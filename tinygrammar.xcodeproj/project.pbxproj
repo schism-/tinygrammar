@@ -10,6 +10,8 @@
 		18D7E9121D08525300C79911 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9111D08525300C79911 /* main.cpp */; };
 		18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9181D0AB31800C79911 /* expansion_manager.cpp */; };
 		18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9211D0B0A3A00C79911 /* shape.cpp */; };
+		18D7E9271D11878500C79911 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9251D11878500C79911 /* model.cpp */; };
+		18D7E92A1D1197DC00C79911 /* grammar_core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9281D1197DC00C79911 /* grammar_core.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +36,10 @@
 		18D7E9211D0B0A3A00C79911 /* shape.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = shape.cpp; sourceTree = "<group>"; };
 		18D7E9221D0B0A3A00C79911 /* shape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shape.h; sourceTree = "<group>"; };
 		18D7E9241D0B0C8E00C79911 /* yocto_math.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = yocto_math.h; sourceTree = "<group>"; };
+		18D7E9251D11878500C79911 /* model.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = model.cpp; sourceTree = "<group>"; };
+		18D7E9261D11878500C79911 /* model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = model.h; sourceTree = "<group>"; };
+		18D7E9281D1197DC00C79911 /* grammar_core.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = grammar_core.cpp; sourceTree = "<group>"; };
+		18D7E9291D1197DC00C79911 /* grammar_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grammar_core.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,10 +75,14 @@
 			children = (
 				18D7E91B1D0AF68F00C79911 /* common.h */,
 				18D7E9181D0AB31800C79911 /* expansion_manager.cpp */,
+				18D7E9281D1197DC00C79911 /* grammar_core.cpp */,
+				18D7E9291D1197DC00C79911 /* grammar_core.h */,
 				18D7E9191D0AB31800C79911 /* expansion_manager.h */,
 				18D7E9111D08525300C79911 /* main.cpp */,
 				18D7E9211D0B0A3A00C79911 /* shape.cpp */,
 				18D7E9221D0B0A3A00C79911 /* shape.h */,
+				18D7E9251D11878500C79911 /* model.cpp */,
+				18D7E9261D11878500C79911 /* model.h */,
 				18D7E9241D0B0C8E00C79911 /* yocto_math.h */,
 			);
 			path = tinygrammar;
@@ -145,6 +155,8 @@
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
 				18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */,
 				18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */,
+				18D7E9271D11878500C79911 /* model.cpp in Sources */,
+				18D7E92A1D1197DC00C79911 /* grammar_core.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +277,7 @@
 				18D7E9171D08525300C79911 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

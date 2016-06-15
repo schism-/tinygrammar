@@ -11,6 +11,7 @@
 
 #include "common.h"
 #include "shape.h"
+#include "model.h"
 
 using namespace std;
 
@@ -25,16 +26,18 @@ enum {
 // |==============================|
 
 struct Expansion {
-    Shape* shape;
+    vector<Shape*> shape;
     Shape* annotation;
+    bool terminal;
     
-    Expansion(Shape* s, Shape* a) : shape(s), annotation(a) {};
+    Expansion(vector<Shape*> s, Shape* a) : shape(s), annotation(a) { terminal = false; };
     
     ~Expansion() {};
 };
 
 struct History {
     int history_type = -1;
+    
     ~History() {};
 };
 
@@ -60,39 +63,8 @@ struct HistoryLinear : History{
 History* make_history(int h_type);
 void free_history(History* history);
 
+void expand(History* history);
 
-
-
-// |=========================================|
-// |======== HISTORY IMPLEMENTATION =========|
-// |=========================================|
-
-History* make_history(int h_type) {
-    History* ret;
-    switch (h_type){
-        case linear_history:
-            ret = new HistoryLinear();
-        case tree_history:
-            ret = new HistoryTree();
-        default:
-            ret = new HistoryLinear();
-    }
-    
-    // TODO: initialize all data structures
-    
-    return ret;
-}
-
-void free_history(History* history){ delete history; }
-
-void expand(History* history) {
-
-}
-
-void get_expansion(History* history, int exp_id){
-    
-}
-
-void add_node(History* history) {}
+void get_expansion(History* history, Shape* sel_shape);
 
 #endif /* expansion_manager_h */
