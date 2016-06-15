@@ -10,6 +10,7 @@
 #define expansion_manager_h
 
 #include "common.h"
+#include "shape.h"
 
 using namespace std;
 
@@ -24,19 +25,34 @@ enum {
 // |==============================|
 
 struct Expansion {
+    Shape* shape;
+    Shape* annotation;
+    
+    Expansion(Shape* s, Shape* a) : shape(s), annotation(a) {};
+    
     ~Expansion() {};
 };
 
 struct History {
+    int history_type = -1;
     ~History() {};
 };
 
 struct HistoryTree : History{
-    tree<Expansion*> history;
+    tree<Expansion*>* history;
+    
+    HistoryTree() {
+        history = new tree<Expansion*>();
+        history_type = tree_history;
+    }
 };
 
 struct HistoryLinear : History{
     vector<Expansion*> history;
+    
+    HistoryLinear() {
+        history_type = linear_history;
+    }
 };
 
 
@@ -68,5 +84,15 @@ History* make_history(int h_type) {
 }
 
 void free_history(History* history){ delete history; }
+
+void expand(History* history) {
+
+}
+
+void get_expansion(History* history, int exp_id){
+    
+}
+
+void add_node(History* history) {}
 
 #endif /* expansion_manager_h */
