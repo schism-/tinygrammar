@@ -17,6 +17,7 @@ struct Shape {
     ~Shape() {};
 };
 
+typedef pair<vector<Shape*>, vector<Shape*>> AnnotatedShapes;
 
 // |=====================================|
 // |======== SHAPES for TANGLES =========|

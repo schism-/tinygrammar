@@ -7,6 +7,7 @@
 //
 
 #include "expansion_manager.h"
+#include "grammar_core.h"
 
 // |=========================================|
 // |======== HISTORY IMPLEMENTATION =========|
@@ -60,17 +61,26 @@ vector<Expansion*> get_active_nodes(History* h){
 
 void get_expansion(History* history, Shape* sel_shape){
     if (history->history_type == linear_history){
+        
     }
     else if (history->history_type == tree_history){
         
     }
 }
 
+vector<AnnotatedShapes*> to_annotated_shapes(const vector<Expansion*>& active_nodes){
+    auto res = vector<AnnotatedShapes*>();
+    for (auto an : active_nodes){
+        res.push_back(new pair<vector<Shape*>, vector<Shape*>>(an->shapes, an->annotations));
+    }
+    return res;
+}
+
 void expand(History* h) {
     //retrieve active nodes
     auto front = get_active_nodes(h);
     //pass them to grammar core
-    
+    auto grammar_step = matching(to_annotated_shapes(front));
     //retrieve results
     
     //update model

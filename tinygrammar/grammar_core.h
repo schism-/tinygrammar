@@ -9,6 +9,13 @@
 #ifndef grammar_core_h
 #define grammar_core_h
 
-#include <stdio.h>
+#include "common.h"
+#include "shape.h"
+
+//TODO: - matching shapes
+//      - matching rule
+//      - loading grammar
+
+AnnotatedShapes* matching(const vector<AnnotatedShapes*>& active_nodes);
 
 #endif /* grammar_core_h */

@@ -26,11 +26,11 @@ enum {
 // |==============================|
 
 struct Expansion {
-    vector<Shape*> shape;
-    Shape* annotation;
+    vector<Shape*> shapes;
+    vector<Shape*> annotations;
     bool terminal;
     
-    Expansion(vector<Shape*> s, Shape* a) : shape(s), annotation(a) { terminal = false; };
+    Expansion(vector<Shape*> s, vector<Shape*> a) : shapes(s), annotations(a) { terminal = false; };
     
     ~Expansion() {};
 };
@@ -61,6 +61,7 @@ struct HistoryLinear : History{
 
 
 History* make_history(int h_type);
+
 void free_history(History* history);
 
 void expand(History* history);
