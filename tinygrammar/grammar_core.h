@@ -29,7 +29,7 @@ struct Grammar {
     ym_rng_pcg32                    rn;
 };
 
-Grammar* get_grammar();
+Grammar* get_grammar(string filename);
 vector<Rule*> get_rules(Grammar* g);
 
 ShapeGroup* matching(ShapeGroup* active_shapes);

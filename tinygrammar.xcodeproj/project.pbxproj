@@ -13,6 +13,7 @@
 		18D7E9271D11878500C79911 /* model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9251D11878500C79911 /* model.cpp */; };
 		18D7E92A1D1197DC00C79911 /* grammar_core.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9281D1197DC00C79911 /* grammar_core.cpp */; };
 		18D7E92D1D12B46800C79911 /* rule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E92B1D12B46800C79911 /* rule.cpp */; };
+		18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E92E1D1838C700C79911 /* jsonxx.cc */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,8 @@
 		18D7E9291D1197DC00C79911 /* grammar_core.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = grammar_core.h; sourceTree = "<group>"; };
 		18D7E92B1D12B46800C79911 /* rule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rule.cpp; sourceTree = "<group>"; };
 		18D7E92C1D12B46800C79911 /* rule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rule.h; sourceTree = "<group>"; };
+		18D7E92E1D1838C700C79911 /* jsonxx.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = jsonxx.cc; sourceTree = "<group>"; };
+		18D7E92F1D1838C700C79911 /* jsonxx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonxx.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +99,8 @@
 		18D7E91F1D0AFD2000C79911 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				18D7E92E1D1838C700C79911 /* jsonxx.cc */,
+				18D7E92F1D1838C700C79911 /* jsonxx.h */,
 				18D7E9201D0AFD2000C79911 /* tree.hh */,
 			);
 			path = external;
@@ -157,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */,
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
 				18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */,
 				18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */,

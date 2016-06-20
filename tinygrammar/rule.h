@@ -11,11 +11,22 @@
 
 #include "common.h"
 
+#define PARAM_SIZE 16
+
 using namespace std;
 
 struct Rule {
+    int rule_name;
+    
     vector<int> matching_tags;
     vector<int> produced_tags;
+    
+    ym_vec<int, PARAM_SIZE> parameters;
+    
+    Rule() {matching_tags = vector<int>(); produced_tags = vector<int>(); parameters = ym_vec<int, PARAM_SIZE>(); }
+    Rule(vector<int> mt, vector<int> pt, ym_vec<int, PARAM_SIZE> pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
+    
+    ~Rule() {};
 };
 
 #endif /* rule_hpp */
