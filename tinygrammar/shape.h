@@ -13,11 +13,27 @@
 
 using namespace std;
 
+enum {
+    basic_shape = 0,
+    tangle_shape,
+    annotated_shape,
+    anim_shape
+};
+
+// |=====================================|
+// |======= BASIC SHAPES and META =======|
+// |=====================================|
+
+
 struct Shape {
+    int shape_type = basic_shape;
     ~Shape() {};
 };
 
-typedef pair<vector<Shape*>, vector<Shape*>> AnnotatedShapes;
+struct ShapeGroup : vector<Shape*> {
+    // inheriting constructors
+    using vector<Shape*>::vector;
+};
 
 // |=====================================|
 // |======== SHAPES for TANGLES =========|
@@ -51,10 +67,23 @@ struct TangleShape : Shape {
     // drawing properties
     bool                    invert = false;
     vector<polyline2r>      viz_lines;
+    
+    TangleShape() {shape_type = tangle_shape;};
 };
 
-struct ScaffoldShape : Shape {
-
+struct AnnotatedShape : Shape {
+    // grammar
+    int                     tag = 0;
+    int                     gid = 0;
+    int                     tid = 0;
+    
+    // tangle shape
+    ym_frame2f              frame = ym_identity_frame2f;
+    polygon2r               poly;
+    
+    Shape*                  annotation;
+    
+    AnnotatedShape() {shape_type = annotated_shape;};
 };
 
 #endif /* shape_h */

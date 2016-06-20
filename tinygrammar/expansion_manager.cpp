@@ -7,7 +7,6 @@
 //
 
 #include "expansion_manager.h"
-#include "grammar_core.h"
 
 // |=========================================|
 // |======== HISTORY IMPLEMENTATION =========|
@@ -68,10 +67,11 @@ void get_expansion(History* history, Shape* sel_shape){
     }
 }
 
-vector<AnnotatedShapes*> to_annotated_shapes(const vector<Expansion*>& active_nodes){
-    auto res = vector<AnnotatedShapes*>();
+ShapeGroup* to_shapes(const vector<Expansion*>& active_nodes){
+    auto res = new ShapeGroup();
     for (auto an : active_nodes){
-        res.push_back(new pair<vector<Shape*>, vector<Shape*>>(an->shapes, an->annotations));
+        auto sg = new ShapeGroup();
+        for (auto s : an->shapes) res->push_back(s);
     }
     return res;
 }
@@ -80,7 +80,7 @@ void expand(History* h) {
     //retrieve active nodes
     auto front = get_active_nodes(h);
     //pass them to grammar core
-    auto grammar_step = matching(to_annotated_shapes(front));
+    auto grammar_step = matching(to_shapes(front));
     //retrieve results
     
     //update model

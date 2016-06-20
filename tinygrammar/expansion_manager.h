@@ -12,6 +12,7 @@
 #include "common.h"
 #include "shape.h"
 #include "model.h"
+#include "grammar_core.h"
 
 using namespace std;
 
@@ -27,10 +28,10 @@ enum {
 
 struct Expansion {
     vector<Shape*> shapes;
-    vector<Shape*> annotations;
     bool terminal;
     
-    Expansion(vector<Shape*> s, vector<Shape*> a) : shapes(s), annotations(a) { terminal = false; };
+    Expansion() { terminal = false; };
+    Expansion(const vector<Shape*>& s) { shapes = s;  terminal = false; };
     
     ~Expansion() {};
 };

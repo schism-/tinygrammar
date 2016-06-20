@@ -11,11 +11,29 @@
 
 #include "common.h"
 #include "shape.h"
+#include "rule.h"
 
 //TODO: - matching shapes
 //      - matching rule
 //      - loading grammar
 
-AnnotatedShapes* matching(const vector<AnnotatedShapes*>& active_nodes);
+enum {
+    tangle_grammar = 0,
+    learning_grammar,
+    animation_grammar
+};
+
+struct Grammar {
+    vector<Rule*>                   rules;
+    int                             seed = 0;
+    ym_rng_pcg32                    rn;
+};
+
+Grammar* get_grammar();
+vector<Rule*> get_rules(Grammar* g);
+
+ShapeGroup* matching(ShapeGroup* active_shapes);
+ShapeGroup* matching_shapes(ShapeGroup* active_nodes);
+Rule* matching_rule(ShapeGroup* matched);
 
 #endif /* grammar_core_h */
