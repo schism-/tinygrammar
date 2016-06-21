@@ -24,13 +24,24 @@ enum {
 };
 
 struct Grammar {
+    string                          name;
     vector<Rule*>                   rules;
     int                             seed = 0;
     ym_rng_pcg32                    rn;
+    
+    map<string, int> rule_mapping;
+    map<string, int> tag_mapping;
+    
+    Grammar() {rules = vector<Rule*>(); rule_mapping = map<string, int>(); tag_mapping = map<string, int>();}
+    
+    ~Grammar() {};
 };
 
 Grammar* get_grammar(string filename);
 vector<Rule*> get_rules(Grammar* g);
+
+int add_rule_to_mapping(Grammar* grammar, string rulename);
+vector<int> add_tags(Grammar* grammar, vector<string> tags);
 
 ShapeGroup* matching(ShapeGroup* active_shapes);
 ShapeGroup* matching_shapes(ShapeGroup* active_nodes);

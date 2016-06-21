@@ -7,17 +7,18 @@
 //
 
 #ifndef common_h
+#define common_h
 
 #include <string>
 #include <vector>
 #include <array>
 #include <initializer_list>
 #include <set>
+#include <map>
 #include <functional>
 #include "tree.hh"
 #include "yocto_math.h"
 
-#define common_h
-
+#define PARAM_SIZE 16
 
 #endif /* common_h */

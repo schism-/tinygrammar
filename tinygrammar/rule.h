@@ -10,8 +10,7 @@
 #define rule_h
 
 #include "common.h"
-
-#define PARAM_SIZE 16
+#include "operator.h"
 
 using namespace std;
 
@@ -22,6 +21,8 @@ struct Rule {
     vector<int> produced_tags;
     
     ym_vec<int, PARAM_SIZE> parameters;
+    
+    Operator op;
     
     Rule() {matching_tags = vector<int>(); produced_tags = vector<int>(); parameters = ym_vec<int, PARAM_SIZE>(); }
     Rule(vector<int> mt, vector<int> pt, ym_vec<int, PARAM_SIZE> pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
