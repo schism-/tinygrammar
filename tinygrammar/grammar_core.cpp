@@ -14,8 +14,6 @@
 
 using namespace jsonxx;
 
-#define ACTIVE_GRAMMAR 0
-
 Grammar* main_grammar = nullptr;
 
 int add_rule_to_mapping(Grammar* grammar, string rulename){
@@ -90,21 +88,17 @@ vector<Rule*> get_rules(Grammar* g){
     return vector<Rule*>();
 }
 
-ShapeGroup matching(const ShapeGroup& active_shapes){
-    auto grammar = get_grammar("grammars/test_grammar.json");
+pair<ShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
+    auto grammar = get_grammar(grammar_filename);
     //matching of the shapes
     auto matched_shapes = matching_shapes(active_shapes);
     //matching of the rule
     if (not matched_shapes.empty()){
         auto rule_to_apply = matching_rule(matched_shapes);
-        //call operator
-        // ShapeGroup* shapes, ym_vec<int, PARAM_SIZE> parameters, rng& sampler, ShapeGroup* annotations = nullptr
-        auto new_shapes = rule_to_apply->op(matched_shapes, rule_to_apply->parameters, grammar->rn);
-        //retrieve and return results
-        return new_shapes;
+        if (rule_to_apply != nullptr) return make_pair(matched_shapes, rule_to_apply);
     }
     printf("Didn't find any rule for matching\n");
-    return ShapeGroup();
+    return pair<ShapeGroup, Rule*>(ShapeGroup(), nullptr);
 }
 
 bool tag_in_rule(int tag, const rule_tags& tags){
@@ -119,7 +113,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
         case tangle_grammar:
         {
             auto matches = vector<int>();
-            auto grammar = get_grammar("grammars/test_grammar.json");
+            auto grammar = get_grammar(grammar_filename);
             auto rules = get_rules(grammar);
             for(auto i = 0; i < (int)rules.size(); i++){
                 if (tag_in_rule(tag, rules[i]->matching_tags))
@@ -137,7 +131,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
 
 ShapeGroup matching_shapes(const ShapeGroup& active_shapes){
     auto res = ShapeGroup();
-    auto grammar = get_grammar("grammars/test_grammar.json");
+    auto grammar = get_grammar(grammar_filename);
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
@@ -162,7 +156,7 @@ ShapeGroup matching_shapes(const ShapeGroup& active_shapes){
 }
 
 Rule* matching_rule(const ShapeGroup& matched) {
-    auto grammar = get_grammar("grammars/test_grammar.json");
+    auto grammar = get_grammar(grammar_filename);
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {

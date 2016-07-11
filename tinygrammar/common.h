@@ -24,7 +24,27 @@ using namespace std;
 #define PARAM_SIZE 16
 #define TAG_SIZE 4
 
+#define ACTIVE_GRAMMAR 0
+
 static constexpr double resolution = 2;
+
+enum {
+    basic_shape = 0,
+    tangle_shape,
+    annotated_shape,
+    anim_shape
+};
+
+enum {
+    linear_history = 0,
+    tree_history = 1
+};
+
+enum {
+    tangle_grammar = 0,
+    learning_grammar,
+    animation_grammar
+};
 
 enum {
     op_split = 0,
@@ -44,7 +64,7 @@ typedef ym_vec<double, PARAM_SIZE> rule_params;
 typedef ym_vec<int, TAG_SIZE> rule_tags;
 
 
-
+static string grammar_filename = "grammars/test_grammar.json";
 
 
 

@@ -16,11 +16,6 @@
 
 using namespace std;
 
-enum {
-    linear_history = 0,
-    tree_history = 1
-};
-
 
 // |==============================|
 // |======== HISTORY API =========|

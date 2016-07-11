@@ -67,6 +67,26 @@ void get_expansion(History* history, Shape* sel_shape){
     }
 }
 
+void update_history(History* h, ShapeGroup matched_shapes, Rule* matched_rule, ShapeGroup new_shapes){
+    switch(h->history_type){
+        case linear_history:
+        {
+            
+            break;
+        }
+        case tree_history:
+        {
+            
+            break;
+        }
+        default:
+        {
+            printf("Shouldn't have gotten here! Invalid history_type in update_history \n");
+            break;
+        }
+    }
+}
+
 ShapeGroup to_shapes(const vector<Expansion*>& active_nodes){
     auto res = ShapeGroup();
     for (auto an : active_nodes){
@@ -76,12 +96,25 @@ ShapeGroup to_shapes(const vector<Expansion*>& active_nodes){
     return res;
 }
 
+void expand_init(History* h) {
+    
+}
+
 void expand(History* h) {
     //retrieve active nodes
     auto front = get_active_nodes(h);
     //pass them to grammar core
     auto grammar_step = matching(to_shapes(front));
-    //retrieve results
+    auto grammar = get_grammar(grammar_filename);
     
+    if (grammar_step.second != nullptr){
+        //apply and retrieve results
+        auto new_shapes = grammar_step.second->op(grammar_step.first, grammar_step.second->parameters, grammar->rn);
+        
+        update_history(h, grammar_step.first, grammar_step.second, new_shapes);
+    }
+    else{
+        printf("No more expansions available\n");
+    }
     //update model
 }

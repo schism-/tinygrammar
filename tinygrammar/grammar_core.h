@@ -17,12 +17,6 @@
 //      - matching rule
 //      - loading grammar
 
-enum {
-    tangle_grammar = 0,
-    learning_grammar,
-    animation_grammar
-};
-
 struct Grammar {
     string                          name;
     vector<Rule*>                   rules;
@@ -43,7 +37,7 @@ vector<Rule*> get_rules(Grammar* g);
 int add_rule_to_mapping(Grammar* grammar, string rulename);
 rule_tags add_tags(Grammar* grammar, vector<string> tags);
 
-ShapeGroup matching(const ShapeGroup& active_shapes);
+pair<ShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
 ShapeGroup matching_shapes(const ShapeGroup& active_nodes);
 Rule* matching_rule(const ShapeGroup& matched);
 

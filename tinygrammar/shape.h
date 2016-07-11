@@ -13,13 +13,6 @@
 
 using namespace std;
 
-enum {
-    basic_shape = 0,
-    tangle_shape,
-    annotated_shape,
-    anim_shape
-};
-
 // |=====================================|
 // |======= BASIC SHAPES and META =======|
 // |=====================================|
