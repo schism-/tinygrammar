@@ -1268,6 +1268,11 @@ inline T ym_rsize(const ym_range<T>& a) {
     return a.max - a.min;
 }
 
+template <typename T>
+inline T ym_rscale(const ym_range<T>& a, const T& b) {
+    return {ym_rcenter(a) - ym_rsize(a) * b / 2, ym_rcenter(a) + ym_rsize(a) * b / 2};
+}
+
 // -----------------------------------------------------------------------------
 // RAYS
 // -----------------------------------------------------------------------------

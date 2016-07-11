@@ -17,15 +17,15 @@ using namespace std;
 struct Rule {
     int rule_name;
     
-    vector<int> matching_tags;
-    vector<int> produced_tags;
+    rule_tags matching_tags;
+    rule_tags produced_tags;
     
-    ym_vec<int, PARAM_SIZE> parameters;
+    rule_params parameters;
     
     Operator op;
     
-    Rule() {matching_tags = vector<int>(); produced_tags = vector<int>(); parameters = ym_vec<int, PARAM_SIZE>(); }
-    Rule(vector<int> mt, vector<int> pt, ym_vec<int, PARAM_SIZE> pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
+    Rule() {matching_tags = rule_tags(); produced_tags = rule_tags(); parameters = rule_params(); }
+    Rule(rule_tags mt, rule_tags pt, rule_params pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
     
     ~Rule() {};
 };

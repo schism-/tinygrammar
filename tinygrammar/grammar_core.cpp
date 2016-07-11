@@ -23,12 +23,12 @@ int add_rule_to_mapping(Grammar* grammar, string rulename){
     else {grammar->rule_mapping[rulename] = (int)(grammar->rule_mapping.size()); return grammar->rule_mapping.at(rulename);}
 }
 
-vector<int> add_tags(Grammar* grammar, vector<string> tags){
+rule_tags add_tags(Grammar* grammar, vector<string> tags){
     auto res = vector<int>();
     for (auto t : tags){
     
     }
-    return {0};
+    return rule_tags();
 }
 
 Grammar* get_grammar(string filename){
@@ -67,9 +67,12 @@ Grammar* get_grammar(string filename){
             for (auto j = 0; j < pt_arr.size(); j++) json_ptags.push_back(pt_arr.get<String>(j));
             rule->produced_tags = add_tags(res, json_ptags);
             
-            rule->op = Operator(rule_json.get<String>("operator"));
+            if (rule_json.get<String>("operator") == "split")
+                rule->op = Operator(op_split);
+            else if (rule_json.get<String>("operator") == "place")
+                rule->op = Operator(op_place);
             
-            auto json_params = ym_vec<int, PARAM_SIZE>();
+            auto json_params = rule_params();
             auto p_arr = rule_json.get<Array>("parameters");
             for (auto j = 0; j < p_arr.size(); j++) json_params[j] = p_arr.get<Number>(j);
             rule->parameters = json_params;
@@ -87,33 +90,43 @@ vector<Rule*> get_rules(Grammar* g){
     return vector<Rule*>();
 }
 
-ShapeGroup* matching(ShapeGroup* active_shapes){
+ShapeGroup matching(const ShapeGroup& active_shapes){
     auto grammar = get_grammar("grammars/test_grammar.json");
     //matching of the shapes
     auto matched_shapes = matching_shapes(active_shapes);
     //matching of the rule
-    if (matched_shapes){
+    if (not matched_shapes.empty()){
         auto rule_to_apply = matching_rule(matched_shapes);
         //call operator
-        auto new_shapes = rule_to_apply->op(matched_shapes, rule_to_apply->parameters);
+        // ShapeGroup* shapes, ym_vec<int, PARAM_SIZE> parameters, rng& sampler, ShapeGroup* annotations = nullptr
+        auto new_shapes = rule_to_apply->op(matched_shapes, rule_to_apply->parameters, grammar->rn);
         //retrieve and return results
-        
+        return new_shapes;
     }
-    return new ShapeGroup();
+    printf("Didn't find any rule for matching\n");
+    return ShapeGroup();
 }
 
-Rule* tangle_match_rule(int tag){
+bool tag_in_rule(int tag, const rule_tags& tags){
+    for (auto i = 0; i < TAG_SIZE; i++){
+        if (tag == tags[i]) return true;
+    }
+    return false;
+}
+
+Rule* tangle_match_rule(Grammar* grammar, int tag){
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
             auto matches = vector<int>();
-            auto grammar = get_grammar("");
+            auto grammar = get_grammar("grammars/test_grammar.json");
             auto rules = get_rules(grammar);
             for(auto i = 0; i < (int)rules.size(); i++){
-                if (find(rules[i]->matching_tags.begin(), rules[i]->matching_tags.end(), tag) != rules[i]->matching_tags.end())
+                if (tag_in_rule(tag, rules[i]->matching_tags))
                     matches.push_back(i);
             }
             if(matches.empty()) return nullptr;
+            // TODO: use RNG to choose rule
             return rules[0];
         }
         default:
@@ -122,22 +135,22 @@ Rule* tangle_match_rule(int tag){
     return nullptr;
 }
 
-ShapeGroup* matching_shapes(ShapeGroup* active_shapes){
-    auto res = new ShapeGroup();
+ShapeGroup matching_shapes(const ShapeGroup& active_shapes){
+    auto res = ShapeGroup();
     auto grammar = get_grammar("grammars/test_grammar.json");
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
             auto rule = (Rule*)nullptr;
             auto start = (TangleShape*)nullptr;
-            for(auto&& shape : *active_shapes) {
-                rule = tangle_match_rule(((TangleShape*)shape)->tag);
+            for(auto&& shape : active_shapes) {
+                rule = tangle_match_rule(grammar, ((TangleShape*)shape)->tag);
                 start = ((TangleShape*)shape);
                 if(rule) break;
             }
-            if(not rule) return nullptr;
-            for(auto shape : *active_shapes) {
-                if(((TangleShape*)shape)->gid == start->gid) res->push_back(shape);
+            if(not rule) return res;
+            for(auto shape : active_shapes) {
+                if(((TangleShape*)shape)->gid == start->gid) res.push_back(shape);
             }
             break;
         }
@@ -148,12 +161,13 @@ ShapeGroup* matching_shapes(ShapeGroup* active_shapes){
     return res;
 }
 
-Rule* matching_rule(ShapeGroup* matched) {
+Rule* matching_rule(const ShapeGroup& matched) {
+    auto grammar = get_grammar("grammars/test_grammar.json");
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
-            auto shape = &matched[0];
-            auto rule = tangle_match_rule(((TangleShape*)shape)->tag);
+            auto shape = matched[0];
+            auto rule = tangle_match_rule(grammar, ((TangleShape*)shape)->tag);
             return rule;
         }
         default:

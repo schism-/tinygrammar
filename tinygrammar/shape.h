@@ -39,10 +39,6 @@ struct ShapeGroup : vector<Shape*> {
 // |======== SHAPES for TANGLES =========|
 // |=====================================|
 
-struct ym_vec2r : vector<ym_vec<double, 2>> {
-    using vector<ym_vec<double, 2>>::vector;
-};
-
 struct polyline2r : vector<ym_vec2r> {
     using vector<ym_vec2r>::vector;
 };
@@ -58,7 +54,7 @@ struct TangleShape : Shape {
     int                     tid = 0;
     
     // tangle shape
-    ym_frame2f              frame = ym_identity_frame2f;
+    ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
     
     // guideline
@@ -66,9 +62,14 @@ struct TangleShape : Shape {
     
     // drawing properties
     bool                    invert = false;
-    vector<polyline2r>      viz_lines;
     
     TangleShape() {shape_type = tangle_shape;};
+    TangleShape(int tag, int gid, int tid, const ym_frame2r& frame, const polygon2r& poly) : tag(tag), gid(gid), tid(tid), frame(frame), poly(poly) {shape_type = tangle_shape;};
+    
+    static int next_gid() {
+        static int gid = 0;
+        return ++gid;
+    }
 };
 
 struct AnnotatedShape : Shape {

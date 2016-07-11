@@ -9,19 +9,30 @@
 #ifndef operator_h
 #define operator_h
 
-#include <stdio.h>
 #include "common.h"
-#include "shape.h"
+#include "tangle_utilities.h"
+
+ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
 
 struct Operator{
-    public:
-        Operator (){}
-        Operator (string operator_name) : operator_name(operator_name) {}
-        ~Operator(){}
+    int operator_name;
     
-        ShapeGroup* operator() (ShapeGroup* shapes, ym_vec<int, PARAM_SIZE> parameters) { return new ShapeGroup(); }
-    private:
-        string operator_name;
+    Operator (){}
+    Operator (int operator_name) : operator_name(operator_name) {}
+    ~Operator(){}
+
+    ShapeGroup operator() (const ShapeGroup& shapes, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr) {
+        switch(operator_name){
+            case op_split:
+                return tangle_split_operator(shapes, parameters, sampler, annotations);
+                break;
+            default:
+                printf("ERROR: shouldn-t have gotten here. Invalid op type\n");
+                break;
+        }
+        return ShapeGroup();
+    }
 };
+
 
 #endif /* operator_h */

@@ -28,3 +28,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+*/**/project.pbxproj
+*/**/UserInterfaceState.xcuserstate
+*/**/Breakpoints_v2.xcbkptlist

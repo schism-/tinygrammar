@@ -67,11 +67,11 @@ void get_expansion(History* history, Shape* sel_shape){
     }
 }
 
-ShapeGroup* to_shapes(const vector<Expansion*>& active_nodes){
-    auto res = new ShapeGroup();
+ShapeGroup to_shapes(const vector<Expansion*>& active_nodes){
+    auto res = ShapeGroup();
     for (auto an : active_nodes){
-        auto sg = new ShapeGroup();
-        for (auto s : an->shapes) res->push_back(s);
+        auto sg = ShapeGroup();
+        for (auto s : an->shapes) res.push_back(s);
     }
     return res;
 }

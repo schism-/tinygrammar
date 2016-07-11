@@ -27,11 +27,11 @@ enum {
 // |==============================|
 
 struct Expansion {
-    vector<Shape*> shapes;
+    ShapeGroup shapes;
     bool terminal;
     
     Expansion() { terminal = false; };
-    Expansion(const vector<Shape*>& s) { shapes = s;  terminal = false; };
+    Expansion(const ShapeGroup& s) { shapes = s;  terminal = false; };
     
     ~Expansion() {};
 };

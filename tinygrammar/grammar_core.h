@@ -27,7 +27,7 @@ struct Grammar {
     string                          name;
     vector<Rule*>                   rules;
     int                             seed = 0;
-    ym_rng_pcg32                    rn;
+    rng                    rn;
     
     map<string, int> rule_mapping;
     map<string, int> tag_mapping;
@@ -41,10 +41,10 @@ Grammar* get_grammar(string filename);
 vector<Rule*> get_rules(Grammar* g);
 
 int add_rule_to_mapping(Grammar* grammar, string rulename);
-vector<int> add_tags(Grammar* grammar, vector<string> tags);
+rule_tags add_tags(Grammar* grammar, vector<string> tags);
 
-ShapeGroup* matching(ShapeGroup* active_shapes);
-ShapeGroup* matching_shapes(ShapeGroup* active_nodes);
-Rule* matching_rule(ShapeGroup* matched);
+ShapeGroup matching(const ShapeGroup& active_shapes);
+ShapeGroup matching_shapes(const ShapeGroup& active_nodes);
+Rule* matching_rule(const ShapeGroup& matched);
 
 #endif /* grammar_core_h */
