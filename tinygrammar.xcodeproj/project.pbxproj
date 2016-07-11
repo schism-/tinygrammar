@@ -15,6 +15,7 @@
 		18D7E92D1D12B46800C79911 /* rule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E92B1D12B46800C79911 /* rule.cpp */; };
 		18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E92E1D1838C700C79911 /* jsonxx.cc */; };
 		18D7E9331D19752000C79911 /* operator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9311D19752000C79911 /* operator.cpp */; };
+		18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		18D7E92F1D1838C700C79911 /* jsonxx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jsonxx.h; sourceTree = "<group>"; };
 		18D7E9311D19752000C79911 /* operator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = operator.cpp; sourceTree = "<group>"; };
 		18D7E9321D19752000C79911 /* operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = operator.h; sourceTree = "<group>"; };
+		18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tangle_utilities.cpp; sourceTree = "<group>"; };
+		18D7E9351D1A9E2800C79911 /* tangle_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tangle_utilities.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				18D7E9311D19752000C79911 /* operator.cpp */,
 				18D7E9321D19752000C79911 /* operator.h */,
 				18D7E9241D0B0C8E00C79911 /* yocto_math.h */,
+				18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */,
+				18D7E9351D1A9E2800C79911 /* tangle_utilities.h */,
 			);
 			path = tinygrammar;
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			files = (
 				18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */,
 				18D7E9331D19752000C79911 /* operator.cpp in Sources */,
+				18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */,
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
 				18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */,
 				18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */,
