@@ -23,10 +23,25 @@ using namespace std;
 
 struct Expansion {
     ShapeGroup shapes;
+    
+    ShapeGroup match;
+    ShapeGroup added;
+    ShapeGroup remainder;
+    
+    Rule* applied_rule;
     bool terminal;
     
     Expansion() { terminal = false; };
     Expansion(const ShapeGroup& s) { shapes = s;  terminal = false; };
+    Expansion(const PartitionShapeGroup& p) {
+        match = p.match;
+        added = p.added;
+        remainder = p.remainder;
+        for (auto s : remainder) shapes.push_back(s);
+        for (auto s : added) shapes.push_back(s);
+        terminal = false;
+    };
+    
     
     ~Expansion() {};
 };
@@ -51,6 +66,7 @@ struct HistoryLinear : History{
     
     HistoryLinear() {
         history_type = linear_history;
+        history = vector<Expansion*>();
     }
 };
 
@@ -62,6 +78,6 @@ void free_history(History* history);
 
 void expand(History* history);
 
-void get_expansion(History* history, Shape* sel_shape);
+Expansion* get_expansion(History* history, Shape* sel_shape);
 
 #endif /* expansion_manager_h */

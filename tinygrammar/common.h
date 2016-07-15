@@ -47,8 +47,9 @@ enum {
 };
 
 enum {
-    op_split = 0,
-    op_place = 1
+    op_init = 0,
+    op_split = 1,
+    op_place = 2
 };
 
 typedef ym_vec<double, 2> ym_vec2r;

@@ -37,8 +37,9 @@ vector<Rule*> get_rules(Grammar* g);
 int add_rule_to_mapping(Grammar* grammar, string rulename);
 rule_tags add_tags(Grammar* grammar, vector<string> tags);
 
-pair<ShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
-ShapeGroup matching_shapes(const ShapeGroup& active_nodes);
+Rule* matching_init();
+pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes);
 Rule* matching_rule(const ShapeGroup& matched);
 
 #endif /* grammar_core_h */

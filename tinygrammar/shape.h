@@ -28,6 +28,13 @@ struct ShapeGroup : vector<Shape*> {
     using vector<Shape*>::vector;
 };
 
+struct PartitionShapeGroup {
+    ShapeGroup match;
+    ShapeGroup added;
+    ShapeGroup remainder;
+};
+
+
 // |=====================================|
 // |======== SHAPES for TANGLES =========|
 // |=====================================|

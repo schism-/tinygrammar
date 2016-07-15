@@ -69,6 +69,8 @@ Grammar* get_grammar(string filename){
                 rule->op = Operator(op_split);
             else if (rule_json.get<String>("operator") == "place")
                 rule->op = Operator(op_place);
+            else if (rule_json.get<String>("operator") == "init")
+                rule->op = Operator(op_init);
             
             auto json_params = rule_params();
             auto p_arr = rule_json.get<Array>("parameters");
@@ -83,22 +85,43 @@ Grammar* get_grammar(string filename){
     else return main_grammar;
 }
 
+vector<Rule*> get_inits(Grammar* g){
+    auto res = vector<Rule*>();
+    if (g != nullptr){
+        for (auto r : g->rules) if (r->op.operator_name == op_init) res.push_back(r);
+    }
+    return res;
+}
+
 vector<Rule*> get_rules(Grammar* g){
     if (g != nullptr) return g->rules;
     return vector<Rule*>();
 }
 
-pair<ShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
+Rule* matching_init(){
+    auto grammar = get_grammar(grammar_filename);
+    auto inits = get_inits(grammar);
+    if (not inits.empty())
+        return inits[(int)(ym_rng_nextf(&grammar->rn) * inits.size())];
+    else {
+        printf("Didn't find any init rule for matching\n");
+        return nullptr;
+    }
+}
+
+pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
     auto grammar = get_grammar(grammar_filename);
     //matching of the shapes
     auto matched_shapes = matching_shapes(active_shapes);
     //matching of the rule
-    if (not matched_shapes.empty()){
-        auto rule_to_apply = matching_rule(matched_shapes);
-        if (rule_to_apply != nullptr) return make_pair(matched_shapes, rule_to_apply);
+    if (not matched_shapes.match.empty()){
+        auto rule_to_apply = matching_rule(matched_shapes.match);
+        if (rule_to_apply != nullptr){
+            return make_pair(matched_shapes, rule_to_apply);
+        }
     }
     printf("Didn't find any rule for matching\n");
-    return pair<ShapeGroup, Rule*>(ShapeGroup(), nullptr);
+    return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
 bool tag_in_rule(int tag, const rule_tags& tags){
@@ -120,8 +143,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
                     matches.push_back(i);
             }
             if(matches.empty()) return nullptr;
-            // TODO: use RNG to choose rule
-            return rules[0];
+            return rules[(int)(ym_rng_nextf(&grammar->rn) * rules.size())];
         }
         default:
             break;
@@ -129,8 +151,8 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
     return nullptr;
 }
 
-ShapeGroup matching_shapes(const ShapeGroup& active_shapes){
-    auto res = ShapeGroup();
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
+    auto res = PartitionShapeGroup();
     auto grammar = get_grammar(grammar_filename);
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
@@ -144,7 +166,8 @@ ShapeGroup matching_shapes(const ShapeGroup& active_shapes){
             }
             if(not rule) return res;
             for(auto shape : active_shapes) {
-                if(((TangleShape*)shape)->gid == start->gid) res.push_back(shape);
+                if(((TangleShape*)shape)->gid == start->gid) res.match.push_back(shape);
+                else res.remainder.push_back(shape);
             }
             break;
         }
