@@ -76,6 +76,7 @@ History* make_history(int h_type);
 
 void free_history(History* history);
 
+void expand_init(History* h);
 void expand(History* history);
 
 Expansion* get_expansion(History* history, Shape* sel_shape);

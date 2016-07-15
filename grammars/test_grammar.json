@@ -1,7 +1,6 @@
 {
 	"grammar_name" : "Test Grammar", 
 	"seed" : 473, 
-	"init" : { "type" : "svg" , "path" : "svgs/test_square.svg" },
 	"rules" : [
 		{ "rule_name" : "rule_0", 	"matching_tags" : [], 						"produced_tags" : ["initial_poly"], 	"operator" : "init", 	"parameters" : [1, ], "init_value" : "svgs/test_square.svg"}, // 1st param : 0 = BUILT-IN SHAPE , 1 = EXTERNAL SVG
 		{ "rule_name" : "rule_1", 	"matching_tags" : [], 						"produced_tags" : ["initial_poly"], 	"operator" : "init", 	"parameters" : [0, ], "init_value" : "square"}, 

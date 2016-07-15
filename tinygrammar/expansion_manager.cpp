@@ -52,7 +52,7 @@ vector<Expansion*> get_active_nodes(History* h){
         }
         default:
         {
-            printf("Shouldn't have gotten here! Invalid history_type \n");
+            printf("[get_active_nodes] ERROR: Shouldn't have gotten here! Invalid history_type \n");
             break;
         }
     }
@@ -93,7 +93,7 @@ void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule*
         }
         default:
         {
-            printf("Shouldn't have gotten here! Invalid history_type in update_history \n");
+            printf("[update_history] ERROR: Shouldn't have gotten here! Invalid history_type in update_history \n");
             break;
         }
     }

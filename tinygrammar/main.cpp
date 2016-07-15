@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[]) {
     auto em = make_history(0);
+    expand_init(em);
     expand(em);
-    
     return 0;
 }

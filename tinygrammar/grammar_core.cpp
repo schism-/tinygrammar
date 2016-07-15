@@ -172,7 +172,7 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
             break;
         }
         default:
-            printf("Shouldn't have gotten here! Invalid grammar_type \n");
+            printf("[matching_shapes] ERROR: Shouldn't have gotten here! Invalid grammar_type \n");
             break;
     }
     return res;
@@ -188,7 +188,7 @@ Rule* matching_rule(const ShapeGroup& matched) {
             return rule;
         }
         default:
-            printf("Shouldn't have gotten here! Invalid grammar_type \n");
+            printf("[matching_rule] ERROR: Shouldn't have gotten here! Invalid grammar_type \n");
             break;
     }
     return nullptr;

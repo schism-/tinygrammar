@@ -63,3 +63,9 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameter
     }
     return children;
 }
+
+ShapeGroup init_operator(rule_params parameters, rng& rn){
+    auto children = ShapeGroup();
+    
+    return children;
+}

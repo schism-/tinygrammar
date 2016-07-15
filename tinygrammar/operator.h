@@ -13,6 +13,7 @@
 #include "tangle_utilities.h"
 
 ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
+ShapeGroup init_operator(rule_params parameters, rng& sampler);
 
 struct Operator{
     int operator_name;
@@ -26,8 +27,11 @@ struct Operator{
             case op_split:
                 return tangle_split_operator(shapes, parameters, sampler, annotations);
                 break;
+            case op_init:
+                return init_operator(parameters, sampler);
+                break;
             default:
-                printf("ERROR: shouldn-t have gotten here. Invalid op type\n");
+                printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid op type\n");
                 break;
         }
         return ShapeGroup();
