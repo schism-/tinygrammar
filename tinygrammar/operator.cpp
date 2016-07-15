@@ -50,7 +50,7 @@ vector<polyline2r> _curves(const polygon2r& poly, const ym_frame2r& frame, rule_
     return curves;
 }
 
-ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameters, rng& rn, ShapeGroup* annotations){
+ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& rn, ShapeGroup* annotations){
     auto children = ShapeGroup();
     auto gid = TangleShape::next_gid();
     
@@ -64,8 +64,14 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameter
     return children;
 }
 
-ShapeGroup init_operator(rule_params parameters, rng& rn){
+ShapeGroup init_operator(rule_tags tags, rule_params parameters, rng& rn){
     auto children = ShapeGroup();
-    
+    if (parameters[0] == 0){
+        // built-in shape
+        auto gid = TangleShape::next_gid();
+        auto shape = make_
+        auto new_s = new TangleShape(0, gid, 0, ym_frame2r, {inter});
+        new_s.
+    }
     return children;
 }

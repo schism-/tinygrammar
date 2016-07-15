@@ -17,6 +17,22 @@
 // |======== POLYLINES METHODS ==========|
 // |=====================================|
 
+inline bool closed_polyline(const polyline2r& curve) {
+    return curve.front() == curve.back();
+}
+
+inline polyline2r close_polyline(const polyline2r& curve) {
+    if(closed_polyline(curve)) return curve;
+    else return curve + curve[0];
+}
+
+inline polyline2r remove_duplicates_polyline(const polyline2r& curve) {
+    if(curve.empty()) return curve;
+    auto cleaned = polyline2r({curve.front()});
+    for(auto&& p : curve) if(not (p == cleaned.back())) cleaned += p;
+    return cleaned;
+}
+
 inline polyline2r make_polyline_segment(const ym_vec2r& a, const ym_vec2r& b) {
     return {a,b};
 }
@@ -29,6 +45,37 @@ inline polyline2r make_polyline_segment(const ym_vec2r& a, const ym_vec2r& b, do
         curve += a*(1-t)+b*t;
     }
     if(not skip_last) curve += b;
+    return curve;
+}
+
+inline polyline2r make_polyline_rect(const ym_vec2r& a, const ym_vec2r& b) {
+    return { {
+        {min(a.x,b.x),min(a.y,b.y)},
+        {max(a.x,b.x),min(a.y,b.y)},
+        {max(a.x,b.x),max(a.y,b.y)},
+        {min(a.x,b.x),max(a.y,b.y)},
+        {min(a.x,b.x),min(a.y,b.y)},
+    } };
+}
+
+inline polyline2r make_polyline_rect(const ym_vec2r& a, const ym_vec2r& b, double dist) {
+    auto points = make_polyline_rect(a,b);
+    return
+    make_polyline_segment(points[0],points[1],dist,true) +
+    make_polyline_segment(points[1],points[2],dist,true) +
+    make_polyline_segment(points[2],points[3],dist,true) +
+    make_polyline_segment(points[3],points[4],dist,true) +
+    points[4];
+}
+
+inline polyline2r make_polyline_circle(const ym_vec2r& c, double radius, double dist) {
+    auto steps = round(2*ym_pif*radius / dist);
+    auto curve = polyline2r();
+    for(auto i : range(steps)) {
+        auto theta = 2 * ym_pif * double(i) / double(steps);
+        curve += c + radius * ym_vec2r{cos(theta),sin(theta)};
+    }
+    curve = close_polyline(curve);
     return curve;
 }
 
@@ -50,9 +97,6 @@ inline polyline2r make_polyline(const vector<A>& points, const T& f) {
     return nc;
 }
 
-inline polyline2r operator+(const polyline2r& a, const ym_vec2r& b) { auto c = a; c.push_back(b); return c; }
-inline polyline2r operator+(const polyline2r& a, const polyline2r& b) { auto c = a; for(auto&& p : b) c.push_back(p); return c; }
-
 inline polyline2r transform_polyline(const ym_frame2r& frame, const polyline2r& curve) {
     return make_polyline(curve,[&](const ym_vec2r& p){ return ym_transform_point(frame, p); });
 }
@@ -67,24 +111,8 @@ inline vector<polyline2r> transform_polylines_inverse(const ym_frame2r& frame, c
     return make_vector(curves, [&](const polyline2r& curve){ return transform_polyline_inverse(frame,curve); });
 }
 
-inline bool closed_polyline(const polyline2r& curve) {
-    return curve.front() == curve.back();
-}
-
 inline polyline2r reverse_polyline(const polyline2r& curve) {
     auto ret = curve; std::reverse(ret.begin(), ret.end()); return ret;
-}
-
-inline polyline2r close_polyline(const polyline2r& curve) {
-    if(closed_polyline(curve)) return curve;
-    else return curve + curve[0];
-}
-
-inline polyline2r remove_duplicates_polyline(const polyline2r& curve) {
-    if(curve.empty()) return curve;
-    auto cleaned = polyline2r({curve.front()});
-    for(auto&& p : curve) if(not (p == cleaned.back())) cleaned += p;
-    return cleaned;
 }
 
 inline double length_polyline(const polyline2r& curve) {

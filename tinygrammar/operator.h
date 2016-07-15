@@ -12,8 +12,8 @@
 #include "common.h"
 #include "tangle_utilities.h"
 
-ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
-ShapeGroup init_operator(rule_params parameters, rng& sampler);
+ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
+ShapeGroup init_operator(rule_tags tags, rule_params parameters, rng& sampler);
 
 struct Operator{
     int operator_name;
@@ -22,13 +22,13 @@ struct Operator{
     Operator (int operator_name) : operator_name(operator_name) {}
     ~Operator(){}
 
-    ShapeGroup operator() (const ShapeGroup& shapes, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr) {
+    ShapeGroup operator() (const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr) {
         switch(operator_name){
             case op_split:
-                return tangle_split_operator(shapes, parameters, sampler, annotations);
+                return tangle_split_operator(shapes, tags, parameters, sampler, annotations);
                 break;
             case op_init:
-                return init_operator(parameters, sampler);
+                return init_operator(tags, parameters, sampler);
                 break;
             default:
                 printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid op type\n");

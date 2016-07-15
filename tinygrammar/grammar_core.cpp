@@ -22,11 +22,14 @@ int add_rule_to_mapping(Grammar* grammar, string rulename){
 }
 
 rule_tags add_tags(Grammar* grammar, vector<string> tags){
-    auto res = vector<int>();
+    auto res = rule_tags();
+    auto k = 0;
     for (auto t : tags){
-    
+        if (grammar->tag_mapping.count(t) > 0) res[k] = grammar->tag_mapping.at(t);
+        else { grammar->tag_mapping[t] = (int)(grammar->tag_mapping.size()); res[k] = grammar->tag_mapping.at(t);}
+        k++;
     }
-    return rule_tags();
+    return res;
 }
 
 Grammar* get_grammar(string filename){

@@ -43,6 +43,13 @@ struct polyline2r : vector<ym_vec2r> {
     using vector<ym_vec2r>::vector;
 };
 
+// python-like list and dictionary manipulation
+inline polyline2r operator+(const polyline2r& a, const polyline2r& b) { auto ret = polyline2r(); ret.insert(ret.end(),a.begin(),a.end()); ret.insert(ret.end(),b.begin(),b.end()); return ret; }
+inline polyline2r operator+(const polyline2r& a, const ym_vec2r& b) { auto ret = polyline2r(); ret.insert(ret.end(),a.begin(),a.end()); ret.push_back(b); return ret; }
+
+inline polyline2r& operator+=(polyline2r& a, const polyline2r& b) { a.insert(a.end(),b.begin(),b.end()); return a; }
+inline polyline2r& operator+=(polyline2r& a, const ym_vec2r& b) { a.push_back(b); return a; }
+
 struct polygon2r : vector<polyline2r> {
     using vector<polyline2r>::vector;
 };
