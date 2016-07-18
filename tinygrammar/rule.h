@@ -9,7 +9,6 @@
 #ifndef rule_h
 #define rule_h
 
-#include "common.h"
 #include "operator.h"
 
 using namespace std;

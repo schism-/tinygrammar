@@ -19,6 +19,8 @@
 #include "tree.hh"
 #include "yocto_math.h"
 
+#include "../external/clipper/clipper.hpp"
+
 using namespace std;
 
 #define PARAM_SIZE 16

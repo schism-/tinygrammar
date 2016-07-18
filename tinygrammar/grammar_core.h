@@ -9,8 +9,6 @@
 #ifndef grammar_core_h
 #define grammar_core_h
 
-#include "common.h"
-#include "shape.h"
 #include "rule.h"
 
 //TODO: - matching shapes

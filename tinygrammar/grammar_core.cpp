@@ -73,7 +73,7 @@ Grammar* get_grammar(string filename){
             else if (rule_json.get<String>("operator") == "place")
                 rule->op = Operator(op_place);
             else if (rule_json.get<String>("operator") == "init")
-                rule->op = Operator(op_init);
+                rule->op = Operator(op_init, rule_json.get<String>("init_value"));
             
             auto json_params = rule_params();
             auto p_arr = rule_json.get<Array>("parameters");

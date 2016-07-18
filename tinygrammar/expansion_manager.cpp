@@ -110,7 +110,7 @@ ShapeGroup to_shapes(const vector<Expansion*>& active_nodes){
 void expand_init(History* h) {
     auto grammar = get_grammar(grammar_filename);
     auto init_step = matching_init();
-    auto init_shapes = init_step->op(ShapeGroup(), init_step->parameters, grammar->rn);
+    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);
     auto init_partition = PartitionShapeGroup();
     init_partition.added = init_shapes;
     init_partition.remainder = ShapeGroup();
@@ -127,7 +127,7 @@ void expand(History* h) {
     
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
-        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->parameters, grammar->rn);
+        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
     }

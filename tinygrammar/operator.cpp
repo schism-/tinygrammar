@@ -11,11 +11,6 @@
 ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid, const ym_frame2r& shape_frame) {
     auto children = ShapeGroup();
     for(auto i = 0; i < (int)curves.size(); i++) {
-        auto guideline = polyline2r(curves[i]);
-        
-        for(auto j = 0; j < (int)guideline.size(); j++)
-            guideline[j] = curves[i][j]*0.5 + curves[i+1][j]*0.5;
-        
         auto inters = intersect_polygons(((TangleShape*)shape)->poly, {curves[i] + reverse_polyline(curves[i+1]) + curves[i][0]});
         
         for(auto&& inter : inters)
@@ -64,14 +59,19 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_
     return children;
 }
 
-ShapeGroup init_operator(rule_tags tags, rule_params parameters, rng& rn){
+ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_value, rng& rn){
     auto children = ShapeGroup();
     if (parameters[0] == 0){
         // built-in shape
         auto gid = TangleShape::next_gid();
-        auto shape = make_
-        auto new_s = new TangleShape(0, gid, 0, ym_frame2r, {inter});
-        new_s.
+        auto shape = make_polyline_rect(ym_vec2r(- parameters[1] / 2.0, - parameters[1] / 2.0), ym_vec2r(parameters[1] / 2.0, parameters[1] / 2.0));
+        auto new_s = new TangleShape(0, gid, 0, ym_frame2r(), {shape});
+        children.push_back(new_s);
     }
+    else if (parameters[0] == 1){
+        //load svg
+        printf("Nothing to load at the moment. \n");
+    }
+    
     return children;
 }

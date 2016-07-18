@@ -9,9 +9,6 @@
 #ifndef expansion_manager_h
 #define expansion_manager_h
 
-#include "common.h"
-#include "shape.h"
-#include "model.h"
 #include "grammar_core.h"
 
 using namespace std;

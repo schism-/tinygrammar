@@ -16,6 +16,7 @@
 		18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E92E1D1838C700C79911 /* jsonxx.cc */; };
 		18D7E9331D19752000C79911 /* operator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9311D19752000C79911 /* operator.cpp */; };
 		18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */; };
+		18D7E9451D3D2A9A00C79911 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9421D3D16F400C79911 /* clipper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,6 +53,8 @@
 		18D7E9321D19752000C79911 /* operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = operator.h; sourceTree = "<group>"; };
 		18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tangle_utilities.cpp; sourceTree = "<group>"; };
 		18D7E9351D1A9E2800C79911 /* tangle_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tangle_utilities.h; sourceTree = "<group>"; };
+		18D7E9421D3D16F400C79911 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
+		18D7E9431D3D16F400C79911 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +112,21 @@
 		18D7E91F1D0AFD2000C79911 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				18D7E9411D3D16F400C79911 /* clipper */,
 				18D7E92E1D1838C700C79911 /* jsonxx.cc */,
 				18D7E92F1D1838C700C79911 /* jsonxx.h */,
 				18D7E9201D0AFD2000C79911 /* tree.hh */,
 			);
 			path = external;
+			sourceTree = "<group>";
+		};
+		18D7E9411D3D16F400C79911 /* clipper */ = {
+			isa = PBXGroup;
+			children = (
+				18D7E9421D3D16F400C79911 /* clipper.cpp */,
+				18D7E9431D3D16F400C79911 /* clipper.hpp */,
+			);
+			path = clipper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */,
+				18D7E9451D3D2A9A00C79911 /* clipper.cpp in Sources */,
 				18D7E9331D19752000C79911 /* operator.cpp in Sources */,
 				18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */,
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
