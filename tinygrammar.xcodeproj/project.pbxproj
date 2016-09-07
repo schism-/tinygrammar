@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181CE5EE1D802A56000019D5 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181CE5ED1D802A56000019D5 /* IOKit.framework */; };
+		181CE5F01D802A64000019D5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181CE5EF1D802A64000019D5 /* CoreVideo.framework */; };
+		181CE5F21D802A69000019D5 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181CE5F11D802A69000019D5 /* Cocoa.framework */; };
+		181CE5F41D802A6D000019D5 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181CE5F31D802A6D000019D5 /* OpenGL.framework */; };
+		181CE5F61D802A88000019D5 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181CE5F51D802A88000019D5 /* libglfw3.a */; };
 		18D7E9121D08525300C79911 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9111D08525300C79911 /* main.cpp */; };
 		18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9181D0AB31800C79911 /* expansion_manager.cpp */; };
 		18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9211D0B0A3A00C79911 /* shape.cpp */; };
@@ -17,6 +22,16 @@
 		18D7E9331D19752000C79911 /* operator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9311D19752000C79911 /* operator.cpp */; };
 		18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */; };
 		18D7E9451D3D2A9A00C79911 /* clipper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9421D3D16F400C79911 /* clipper.cpp */; };
+		18D7E94E1D80175400C79911 /* svg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E94C1D80175400C79911 /* svg.cpp */; };
+		18D7E9511D801D1600C79911 /* draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E94F1D801D1600C79911 /* draw.cpp */; };
+		18D7E9691D801E3300C79911 /* nanovg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E95F1D801E3300C79911 /* nanovg.cpp */; };
+		18D7E96A1D801E3300C79911 /* nanovg_gl2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9621D801E3300C79911 /* nanovg_gl2.cpp */; };
+		18D7E97A1D801EED00C79911 /* imgui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E96E1D801EED00C79911 /* imgui.cpp */; };
+		18D7E97B1D801EED00C79911 /* imgui_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9701D801EED00C79911 /* imgui_demo.cpp */; };
+		18D7E97C1D801EED00C79911 /* imgui_draw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9711D801EED00C79911 /* imgui_draw.cpp */; };
+		18D7E97D1D801EED00C79911 /* imgui_impl_glfw.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9721D801EED00C79911 /* imgui_impl_glfw.cpp */; };
+		18D7E97E1D801EED00C79911 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E9761D801EED00C79911 /* README.md */; };
+		18D7E9811D80223E00C79911 /* format.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18D7E97F1D80223E00C79911 /* format.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +47,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		181CE5EA1D802924000019D5 /* glfw3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3.h; sourceTree = "<group>"; };
+		181CE5EB1D802924000019D5 /* glfw3native.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = glfw3native.h; sourceTree = "<group>"; };
+		181CE5EC1D802924000019D5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libglfw3.a; sourceTree = "<group>"; };
+		181CE5ED1D802A56000019D5 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		181CE5EF1D802A64000019D5 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		181CE5F11D802A69000019D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		181CE5F31D802A6D000019D5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		181CE5F51D802A88000019D5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../homebrew/Cellar/glfw3/3.1.2/lib/libglfw3.a; sourceTree = "<group>"; };
 		18D7E90E1D08525300C79911 /* tinygrammar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tinygrammar; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D7E9111D08525300C79911 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D7E9181D0AB31800C79911 /* expansion_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = expansion_manager.cpp; sourceTree = "<group>"; };
@@ -55,6 +78,41 @@
 		18D7E9351D1A9E2800C79911 /* tangle_utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tangle_utilities.h; sourceTree = "<group>"; };
 		18D7E9421D3D16F400C79911 /* clipper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = clipper.cpp; sourceTree = "<group>"; };
 		18D7E9431D3D16F400C79911 /* clipper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = clipper.hpp; sourceTree = "<group>"; };
+		18D7E9461D80166200C79911 /* ui.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ui.h; sourceTree = "<group>"; };
+		18D7E94C1D80175400C79911 /* svg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = svg.cpp; sourceTree = "<group>"; };
+		18D7E94D1D80175400C79911 /* svg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = svg.h; sourceTree = "<group>"; };
+		18D7E94F1D801D1600C79911 /* draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = draw.cpp; sourceTree = "<group>"; };
+		18D7E9501D801D1600C79911 /* draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = draw.h; sourceTree = "<group>"; };
+		18D7E9581D801E2900C79911 /* nanosvg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvg.h; sourceTree = "<group>"; };
+		18D7E9591D801E2900C79911 /* nanosvgrast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanosvgrast.h; sourceTree = "<group>"; };
+		18D7E95B1D801E3300C79911 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		18D7E95C1D801E3300C79911 /* fontstash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fontstash.h; sourceTree = "<group>"; };
+		18D7E95D1D801E3300C79911 /* libnanovg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libnanovg.a; sourceTree = "<group>"; };
+		18D7E95E1D801E3300C79911 /* nanovg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = nanovg.a; sourceTree = "<group>"; };
+		18D7E95F1D801E3300C79911 /* nanovg.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nanovg.cpp; sourceTree = "<group>"; };
+		18D7E9601D801E3300C79911 /* nanovg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg.h; sourceTree = "<group>"; };
+		18D7E9611D801E3300C79911 /* nanovg_gl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl.h; sourceTree = "<group>"; };
+		18D7E9621D801E3300C79911 /* nanovg_gl2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = nanovg_gl2.cpp; sourceTree = "<group>"; };
+		18D7E9631D801E3300C79911 /* nanovg_gl_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nanovg_gl_utils.h; sourceTree = "<group>"; };
+		18D7E9641D801E3300C79911 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		18D7E9651D801E3300C79911 /* stb_image_write.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_write.h; sourceTree = "<group>"; };
+		18D7E9661D801E3300C79911 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		18D7E96C1D801EED00C79911 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
+		18D7E96D1D801EED00C79911 /* imconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imconfig.h; sourceTree = "<group>"; };
+		18D7E96E1D801EED00C79911 /* imgui.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui.cpp; sourceTree = "<group>"; };
+		18D7E96F1D801EED00C79911 /* imgui.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui.h; sourceTree = "<group>"; };
+		18D7E9701D801EED00C79911 /* imgui_demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_demo.cpp; sourceTree = "<group>"; };
+		18D7E9711D801EED00C79911 /* imgui_draw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_draw.cpp; sourceTree = "<group>"; };
+		18D7E9721D801EED00C79911 /* imgui_impl_glfw.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imgui_impl_glfw.cpp; sourceTree = "<group>"; };
+		18D7E9731D801EED00C79911 /* imgui_impl_glfw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_impl_glfw.h; sourceTree = "<group>"; };
+		18D7E9741D801EED00C79911 /* imgui_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imgui_internal.h; sourceTree = "<group>"; };
+		18D7E9751D801EED00C79911 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		18D7E9761D801EED00C79911 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		18D7E9771D801EED00C79911 /* stb_rect_pack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_rect_pack.h; sourceTree = "<group>"; };
+		18D7E9781D801EED00C79911 /* stb_textedit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_textedit.h; sourceTree = "<group>"; };
+		18D7E9791D801EED00C79911 /* stb_truetype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_truetype.h; sourceTree = "<group>"; };
+		18D7E97F1D80223E00C79911 /* format.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = format.cpp; sourceTree = "<group>"; };
+		18D7E9801D80223E00C79911 /* format.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = format.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +120,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181CE5F61D802A88000019D5 /* libglfw3.a in Frameworks */,
+				181CE5F41D802A6D000019D5 /* OpenGL.framework in Frameworks */,
+				181CE5F21D802A69000019D5 /* Cocoa.framework in Frameworks */,
+				181CE5F01D802A64000019D5 /* CoreVideo.framework in Frameworks */,
+				181CE5EE1D802A56000019D5 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181CE5E91D802924000019D5 /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				181CE5EA1D802924000019D5 /* glfw3.h */,
+				181CE5EB1D802924000019D5 /* glfw3native.h */,
+				181CE5EC1D802924000019D5 /* libglfw3.a */,
+			);
+			path = glfw;
+			sourceTree = "<group>";
+		};
 		18D7E9051D08525300C79911 = {
 			isa = PBXGroup;
 			children = (
+				181CE5F51D802A88000019D5 /* libglfw3.a */,
+				181CE5F31D802A6D000019D5 /* OpenGL.framework */,
+				181CE5F11D802A69000019D5 /* Cocoa.framework */,
+				181CE5EF1D802A64000019D5 /* CoreVideo.framework */,
+				181CE5ED1D802A56000019D5 /* IOKit.framework */,
 				18D7E91F1D0AFD2000C79911 /* external */,
 				18D7E9101D08525300C79911 /* tinygrammar */,
 				18D7E90F1D08525300C79911 /* Products */,
@@ -89,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				18D7E91B1D0AF68F00C79911 /* common.h */,
+				18D7E9461D80166200C79911 /* ui.h */,
 				18D7E9111D08525300C79911 /* main.cpp */,
 				18D7E9211D0B0A3A00C79911 /* shape.cpp */,
 				18D7E9221D0B0A3A00C79911 /* shape.h */,
@@ -105,6 +184,10 @@
 				18D7E9241D0B0C8E00C79911 /* yocto_math.h */,
 				18D7E9341D1A9E2800C79911 /* tangle_utilities.cpp */,
 				18D7E9351D1A9E2800C79911 /* tangle_utilities.h */,
+				18D7E94C1D80175400C79911 /* svg.cpp */,
+				18D7E94D1D80175400C79911 /* svg.h */,
+				18D7E94F1D801D1600C79911 /* draw.cpp */,
+				18D7E9501D801D1600C79911 /* draw.h */,
 			);
 			path = tinygrammar;
 			sourceTree = "<group>";
@@ -112,10 +195,16 @@
 		18D7E91F1D0AFD2000C79911 /* external */ = {
 			isa = PBXGroup;
 			children = (
+				18D7E9571D801E2900C79911 /* nanosvg */,
+				18D7E95A1D801E3300C79911 /* nanovg */,
 				18D7E9411D3D16F400C79911 /* clipper */,
+				18D7E96B1D801EED00C79911 /* imgui */,
+				181CE5E91D802924000019D5 /* glfw */,
 				18D7E92E1D1838C700C79911 /* jsonxx.cc */,
 				18D7E92F1D1838C700C79911 /* jsonxx.h */,
 				18D7E9201D0AFD2000C79911 /* tree.hh */,
+				18D7E97F1D80223E00C79911 /* format.cpp */,
+				18D7E9801D80223E00C79911 /* format.h */,
 			);
 			path = external;
 			sourceTree = "<group>";
@@ -127,6 +216,55 @@
 				18D7E9431D3D16F400C79911 /* clipper.hpp */,
 			);
 			path = clipper;
+			sourceTree = "<group>";
+		};
+		18D7E9571D801E2900C79911 /* nanosvg */ = {
+			isa = PBXGroup;
+			children = (
+				18D7E9581D801E2900C79911 /* nanosvg.h */,
+				18D7E9591D801E2900C79911 /* nanosvgrast.h */,
+			);
+			path = nanosvg;
+			sourceTree = "<group>";
+		};
+		18D7E95A1D801E3300C79911 /* nanovg */ = {
+			isa = PBXGroup;
+			children = (
+				18D7E95B1D801E3300C79911 /* build.sh */,
+				18D7E95C1D801E3300C79911 /* fontstash.h */,
+				18D7E95D1D801E3300C79911 /* libnanovg.a */,
+				18D7E95E1D801E3300C79911 /* nanovg.a */,
+				18D7E95F1D801E3300C79911 /* nanovg.cpp */,
+				18D7E9601D801E3300C79911 /* nanovg.h */,
+				18D7E9611D801E3300C79911 /* nanovg_gl.h */,
+				18D7E9621D801E3300C79911 /* nanovg_gl2.cpp */,
+				18D7E9631D801E3300C79911 /* nanovg_gl_utils.h */,
+				18D7E9641D801E3300C79911 /* stb_image.h */,
+				18D7E9651D801E3300C79911 /* stb_image_write.h */,
+				18D7E9661D801E3300C79911 /* stb_truetype.h */,
+			);
+			path = nanovg;
+			sourceTree = "<group>";
+		};
+		18D7E96B1D801EED00C79911 /* imgui */ = {
+			isa = PBXGroup;
+			children = (
+				18D7E96C1D801EED00C79911 /* .travis.yml */,
+				18D7E96D1D801EED00C79911 /* imconfig.h */,
+				18D7E96E1D801EED00C79911 /* imgui.cpp */,
+				18D7E96F1D801EED00C79911 /* imgui.h */,
+				18D7E9701D801EED00C79911 /* imgui_demo.cpp */,
+				18D7E9711D801EED00C79911 /* imgui_draw.cpp */,
+				18D7E9721D801EED00C79911 /* imgui_impl_glfw.cpp */,
+				18D7E9731D801EED00C79911 /* imgui_impl_glfw.h */,
+				18D7E9741D801EED00C79911 /* imgui_internal.h */,
+				18D7E9751D801EED00C79911 /* LICENSE */,
+				18D7E9761D801EED00C79911 /* README.md */,
+				18D7E9771D801EED00C79911 /* stb_rect_pack.h */,
+				18D7E9781D801EED00C79911 /* stb_textedit.h */,
+				18D7E9791D801EED00C79911 /* stb_truetype.h */,
+			);
+			path = imgui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D7E96A1D801E3300C79911 /* nanovg_gl2.cpp in Sources */,
 				18D7E9301D1838C700C79911 /* jsonxx.cc in Sources */,
 				18D7E9451D3D2A9A00C79911 /* clipper.cpp in Sources */,
 				18D7E9331D19752000C79911 /* operator.cpp in Sources */,
@@ -192,9 +331,18 @@
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
 				18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */,
 				18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */,
+				18D7E9811D80223E00C79911 /* format.cpp in Sources */,
+				18D7E94E1D80175400C79911 /* svg.cpp in Sources */,
+				18D7E9691D801E3300C79911 /* nanovg.cpp in Sources */,
 				18D7E9271D11878500C79911 /* model.cpp in Sources */,
+				18D7E97D1D801EED00C79911 /* imgui_impl_glfw.cpp in Sources */,
+				18D7E97C1D801EED00C79911 /* imgui_draw.cpp in Sources */,
+				18D7E97E1D801EED00C79911 /* README.md in Sources */,
 				18D7E92A1D1197DC00C79911 /* grammar_core.cpp in Sources */,
 				18D7E92D1D12B46800C79911 /* rule.cpp in Sources */,
+				18D7E9511D801D1600C79911 /* draw.cpp in Sources */,
+				18D7E97B1D801EED00C79911 /* imgui_demo.cpp in Sources */,
+				18D7E97A1D801EED00C79911 /* imgui.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +433,12 @@
 		18D7E9161D08525300C79911 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/external/glfw",
+					"$(PROJECT_DIR)/external/clipper/glfw",
+					"$(PROJECT_DIR)/external/nanovg",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -292,6 +446,12 @@
 		18D7E9171D08525300C79911 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/external/glfw",
+					"$(PROJECT_DIR)/external/clipper/glfw",
+					"$(PROJECT_DIR)/external/nanovg",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

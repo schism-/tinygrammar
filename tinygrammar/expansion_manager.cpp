@@ -118,7 +118,7 @@ void expand_init(History* h) {
     update_history(h, init_partition, init_step);
 }
 
-void expand(History* h) {
+bool expand(History* h) {
     //retrieve active nodes
     auto front = get_active_nodes(h);
     //pass them to grammar core
@@ -127,11 +127,14 @@ void expand(History* h) {
     
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
+        printf("Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
         grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
+        return true;
     }
     else{
         printf("No more expansions available\n");
+        return false;
     }
 }

@@ -8,13 +8,13 @@
 
 #include "operator.h"
 
-ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid, const ym_frame2r& shape_frame) {
+ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid, const ym_frame2r& shape_frame, rule_tags tags) {
     auto children = ShapeGroup();
-    for(auto i = 0; i < (int)curves.size(); i++) {
+    for(auto i = 0; i < (int)curves.size() - 1; i++) {
         auto inters = intersect_polygons(((TangleShape*)shape)->poly, {curves[i] + reverse_polyline(curves[i+1]) + curves[i][0]});
         
         for(auto&& inter : inters)
-            children.push_back(new TangleShape(0, gid, i, shape_frame, {inter}));
+            children.push_back(new TangleShape(tags[0], gid, i, shape_frame, {inter}));
     }
     return children;
 }
@@ -53,8 +53,9 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_
         auto curves = vector<polyline2r>();
         auto t_shape = (TangleShape*)shape;
         auto shape_frame = t_shape->frame;
+        if (parameters[1] != -1) shape_frame = rotate(shape_frame.o, parameters[1]);
         curves = _curves(t_shape->poly, shape_frame, parameters, rn);
-        children += _split_shapes(curves, shape, gid, shape_frame);
+        children += _split_shapes(curves, shape, gid, shape_frame, tags);
     }
     return children;
 }
@@ -65,7 +66,7 @@ ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_val
         // built-in shape
         auto gid = TangleShape::next_gid();
         auto shape = make_polyline_rect(ym_vec2r(- parameters[1] / 2.0, - parameters[1] / 2.0), ym_vec2r(parameters[1] / 2.0, parameters[1] / 2.0));
-        auto new_s = new TangleShape(0, gid, 0, ym_frame2r(), {shape});
+        auto new_s = new TangleShape(tags[0], gid, 0, ym_frame2r(), {shape});
         children.push_back(new_s);
     }
     else if (parameters[0] == 1){

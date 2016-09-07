@@ -15,6 +15,7 @@ using namespace std;
 
 struct Rule {
     int rule_name;
+    string rule_name_str;
     
     rule_tags matching_tags;
     rule_tags produced_tags;

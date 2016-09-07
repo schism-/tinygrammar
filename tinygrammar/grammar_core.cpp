@@ -18,7 +18,7 @@ Grammar* main_grammar = nullptr;
 
 int add_rule_to_mapping(Grammar* grammar, string rulename){
     if (grammar->rule_mapping.count(rulename) > 0) return grammar->rule_mapping.at(rulename);
-    else {grammar->rule_mapping[rulename] = (int)(grammar->rule_mapping.size()); return grammar->rule_mapping.at(rulename);}
+    else {grammar->rule_mapping[rulename] = (int)(grammar->rule_mapping.size() + 1); return grammar->rule_mapping.at(rulename);}
 }
 
 rule_tags add_tags(Grammar* grammar, vector<string> tags){
@@ -26,7 +26,7 @@ rule_tags add_tags(Grammar* grammar, vector<string> tags){
     auto k = 0;
     for (auto t : tags){
         if (grammar->tag_mapping.count(t) > 0) res[k] = grammar->tag_mapping.at(t);
-        else { grammar->tag_mapping[t] = (int)(grammar->tag_mapping.size()); res[k] = grammar->tag_mapping.at(t);}
+        else { grammar->tag_mapping[t] = (int)(grammar->tag_mapping.size() + 1); res[k] = grammar->tag_mapping.at(t);}
         k++;
     }
     return res;
@@ -57,6 +57,8 @@ Grammar* get_grammar(string filename){
             auto rule = new Rule();
             
             rule->rule_name = add_rule_to_mapping(res, rule_json.get<String>("rule_name"));
+            //dirty, so dirty. FIX this
+            rule->rule_name_str = rule_json.get<String>("rule_name");
             
             auto json_mtags = vector<string>();
             auto mt_arr = rule_json.get<Array>("matching_tags");
@@ -146,7 +148,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
                     matches.push_back(i);
             }
             if(matches.empty()) return nullptr;
-            return rules[(int)(ym_rng_nextf(&grammar->rn) * rules.size())];
+            return rules[matches[(int)(ym_rng_nextf(&grammar->rn) * matches.size())]];
         }
         default:
             break;

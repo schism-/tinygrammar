@@ -66,7 +66,6 @@ const ym_frame2r ym_identity_frame2r = ym_frame2r{{1, 0}, {0, 1}, {0, 0}};
 typedef ym_vec<double, PARAM_SIZE> rule_params;
 typedef ym_vec<int, TAG_SIZE> rule_tags;
 
-
 static string grammar_filename = "grammars/test_grammar.json";
 
 
@@ -157,5 +156,13 @@ template<typename T>
 inline set<T> make_set(const vector<T>& v) { return set<T>(v.begin(),v.end()); }
 template<typename T>
 inline vector<T> make_vector(const set<T>& v) { return vector<T>(v.begin(),v.end()); }
+
+inline string load_text_file(const string& filename) { return load_text_file(filename.c_str()); }
+inline void save_text_file(const string& filename, const string& str) {
+    auto f = fopen(filename.c_str(), "w");
+    error_if_not(f, "could not open file: %s\n", filename.c_str());
+    fwrite(str.c_str(), sizeof(char), str.length(), f);
+    fclose(f);
+}
 
 #endif /* common_h */

@@ -8,10 +8,14 @@
 
 #include <iostream>
 #include "expansion_manager.h"
+#include "svg.h"
 
 int main(int argc, const char * argv[]) {
     auto em = make_history(0);
     expand_init(em);
-    expand(em);
+    while (expand(em)){
+        printf("...");
+    };
+    save_svg(em, {600,600}, {300, 300}, {1.0, 1.0});
     return 0;
 }

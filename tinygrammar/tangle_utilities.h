@@ -11,6 +11,9 @@
 
 #include "shape.h"
 
+inline ym_vec2r orthogonal(const ym_vec2r& x) { return {x.y,-x.x}; }
+inline ym_frame2r frame_from_x(const ym_vec2r& o, const ym_vec2r& x) { auto f = ym_identity_frame2r; f.o = o; f.x = ym_normalize(x); f.y = orthogonal(f.x); return f; }
+static ym_frame2r rotate(const ym_vec2r& o, const double angle) { return frame_from_x(o, ym_vec2r(cos(angle * ym_pi / 180.0), sin(angle * ym_pi / 180.0))); }
 
 // |=====================================|
 // |======== POLYLINES METHODS ==========|

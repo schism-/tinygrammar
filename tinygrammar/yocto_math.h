@@ -1207,7 +1207,7 @@ struct ym_range<ym_vec<T, M>> {
 //
 // Axis aligned bounding box typedefs.
 //
-
+typedef ym_range<float> ym_range1f;
 typedef ym_range<ym_vec2f> ym_range2f;
 typedef ym_range<ym_vec3f> ym_range3f;
 

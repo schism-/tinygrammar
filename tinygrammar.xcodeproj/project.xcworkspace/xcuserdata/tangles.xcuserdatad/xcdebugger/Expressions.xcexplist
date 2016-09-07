@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "_split_shapes(std::__1::vector&lt;polyline2r, std::__1::allocator&lt;polyline2r&gt; &gt; const&amp;, Shape*, int, ym_affine&lt;double, 2, true&gt; const&amp;):operator.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "tangle_match_rule(Grammar*, int):grammar_core.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "expand(History*):expansion_manager.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "tangle_split_operator(ShapeGroup const&amp;, ym_vec&lt;int, 4&gt;, ym_vec&lt;double, 16&gt;, ym_rng_pcg32&amp;, ShapeGroup*):operator.cpp">
+      </ContextState>
+      <ContextState
+         contextName = "Operator::operator()(ShapeGroup const&amp;, ym_vec&lt;int, 4&gt;, ym_vec&lt;double, 16&gt;, ym_rng_pcg32&amp;, ShapeGroup*):operator.h">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
