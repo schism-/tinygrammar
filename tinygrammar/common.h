@@ -56,6 +56,9 @@ enum {
 
 typedef ym_vec<double, 2> ym_vec2r;
 
+const ym_vec2r ym_x2r = ym_vec2r(1, 0);
+const ym_vec2r ym_y2r = ym_vec2r(0, 1);
+
 typedef ym_rng_pcg32 rng;
 
 typedef ym_range<ym_vec2r> ym_range2r;

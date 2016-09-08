@@ -55,6 +55,7 @@
 		181CE5F11D802A69000019D5 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		181CE5F31D802A6D000019D5 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		181CE5F51D802A88000019D5 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = ../../../../homebrew/Cellar/glfw3/3.1.2/lib/libglfw3.a; sourceTree = "<group>"; };
+		181CE5F81D805B3C000019D5 /* stb_perlin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_perlin.h; sourceTree = "<group>"; };
 		18D7E90E1D08525300C79911 /* tinygrammar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = tinygrammar; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D7E9111D08525300C79911 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		18D7E9181D0AB31800C79911 /* expansion_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = expansion_manager.cpp; sourceTree = "<group>"; };
@@ -141,6 +142,14 @@
 			path = glfw;
 			sourceTree = "<group>";
 		};
+		181CE5F71D805B3C000019D5 /* stb */ = {
+			isa = PBXGroup;
+			children = (
+				181CE5F81D805B3C000019D5 /* stb_perlin.h */,
+			);
+			path = stb;
+			sourceTree = "<group>";
+		};
 		18D7E9051D08525300C79911 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +209,7 @@
 				18D7E9411D3D16F400C79911 /* clipper */,
 				18D7E96B1D801EED00C79911 /* imgui */,
 				181CE5E91D802924000019D5 /* glfw */,
+				181CE5F71D805B3C000019D5 /* stb */,
 				18D7E92E1D1838C700C79911 /* jsonxx.cc */,
 				18D7E92F1D1838C700C79911 /* jsonxx.h */,
 				18D7E9201D0AFD2000C79911 /* tree.hh */,

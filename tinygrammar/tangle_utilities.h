@@ -164,6 +164,11 @@ inline double area_polyline(const polyline2r& curve) {
     return area/2;
 }
 
+polyline2r tangents_polyline(const polyline2r& curve, bool use_both = false);
+polyline2r normals_polyline(const polyline2r& curve, bool flipped = false, bool use_both = false);
+polyline2r perturb_polyline(const polyline2r& curve, double scale, double strength, rng& rn, bool ortho);
+
+
 // |=====================================|
 // |========= POLYGONS METHODS ==========|
 // |=====================================|
@@ -261,6 +266,23 @@ inline vector<polygon2r> intersect_polygons(const polygon2r& a, const polygon2r&
     return from_clipper_tree(tree,false);
 }
 
+inline polygon2r perturb_polygon(const polygon2r& poly, double scale, double strength, rng& rn, bool ortho = false) {
+    return make_polygon(poly,[&](const polyline2r& curve){ return perturb_polyline(curve, scale, strength, rn, ortho); });
+}
 
+// |=====================================|
+// |======= PERTURBATION METHODS ========|
+// |=====================================|
+
+struct RuleUtils {
+    static constexpr double          resolution = 2;
+    static constexpr double          perturb_scale = 100;
+    static constexpr double          perturb_strength = 5;
+    
+    static polyline2r perturb(const polyline2r& curve, rng& rn);
+    static polygon2r perturb(const polygon2r& poly, rng& rn);
+    static vector<polyline2r> perturb(const vector<polyline2r>& curves, rng& rn);
+    static vector<polygon2r> perturb(const vector<polygon2r>& polys, rng& rn);
+};
 
 #endif /* tangle_utilities_h */

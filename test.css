@@ -1,0 +1,69 @@
+.svg-container {
+  width: 100%;
+  height: auto;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+}
+
+.svg path {
+  fill: #ADECAB;
+}
+
+@keyframes moveY1 {
+  0%   {transform: translateY(-5px) translateX(5px)}
+  50%  {transform: translateY(5px) translateX(-5px)}
+  100% {transform: translateY(-5px) translateX(5px)}
+}
+
+@keyframes moveY2 {
+  0%   {transform: translateY(5px)}
+  50%  {transform: translateY(-5px)}
+  100% {transform: translateY(5px)}
+}
+
+@keyframes moveY3 {
+  0%   {transform: translateX(5px)}
+  50%  {transform: translateX(-5px)}
+  100% {transform: translateX(5px)}
+}
+
+@keyframes moveY4 {
+  0%   {transform: translateY(5px)}
+  50%  {transform: translateY(-5px)}
+  100% {transform: translateY(5px)}
+}
+
+.moveY1 {
+  animation: moveY1 3s ease-in-out infinite;
+}
+
+.moveY2 {
+  animation: moveY2 3s ease-in-out infinite;
+}
+
+.moveY3 {
+  animation: moveY3 3s ease-in-out infinite;
+}
+
+.moveY4 {
+  animation: moveY4 3s ease-in-out infinite;
+}
+
+.moveY5 {
+  animation: moveY1 3s ease-in-out infinite;
+}
+
+.moveY6 {
+  animation: moveY2 3s ease-in-out infinite;
+}
+
+.moveY7 {
+  animation: moveY3 3s ease-in-out infinite;
+}
+
+.moveY8 {
+  animation: moveY4 3s ease-in-out infinite;
+}
