@@ -1,32 +1,43 @@
 #include "shape.h"
+#include "clipper_methods.h"
 
 namespace CSGTree
 {
     
+    enum {
+        union_op = 0,
+        difference_op,
+        intersection_op,
+        xor_op
+    };
+    
     struct NodeContent
     {
-        Shape& shape;
-        NodeContent(Shape& shape) : shape(shape) {}
+        vector<AnimatedShape*> shapes;
+        NodeContent(vector<AnimatedShape*> shapes) : shapes(shapes) {}
         ~NodeContent() {}
     };
     
     struct Node
     {
-        NodeContent& content;
-        Node(NodeContent& c) : content(c) { }
+        Node* parent;
+        NodeContent* content;
+        Node() { }
+        Node(NodeContent* c) : content(c) { }
+        Node(vector<AnimatedShape*> shapes) { content = new NodeContent(shapes); }
         ~Node() {}
     };
     
     struct OpNode : Node
     {
-        OpNode* parent;
         Node* child_left;
         Node* child_right;
+        int op_type;
     };
     
     struct LeafNode : Node
     {
-        OpNode* parent;
+        
     };
     
     struct Tree
@@ -39,6 +50,7 @@ namespace CSGTree
     
     Tree* InitTree();
     void AddNode(Tree* tree, LeafNode* node);
+    Node* BuildResult(const vector<polygon2r>& shapes, Node* a, Node* b);
     
     void Union(Tree* tree, Node* a, Node* b);
     void Difference(Tree* tree, Node* a, Node* b);

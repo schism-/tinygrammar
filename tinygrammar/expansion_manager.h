@@ -10,6 +10,7 @@
 #define expansion_manager_h
 
 #include "grammar_core.h"
+#include "csg_tree.h"
 
 using namespace std;
 

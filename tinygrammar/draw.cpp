@@ -7,7 +7,6 @@
 //
 
 #include "draw.h"
-#include "../external/format.h"
 
 void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_points,
                              const ym_vec4f& stroke, const ym_vec4f& fill) {
@@ -142,7 +141,8 @@ string SVGContext::_svg_points(const polyline2r &curve) {
         svg += fmt::format("{}{} {} ", (first)?"M":"L", p.x, p.y);
         first = false;
     }
-    if(closed_polyline(curve)) svg += "Z";
+//    if(closed_polyline(curve)) svg += "Z";
+    svg += "Z";
     return svg;
 }
 

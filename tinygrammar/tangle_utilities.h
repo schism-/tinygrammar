@@ -9,7 +9,7 @@
 #ifndef tangle_utilities_h
 #define tangle_utilities_h
 
-#include "shape.h"
+#include "common.h"
 
 inline ym_vec2r orthogonal(const ym_vec2r& x) { return {x.y,-x.x}; }
 inline ym_frame2r frame_from_x(const ym_vec2r& o, const ym_vec2r& x) { auto f = ym_identity_frame2r; f.o = o; f.x = ym_normalize(x); f.y = orthogonal(f.x); return f; }
