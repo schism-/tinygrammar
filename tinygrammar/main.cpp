@@ -9,6 +9,7 @@
 #include <iostream>
 #include "expansion_manager.h"
 #include "svg.h"
+#include "csg_tree.h"
 
 int main(int argc, const char * argv[]) {
     auto em = make_history(0);
