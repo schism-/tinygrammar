@@ -52,6 +52,13 @@ enum {
     op_place = 2
 };
 
+enum {
+    union_op = 0,
+    difference_op,
+    intersection_op,
+    xor_op
+};
+
 typedef ym_vec<double, 2> ym_vec2r;
 
 const ym_vec2r ym_x2r = ym_vec2r(1, 0);

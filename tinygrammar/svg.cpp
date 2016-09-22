@@ -7,7 +7,6 @@
 //
 
 #include "svg.h"
-#include "draw.h"
 
 double get_sec(){
     time_t timer;
@@ -37,3 +36,16 @@ void save_svg(History* h, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_
     save_text_file("tangleSVG_" + std::to_string(get_sec()) + ".svg", context->svg);
     delete context;
 }
+
+void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor){
+    auto context = new SVGContext();
+    context->begin_frame(wh, offset, scale_factor);
+    
+    for (auto&& s : t->root->content->shapes) context->draw_shape(s, false, false, {0,0,0,1}, {0,0,0,0});
+    
+    context->end_frame(offset, scale_factor);
+    time_t rawtime; time (&rawtime);
+    save_text_file("tangleSVG_" + std::to_string(get_sec()) + ".svg", context->svg);
+    delete context;
+}
+

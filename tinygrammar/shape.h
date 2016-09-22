@@ -90,6 +90,7 @@ struct AnimatedShape : Shape {
     Shape*                  annotation;
     
     AnimatedShape() {shape_type = animated_shape;};
+    AnimatedShape(polygon2r poly) : poly(poly) {shape_type = animated_shape;};
 };
 
 #endif /* shape_h */

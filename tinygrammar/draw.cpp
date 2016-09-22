@@ -22,6 +22,16 @@ void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_
     }
 }
 
+void DrawContext::draw_shape(AnimatedShape* shape, bool draw_frames, bool draw_as_points,
+                             const ym_vec4f& stroke, const ym_vec4f& fill) {
+    if(draw_as_points) {
+        for(auto& curve : shape->poly) for(auto&& p : curve) draw_point(p, stroke);
+    }
+    else{
+        draw_polygon(shape->poly, stroke, fill);
+    }
+}
+
 void DrawContext::draw_labels(const vector<string>& labels) {
     auto offset = ym_vec2r{8,18};
     for(auto i : range(labels)) {
