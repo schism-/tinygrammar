@@ -46,16 +46,17 @@ int main(int argc, const char * argv[]) {
     r_p[0] = 1.0; r_p[1] = 0.0; r_p[2] = 0.0; r_p[3] = 1.0;
     r_p[4] = 30.0; r_p[5] = 30.0;
     auto anim = Animator(anim_eulerian, r_p);
-    CSGTree::UpdateLeafNode(tree, n1, anim, 1.0);
-    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "3");
     
     auto r_p_2 = rule_params();
     r_p_2[0] = 1.0;  r_p_2[1] = 0.0; r_p_2[2] = 0.0; r_p_2[3] = 1.0;
-    r_p_2[4] = 10.0; r_p_2[5] = 10.0;
+    r_p_2[4] = 10.0; r_p_2[5] = -10.0;
     auto anim2 = Animator(anim_eulerian, r_p_2);
-    CSGTree::UpdateLeafNode(tree, n2, anim2, 1.0);
-    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "4");
     
-    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "4");
+    for (auto i = 0; i <= 20; i++){
+        CSGTree::UpdateLeafNode(tree, n1, anim, 1.0/20.0);
+        CSGTree::UpdateLeafNode(tree, n2, anim2, 1.0/20.0);
+        save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, std::to_string(i));
+    }
+
     printf("end main");
 }

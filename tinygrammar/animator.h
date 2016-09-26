@@ -21,14 +21,16 @@ struct Animator{
     
     ~Animator(){}
     
-    vector<AnimatedShape*> operator() (const vector<AnimatedShape*>& shape, float delta, const rng& sampler = rng(), ShapeGroup* annotations = nullptr) {
+    vector<AnimatedShape*> operator() (const vector<AnimatedShape*>& shape, double delta, const rng& sampler = rng(), ShapeGroup* annotations = nullptr) {
         switch(animator_name){
             case anim_eulerian:
             {
                 for (auto&& s : shape){
                     auto poly = s->poly;
                     auto frame = ym_frame2r({params[0], params[1]}, {params[2], params[3]}, {params[4], params[5]});
-                    s->poly = transform_polygon(frame, poly);
+                    auto frame_diff = ym_identity_frame2r;
+                    auto boh = ym_frame2r((frame_diff.m * (1.0 - delta) + frame.m * delta), (frame_diff.t * (1.0 - delta) + frame.t * delta));
+                    s->poly = transform_polygon(boh, poly);
                 }
                 return shape;
                 break;
