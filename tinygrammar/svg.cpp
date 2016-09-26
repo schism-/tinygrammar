@@ -41,7 +41,7 @@ void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  con
     auto context = new SVGContext();
     context->begin_frame(wh, offset, scale_factor);
     
-    for (auto&& s : t->root->content->shapes) context->draw_shape(s, false, false, {0,0,0,1}, {0,0,0,0});
+    for (auto&& s : t->root->content->shapes) context->draw_shape(s, false, false, {0, 0, 0, 1}, {200, 200, 200,1});
     
     context->end_frame(offset, scale_factor);
     time_t rawtime; time (&rawtime);

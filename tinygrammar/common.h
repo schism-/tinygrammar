@@ -53,10 +53,16 @@ enum {
 };
 
 enum {
+    anim_eulerian = 0,
+    anim_perturb,
+};
+
+enum {
     union_op = 0,
     difference_op,
     intersection_op,
-    xor_op
+    xor_op,
+    sum_op
 };
 
 typedef ym_vec<double, 2> ym_vec2r;

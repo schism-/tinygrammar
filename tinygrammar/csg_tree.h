@@ -1,4 +1,5 @@
 #include "shape.h"
+#include "animator.h"
 #include "clipper_methods.h"
 
 namespace CSGTree
@@ -37,19 +38,24 @@ namespace CSGTree
     struct Tree
     {
         Node* root;
-        vector<Node*> nodes;
-        Tree() { root = nullptr; nodes = vector<Node*>(); }
-        Tree(const vector<Node*>& nn) : nodes(nn) { root = nullptr; }
+        vector<OpNode*> nodes;
+        vector<LeafNode*> leaves;
+        Tree() { root = nullptr; nodes = vector<OpNode*>(); leaves = vector<LeafNode*>(); }
+        Tree(const vector<OpNode*>& nn, const vector<LeafNode*>& ll) : nodes(nn), leaves(ll) { root = nullptr; }
         ~Tree() {}
     };
     
     Tree* InitTree();
     CSGTree::LeafNode* AddShape(Tree* tree, AnimatedShape* shape);
 
-    CSGTree::OpNode* Union(Tree* tree, Node* a, Node* b);
-    CSGTree::OpNode* Difference(Tree* tree, Node* a, Node* b);
-    CSGTree::OpNode* Intersection(Tree* tree, Node* a, Node* b);
+    OpNode* Sum(Tree* tree, Node* a, Node* b);
+    OpNode* Union(Tree* tree, Node* a, Node* b);
+    OpNode* Difference(Tree* tree, Node* a, Node* b);
+    OpNode* Intersection(Tree* tree, Node* a, Node* b);
+    OpNode* XOR(Tree* tree, Node* a, Node* b);
     
+    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim);
+    void UpdateOpNode(Tree* tree, OpNode* a);
     
     void AddNode(Tree* tree, LeafNode* node);
     void AddNode(Tree* tree, OpNode* node);
