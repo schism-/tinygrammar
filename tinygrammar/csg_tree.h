@@ -32,7 +32,7 @@ namespace CSGTree
     
     struct LeafNode : Node
     {
-        
+        vector<LeafNode*> copies;
     };
     
     struct Tree
@@ -46,18 +46,20 @@ namespace CSGTree
     };
     
     Tree* InitTree();
-    CSGTree::LeafNode* AddShape(Tree* tree, AnimatedShape* shape);
+    LeafNode* AddShape(Tree* tree, AnimatedShape* shape);
+    LeafNode* CopyNode(Tree* tree, LeafNode* a);
 
-    OpNode* Sum(Tree* tree, Node* a, Node* b);
-    OpNode* Union(Tree* tree, Node* a, Node* b);
-    OpNode* Difference(Tree* tree, Node* a, Node* b);
-    OpNode* Intersection(Tree* tree, Node* a, Node* b);
-    OpNode* XOR(Tree* tree, Node* a, Node* b);
+    OpNode* Sum(Tree* tree, Node* a, Node* b, bool update = true);
+    OpNode* Union(Tree* tree, Node* a, Node* b, bool update = true);
+    OpNode* Difference(Tree* tree, Node* a, Node* b, bool update = true);
+    OpNode* Intersection(Tree* tree, Node* a, Node* b, bool update = true);
+    OpNode* XOR(Tree* tree, Node* a, Node* b, bool update = true);
     
-    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim);
+    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double delta, bool update = true);
     void UpdateOpNode(Tree* tree, OpNode* a);
     
     void AddNode(Tree* tree, LeafNode* node);
     void AddNode(Tree* tree, OpNode* node);
+    
     OpNode* BuildResult(const vector<polygon2r>& shapes, Node* a, Node* b);
 }

@@ -33,11 +33,12 @@ void save_svg(History* h, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_
     }
     context->end_frame(offset, scale_factor);
     time_t rawtime; time (&rawtime);
-    save_text_file("tangleSVG_" + std::to_string(get_sec()) + ".svg", context->svg);
+    auto r = new rng();
+    save_text_file("tangleSVG_" + std::to_string(get_sec()) + "_" + std::to_string(ym_rng_nextf(r)) + ".svg", context->svg);
     delete context;
 }
 
-void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor){
+void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor, string postfix){
     auto context = new SVGContext();
     context->begin_frame(wh, offset, scale_factor);
     
@@ -45,7 +46,7 @@ void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  con
     
     context->end_frame(offset, scale_factor);
     time_t rawtime; time (&rawtime);
-    save_text_file("tangleSVG_" + std::to_string(get_sec()) + ".svg", context->svg);
+    save_text_file("tangleSVG_" + std::to_string(get_sec()) + "_" + postfix + ".svg", context->svg);
     delete context;
 }
 

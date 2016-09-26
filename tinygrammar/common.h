@@ -80,6 +80,8 @@ const ym_frame2r ym_identity_frame2r = ym_frame2r{{1, 0}, {0, 1}, {0, 0}};
 typedef ym_vec<double, PARAM_SIZE> rule_params;
 typedef ym_vec<int, TAG_SIZE> rule_tags;
 
+typedef ym_vec<double, PARAM_SIZE> anim_params;
+
 static string grammar_filename = "grammars/test_grammar.json";
 
 

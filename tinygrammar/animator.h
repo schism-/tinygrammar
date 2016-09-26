@@ -14,17 +14,20 @@
 
 struct Animator{
     int animator_name;
+    anim_params params;
     Animator (){}
     Animator (int animator_name) : animator_name(animator_name) {}
+    Animator (int animator_name, anim_params p) : animator_name(animator_name), params(p) {}
+    
     ~Animator(){}
     
-    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, rule_params parameters, const rng& sampler = rng(), ShapeGroup* annotations = nullptr) {
+    vector<AnimatedShape*> operator() (const vector<AnimatedShape*>& shape, float delta, const rng& sampler = rng(), ShapeGroup* annotations = nullptr) {
         switch(animator_name){
             case anim_eulerian:
             {
                 for (auto&& s : shape){
                     auto poly = s->poly;
-                    auto frame = ym_frame2r({1, 0}, {0, 1}, {30, -30});
+                    auto frame = ym_frame2r({params[0], params[1]}, {params[2], params[3]}, {params[4], params[5]});
                     s->poly = transform_polygon(frame, poly);
                 }
                 return shape;

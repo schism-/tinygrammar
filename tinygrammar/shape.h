@@ -69,7 +69,7 @@ struct AnnotatedShape : Shape {
     int                     tid = 0;
     
     // tangle shape
-    ym_frame2f              frame = ym_identity_frame2f;
+    ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
     
     Shape*                  annotation;
@@ -84,7 +84,7 @@ struct AnimatedShape : Shape {
     int                     tid = 0;
     
     // shape
-    ym_frame2f              frame = ym_identity_frame2f;
+    ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
     
     Shape*                  annotation;
