@@ -9,7 +9,7 @@
 #ifndef operator_h
 #define operator_h
 
-#include "tangle_utilities.h"
+#include "shape.h"
 
 ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
 ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_value, rng& sampler);

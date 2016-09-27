@@ -7,6 +7,7 @@
 //
 
 #include "operator.h"
+#include "clipper_methods.h"
 
 ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid, const ym_frame2r& shape_frame, rule_tags tags) {
     auto children = ShapeGroup();

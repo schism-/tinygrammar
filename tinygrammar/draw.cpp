@@ -7,7 +7,6 @@
 //
 
 #include "draw.h"
-#include "../external/format.h"
 
 void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_points,
                              const ym_vec4f& stroke, const ym_vec4f& fill) {
@@ -20,6 +19,16 @@ void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_
     if(draw_frames) {
         draw_line({shape->frame.o,shape->frame.o+shape->frame.x*5}, {1,0,0,0.5f});
         draw_line({shape->frame.o,shape->frame.o+shape->frame.y*5}, {0,0,1,0.5f});
+    }
+}
+
+void DrawContext::draw_shape(AnimatedShape* shape, bool draw_frames, bool draw_as_points,
+                             const ym_vec4f& stroke, const ym_vec4f& fill) {
+    if(draw_as_points) {
+        for(auto& curve : shape->poly) for(auto&& p : curve) draw_point(p, stroke);
+    }
+    else{
+        draw_polygon(shape->poly, stroke, fill);
     }
 }
 
@@ -142,7 +151,8 @@ string SVGContext::_svg_points(const polyline2r &curve) {
         svg += fmt::format("{}{} {} ", (first)?"M":"L", p.x, p.y);
         first = false;
     }
-    if(closed_polyline(curve)) svg += "Z";
+//    if(closed_polyline(curve)) svg += "Z";
+    svg += "Z";
     return svg;
 }
 

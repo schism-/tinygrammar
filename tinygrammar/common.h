@@ -19,8 +19,6 @@
 #include "tree.hh"
 #include "yocto_math.h"
 
-#include "../external/clipper/clipper.hpp"
-
 using namespace std;
 
 #define PARAM_SIZE 16
@@ -34,7 +32,7 @@ enum {
     basic_shape = 0,
     tangle_shape,
     annotated_shape,
-    anim_shape
+    animated_shape
 };
 
 enum {
@@ -54,6 +52,19 @@ enum {
     op_place = 2
 };
 
+enum {
+    anim_eulerian = 0,
+    anim_perturb,
+};
+
+enum {
+    union_op = 0,
+    difference_op,
+    intersection_op,
+    xor_op,
+    sum_op
+};
+
 typedef ym_vec<double, 2> ym_vec2r;
 
 const ym_vec2r ym_x2r = ym_vec2r(1, 0);
@@ -68,6 +79,8 @@ const ym_frame2r ym_identity_frame2r = ym_frame2r{{1, 0}, {0, 1}, {0, 0}};
 
 typedef ym_vec<double, PARAM_SIZE> rule_params;
 typedef ym_vec<int, TAG_SIZE> rule_tags;
+
+typedef ym_vec<double, PARAM_SIZE> anim_params;
 
 static string grammar_filename = "grammars/test_grammar.json";
 
@@ -167,5 +180,20 @@ inline void save_text_file(const string& filename, const string& str) {
     fwrite(str.c_str(), sizeof(char), str.length(), f);
     fclose(f);
 }
+
+struct polyline2r : vector<ym_vec2r> {
+    using vector<ym_vec2r>::vector;
+};
+
+// python-like list and dictionary manipulation
+inline polyline2r operator+(const polyline2r& a, const polyline2r& b) { auto ret = polyline2r(); ret.insert(ret.end(),a.begin(),a.end()); ret.insert(ret.end(),b.begin(),b.end()); return ret; }
+inline polyline2r operator+(const polyline2r& a, const ym_vec2r& b) { auto ret = polyline2r(); ret.insert(ret.end(),a.begin(),a.end()); ret.push_back(b); return ret; }
+
+inline polyline2r& operator+=(polyline2r& a, const polyline2r& b) { a.insert(a.end(),b.begin(),b.end()); return a; }
+inline polyline2r& operator+=(polyline2r& a, const ym_vec2r& b) { a.push_back(b); return a; }
+
+struct polygon2r : vector<polyline2r> {
+    using vector<polyline2r>::vector;
+};
 
 #endif /* common_h */
