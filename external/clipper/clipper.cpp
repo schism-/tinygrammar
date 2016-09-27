@@ -48,6 +48,8 @@
 #include <ostream>
 #include <functional>
 
+#define use_lines
+
 namespace ClipperLib {
 
 static double const pi = 3.141592653589793238;

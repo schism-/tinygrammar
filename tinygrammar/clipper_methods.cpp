@@ -72,7 +72,7 @@ vector<polygon2r> intersect_polygons(const polygon2r& a, const polygon2r& b) {
 vector<polygon2r> intersect_polygons(const vector<polygon2r>& as, const vector<polygon2r>& bs) {
     auto clipper = ClipperLib::Clipper();
     clipper.PreserveCollinear(true);
-    for(auto&& a : as) clipper.AddPaths(to_clipper_paths(a), ClipperLib::ptSubject, true);
+    for(auto&& a : as) { for(auto&& al : a) clipper.AddPath(to_clipper_path(al), ClipperLib::ptSubject, closed_polyline(al)); }
     for(auto&& b : bs) clipper.AddPaths(to_clipper_paths(b), ClipperLib::ptClip, true);
     auto tree = ClipperLib::PolyTree();
     if(not clipper.Execute(ClipperLib::ctIntersection, tree, ClipperLib::pftNonZero)) return {};

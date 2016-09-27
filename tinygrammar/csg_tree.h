@@ -54,6 +54,7 @@ namespace CSGTree
     OpNode* Difference(Tree* tree, Node* a, Node* b, bool update = true);
     OpNode* Intersection(Tree* tree, Node* a, Node* b, bool update = true);
     OpNode* XOR(Tree* tree, Node* a, Node* b, bool update = true);
+    OpNode* PlaceInShape(Tree* tree, Node* a, Node* b, bool update = true);
     
     void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double delta, bool update = true);
     void UpdateOpNode(Tree* tree, OpNode* a);

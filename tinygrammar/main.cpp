@@ -23,39 +23,43 @@ int main(int argc, const char * argv[]) {
     #endif
     
     auto tree = CSGTree::InitTree();
-    auto s1 = make_polyline_rect({-100, -100}, {100, 100});
-    auto s2 = make_polyline_rect({0, 0}, {200, 200});
-    auto s3 = make_polyline_rect({-300, -300}, {300, 300});
+    auto s1 = make_polyline_rect({-100.0, -100.0}, {100.0, 100.0}, 1.0);
+    auto s2 = make_polyline_rect({0.0, 0.0}, {200.0, 200.0}, 1.0);
+    auto s3 = make_polyline_rect({-300.0, -300.0}, {300.0, 300.0}, 1.0);
+    auto s4 = make_polyline_segment({-501.6, -199.8}, {201.3, 498.4}, 1.0, true);
+    
+    
+//    auto n1 = CSGTree::AddShape(tree, new AnimatedShape({s1}));
+//    auto n2 = CSGTree::AddShape(tree, new AnimatedShape({s2}));
+//    auto n1_c = CSGTree::CopyNode(tree, n1);
+//    auto n2_c = CSGTree::CopyNode(tree, n2);
     
     auto n1 = CSGTree::AddShape(tree, new AnimatedShape({s1}));
     auto n2 = CSGTree::AddShape(tree, new AnimatedShape({s2}));
-    auto n1_c = CSGTree::CopyNode(tree, n1);
-    auto n2_c = CSGTree::CopyNode(tree, n2);
-    
     auto n3 = CSGTree::AddShape(tree, new AnimatedShape({s3}));
+    auto n4 = CSGTree::AddShape(tree, new AnimatedShape({s4}));
     
-    auto op1 = CSGTree::XOR(tree, n1, n2);
-    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "1");
-    
-    auto op2 = CSGTree::Difference(tree, n3, op1);
-    auto op4 = CSGTree::XOR(tree, n1_c, n2_c);
-    auto op3 = CSGTree::Sum(tree, op2, op4);
-    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "2");
+    auto op1 = CSGTree::Union(tree, n1, n2);
+    auto op2 = CSGTree::Union(tree, op1, n4);
+    auto op6 = CSGTree::PlaceInShape(tree, n3, op2);
+    save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, "0");
     
     auto r_p = rule_params();
-    r_p[0] = 1.0; r_p[1] = 0.0; r_p[2] = 0.0; r_p[3] = 1.0;
-    r_p[4] = 30.0; r_p[5] = 30.0;
+    r_p[0] = 1.0;   r_p[1] = 0.0;
+    r_p[2] = 0.0;   r_p[3] = 1.0;
+    r_p[4] = 150.0;  r_p[5] = 150.0;
     auto anim = Animator(anim_eulerian, r_p);
     
-    auto r_p_2 = rule_params();
-    r_p_2[0] = 1.0;  r_p_2[1] = 0.0; r_p_2[2] = 0.0; r_p_2[3] = 1.0;
-    r_p_2[4] = 10.0; r_p_2[5] = -10.0;
-    auto anim2 = Animator(anim_eulerian, r_p_2);
-    
-    for (auto i = 0; i <= 20; i++){
-        CSGTree::UpdateLeafNode(tree, n1, anim, 1.0/20.0);
-        CSGTree::UpdateLeafNode(tree, n2, anim2, 1.0/20.0);
-        save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, std::to_string(i));
+    auto r_p2 = rule_params();
+    r_p2[0] = 1.0;   r_p2[1] = 0.0;
+    r_p2[2] = 0.0;   r_p2[3] = 1.0;
+    r_p2[4] = 100.0;  r_p2[5] = -100.0;
+    auto anim2 = Animator(anim_eulerian, r_p2);
+
+    for (auto i = 0; i <= 26; i++){
+        CSGTree::UpdateLeafNode(tree, n2, anim, 1.0/26.0);
+        CSGTree::UpdateLeafNode(tree, n4, anim2, 1.0/26.0);
+        save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, std::to_string(i+1));
     }
 
     printf("end main");

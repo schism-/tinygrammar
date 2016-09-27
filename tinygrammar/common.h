@@ -62,7 +62,8 @@ enum {
     difference_op,
     intersection_op,
     xor_op,
-    sum_op
+    sum_op,
+    place_in_op
 };
 
 typedef ym_vec<double, 2> ym_vec2r;

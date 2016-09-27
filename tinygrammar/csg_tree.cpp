@@ -115,6 +115,23 @@ CSGTree::OpNode* CSGTree::XOR(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::No
     return res_node;
 }
 
+CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+    vector<polygon2r> a_polys = make_vector(a->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto temp = intersect_polygons(b_polys, a_polys);
+    auto result = subtract_polygons_clipper(a_polys, temp);
+    result.insert(result.end(), temp.begin(), temp.end());
+    
+    auto res_node = CSGTree::BuildResult(result, a, b);
+    res_node->op_type = place_in_op;
+    if (update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+    }
+    return res_node;
+}
+
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double delta, bool update){
     if (update){
@@ -157,6 +174,13 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
             {
                 printf("Updating sum \n");
                 auto temp = CSGTree::Sum(tree, cur_node->child_left, cur_node->child_right, false);
+                cur_node->content = temp->content;
+                break;
+            }
+            case place_in_op:
+            {
+                printf("Updating place_in \n");
+                auto temp = CSGTree::PlaceInShape(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
