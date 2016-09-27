@@ -1,6 +1,8 @@
 .svg-container {
   width: 100%;
   height: auto;
+  perspective: 500px;
+  transform-style: preserve-3d;
 }
 
 .svg {
@@ -8,62 +10,25 @@
   height: 100%;
 }
 
-.svg path {
-  fill: #ADECAB;
-}
 
 @keyframes moveY1 {
-  0%   {transform: translateY(-5px) translateX(5px)}
-  50%  {transform: translateY(5px) translateX(-5px)}
-  100% {transform: translateY(-5px) translateX(5px)}
+  0%   {fill: rgb(196, 252, 243); transform: translateY(-5px) translateX(5px) scale(0.8,0.8) rotate3d(1,1,1,-10deg) } 
+  50%  {fill: rgb(205, 250, 153); transform: translateY(5px) translateX(-5px) scale(1,1)  rotate3d(1,1,1,10deg) }
+  100%  {fill: rgb(196, 252, 243) ; transform: translateY(-5px) translateX(5px) scale(0.8,0.8)  rotate3d(1,1,1,-10deg) }
 }
 
-@keyframes moveY2 {
-  0%   {transform: translateY(5px)}
-  50%  {transform: translateY(-5px)}
-  100% {transform: translateY(5px)}
+
+.moveY1, .moveY2, .moveY3, .moveY4, 
+.moveY5, .moveY6, .moveY7, .moveY8 {
+  animation: moveY1 4s ease-in-out infinite;
+  position: absolute;
 }
 
-@keyframes moveY3 {
-  0%   {transform: translateX(5px)}
-  50%  {transform: translateX(-5px)}
-  100% {transform: translateX(5px)}
-}
-
-@keyframes moveY4 {
-  0%   {transform: translateY(5px)}
-  50%  {transform: translateY(-5px)}
-  100% {transform: translateY(5px)}
-}
-
-.moveY1 {
-  animation: moveY1 3s ease-in-out infinite;
-}
-
-.moveY2 {
-  animation: moveY2 3s ease-in-out infinite;
-}
-
-.moveY3 {
-  animation: moveY3 3s ease-in-out infinite;
-}
-
-.moveY4 {
-  animation: moveY4 3s ease-in-out infinite;
-}
-
-.moveY5 {
-  animation: moveY1 3s ease-in-out infinite;
-}
-
-.moveY6 {
-  animation: moveY2 3s ease-in-out infinite;
-}
-
-.moveY7 {
-  animation: moveY3 3s ease-in-out infinite;
-}
-
-.moveY8 {
-  animation: moveY4 3s ease-in-out infinite;
-}
+.moveY1 { animation-delay: .2s; }
+.moveY2 { animation-delay: .4s; }
+.moveY3 { animation-delay: .6s; }
+.moveY4 { animation-delay: .8s; }
+.moveY5 { animation-delay: 1.0s; }
+.moveY6 { animation-delay: 1.2s; }
+.moveY7 { animation-delay: 1.4s; }
+.moveY8 { animation-delay: 1.6s; }
