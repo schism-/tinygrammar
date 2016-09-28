@@ -26,7 +26,7 @@ using namespace std;
 
 #define ACTIVE_GRAMMAR 0
 
-static constexpr double resolution = 2;
+static constexpr double resolution = 3.0;
 
 enum {
     basic_shape = 0,
@@ -55,6 +55,7 @@ enum {
 enum {
     anim_eulerian = 0,
     anim_perturb,
+    anim_wave
 };
 
 enum {
