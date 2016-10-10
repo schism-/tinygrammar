@@ -8,6 +8,14 @@
 
 #include "animator_matrix.h"
 
+AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale){
+    auto res_am = AnimatorMatrix(bb);
+    for (auto i = 0; i <= res_am.mats.size(); i++){
+        res_am.mats[i].t = ym_normalize( pos - res_am.mats_centers[i] ) * scale;
+    }
+    return res_am;
+}
+
 ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
     if (!ym_rinside(am.bounding_box, pos)){
         printf("[AnimatorMatrix] ERROR: position outside the bounding box;");
