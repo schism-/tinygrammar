@@ -27,6 +27,8 @@ using namespace std;
 #define ACTIVE_GRAMMAR 0
 
 static constexpr double resolution = 2;
+static constexpr double matrix_resolution = 5;
+static constexpr int matrix_num = (int)(matrix_resolution * matrix_resolution);
 
 enum {
     basic_shape = 0,
@@ -55,6 +57,9 @@ enum {
 enum {
     anim_eulerian = 0,
     anim_perturb,
+    anim_single,
+    anim_group,
+    anim_morph
 };
 
 enum {
@@ -67,6 +72,7 @@ enum {
 };
 
 typedef ym_vec<double, 2> ym_vec2r;
+typedef ym_affine<double, 2, false> ym_affine2r;
 
 const ym_vec2r ym_x2r = ym_vec2r(1, 0);
 const ym_vec2r ym_y2r = ym_vec2r(0, 1);

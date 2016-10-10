@@ -196,6 +196,14 @@ inline ym_range2r bounds_polygons(const vector<polygon2r>& polys) {
     return bbox;
 }
 
+inline ym_vec2r get_centroid(const polygon2r& poly) {
+    auto res_p = ym_vec2r();
+    for(auto&& p : poly[0]) res_p += p;
+    res_p.x = res_p.x / poly[0].size();
+    res_p.y = res_p.y / poly[0].size();
+    return res_p;
+}
+
 inline polygon2r transform_polygon(const ym_frame2r& frame, const polygon2r& poly) {
     return make_polygon(poly, [&](const polyline2r& curve){ return transform_polyline(frame, curve); });
 }

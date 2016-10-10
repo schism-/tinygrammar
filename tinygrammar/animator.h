@@ -11,13 +11,17 @@
 
 #include "shape.h"
 #include "tangle_utilities.h"
+#include "animator_matrix.h"
 
 struct Animator{
     int animator_name;
     anim_params params;
+    AnimatorKeyframes akf;
+    
     Animator (){}
     Animator (int animator_name) : animator_name(animator_name) {}
     Animator (int animator_name, anim_params p) : animator_name(animator_name), params(p) {}
+    Animator (int animator_name, AnimatorKeyframes akf) : animator_name(animator_name), akf(akf) {}
     
     ~Animator(){}
     
@@ -47,6 +51,42 @@ struct Animator{
             }
         }
         return vector<AnimatedShape*>();
+    }
+    
+    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, int frame) {
+        switch(animator_name){
+            case anim_single:
+            {
+                auto m = get_matrix(akf, frame);
+                for (auto&& as : shape){
+                    auto new_poly = transform(m, as->poly);
+                    as->poly = new_poly;
+                }
+                return shape;
+                break;
+            }
+            case anim_group:
+            {
+                auto m = get_matrix(akf, frame);
+                for (auto&& as : shape){
+                    auto new_poly = transform_group(m, as->poly);
+                    as->poly = new_poly;
+                }
+                return shape;
+                break;
+            }
+            case anim_morph:
+            {
+                return vector<AnimatedShape*>();
+                break;
+            }
+            default:
+            {
+                printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid animator type\n");
+                return vector<AnimatedShape*>();
+                break;
+            }
+        }
     }
 };
 

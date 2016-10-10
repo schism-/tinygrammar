@@ -1273,6 +1273,11 @@ inline T ym_rscale(const ym_range<T>& a, const T& b) {
     return {ym_rcenter(a) - ym_rsize(a) * b / 2, ym_rcenter(a) + ym_rsize(a) * b / 2};
 }
 
+template <typename T>
+inline bool ym_rinside(const ym_range<T>& a, const T& b) {
+    return (a.min.x <= b.x && a.min.y <= b.y) && (a.max.x >= b.x && a.max.y >= b.y);
+}
+
 // -----------------------------------------------------------------------------
 // RAYS
 // -----------------------------------------------------------------------------

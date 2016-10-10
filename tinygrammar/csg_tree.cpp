@@ -139,6 +139,29 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
         a->content = new NodeContent(new_shapes);
     }
     
+    UpdateContent(tree, a);
+    
+    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
+}
+
+void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, int frame, bool update){
+    if (update){
+        auto new_shapes = anim(a->content->shapes, frame);
+        a->content = new NodeContent(new_shapes);
+    }
+    
+    UpdateContent(tree, a);
+    
+    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, frame, false);
+}
+
+void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as, Animator anim, int frame, bool update){
+    for (auto&& a : as){
+        UpdateLeafNode(tree, a, anim, frame, update);
+    }
+}
+
+void CSGTree::UpdateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
     auto cur_node = (OpNode*)(a->parent);
     while (cur_node != nullptr){
         switch (cur_node->op_type) {
@@ -190,8 +213,6 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
         }
         cur_node = (OpNode*)(cur_node->parent);
     }
-    
-    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
 }
 
 

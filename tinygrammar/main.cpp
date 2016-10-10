@@ -55,10 +55,19 @@ int main(int argc, const char * argv[]) {
     r_p2[2] = 0.0;   r_p2[3] = 1.0;
     r_p2[4] = 100.0;  r_p2[5] = -100.0;
     auto anim2 = Animator(anim_eulerian, r_p2);
-
-    for (auto i = 0; i <= 26; i++){
-        CSGTree::UpdateLeafNode(tree, n2, anim, 1.0/26.0);
-        CSGTree::UpdateLeafNode(tree, n4, anim2, 1.0/26.0);
+    
+    auto bbox = ym_range2r({-1000.0, -1000.0}, {1000.0, 1000.0});
+    auto mat = ym_affine2r({{1.0, 0.0},{0.0, 1.0}, {5.0, -5.0}});
+    auto am  = AnimatorMatrix(bbox, mat);
+    auto akf = AnimatorKeyframes(am, 30);
+    auto anim_new = Animator(anim_single, akf);
+    
+    for (auto i = 0; i <= 10; i++){
+        
+        CSGTree::UpdateLeafNode(tree, n2, anim_new, i);
+        CSGTree::UpdateLeafNode(tree, n3, anim_new, i);
+        CSGTree::UpdateLeafNode(tree, n4, anim_new, i);
+        
         save_svg(tree, {800, 800}, {350, 350}, {1.0, 1.0}, std::to_string(i+1));
     }
 

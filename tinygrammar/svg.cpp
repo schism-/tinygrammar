@@ -46,7 +46,7 @@ void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  con
     
     context->end_frame(offset, scale_factor);
     time_t rawtime; time (&rawtime);
-    save_text_file("tangleSVG_" + std::to_string(get_sec()) + "_" + postfix + ".svg", context->svg);
+    save_text_file("./results/tangleSVG_" + std::to_string(get_sec()) + "_" + postfix + ".svg", context->svg);
     delete context;
 }
 
