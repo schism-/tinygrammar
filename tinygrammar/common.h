@@ -57,6 +57,7 @@ enum {
 enum {
     anim_eulerian = 0,
     anim_perturb,
+    anim_wave,
     anim_single,
     anim_group,
     anim_morph
