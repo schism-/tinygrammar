@@ -76,11 +76,11 @@ int main(int argc, const char * argv[]) {
     auto am2  = AnimatorMatrix(bbox, {{0.99, 0.0},{0.0, 0.99}, {0.0, 0.0}});
     auto anim_new2 = Animator(anim_single, {am2, frame_num});
     
-    auto anim_new3 = Animator(anim_group, {move_towards_point(bbox, {0.0, 0.0}, 25.0), frame_num});
+    auto anim_new3 = Animator(anim_group, {move_towards_point(bbox, {-300.0, 0.0}, 25.0), frame_num});
     
-    auto anim_new4 = Animator(anim_group, {move_towards_point(bbox, {1000.0, 0.0}, 25.0), frame_num});
+    auto anim_new4 = Animator(anim_group, {move_towards_point(bbox, {1000.0, 0.0}, 5.0), frame_num});
     
-    auto am2_g  = AnimatorMatrix(bbox, {{0.9, 0.0},{0.0, 0.9}, {0.0, 0.0}});
+    auto am2_g  = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
     auto anim_new2_g = Animator(anim_single, {am2_g, frame_num});
     
     auto angle = 5.0 * ym_pi / 180.0;
@@ -97,6 +97,7 @@ int main(int argc, const char * argv[]) {
         if (i > 20){
             CSGTree::UpdateLeafNode(tree, {n5_1, n5_2, n5_3, n5_4, n5_5, n5_6, n5_7} , anim_new4, i);
             CSGTree::UpdateLeafNode(tree, {n5_1, n5_2, n5_3, n5_4, n5_5, n5_6, n5_7} , anim_new2_g, i);
+            CSGTree::UpdateLeafNode(tree, {n5_1, n5_2, n5_3, n5_4, n5_5, n5_6, n5_7} , anim_new5_rot, i);
         }
         
         if (i > 30){
