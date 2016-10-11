@@ -38,12 +38,13 @@ void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx)
 
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly){
     auto new_shape = polygon2r();
+    auto centroid = get_centroid(poly);
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
             auto m = get_matrix(am, p);
-            auto new_p = ym_transform_point(m, p);
-            new_shape.back() += new_p;
+            auto new_p = ym_transform_point(m, p - centroid);
+            new_shape.back() += (new_p + centroid);
         }
     }
     return new_shape;
