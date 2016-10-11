@@ -39,6 +39,30 @@ struct Animator{
                 return shape;
                 break;
             }
+            case anim_wave:
+            {
+                for (auto&& s : shape){
+                    auto poly = s->poly;
+                    auto frame = ym_frame2r({params[0], params[1]}, {params[2], params[3]}, {params[4], params[5]});
+                    auto frame_diff = ym_identity_frame2r;
+                    auto mu2 = (1 - cos(2.0 * delta * ym_pif)) / 2.0;
+                    if (cos(2.0 * delta * ym_pif) > 0){
+                        auto boh = ym_frame2r(frame_diff.m * (1.0 - mu2) + frame.m * mu2,
+                                              frame_diff.t * (1.0 - mu2) + frame.t * mu2);
+                        s->poly = transform_polygon(boh, poly);
+                    }
+                    else{
+                        frame.m = ym_inverse(frame.m);
+                        frame.t = frame.t * -1.0;
+                        mu2 = (1 - cos(delta * ym_pif)) / 2.0;
+                        auto boh = ym_frame2r(frame_diff.m * (1.0 - mu2) + frame.m * mu2,
+                                              frame_diff.t * (1.0 - mu2) + frame.t * mu2);
+                        s->poly = transform_polygon(boh, poly);
+                    }
+                }
+                return shape;
+                break;
+            }
             case anim_perturb:
             {
                 return vector<AnimatedShape*>();

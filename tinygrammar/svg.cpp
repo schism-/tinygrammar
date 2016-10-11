@@ -34,7 +34,7 @@ void save_svg(History* h, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_
     context->end_frame(offset, scale_factor);
     time_t rawtime; time (&rawtime);
     auto r = new rng();
-    save_text_file("tangleSVG_" + std::to_string(get_sec()) + "_" + std::to_string(ym_rng_nextf(r)) + ".svg", context->svg);
+    save_text_file("images/tangleSVG_" + std::to_string(get_sec()) + "_" + std::to_string(ym_rng_nextf(r)) + ".svg", context->svg);
     delete context;
 }
 

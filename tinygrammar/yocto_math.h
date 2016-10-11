@@ -838,6 +838,25 @@ inline ym_mat<T, M, N> ym_transpose(const ym_mat<T, N, M>& a) {
     return c;
 }
 
+
+template <typename T>
+inline ym_mat<T, 2, 2> ym_inverse(const ym_mat<T, 2, 2>& m_) {
+    T m[2][2];
+    *(ym_mat<T, 2, 2>*)m = m_;
+    
+    // computes the inverse of a matrix m
+    T det = m[0][0] * m[1][1] + m[0][1] * m[1][0];
+    T invdet = 1 / det;
+    
+    T minv[2][2];  // inverse of matrix m
+    minv[0][0] = m[1][1] * invdet;
+    minv[0][1] = - m[0][1] * invdet;
+    minv[1][0] = - m[1][0] * invdet;
+    minv[1][1] = m[0][0] * invdet;
+    
+    return *(ym_mat<T, 2, 2>*)minv;
+}
+
 // http://stackoverflow.com/questions/983999/simple-3x3-matrix-inverse-code-c
 template <typename T>
 inline ym_mat<T, 3, 3> ym_inverse(const ym_mat<T, 3, 3>& m_) {

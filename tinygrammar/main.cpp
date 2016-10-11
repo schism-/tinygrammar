@@ -21,12 +21,8 @@ int main(int argc, const char * argv[]) {
     save_svg(em, {600,600}, {300, 300}, {1.0, 1.0});
     return 0;
     #endif
-    
+ 
     auto tree = CSGTree::InitTree();
-    auto s1 = make_polyline_rect({-100.0, -100.0}, {100.0, 100.0}, 1.0);
-    auto s2 = make_polyline_rect({0.0, 0.0}, {200.0, 200.0}, 1.0);
-    auto s3 = make_polyline_rect({-300.0, -300.0}, {300.0, 300.0}, 1.0);
-    auto s4 = make_polyline_segment({-501.6, -199.8}, {201.3, 498.4}, 1.0, true);
     
     auto s5_1 = make_polyline_rect({350.0, -325.0}, {400.0, -275.0}, 1.0);
     auto s5_2 = make_polyline_rect({350.0, -225.0}, {400.0, -175.0}, 1.0);
@@ -36,11 +32,15 @@ int main(int argc, const char * argv[]) {
     auto s5_6 = make_polyline_rect({350.0, 175.0},  {400.0, 225.0}, 1.0);
     auto s5_7 = make_polyline_rect({350.0, 275.0},  {400.0, 325.0}, 1.0);
 
+    auto s1   = make_polyline_rect({-100.0, -100.0}, {100.0, 100.0}, resolution);
+    auto s2   = make_polyline_rect({0.0, 0.0}, {200.0, 200.0}, resolution);
+    auto s3   = make_polyline_rect({-300.0, -300.0}, {300.0, 300.0}, resolution);
+    auto s4   = make_polyline_segment({-400.0, -200.0}, {-400.0, -200.0}, resolution);
     
-    auto n1 = CSGTree::AddShape(tree, new AnimatedShape({s1}));
-    auto n2 = CSGTree::AddShape(tree, new AnimatedShape({s2}));
-    auto n3 = CSGTree::AddShape(tree, new AnimatedShape({s3}));
-    auto n4 = CSGTree::AddShape(tree, new AnimatedShape({s4}));
+    auto n1   = CSGTree::AddShape(tree, new AnimatedShape({s1}));
+    auto n2   = CSGTree::AddShape(tree, new AnimatedShape({s2}));
+    auto n3   = CSGTree::AddShape(tree, new AnimatedShape({s3}));
+    auto n4   = CSGTree::AddShape(tree, new AnimatedShape({s4}));
     
     auto n5_1 = CSGTree::AddShape(tree, new AnimatedShape({s5_1}));
     auto n5_2 = CSGTree::AddShape(tree, new AnimatedShape({s5_2}));
