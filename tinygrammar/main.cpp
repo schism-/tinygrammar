@@ -65,7 +65,7 @@ int main(int argc, const char * argv[]) {
     
     auto op6    = CSGTree::PlaceInShape(tree, op3_6, op2);
 
-    save_svg(tree, {2000, 2000}, {1000, 1000}, {1.0, 1.0}, "0");
+    save_svg(tree, {800, 800}, {400, 400}, {1.0, 1.0}, "0");
     
     auto frame_num = 60;
     auto bbox = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
@@ -78,7 +78,7 @@ int main(int argc, const char * argv[]) {
     
     auto anim_new3 = Animator(anim_group, {move_towards_point(bbox, {-300.0, 0.0}, 25.0), frame_num});
     
-    auto anim_new4 = Animator(anim_group, {move_towards_point(bbox, {1000.0, 0.0}, 5.0), frame_num});
+    auto anim_new4 = Animator(anim_group, {move_towards_point(bbox, {1000.0, 0.0}, 25.0), frame_num});
     
     auto am2_g  = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
     auto anim_new2_g = Animator(anim_single, {am2_g, frame_num});
@@ -108,7 +108,7 @@ int main(int argc, const char * argv[]) {
             CSGTree::UpdateLeafNode(tree, n2 , anim_new5_rot, i);
         }
         
-        save_svg(tree, {2000, 2000}, {1000, 1000}, {1.0, 1.0}, std::to_string(i+1));
+        save_svg(tree, {800, 800}, {400, 400}, {1.0, 1.0}, std::to_string(i+1));
     }
 
     printf("end main");

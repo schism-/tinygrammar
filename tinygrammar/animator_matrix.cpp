@@ -70,3 +70,19 @@ AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
     auto key_idx = std::distance(akf.keyframes_idx.begin(), std::find(akf.keyframes_idx.begin(), akf.keyframes_idx.end(), keyframe));
     return akf.keyframes.at(key_idx);
 }
+
+AnimatorKeyframes copy(const AnimatorKeyframes& akf){
+    auto res = AnimatorKeyframes();
+    res.keyframes = vector<AnimatorMatrix>();
+    for (auto&& am : akf.keyframes) res.keyframes.push_back(copy(am));
+    for (auto&& am_i : akf.keyframes_idx) res.keyframes_idx.push_back(am_i);
+    return res;
+}
+
+AnimatorMatrix copy(const AnimatorMatrix& am){
+    auto res = AnimatorMatrix(am.bounding_box);
+    std::copy(std::begin(am.mats), std::end(am.mats), std::begin(res.mats));
+    std::copy(std::begin(am.mats_centers), std::end(am.mats_centers), std::begin(res.mats_centers));
+    res.step = ym_vec2r(am.step.x, am.step.y);
+    return res;
+}

@@ -57,7 +57,7 @@ void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx)
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly);
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly);
 
-
+AnimatorMatrix copy(const AnimatorMatrix& am);
 
 struct AnimatorKeyframes{
     
@@ -82,5 +82,6 @@ struct AnimatorKeyframes{
 };
 
 AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe);
+AnimatorKeyframes copy(const AnimatorKeyframes& akf);
 
 #endif /* animator_matrix_h */
