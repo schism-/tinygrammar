@@ -18,17 +18,20 @@ namespace TimeManager {
     struct TimeSlice{
         string ts_tag;
         double duration;
-        CSGTree::Node* node;
         AnimatorKeyframes animation;
         
         TimeSlice (double d) : duration(d){}
+        
+        TimeSlice (double d, AnimatorKeyframes akf) : duration(d), animation(akf) {}
     };
 
     struct NodeTimeLine{
         double duration;
         vector<TimeSlice*> slices;
+        CSGTree::Node* node;
         
         NodeTimeLine (double d) : duration(d), slices({new TimeSlice(d)}){}
+        NodeTimeLine (double d, AnimatorKeyframes akf) : duration(d), slices({new TimeSlice(d, akf)}){}
         
         ~NodeTimeLine(){}
     };
@@ -40,15 +43,19 @@ namespace TimeManager {
         vector<NodeTimeLine*> timelines;
         
         TimeLine (double d) : duration(d), timelines({new NodeTimeLine(d)}){ current_time = 0.0; }
+        TimeLine (double d, AnimatorKeyframes akf) : duration(d), timelines({new NodeTimeLine(d, akf)}){
+            current_time = 0.0;
+        }
         
         ~TimeLine(){}
     };
     
     NodeTimeLine* FindTimeLine(TimeLine* t, TimeSlice* s);
+    vector<TimeSlice*> GetAllSlices (TimeLine* t, NodeTimeLine* tl = nullptr);
     
-    void TimeSliceCut (TimeLine* t, TimeSlice* slice, vector<double> cutPoints = {0.5});
-    
-    void TimeLineSplit (TimeLine* t, NodeTimeLine* nodeTimeLine, bool complete = false);
+    void TimeSliceCut  (TimeLine* t, TimeSlice* slice, const vector<double>& cutPoints = {0.5, 0.5}, const string& new_tag = "");
+    void TimeLineSplit (TimeLine* t, NodeTimeLine* nodeTimeLine, const string& new_tag = "", bool complete = false);
+    void TimeLineMerge (TimeLine* t, const vector<NodeTimeLine*>& nodeTimeLines);
 
     void AnimateTimeLine(TimeLine* t);
 
