@@ -10,7 +10,7 @@
 #define expansion_manager_h
 
 #include "grammar_core.h"
-#include "csg_tree.h"
+#include "time_manager.h"
 
 using namespace std;
 
@@ -19,15 +19,19 @@ using namespace std;
 // |======== HISTORY API =========|
 // |==============================|
 
-struct Expansion {
+struct BaseExpansion {
+    Rule* applied_rule;
+    bool terminal;
+    
+    ~BaseExpansion() {};
+};
+
+struct Expansion : BaseExpansion {
     ShapeGroup shapes;
     
     ShapeGroup match;
     ShapeGroup added;
     ShapeGroup remainder;
-    
-    Rule* applied_rule;
-    bool terminal;
     
     Expansion() { terminal = false; };
     Expansion(const ShapeGroup& s) { shapes = s;  terminal = false; };
@@ -39,9 +43,16 @@ struct Expansion {
         for (auto s : added) shapes.push_back(s);
         terminal = false;
     };
+};
+
+struct ExpansionAnim : BaseExpansion {
+    CSGTree::Tree* tree;
+    TimeManager::TimeLine* timeline;
     
+    //TODO : think about adding a partition for slices
+    ExpansionAnim() { tree = new CSGTree::Tree(); timeline = new TimeManager::TimeLine(); terminal = false; };
+    ExpansionAnim(Rule* a_r) { terminal = false; applied_rule = a_r; };
     
-    ~Expansion() {};
 };
 
 struct History {
@@ -68,6 +79,15 @@ struct HistoryLinear : History{
     }
 };
 
+struct HistoryAnim : History{
+    vector<ExpansionAnim*> history;
+    
+    HistoryAnim() {
+        history_type = animation_history;
+        history = vector<ExpansionAnim*>();
+    }
+};
+
 
 
 History* make_history(int h_type);
@@ -77,6 +97,11 @@ void free_history(History* history);
 void expand_init(History* h);
 bool expand(History* history);
 
-Expansion* get_expansion(History* history, Shape* sel_shape);
+void expand_init(HistoryAnim* h);
+bool expand(HistoryAnim* history);
+
+BaseExpansion* get_expansion(History* history, Shape* sel_shape);
+
+void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule* matched_rule);
 
 #endif /* expansion_manager_h */

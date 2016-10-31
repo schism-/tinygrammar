@@ -8,25 +8,44 @@
 
 #include <iostream>
 #include "time_manager.h"
+#include "expansion_manager.h"
 
 int main(int argc, const char * argv[]) {
-    auto bbox   = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
-    auto am     = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
-    auto akf    = AnimatorKeyframes({am}, vector<int>{1});
-    auto anim   = Animator(anim_single, akf);
+//    auto bbox   = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
+//    auto am     = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
+//    auto akf    = AnimatorKeyframes({am}, vector<int>{1});
+//    auto anim   = Animator(anim_single, akf);
+//    
+//    auto tl = new TimeManager::TimeLine(10.0, akf);
+//    
+//    auto slices = TimeManager::GetAllSlices(tl);
+//    
+//    TimeManager::TimeSliceCut(tl, slices[0]);
+//    slices = TimeManager::GetAllSlices(tl);
+//    
+//    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
+//    slices = TimeManager::GetAllSlices(tl);
+//    
+//    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
+//    slices = TimeManager::GetAllSlices(tl);
     
-    auto tl = new TimeManager::TimeLine(10.0, akf);
+    auto em = (HistoryAnim*)(make_history(animation_history));
     
-    auto slices = TimeManager::GetAllSlices(tl);
+    auto grammar = get_grammar(grammar_filename);
     
-    TimeManager::TimeSliceCut(tl, slices[0]);
-    slices = TimeManager::GetAllSlices(tl);
+    auto init_step = matching_init();
+    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);
+    auto init_partition = PartitionShapeGroup();
+    init_partition.added = init_shapes;
+    init_partition.remainder = ShapeGroup();
+    init_partition.match = ShapeGroup();
     
-    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
-    slices = TimeManager::GetAllSlices(tl);
+    update_history(em, init_partition, init_step);
     
-    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
-    slices = TimeManager::GetAllSlices(tl);
+    while (expand(em)){
+        printf("Expanding... \n");
+    };
+
     
     printf("end main\n");
 }

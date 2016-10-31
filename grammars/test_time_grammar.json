@@ -1,0 +1,31 @@
+{
+	"grammar_name" : "Test Time Grammar", 
+	"seed" : 473, 
+	"rules" : [
+		{ 
+			"rule_name" : "rule_1",
+			"matching_tags" : [],
+			"produced_tags" : ["a"],
+			"operator" : "time_init",
+			"parameters" : [10, 1],
+			"init_value" : "square"
+		}, 
+
+		{ 	
+			"rule_name" : "rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b"],
+			"operator" : "time_slice",
+			"parameters" : [0.5, 0.5],
+			"init_value" : ""
+		},
+		{ 	
+			"rule_name" : "rule_3",
+			"matching_tags" : ["b"],
+			"produced_tags" : ["c"],
+			"operator" : "time_slice",
+			"parameters" : [0.25, 0.75],
+			"init_value" : ""
+		}, 
+	],
+}

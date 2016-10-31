@@ -77,3 +77,20 @@ ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_val
     
     return children;
 }
+
+// |============================|
+// |       TIME OPERATORS       |
+// |============================|
+
+ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, string init_value, rng& rn){
+    auto children = ShapeGroup();
+    
+    for (auto i = 0; i < (int)parameters[1]; i++){
+        auto slice = new TimeSliceShape(new TimeManager::TimeSlice(parameters[0], tags[0]));
+        slice->tag = tags[0];
+        children.push_back(slice);
+    }
+    
+    return children;
+}
+

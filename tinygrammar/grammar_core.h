@@ -10,10 +10,7 @@
 #define grammar_core_h
 
 #include "rule.h"
-
-//TODO: - matching shapes
-//      - matching rule
-//      - loading grammar
+#include "time_manager.h"
 
 struct Grammar {
     string                          name;
@@ -36,7 +33,10 @@ int add_rule_to_mapping(Grammar* grammar, string rulename);
 rule_tags add_tags(Grammar* grammar, vector<string> tags);
 
 Rule* matching_init();
+
 pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
+pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes);
+
 PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes);
 Rule* matching_rule(const ShapeGroup& matched);
 

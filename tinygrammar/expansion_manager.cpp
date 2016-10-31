@@ -16,9 +16,20 @@ History* make_history(int h_type) {
     History* ret;
     switch (h_type){
         case linear_history:
+        {
             ret = new HistoryLinear();
+            break;
+        }
         case tree_history:
+        {
             ret = new HistoryTree();
+            break;
+        }
+        case animation_history:
+        {
+            ret = new HistoryAnim();
+            break;
+        }
         default:
             ret = new HistoryLinear();
     }
@@ -30,15 +41,13 @@ History* make_history(int h_type) {
 
 void free_history(History* h){ delete h; }
 
-vector<Expansion*> get_active_nodes(History* h){
-    auto res = vector<Expansion*>();
+vector<BaseExpansion*> get_active_nodes(History* h){
+    auto res = vector<BaseExpansion*>();
     switch(h->history_type){
         case linear_history:
         {
-//            for (auto exp : ((HistoryLinear*)h)->history){
-//                if (not exp->terminal) res.push_back(exp);
-//            }
-            if (not ((HistoryLinear*)h)->history.empty()) res.push_back(((HistoryLinear*)h)->history.back());
+            if (not ((HistoryLinear*)h)->history.empty())
+                res.push_back(((HistoryLinear*)h)->history.back());
             break;
         }
         case tree_history:
@@ -50,6 +59,12 @@ vector<Expansion*> get_active_nodes(History* h){
             }
             break;
         }
+        case animation_history:
+        {
+            if (not ((HistoryAnim*)h)->history.empty())
+                res.push_back(((HistoryAnim*)h)->history.back());
+            break;
+        }
         default:
         {
             printf("[get_active_nodes] ERROR: Shouldn't have gotten here! Invalid history_type \n");
@@ -59,7 +74,7 @@ vector<Expansion*> get_active_nodes(History* h){
     return res;
 }
 
-Expansion* get_expansion(History* h, Shape* sel_shape){
+BaseExpansion* get_expansion(History* h, Shape* sel_shape){
     if (h->history_type == linear_history){
         for (auto exp : ((HistoryLinear*)h)->history){
             if (contains(exp->shapes, sel_shape)) return exp;
@@ -91,6 +106,24 @@ void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule*
             // TODO : implementa metodo per tree
             break;
         }
+        case animation_history:
+        {
+            if(matched_shapes.match.empty()){
+                // We're dealing with an init
+                auto exp = new ExpansionAnim();
+                for (auto&& s : matched_shapes.added){
+                    auto temp = ((TimeSliceShape*)s);
+                    exp->timeline->duration = temp->slice->duration;
+                    exp->timeline->timelines.push_back(new TimeManager::NodeTimeLine(temp->slice->duration, temp->slice));
+                }
+                ((HistoryAnim*)h)->history.push_back(exp);
+            }
+            else{
+                auto exp = new ExpansionAnim();
+                ((HistoryAnim*)h)->history.push_back(exp);
+            }
+            break;
+        }
         default:
         {
             printf("[update_history] ERROR: Shouldn't have gotten here! Invalid history_type in update_history \n");
@@ -99,13 +132,24 @@ void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule*
     }
 }
 
-ShapeGroup to_shapes(const vector<Expansion*>& active_nodes){
+ShapeGroup to_shapes(const vector<BaseExpansion*>& active_nodes){
     auto res = ShapeGroup();
     for (auto an : active_nodes){
-        for (auto s : an->shapes) res.push_back(s);
+        for (auto s : ((Expansion*)an)->shapes) res.push_back(s);
     }
     return res;
 }
+
+ShapeGroup to_slices(const vector<BaseExpansion*>& active_nodes){
+    auto res = ShapeGroup();
+    for (auto an : active_nodes){
+        for (auto&& ntl : ((ExpansionAnim*)an)->timeline->timelines)
+            for (auto&& sl : ntl->slices)
+                res.push_back(new TimeSliceShape(sl));
+    }
+    return res;
+}
+
 
 void expand_init(History* h) {
     auto grammar = get_grammar(grammar_filename);
@@ -138,3 +182,31 @@ bool expand(History* h) {
         return false;
     }
 }
+
+void expand_init(HistoryAnim* h) {
+    
+}
+
+bool expand(HistoryAnim* h) {
+    //retrieve active nodes
+    auto front = get_active_nodes(h);
+    //pass them to grammar core
+    auto grammar = get_grammar(grammar_filename);
+    auto grammar_step = matching_slice(grammar, to_slices(front));
+    
+    if (grammar_step.second != nullptr){
+        //if an appliable rule has been found, apply it and retrieve results
+        printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
+        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
+        //update model
+        update_history(h, grammar_step.first, grammar_step.second);
+        return true;
+    }
+    else{
+        printf("[TIME] No more expansions available\n");
+        return false;
+    }
+
+    return true;
+}
+

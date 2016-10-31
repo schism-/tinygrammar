@@ -31,14 +31,14 @@ vector<TimeManager::TimeSlice*> TimeManager::GetAllSlices (TimeManager::TimeLine
 }
 
 void TimeManager::TimeSliceCut (TimeManager::TimeLine* t, TimeManager::TimeSlice* slice,
-                                const vector<double>& cutPoints, const string& new_tag){
+                                const vector<double>& cutPoints, int new_tag){
     auto ntm = TimeManager::FindTimeLine(t, slice);
     if (ntm != nullptr){
         auto new_slices = vector<TimeManager::TimeSlice*>();
         for (auto&& cp : cutPoints) {
             auto temp = new TimeManager::TimeSlice(slice->duration * cp);
             temp->animation = copy(slice->animation);
-            if (new_tag != "") temp->ts_tag = new_tag;
+            if (new_tag != -1) temp->ts_tag = new_tag;
             else temp->ts_tag = slice->ts_tag;
             new_slices.push_back(temp);
         }
@@ -52,7 +52,7 @@ void TimeManager::TimeSliceCut (TimeManager::TimeLine* t, TimeManager::TimeSlice
 }
 
 void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTimeLine* nodeTimeLine,
-                                 const string& new_tag, bool complete){
+                                 int new_tag, bool complete){
     // TODO: Evaluate if splitting nodes into singular shapes.
     // In that case, NodeTimeLine cannot use Node as object to apply tranformations on, but they have to act
     // directly on AnimatedShapes.

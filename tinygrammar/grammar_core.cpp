@@ -76,6 +76,10 @@ Grammar* get_grammar(string filename){
                 rule->op = Operator(op_place);
             else if (rule_json.get<String>("operator") == "init")
                 rule->op = Operator(op_init, rule_json.get<String>("init_value"));
+            else if (rule_json.get<String>("operator") == "time_init")
+                rule->op = Operator(op_time_init, rule_json.get<String>("init_value"));
+            else
+                rule->op = Operator(op_default, "default");
             
             auto json_params = rule_params();
             auto p_arr = rule_json.get<Array>("parameters");
@@ -93,7 +97,7 @@ Grammar* get_grammar(string filename){
 vector<Rule*> get_inits(Grammar* g){
     auto res = vector<Rule*>();
     if (g != nullptr){
-        for (auto r : g->rules) if (r->op.operator_name == op_init) res.push_back(r);
+        for (auto r : g->rules) if (r->op.operator_name == op_init || r->op.operator_name == op_time_init) res.push_back(r);
     }
     return res;
 }
@@ -129,6 +133,21 @@ pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
+pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes){
+    //matching of the shapes
+    auto matched_shapes = matching_shapes(active_shapes);
+    //matching of the rule
+    if (not matched_shapes.match.empty()){
+        auto rule_to_apply = matching_rule(matched_shapes.match);
+        if (rule_to_apply != nullptr){
+            return make_pair(matched_shapes, rule_to_apply);
+        }
+    }
+    printf("[TIME] Didn't find any rule for matching\n");
+    return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
+}
+
+
 bool tag_in_rule(int tag, const rule_tags& tags){
     for (auto i = 0; i < TAG_SIZE; i++){
         if (tag == tags[i]) return true;
@@ -139,6 +158,18 @@ bool tag_in_rule(int tag, const rule_tags& tags){
 Rule* tangle_match_rule(Grammar* grammar, int tag){
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
+        {
+            auto matches = vector<int>();
+            auto grammar = get_grammar(grammar_filename);
+            auto rules = get_rules(grammar);
+            for(auto i = 0; i < (int)rules.size(); i++){
+                if (tag_in_rule(tag, rules[i]->matching_tags))
+                    matches.push_back(i);
+            }
+            if(matches.empty()) return nullptr;
+            return rules[matches[(int)(ym_rng_nextf(&grammar->rn) * matches.size())]];
+        }
+        case animation_grammar:
         {
             auto matches = vector<int>();
             auto grammar = get_grammar(grammar_filename);
@@ -176,6 +207,22 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
             }
             break;
         }
+        case animation_grammar:
+        {
+            auto rule = (Rule*)nullptr;
+            auto start = (TimeSliceShape*)nullptr;
+            for(auto&& shape : active_shapes) {
+                rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->tag);
+                start = ((TimeSliceShape*)shape);
+                if(rule) break;
+            }
+            if(not rule) return res;
+            for(auto shape : active_shapes) {
+                if(((TimeSliceShape*)shape)->tag == start->tag) res.match.push_back(shape);
+                else res.remainder.push_back(shape);
+            }
+            break;
+        }
         default:
             printf("[matching_shapes] ERROR: Shouldn't have gotten here! Invalid grammar_type \n");
             break;
@@ -190,6 +237,12 @@ Rule* matching_rule(const ShapeGroup& matched) {
         {
             auto shape = matched[0];
             auto rule = tangle_match_rule(grammar, ((TangleShape*)shape)->tag);
+            return rule;
+        }
+        case animation_grammar:
+        {
+            auto shape = matched[0];
+            auto rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->tag);
             return rule;
         }
         default:
