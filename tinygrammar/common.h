@@ -16,6 +16,9 @@
 #include <set>
 #include <map>
 #include <functional>
+#include <iostream>
+#include <sstream>
+
 #include "tree.hh"
 #include "yocto_math.h"
 
@@ -55,7 +58,8 @@ enum {
     op_init,
     op_time_init,
     op_split,
-    op_place
+    op_place,
+    op_time_slice
 };
 
 enum {

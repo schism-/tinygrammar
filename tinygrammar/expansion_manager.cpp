@@ -115,11 +115,23 @@ void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule*
                     auto temp = ((TimeSliceShape*)s);
                     exp->timeline->duration = temp->slice->duration;
                     exp->timeline->timelines.push_back(new TimeManager::NodeTimeLine(temp->slice->duration, temp->slice));
+                    exp->applied_rule = matched_rule;
                 }
                 ((HistoryAnim*)h)->history.push_back(exp);
             }
             else{
                 auto exp = new ExpansionAnim();
+                auto old_exp = ((HistoryAnim*)h)->history.back();
+                
+                //TODO: THIS IS WRONG. OPERATORS SHOULDN'T OPERATE WITH TIMELINES, ONLY WITH SLICES
+                //      exp_manager should deal with all this stuff. CORRECT THIS!
+                
+                exp->tree = old_exp->tree;
+                exp->timeline = old_exp->timeline;
+                exp->terminal = false;
+                
+                exp->applied_rule = matched_rule;
+                
                 ((HistoryAnim*)h)->history.push_back(exp);
             }
             break;
@@ -197,7 +209,8 @@ bool expand(HistoryAnim* h) {
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
         printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
-        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
+        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters,
+                                                           grammar->rn, nullptr, h->history.back()->timeline);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
         return true;

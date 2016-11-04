@@ -78,6 +78,8 @@ Grammar* get_grammar(string filename){
                 rule->op = Operator(op_init, rule_json.get<String>("init_value"));
             else if (rule_json.get<String>("operator") == "time_init")
                 rule->op = Operator(op_time_init, rule_json.get<String>("init_value"));
+            else if (rule_json.get<String>("operator") == "time_slice")
+                rule->op = Operator(op_time_slice);
             else
                 rule->op = Operator(op_default, "default");
             
@@ -212,13 +214,14 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
             auto rule = (Rule*)nullptr;
             auto start = (TimeSliceShape*)nullptr;
             for(auto&& shape : active_shapes) {
-                rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->tag);
+                auto temp = (TimeSliceShape*)shape;
+                rule = tangle_match_rule(grammar, temp->slice->ts_tag);
                 start = ((TimeSliceShape*)shape);
                 if(rule) break;
             }
             if(not rule) return res;
             for(auto shape : active_shapes) {
-                if(((TimeSliceShape*)shape)->tag == start->tag) res.match.push_back(shape);
+                if(((TimeSliceShape*)shape)->slice->ts_tag == start->slice->ts_tag) res.match.push_back(shape);
                 else res.remainder.push_back(shape);
             }
             break;
@@ -242,7 +245,7 @@ Rule* matching_rule(const ShapeGroup& matched) {
         case animation_grammar:
         {
             auto shape = matched[0];
-            auto rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->tag);
+            auto rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->slice->ts_tag);
             return rule;
         }
         default:

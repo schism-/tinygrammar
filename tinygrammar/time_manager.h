@@ -55,17 +55,17 @@ namespace TimeManager {
     NodeTimeLine* FindTimeLine(TimeLine* t, TimeSlice* s);
     vector<TimeSlice*> GetAllSlices (TimeLine* t, NodeTimeLine* tl = nullptr);
     
-    void TimeSliceCut  (TimeLine* t, TimeSlice* slice, const vector<double>& cutPoints = {0.5, 0.5}, int new_tag = -1);
+    vector<TimeManager::TimeSlice*> TimeSliceCut  (TimeLine* t, TimeSlice* slice, rule_params cutPoints, rule_tags new_tags);
+    
+    void printTimeLine(TimeLine* t);
+
     void TimeLineSplit (TimeLine* t, NodeTimeLine* nodeTimeLine, int new_tag = -1, bool complete = false);
-    void TimeLineMerge (TimeLine* t, const vector<NodeTimeLine*>& nodeTimeLines);
 
-    void AnimateTimeLine(TimeLine* t);
-
+    //void TimeLineMerge (TimeLine* t, const vector<NodeTimeLine*>& nodeTimeLines);
+    //void AnimateTimeLine(TimeLine* t);
 }
 
 struct TimeSliceShape : Shape {
-    // grammar
-    int                     tag = 0;    
     TimeManager::TimeSlice* slice;
     
     TimeSliceShape () {shape_type = time_shape;};

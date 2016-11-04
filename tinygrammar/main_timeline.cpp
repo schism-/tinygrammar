@@ -10,6 +10,8 @@
 #include "time_manager.h"
 #include "expansion_manager.h"
 
+
+
 int main(int argc, const char * argv[]) {
 //    auto bbox   = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
 //    auto am     = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
@@ -42,8 +44,11 @@ int main(int argc, const char * argv[]) {
     
     update_history(em, init_partition, init_step);
     
+    TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
+    
     while (expand(em)){
         printf("Expanding... \n");
+        TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
     };
 
     

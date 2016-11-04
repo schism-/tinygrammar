@@ -87,10 +87,23 @@ ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, string ini
     
     for (auto i = 0; i < (int)parameters[1]; i++){
         auto slice = new TimeSliceShape(new TimeManager::TimeSlice(parameters[0], tags[0]));
-        slice->tag = tags[0];
         children.push_back(slice);
     }
     
     return children;
 }
+
+ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& rn, TimeManager::TimeLine* timeline){
+    auto children = ShapeGroup();
+    
+    for(auto&& shape : shapes) {
+        auto temp = (TimeSliceShape*)shape;
+        auto new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
+        for (auto&& ns : new_slices){
+            children.push_back(new TimeSliceShape(ns));
+        }
+    }
+    return children;
+}
+
 

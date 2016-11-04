@@ -30,26 +30,80 @@ vector<TimeManager::TimeSlice*> TimeManager::GetAllSlices (TimeManager::TimeLine
     return res;
 }
 
-void TimeManager::TimeSliceCut (TimeManager::TimeLine* t, TimeManager::TimeSlice* slice,
-                                const vector<double>& cutPoints, int new_tag){
+vector<TimeManager::TimeSlice*> TimeManager::TimeSliceCut (TimeManager::TimeLine* t, TimeManager::TimeSlice* slice, rule_params cutPoints, rule_tags new_tag){
     auto ntm = TimeManager::FindTimeLine(t, slice);
     if (ntm != nullptr){
         auto new_slices = vector<TimeManager::TimeSlice*>();
-        for (auto&& cp : cutPoints) {
-            auto temp = new TimeManager::TimeSlice(slice->duration * cp);
+        for (auto i = 0; i < PARAM_SIZE; i++) {
+            if (cutPoints[i] == 0.0) break;
+            auto temp = new TimeManager::TimeSlice(slice->duration * cutPoints[i]);
             temp->animation = copy(slice->animation);
-            if (new_tag != -1) temp->ts_tag = new_tag;
+            if (new_tag[i] != -1) temp->ts_tag = new_tag[i];
             else temp->ts_tag = slice->ts_tag;
             new_slices.push_back(temp);
         }
         auto pos = find(ntm->slices.begin(), ntm->slices.end(), slice);
         ntm->slices.erase(pos);
         ntm->slices.insert(pos, new_slices.begin(), new_slices.end());
+        
+        return new_slices;
     }
     else {
         printf("[ERROR] TimeSliceCut : Trying to cut a slice from a NodeTimeLine that doesn't exist.\n");
+        return vector<TimeManager::TimeSlice*>();
     }
 }
+
+void TimeManager::printTimeLine(TimeManager::TimeLine* t){
+    int scale = 80;
+    std::cout << std::endl;
+    std::cout << " ~~~ Printing Timeline ~~~ " << std::endl;
+    auto k = 0;
+    for (auto&& ntl : t->timelines){
+        std::cout << (k++) << " |";
+        auto ntl_duration = ntl->duration;
+        char slice_char = '-';
+        for (auto&& s : ntl->slices){
+            int num = (int)(scale * (s->duration / ntl_duration));
+            std::cout << "{";
+            std::cout << std::string(num, slice_char);
+            std::cout << "}";
+        }
+        std::cout << "|" << std::endl;
+        
+        std::cout << "  |";
+        slice_char = ' ';
+        for (auto&& s : ntl->slices){
+            int num = (int)(scale * (s->duration / ntl_duration));
+            stringstream ss;
+            ss << std::to_string(s->ts_tag) << " (" << s->duration << ")";
+            int padding = num - (int)ss.str().length();
+            
+            if (padding > 0){
+                std::cout << "{" << std::string(padding / 2, slice_char);
+
+                std::cout << ss.str();
+                
+                if (padding % 2 == 0) std::cout << std::string(padding / 2, slice_char);
+                else std::cout << std::string(padding / 2 + 1, slice_char);
+            }
+            else {
+                padding = num - (int)(std::to_string(s->ts_tag).length());
+                std::cout << "{" << std::string(padding / 2, slice_char);
+                
+                std::cout << s->ts_tag;
+                
+                if (padding % 2 == 0) std::cout << std::string(padding / 2, slice_char);
+                else std::cout << std::string(padding / 2 + 1, slice_char);
+            }
+            
+            std::cout << "}";
+        }
+        std::cout << "|" << std::endl;
+    }
+    std::cout << std::endl;
+}
+
 
 void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTimeLine* nodeTimeLine,
                                  int new_tag, bool complete){
@@ -74,10 +128,10 @@ void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTime
     }
 }
 
-void TimeManager::TimeLineMerge (TimeManager::TimeLine* t, const vector<TimeManager::NodeTimeLine*>& nodeTimeLines){
-    
-}
-
-void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t){
-    // This won't be void in the end.
-}
+//void TimeManager::TimeLineMerge (TimeManager::TimeLine* t, const vector<TimeManager::NodeTimeLine*>& nodeTimeLines){
+//    
+//}
+//
+//void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t){
+//    // This won't be void in the end.
+//}

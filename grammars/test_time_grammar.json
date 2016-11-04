@@ -3,7 +3,7 @@
 	"seed" : 473, 
 	"rules" : [
 		{ 
-			"rule_name" : "rule_1",
+			"rule_name" : "init_1",
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
@@ -12,19 +12,38 @@
 		}, 
 
 		{ 	
-			"rule_name" : "rule_2",
+			"rule_name" : "rule_1",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["b"],
+			"produced_tags" : ["b", "c"],
 			"operator" : "time_slice",
 			"parameters" : [0.5, 0.5],
 			"init_value" : ""
 		},
+		
 		{ 	
-			"rule_name" : "rule_3",
-			"matching_tags" : ["b"],
-			"produced_tags" : ["c"],
+			"rule_name" : "rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "b"],
 			"operator" : "time_slice",
 			"parameters" : [0.25, 0.75],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "rule_3",
+			"matching_tags" : ["z"],
+			"produced_tags" : ["c", "c"],
+			"operator" : "time_slice",
+			"parameters" : [0.25, 0.75],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "rule_4",
+			"matching_tags" : ["b"],
+			"produced_tags" : ["d", "d", "d"],
+			"operator" : "time_slice",
+			"parameters" : [0.30, 0.30, 0.40],
 			"init_value" : ""
 		}, 
 	],
