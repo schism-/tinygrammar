@@ -59,7 +59,8 @@ enum {
     op_time_init,
     op_split,
     op_place,
-    op_time_slice
+    op_time_slice,
+    op_affine
 };
 
 enum {

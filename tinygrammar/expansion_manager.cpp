@@ -162,6 +162,16 @@ ShapeGroup to_slices(const vector<BaseExpansion*>& active_nodes){
     return res;
 }
 
+ShapeGroup to_animated_shapes(const vector<BaseExpansion*>& active_nodes){
+    auto res = ShapeGroup();
+    for (auto an : active_nodes){
+        for (auto&& l : ((ExpansionAnim*)an)->tree->leaves)
+            for (auto&& s : l->content->shapes)
+                res.push_back(s);
+    }
+    return res;
+}
+
 
 void expand_init(History* h) {
     auto grammar = get_grammar(grammar_filename);
@@ -216,10 +226,44 @@ bool expand(HistoryAnim* h) {
         return true;
     }
     else{
-        printf("[TIME] No more expansions available\n");
-        return false;
+        printf("[TIME]  No more expansions available\n");
+        printf("[SPACE] Finding expansions \n");
+        
+        // Now we can start doing the spatial expansions
+        grammar_step = matching_anim_shape(grammar, to_animated_shapes(front));
+        
+        if (grammar_step.second != nullptr){
+            //if an appliable rule has been found, apply it and retrieve results
+            printf("[SPACE] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
+            
+            // Got the shapes, now retrieve the Nodes in the Tree
+            auto ntls = vector<TimeManager::NodeTimeLine*>();
+            for (auto&& s : grammar_step.first.match){
+                ntls.push_back(TimeManager::FindTimeLine(h->history.back()->timeline, CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)s)));
+            }
+            // Choose slices where to apply the animation
+            //      The Rule should tell me that
+            auto shapes = ShapeGroup();
+            for (auto&& ntl : ntls){
+                for (auto&& s : ntl->slices)
+                    if (grammar_step.second->op.init_value == s->ts_tag)
+                        shapes.push_back(new TimeSliceShape(s));
+            }
+            // Note: maybe create upfront a NodeTimeLine per Node
+            
+            // Apply the animation to the selected slices
+            grammar_step.first.added = grammar_step.second->op(shapes, grammar_step.second->produced_tags, grammar_step.second->parameters,
+                                                               grammar->rn, nullptr, h->history.back()->timeline);
+            //update model
+            update_history(h, grammar_step.first, grammar_step.second);
+            return true;
+        }
+        else{
+            printf("[SPACE]  No more expansions available\n");
+            return false;
+        }
     }
 
-    return true;
+    return false;
 }
 

@@ -11,29 +11,67 @@
 #include "expansion_manager.h"
 
 
+CSGTree::Tree* initialize_tree(Grammar* g) {
+    auto tree = CSGTree::InitTree();
+    auto s5_1 = make_polyline_rect({350.0, -325.0}, {400.0, -275.0}, 1.0);
+    auto s5_2 = make_polyline_rect({350.0, -225.0}, {400.0, -175.0}, 1.0);
+    auto s5_3 = make_polyline_rect({350.0, -125.0}, {400.0, -75.0}, 1.0);
+    auto s5_4 = make_polyline_rect({350.0, -25.0},  {400.0, 25.0}, 1.0);
+    auto s5_5 = make_polyline_rect({350.0, 75.0},   {400.0, 125.0}, 1.0);
+    auto s5_6 = make_polyline_rect({350.0, 175.0},  {400.0, 225.0}, 1.0);
+    auto s5_7 = make_polyline_rect({350.0, 275.0},  {400.0, 325.0}, 1.0);
+    auto s1   = make_polyline_rect({-100.0, -100.0}, {100.0, 100.0}, resolution);
+    auto s2   = make_polyline_rect({0.0, 0.0}, {200.0, 200.0}, resolution);
+    auto s3   = make_polyline_rect({-300.0, -300.0}, {300.0, 300.0}, resolution);
+    auto s4   = make_polyline_segment({-500.1, -200.6}, {200.3, 400.7}, resolution);
+    
+    auto l_s_tag = add_tags(g, {"l_s"});
+    auto m_s_tag = add_tags(g, {"m_s"});
+    auto b_s_tag = add_tags(g, {"b_s"});
+    auto seg_tag = add_tags(g, {"seg"});
+    
+    // Medium squares
+    auto n1   = CSGTree::AddShape(tree, new AnimatedShape({s1}, m_s_tag[0], 0));
+    auto n2   = CSGTree::AddShape(tree, new AnimatedShape({s2}, m_s_tag[0], 1));
+    
+    // Big square
+    auto n3   = CSGTree::AddShape(tree, new AnimatedShape({s3}, b_s_tag[0], 0));
+    
+    // Segment
+    auto n4   = CSGTree::AddShape(tree, new AnimatedShape({s4}, seg_tag[0], 0));
+    
+    // Little squares
+    auto n5_1 = CSGTree::AddShape(tree, new AnimatedShape({s5_1}, l_s_tag[0], 0));
+    auto n5_2 = CSGTree::AddShape(tree, new AnimatedShape({s5_2}, l_s_tag[0], 1));
+    auto n5_3 = CSGTree::AddShape(tree, new AnimatedShape({s5_3}, l_s_tag[0], 2));
+    auto n5_4 = CSGTree::AddShape(tree, new AnimatedShape({s5_4}, l_s_tag[0], 3));
+    auto n5_5 = CSGTree::AddShape(tree, new AnimatedShape({s5_5}, l_s_tag[0], 4));
+    auto n5_6 = CSGTree::AddShape(tree, new AnimatedShape({s5_6}, l_s_tag[0], 5));
+    auto n5_7 = CSGTree::AddShape(tree, new AnimatedShape({s5_7}, l_s_tag[0], 6));
+    
+    // Tree creation
+    auto op1    = CSGTree::Union(tree, n1, n2);
+    auto op2    = CSGTree::Union(tree, op1, n4);
+    auto op3    = CSGTree::Union(tree, n5_1,  n5_2);
+    auto op3_1  = CSGTree::Union(tree, op3,   n5_3);
+    auto op3_2  = CSGTree::Union(tree, op3_1, n5_4);
+    auto op3_3  = CSGTree::Union(tree, op3_2, n5_5);
+    auto op3_4  = CSGTree::Union(tree, op3_3, n5_6);
+    auto op3_5  = CSGTree::Union(tree, op3_4, n5_7);
+    auto op3_6  = CSGTree::Union(tree, op3_5, n3);
+    auto op6    = CSGTree::PlaceInShape(tree, op3_6, op2);
+    
+    return tree;
+}
+
 
 int main(int argc, const char * argv[]) {
-//    auto bbox   = ym_range2r({-2000.0, -2000.0}, {2000.0, 2000.0});
-//    auto am     = AnimatorMatrix(bbox, {{0.95, 0.0},{0.0, 0.95}, {0.0, 0.0}});
-//    auto akf    = AnimatorKeyframes({am}, vector<int>{1});
-//    auto anim   = Animator(anim_single, akf);
-//    
-//    auto tl = new TimeManager::TimeLine(10.0, akf);
-//    
-//    auto slices = TimeManager::GetAllSlices(tl);
-//    
-//    TimeManager::TimeSliceCut(tl, slices[0]);
-//    slices = TimeManager::GetAllSlices(tl);
-//    
-//    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
-//    slices = TimeManager::GetAllSlices(tl);
-//    
-//    TimeManager::TimeSliceCut(tl, (TimeManager::GetAllSlices(tl))[0]);
-//    slices = TimeManager::GetAllSlices(tl);
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     
     auto grammar = get_grammar(grammar_filename);
+    
+    auto tree = initialize_tree(grammar);
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);

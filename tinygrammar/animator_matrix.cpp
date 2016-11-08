@@ -64,8 +64,6 @@ polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly){
     return new_shape;
 }
 
-
-
 AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
     auto key_idx = std::distance(akf.keyframes_idx.begin(), std::find(akf.keyframes_idx.begin(), akf.keyframes_idx.end(), keyframe));
     return akf.keyframes.at(key_idx);

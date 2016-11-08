@@ -91,6 +91,7 @@ struct AnimatedShape : Shape {
     
     AnimatedShape() {shape_type = animated_shape;};
     AnimatedShape(polygon2r poly) : poly(poly) {shape_type = animated_shape;};
+    AnimatedShape(polygon2r poly, int tag, int tid) : poly(poly), tag(tag), tid(tid) {shape_type = animated_shape;};
 };
 
 #endif /* shape_h */

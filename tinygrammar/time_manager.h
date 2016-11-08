@@ -53,6 +53,7 @@ namespace TimeManager {
     };
     
     NodeTimeLine* FindTimeLine(TimeLine* t, TimeSlice* s);
+    NodeTimeLine* FindTimeLine (TimeLine* t, CSGTree::Node* n);
     vector<TimeSlice*> GetAllSlices (TimeLine* t, NodeTimeLine* tl = nullptr);
     
     vector<TimeManager::TimeSlice*> TimeSliceCut  (TimeLine* t, TimeSlice* slice, rule_params cutPoints, rule_tags new_tags);

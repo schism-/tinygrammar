@@ -36,8 +36,9 @@ Rule* matching_init();
 
 pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
 pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes);
+pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes);
 
-PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes);
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false);
 Rule* matching_rule(const ShapeGroup& matched);
 
 #endif /* grammar_core_h */

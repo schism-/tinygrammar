@@ -4,6 +4,15 @@ CSGTree::Tree* CSGTree::InitTree() {
     return new Tree();
 }
 
+CSGTree::LeafNode* CSGTree::FindNode(CSGTree::Tree* tree, AnimatedShape* shape){
+    for (auto&& l : tree->leaves){
+        if (find(l->content->shapes.begin(), l->content->shapes.end(), shape) != l->content->shapes.end()){
+            return l;
+        }
+    }
+    return nullptr;
+}
+
 void CSGTree::AddNode(CSGTree::Tree* tree, CSGTree::LeafNode* node){
     tree->leaves.push_back(node);
     if (tree->root  == nullptr) { tree->root = node; }

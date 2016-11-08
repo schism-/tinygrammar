@@ -70,18 +70,21 @@ Grammar* get_grammar(string filename){
             for (auto j = 0; j < pt_arr.size(); j++) json_ptags.push_back(pt_arr.get<String>(j));
             rule->produced_tags = add_tags(res, json_ptags);
             
+            auto init_value = rule_json.get<String>("init_value");
             if (rule_json.get<String>("operator") == "split")
-                rule->op = Operator(op_split);
+                rule->op = Operator(op_split, init_value[0]);
             else if (rule_json.get<String>("operator") == "place")
-                rule->op = Operator(op_place);
+                rule->op = Operator(op_place, init_value[0]);
             else if (rule_json.get<String>("operator") == "init")
-                rule->op = Operator(op_init, rule_json.get<String>("init_value"));
+                rule->op = Operator(op_init, init_value[0]);
             else if (rule_json.get<String>("operator") == "time_init")
-                rule->op = Operator(op_time_init, rule_json.get<String>("init_value"));
+                rule->op = Operator(op_time_init, init_value[0]);
             else if (rule_json.get<String>("operator") == "time_slice")
-                rule->op = Operator(op_time_slice);
+                rule->op = Operator(op_time_slice, init_value[0]);
+            else if (rule_json.get<String>("operator") == "affine")
+                rule->op = Operator(op_affine, init_value[0]);
             else
-                rule->op = Operator(op_default, "default");
+                rule->op = Operator(op_default, -1);
             
             auto json_params = rule_params();
             auto p_arr = rule_json.get<Array>("parameters");
@@ -149,6 +152,20 @@ pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& ac
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
+pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes){
+    //matching of the shapes
+    auto matched_shapes = matching_shapes(active_shapes);
+    //matching of the rule
+    if (not matched_shapes.match.empty()){
+        auto rule_to_apply = matching_rule(matched_shapes.match);
+        if (rule_to_apply != nullptr){
+            return make_pair(matched_shapes, rule_to_apply);
+        }
+    }
+    printf("[SPACE] Didn't find any rule for matching\n");
+    return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
+}
+
 
 bool tag_in_rule(int tag, const rule_tags& tags){
     for (auto i = 0; i < TAG_SIZE; i++){
@@ -189,7 +206,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag){
     return nullptr;
 }
 
-PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_shape){
     auto res = PartitionShapeGroup();
     auto grammar = get_grammar(grammar_filename);
     switch (ACTIVE_GRAMMAR) {
@@ -211,18 +228,35 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes){
         }
         case animation_grammar:
         {
-            auto rule = (Rule*)nullptr;
-            auto start = (TimeSliceShape*)nullptr;
-            for(auto&& shape : active_shapes) {
-                auto temp = (TimeSliceShape*)shape;
-                rule = tangle_match_rule(grammar, temp->slice->ts_tag);
-                start = ((TimeSliceShape*)shape);
-                if(rule) break;
+            if (!anim_shape){
+                auto rule = (Rule*)nullptr;
+                auto start = (TimeSliceShape*)nullptr;
+                for(auto&& shape : active_shapes) {
+                    auto temp = (TimeSliceShape*)shape;
+                    rule = tangle_match_rule(grammar, temp->slice->ts_tag);
+                    start = ((TimeSliceShape*)shape);
+                    if(rule) break;
+                }
+                if(not rule) return res;
+                for(auto shape : active_shapes) {
+                    if(((TimeSliceShape*)shape)->slice->ts_tag == start->slice->ts_tag) res.match.push_back(shape);
+                    else res.remainder.push_back(shape);
+                }
             }
-            if(not rule) return res;
-            for(auto shape : active_shapes) {
-                if(((TimeSliceShape*)shape)->slice->ts_tag == start->slice->ts_tag) res.match.push_back(shape);
-                else res.remainder.push_back(shape);
+            else{
+                auto rule = (Rule*)nullptr;
+                auto start = (AnimatedShape*)nullptr;
+                for(auto&& shape : active_shapes) {
+                    auto temp = (AnimatedShape*)shape;
+                    rule = tangle_match_rule(grammar, temp->tag);
+                    start = ((AnimatedShape*)shape);
+                    if(rule) break;
+                }
+                if(not rule) return res;
+                for(auto shape : active_shapes) {
+                    if(((AnimatedShape*)shape)->tag == start->tag) res.match.push_back(shape);
+                    else res.remainder.push_back(shape);
+                }
             }
             break;
         }

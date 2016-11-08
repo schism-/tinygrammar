@@ -17,6 +17,8 @@ namespace CSGTree
     {
         Node* parent;
         NodeContent* content;
+        int node_tag = -1;
+        
         Node() { }
         Node(NodeContent* c) : content(c) { }
         Node(vector<AnimatedShape*> shapes) { content = new NodeContent(shapes); }
@@ -64,6 +66,8 @@ namespace CSGTree
     
     void AddNode(Tree* tree, LeafNode* node);
     void AddNode(Tree* tree, OpNode* node);
+    
+    LeafNode* FindNode(Tree* tree, AnimatedShape* shape);
     
     OpNode* BuildResult(const vector<polygon2r>& shapes, Node* a, Node* b);
 }

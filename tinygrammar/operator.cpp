@@ -61,7 +61,7 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_
     return children;
 }
 
-ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_value, rng& rn){
+ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn){
     auto children = ShapeGroup();
     if (parameters[0] == 0){
         // built-in shape
@@ -82,7 +82,7 @@ ShapeGroup init_operator(rule_tags tags, rule_params parameters, string init_val
 // |       TIME OPERATORS       |
 // |============================|
 
-ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, string init_value, rng& rn){
+ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn){
     auto children = ShapeGroup();
     
     for (auto i = 0; i < (int)parameters[1]; i++){
@@ -98,6 +98,22 @@ ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_pa
     
     for(auto&& shape : shapes) {
         auto temp = (TimeSliceShape*)shape;
+        auto new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
+        for (auto&& ns : new_slices){
+            children.push_back(new TimeSliceShape(ns));
+        }
+    }
+    return children;
+}
+
+ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+    auto children = ShapeGroup();
+    
+    for(auto&& shape : shapes) {
+        auto temp = (TimeSliceShape*)shape;
+        auto am  = AnimatorMatrix(temp->slice->, {{1.0, 0.0},{0.0, 1.0}, {1.0, -1.0}});
+        auto anim_new = Animator(anim_single, {am, temp->slice->duration});
+
         auto new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
         for (auto&& ns : new_slices){
             children.push_back(new TimeSliceShape(ns));

@@ -16,6 +16,14 @@ TimeManager::NodeTimeLine* TimeManager::FindTimeLine (TimeManager::TimeLine* t, 
     return nullptr;
 }
 
+TimeManager::NodeTimeLine* TimeManager::FindTimeLine (TimeManager::TimeLine* t, CSGTree::Node* n){
+    for (auto&& ntm : t->timelines){
+        if (ntm->node == n) return ntm;
+    }
+    printf("[ERROR] FindTimeLine w/ node: NodeTimeLine not found \n");
+    return nullptr;
+}
+
 vector<TimeManager::TimeSlice*> TimeManager::GetAllSlices (TimeManager::TimeLine* t, TimeManager::NodeTimeLine* ntl){
     auto res = vector<TimeManager::TimeSlice*>();
     if (ntl == nullptr){
