@@ -69,6 +69,13 @@ AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
     return akf.keyframes.at(key_idx);
 }
 
+AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, double delta){
+    // For now it's just an hack for constant matrices.
+    // If more keyframes are present, we should interpolate
+    // to get the final matrix.
+    return akf.keyframes.at(0);
+}
+
 AnimatorKeyframes copy(const AnimatorKeyframes& akf){
     auto res = AnimatorKeyframes();
     res.keyframes = vector<AnimatorMatrix>();

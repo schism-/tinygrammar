@@ -13,6 +13,7 @@
 #include "csg_tree.h"
 #include "animator_matrix.h"
 
+
 namespace TimeManager {
     
     struct TimeSlice{
@@ -30,7 +31,7 @@ namespace TimeManager {
         vector<TimeSlice*> slices;
         CSGTree::Node* node;
         
-        NodeTimeLine (double d) : duration(d), slices({new TimeSlice(d)}){}
+        NodeTimeLine (double d) : duration(d) {slices = vector<TimeSlice*>();}
         NodeTimeLine (double d, TimeSlice* ts) : duration(d), slices({ts}){}
         NodeTimeLine (double d, AnimatorKeyframes akf) : duration(d), slices({new TimeSlice(d, akf)}){}
         
@@ -63,7 +64,9 @@ namespace TimeManager {
     void TimeLineSplit (TimeLine* t, NodeTimeLine* nodeTimeLine, int new_tag = -1, bool complete = false);
 
     //void TimeLineMerge (TimeLine* t, const vector<NodeTimeLine*>& nodeTimeLines);
-    //void AnimateTimeLine(TimeLine* t);
+    
+    void AnimateTimeLine(TimeLine* t, CSGTree::Tree* tree, double current_time);
+    void AnimateNodeTimeLine(NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time);
 }
 
 struct TimeSliceShape : Shape {

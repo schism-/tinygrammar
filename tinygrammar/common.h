@@ -18,6 +18,7 @@
 #include <functional>
 #include <iostream>
 #include <sstream>
+#include <random>
 
 #include "tree.hh"
 #include "yocto_math.h"
@@ -30,7 +31,7 @@ using namespace std;
 #define ACTIVE_GRAMMAR 2
 
 static constexpr double resolution = 2;
-static constexpr double matrix_resolution = 20;
+static constexpr double matrix_resolution = 10;
 static constexpr int matrix_num = (int)(matrix_resolution * matrix_resolution);
 
 enum {
@@ -60,7 +61,9 @@ enum {
     op_split,
     op_place,
     op_time_slice,
-    op_affine
+    op_affine,
+    op_affine_rot,
+    op_move_towards
 };
 
 enum {

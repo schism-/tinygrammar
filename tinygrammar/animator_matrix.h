@@ -63,16 +63,20 @@ struct AnimatorKeyframes{
     
     vector<AnimatorMatrix> keyframes;
     vector<int> keyframes_idx;
+    double offset;
+    int anim_type;
     
-    AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<int>& kf_i) : keyframes(kf), keyframes_idx(kf_i) {}
+    AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<int>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
     
-    AnimatorKeyframes (const AnimatorMatrix kf, int kf_num) {
+    AnimatorKeyframes (const AnimatorMatrix kf, int kf_num, int a_t, double off = 0.0) {
         keyframes = vector<AnimatorMatrix>();
         keyframes_idx = vector<int>();
         for (auto i = 0 ; i < kf_num; i++) {
             keyframes.push_back(kf);
             keyframes_idx.push_back(i);
         }
+        offset = off;
+        anim_type = a_t;
     }
     
     AnimatorKeyframes(){}
@@ -82,6 +86,7 @@ struct AnimatorKeyframes{
 };
 
 AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe);
+AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, double delta);
 AnimatorKeyframes copy(const AnimatorKeyframes& akf);
 
 #endif /* animator_matrix_h */

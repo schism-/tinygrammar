@@ -141,19 +141,18 @@ CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CS
     return res_node;
 }
 
+//void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double delta, bool update){
+//    if (update){
+//        auto new_shapes = anim(a->content->shapes, delta);
+//        a->content = new NodeContent(new_shapes);
+//    }
+//    
+//    UpdateContent(tree, a);
+//    
+//    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
+//}
 
-void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double delta, bool update){
-    if (update){
-        auto new_shapes = anim(a->content->shapes, delta);
-        a->content = new NodeContent(new_shapes);
-    }
-    
-    UpdateContent(tree, a);
-    
-    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
-}
-
-void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, int frame, bool update){
+void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double frame, bool update){
     if (update){
         auto new_shapes = anim(a->content->shapes, frame);
         a->content = new NodeContent(new_shapes);
@@ -161,7 +160,7 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
     
     UpdateContent(tree, a);
     
-    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, frame, false);
+    //for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, frame, false);
 }
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as, Animator anim, int frame, bool update){
@@ -176,42 +175,42 @@ void CSGTree::UpdateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
         switch (cur_node->op_type) {
             case union_op:
             {
-                printf("Updating union \n");
+                //printf("Updating union \n");
                 auto temp = CSGTree::Union(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
             case intersection_op:
             {
-                printf("Updating intersection \n");
+                //printf("Updating intersection \n");
                 auto temp = CSGTree::Intersection(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
             case difference_op:
             {
-                printf("Updating difference \n");
+                //printf("Updating difference \n");
                 auto temp = CSGTree::Difference(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
             case xor_op:
             {
-                printf("Updating xor \n");
+                //printf("Updating xor \n");
                 auto temp = CSGTree::XOR(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
             case sum_op:
             {
-                printf("Updating sum \n");
+                //printf("Updating sum \n");
                 auto temp = CSGTree::Sum(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;
             }
             case place_in_op:
             {
-                printf("Updating place_in \n");
+                //printf("Updating place_in \n");
                 auto temp = CSGTree::PlaceInShape(tree, cur_node->child_left, cur_node->child_right, false);
                 cur_node->content = temp->content;
                 break;

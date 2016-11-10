@@ -82,12 +82,23 @@ ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value,
 // |       TIME OPERATORS       |
 // |============================|
 
-ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn){
+ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn, CSGTree::Tree* tree){
     auto children = ShapeGroup();
     
-    for (auto i = 0; i < (int)parameters[1]; i++){
-        auto slice = new TimeSliceShape(new TimeManager::TimeSlice(parameters[0], tags[0]));
-        children.push_back(slice);
+    if (tree == nullptr) {
+        for (auto i = 0; i < (int)parameters[1]; i++){
+            auto slice = new TimeSliceShape(new TimeManager::TimeSlice(parameters[0] / parameters[1], tags[0]));
+            children.push_back(slice);
+        }
+    }
+    else {
+        for (auto&& node : tree->leaves){
+            for (auto i = 0; i < (int)parameters[1]; i++){
+                auto slice = new TimeSliceShape(new TimeManager::TimeSlice(parameters[0] / parameters[1], tags[0]));
+                children.push_back(slice);
+            }
+            children.push_back(nullptr);
+        }
     }
     
     return children;
@@ -109,15 +120,46 @@ ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_pa
 ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
     auto children = ShapeGroup();
     
-    for(auto&& shape : shapes) {
-        auto temp = (TimeSliceShape*)shape;
-        auto am  = AnimatorMatrix(temp->slice->, {{1.0, 0.0},{0.0, 1.0}, {1.0, -1.0}});
-        auto anim_new = Animator(anim_single, {am, temp->slice->duration});
-
-        auto new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
-        for (auto&& ns : new_slices){
-            children.push_back(new TimeSliceShape(ns));
+    int animator_type;
+    ym_range2r bbox;
+    
+    auto data = vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>>();
+    for (auto&& s : shapes){
+        auto temp = (TimeSliceShape*)s;
+        data.push_back(make_pair(temp, TimeManager::FindTimeLine(timeline, temp->slice)));
+    }
+    
+    if (parameters[0] == 1.0) {
+        animator_type = anim_single;
+    }
+    else {
+        animator_type = anim_group;
+    }
+    
+    auto anim_shapes = vector<AnimatedShape*>();
+    for (auto&& ntl : data) anim_shapes.insert(anim_shapes.end(), ntl.second->node->content->shapes.begin(), ntl.second->node->content->shapes.end());
+    bbox = bounds_polygons(make_vector(anim_shapes, [&](AnimatedShape* as){return as->poly;}));
+    
+    bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
+    
+    auto off_count = 1;
+    for(auto&& d : data) {
+        if (animator_type == anim_single){
+//            auto am  = AnimatorMatrix(bounds_polygons(make_vector(d.second->node->content->shapes, [&](AnimatedShape* as){return as->poly;})),
+//                                      {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
+            auto am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
+            auto akf = AnimatorKeyframes(am, 1, anim_single, parameters[7] * off_count);
+            d.first->slice->animation = akf;
+            d.first->slice->ts_tag = tags[0];
         }
+        else {
+            auto am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
+            auto akf = AnimatorKeyframes(am, 1, anim_group, parameters[7] * off_count);
+            d.first->slice->animation = akf;
+            d.first->slice->ts_tag = tags[0];
+        }
+        off_count++;
+        children.push_back(d.first);
     }
     return children;
 }

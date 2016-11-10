@@ -15,10 +15,12 @@
 ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
 ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value, rng& sampler);
 
-ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn);
+ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn, CSGTree::Tree* tree = nullptr);
 ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
 ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+
+ShapeGroup rotation_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
 struct Operator{
     int operator_name;
@@ -30,7 +32,7 @@ struct Operator{
     ~Operator(){}
 
     ShapeGroup operator() (const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler,
-                           ShapeGroup* annotations = nullptr, TimeManager::TimeLine* timeline = nullptr) {
+                           ShapeGroup* annotations = nullptr, TimeManager::TimeLine* timeline = nullptr, CSGTree::Tree* tree = nullptr) {
         switch(operator_name){
             case op_split:
                 return tangle_split_operator(shapes, tags, parameters, sampler, annotations);
@@ -39,7 +41,7 @@ struct Operator{
                 return init_operator(tags, parameters, init_value, sampler);
                 break;
             case op_time_init:
-                return time_init_operator(tags, parameters, init_value, sampler);
+                return time_init_operator(tags, parameters, init_value, sampler, tree);
                 break;
             case op_time_slice:
                 return time_slice_operator(shapes, tags, parameters, sampler, timeline);
@@ -47,6 +49,18 @@ struct Operator{
             case op_affine:
                 return affine_operator(shapes, tags, parameters, sampler, timeline);
                 break;
+            case op_affine_rot:
+            {
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                auto angle = parameters[1] * ym_pi / 180.0;
+                new_param[1] = cos(angle);  new_param[2] = -1.0 * sin(angle);
+                new_param[3] = sin(angle);  new_param[4] = cos(angle);
+                new_param[5] = 0.0;                 new_param[6] = 0.0;
+                new_param[7] = parameters[2];
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
             default:
                 printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid op type\n");
                 break;

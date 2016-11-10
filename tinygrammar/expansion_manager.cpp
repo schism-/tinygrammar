@@ -86,7 +86,7 @@ BaseExpansion* get_expansion(History* h, Shape* sel_shape){
     return nullptr;
 }
 
-void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule* matched_rule){
+void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule* matched_rule, CSGTree::Tree* tree){
     switch(h->history_type){
         case linear_history:
         {
@@ -111,12 +111,26 @@ void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule*
             if(matched_shapes.match.empty()){
                 // We're dealing with an init
                 auto exp = new ExpansionAnim();
+                auto k = 0;
+                
+                exp->timeline->timelines.push_back(new TimeManager::NodeTimeLine(matched_rule->parameters[0]));
+                exp->timeline->timelines.back()->node = tree->leaves[k];
+                k++;
+                
+                exp->timeline->duration = matched_rule->parameters[0];
+                exp->applied_rule = matched_rule;
+                
                 for (auto&& s : matched_shapes.added){
+                    if (s == nullptr){
+                        exp->timeline->timelines.push_back(new TimeManager::NodeTimeLine(matched_rule->parameters[0]));
+                        exp->timeline->timelines.back()->node = tree->leaves[k];
+                        k++;
+                        continue;
+                    }
                     auto temp = ((TimeSliceShape*)s);
-                    exp->timeline->duration = temp->slice->duration;
-                    exp->timeline->timelines.push_back(new TimeManager::NodeTimeLine(temp->slice->duration, temp->slice));
-                    exp->applied_rule = matched_rule;
+                    exp->timeline->timelines.back()->slices.push_back(temp->slice);
                 }
+                exp->timeline->timelines.pop_back();
                 ((HistoryAnim*)h)->history.push_back(exp);
             }
             else{
@@ -165,7 +179,8 @@ ShapeGroup to_slices(const vector<BaseExpansion*>& active_nodes){
 ShapeGroup to_animated_shapes(const vector<BaseExpansion*>& active_nodes){
     auto res = ShapeGroup();
     for (auto an : active_nodes){
-        for (auto&& l : ((ExpansionAnim*)an)->tree->leaves)
+        auto temp = ((ExpansionAnim*)an);
+        for (auto&& l : temp->tree->leaves)
             for (auto&& s : l->content->shapes)
                 res.push_back(s);
     }
@@ -230,7 +245,14 @@ bool expand(HistoryAnim* h) {
         printf("[SPACE] Finding expansions \n");
         
         // Now we can start doing the spatial expansions
-        grammar_step = matching_anim_shape(grammar, to_animated_shapes(front));
+        auto anim_shapes = to_animated_shapes(front);
+        
+        // Mapping the shapes to their respective slices
+        auto shapes_map = map<AnimatedShape*, TimeManager::NodeTimeLine*>();
+        for (auto && as : anim_shapes){
+            shapes_map[(AnimatedShape*)as] = TimeManager::FindTimeLine(h->history.back()->timeline, CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)as));
+        }
+        grammar_step = matching_anim_shape(grammar, anim_shapes, shapes_map);
         
         if (grammar_step.second != nullptr){
             //if an appliable rule has been found, apply it and retrieve results
@@ -239,7 +261,7 @@ bool expand(HistoryAnim* h) {
             // Got the shapes, now retrieve the Nodes in the Tree
             auto ntls = vector<TimeManager::NodeTimeLine*>();
             for (auto&& s : grammar_step.first.match){
-                ntls.push_back(TimeManager::FindTimeLine(h->history.back()->timeline, CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)s)));
+                ntls.push_back(shapes_map[(AnimatedShape*)s]);
             }
             // Choose slices where to apply the animation
             //      The Rule should tell me that

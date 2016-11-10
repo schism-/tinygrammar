@@ -102,6 +102,6 @@ bool expand(HistoryAnim* history);
 
 BaseExpansion* get_expansion(History* history, Shape* sel_shape);
 
-void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule* matched_rule);
+void update_history(History* h, const PartitionShapeGroup& matched_shapes, Rule* matched_rule, CSGTree::Tree* tree = nullptr);
 
 #endif /* expansion_manager_h */

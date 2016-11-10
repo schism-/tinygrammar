@@ -26,19 +26,24 @@ struct Grammar {
     ~Grammar() {};
 };
 
-Grammar* get_grammar(string filename);
-vector<Rule*> get_rules(Grammar* g);
-
 int add_rule_to_mapping(Grammar* grammar, string rulename);
 rule_tags add_tags(Grammar* grammar, vector<string> tags);
 
+Grammar* get_grammar(string filename);
+vector<Rule*> get_inits(Grammar* g);
+vector<Rule*> get_rules(Grammar* g);
 Rule* matching_init();
 
 pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
 pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes);
-pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes);
+pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes, const map<AnimatedShape*, TimeManager::NodeTimeLine*>& shape_map = {});
 
-PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false);
-Rule* matching_rule(const ShapeGroup& matched);
+bool tag_in_rule(int tag, const rule_tags& tags);
+Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags = {});
+
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const map<AnimatedShape*, TimeManager::NodeTimeLine*>& shape_map = {});
+Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const map<AnimatedShape*, TimeManager::NodeTimeLine*>& shape_map = {});
+
+
 
 #endif /* grammar_core_h */

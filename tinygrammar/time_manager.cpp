@@ -136,10 +136,36 @@ void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTime
     }
 }
 
-//void TimeManager::TimeLineMerge (TimeManager::TimeLine* t, const vector<TimeManager::NodeTimeLine*>& nodeTimeLines){
-//    
-//}
-//
-//void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t){
-//    // This won't be void in the end.
-//}
+void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree, double current_time){
+    //For each NodeTimeLine, update its content.
+    for (auto&& ntl : t->timelines){
+        TimeManager::AnimateNodeTimeLine(ntl, tree, current_time);
+    }
+}
+
+void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time){
+    //Find the right active slice for the current_time
+
+    auto incr = 0.0;
+    auto selected_slice = (TimeManager::TimeSlice*) nullptr;
+    auto slice_current_time = 0.0;
+    
+    for (auto&& sl : ntl->slices){
+        incr += sl->duration;
+        if (current_time <= incr) {
+            selected_slice = sl;
+            slice_current_time = current_time + sl->duration - incr;
+            break;
+        }
+    }
+    
+    if (selected_slice == nullptr) {
+        printf("[Animate NTL] ERROR : current time out of range. \n");
+        return;
+    }
+    
+    //Update the node linked to the ntl with the animation associated to the active slice
+    
+    CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, Animator(selected_slice->animation.anim_type, selected_slice->animation), slice_current_time);
+    
+}

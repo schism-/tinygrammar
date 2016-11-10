@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
+#include <iomanip>
 #include "time_manager.h"
 #include "expansion_manager.h"
-
+#include "svg.h"
 
 CSGTree::Tree* initialize_tree(Grammar* g) {
     auto tree = CSGTree::InitTree();
@@ -68,19 +69,19 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
 int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
-    
     auto grammar = get_grammar(grammar_filename);
-    
     auto tree = initialize_tree(grammar);
     
     auto init_step = matching_init();
-    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);
+    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);
     auto init_partition = PartitionShapeGroup();
     init_partition.added = init_shapes;
     init_partition.remainder = ShapeGroup();
     init_partition.match = ShapeGroup();
     
-    update_history(em, init_partition, init_step);
+    update_history(em, init_partition, init_step, tree);
+    
+    ((ExpansionAnim*)(em->history.back()))->tree = tree;
     
     TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
     
@@ -89,6 +90,31 @@ int main(int argc, const char * argv[]) {
         TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
     };
 
+    auto last_exp = ((ExpansionAnim*)(em->history.back()));
+    auto duration = last_exp->timeline->duration;
+    auto frame_rate = 8.0;
+    auto frame_step = 1.0 / frame_rate;
+    
+    auto k = 0;
+    for (auto i = 0.0; i < duration; i = i + frame_step){
+        TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, i);
+        stringstream ss;
+        ss << std::setfill('0') << std::setw(3) << k;
+        save_svg(last_exp->tree, {1000, 1000}, {500, 500}, {1.0, 1.0}, ss.str());
+        k++;
+    }
+    
+    // - improve the offset : don't use keyframes anymore, use those indices as POI in the slice timeline
+    //              SLICE
+    //      |===================|
+    //          ###########
+    //              ANIM
+    // - easing
+    // - play with grouping -> all the rules (matching included) should be the same,
+    //   it changes only on what type of slice+shape they act
+    
+    //convert -density 100 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
+    //convert -delay 1/8 -loop 0 png/*.png animated4.gif
     
     printf("end main\n");
 }
