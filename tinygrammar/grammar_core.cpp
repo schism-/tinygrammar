@@ -60,8 +60,8 @@ Grammar* get_grammar(string filename){
             std::cout << "[GRAMMAR] Random seed initialized to " << random_integer << std::endl;
         }
         
-        uint64_t initseq = ym_hash_uint64(g_seed);
-        uint64_t initstate = ym_hash_uint64(g_seed * 3202034522624059733ull + 1ull);
+        uint64_t initseq = ym_hash_uint64(res->seed);
+        uint64_t initstate = ym_hash_uint64(res->seed * 3202034522624059733ull + 1ull);
         ym_rng_init(&res->rn, initstate, initseq);
         
         auto r_arr = o.get<Array>("rules");
@@ -224,7 +224,11 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
                 }
             }
             if(matches.empty()) return nullptr;
-            return rules[matches[(int)(ym_rng_nextf(&grammar->rn) * matches.size())]];
+            if (tag == 1)
+                printf(" ");
+            auto f_idx = ym_rng_nextf(&(grammar->rn)) * (float)matches.size();
+            auto r_idx = (int)(f_idx);
+            return rules[matches[r_idx]];
         }
         default:
             break;

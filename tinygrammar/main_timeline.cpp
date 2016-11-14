@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
     //          ###########
     //              ANIM
     // - easing
-    // - play with grouping -> all the rules (matching included) should be the same,
+    // - [x] play with grouping -> all the rules (matching included) should be the same,
     //   it changes only on what type of slice+shape they act
     
     //convert -density 100 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
