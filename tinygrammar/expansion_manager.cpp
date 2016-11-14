@@ -229,7 +229,13 @@ bool expand(HistoryAnim* h) {
     auto front = get_active_nodes(h);
     //pass them to grammar core
     auto grammar = get_grammar(grammar_filename);
-    auto grammar_step = matching_slice(grammar, to_slices(front));
+    
+    auto active_slices = to_slices(front);
+    // Mapping the shapes to their respective slices
+    auto shapes_map = map<Shape*, TimeManager::NodeTimeLine*>();
+    for (auto && as : active_slices) shapes_map[as] = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
+    
+    auto grammar_step = matching_slice(grammar, active_slices, shapes_map);
     
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
@@ -248,7 +254,7 @@ bool expand(HistoryAnim* h) {
         auto anim_shapes = to_animated_shapes(front);
         
         // Mapping the shapes to their respective slices
-        auto shapes_map = map<AnimatedShape*, TimeManager::NodeTimeLine*>();
+        auto shapes_map = map<Shape*, TimeManager::NodeTimeLine*>();
         for (auto && as : anim_shapes){
             shapes_map[(AnimatedShape*)as] = TimeManager::FindTimeLine(h->history.back()->timeline, CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)as));
         }
