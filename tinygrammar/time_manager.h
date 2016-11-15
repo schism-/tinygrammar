@@ -65,8 +65,8 @@ namespace TimeManager {
 
     //void TimeLineMerge (TimeLine* t, const vector<NodeTimeLine*>& nodeTimeLines);
     
-    void AnimateTimeLine(TimeLine* t, CSGTree::Tree* tree, double current_time);
-    void AnimateNodeTimeLine(NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time);
+    void AnimateTimeLine(TimeLine* t, CSGTree::Tree* tree, double current_time, double incr);
+    void AnimateNodeTimeLine(NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time, double incr);
 }
 
 struct TimeSliceShape : Shape {

@@ -92,17 +92,23 @@ int main(int argc, const char * argv[]) {
 
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
     auto duration = last_exp->timeline->duration;
-    auto frame_rate = 30.0;
-    auto frame_step = 1.0 / frame_rate;
-    
+    double frame_rate = 10.0;
+    double frame_step = 1.0 / frame_rate;
     auto k = 0;
+    double prev_step = 0.0;
     
-    for (auto i = 0.0; i < duration; i = i + frame_step){
-        TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, i);
-        stringstream ss;
-        ss << std::setfill('0') << std::setw(3) << k;
-        save_svg(last_exp->tree, {1000, 1000}, {500, 500}, {1.0, 1.0}, ss.str());
+    stringstream ss;
+    ss << std::setfill('0') << std::setw(3) << 0;
+    save_svg(last_exp->tree, {1000, 1000}, {500, 500}, {1.0, 1.0}, ss.str());
+    
+    for (auto i = frame_step; i < duration; i = i + frame_step){
+        TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, i, i - prev_step);
+        stringstream ss1;
+        ss1 << std::setfill('0') << std::setw(3) << k;
+        save_svg(last_exp->tree, {1000, 1000}, {500, 500}, {1.0, 1.0}, ss1.str());
         k++;
+        prev_step = i;
+        printf("Animating frame %d...", k);
     }
     
     // - improve the offset : don't use keyframes anymore, use those indices as POI in the slice timeline

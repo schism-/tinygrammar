@@ -136,19 +136,19 @@ void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTime
     }
 }
 
-void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree, double current_time){
+void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree, double current_time, double incr){
     //For each NodeTimeLine, update its content.
     for (auto&& ntl : t->timelines){
-        TimeManager::AnimateNodeTimeLine(ntl, tree, current_time);
+        TimeManager::AnimateNodeTimeLine(ntl, tree, current_time, incr);
     }
 }
 
-void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time){
+void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time, double delta){
     //Find the right active slice for the current_time
 
-    auto incr = 0.0;
     auto selected_slice = (TimeManager::TimeSlice*) nullptr;
     auto slice_current_time = 0.0;
+    auto incr = 0.0;
     
     for (auto&& sl : ntl->slices){
         incr += sl->duration;
@@ -165,6 +165,6 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
     }
     
     //Update the node linked to the ntl with the animation associated to the active slice
-    CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, Animator(selected_slice->animation.anim_type, selected_slice->animation), slice_current_time, selected_slice->duration);
+    CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, Animator(selected_slice->animation.anim_type, selected_slice->animation), slice_current_time, delta/selected_slice->duration);
     
 }

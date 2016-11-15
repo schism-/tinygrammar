@@ -17,7 +17,6 @@ struct Animator{
     int animator_name;
     anim_params params;
     AnimatorKeyframes akf;
-    double prev_frame = 0.0;
     
     Animator (){}
     Animator (int animator_name) : animator_name(animator_name) {}
@@ -26,72 +25,18 @@ struct Animator{
     
     ~Animator(){}
     
-//    vector<AnimatedShape*> operator() (const vector<AnimatedShape*>& shape, double delta, const rng& sampler = rng(), ShapeGroup* annotations = nullptr) {
-//        switch(animator_name){
-//            case anim_eulerian:
-//            {
-//                for (auto&& s : shape){
-//                    auto poly = s->poly;
-//                    auto frame = ym_frame2r({params[0], params[1]}, {params[2], params[3]}, {params[4], params[5]});
-//                    auto frame_diff = ym_identity_frame2r;
-//                    auto boh = ym_frame2r((frame_diff.m * (1.0 - delta) + frame.m * delta), (frame_diff.t * (1.0 - delta) + frame.t * delta));
-//                    s->poly = transform_polygon(boh, poly);
-//                }
-//                return shape;
-//                break;
-//            }
-//            case anim_wave:
-//            {
-//                for (auto&& s : shape){
-//                    auto poly = s->poly;
-//                    auto frame = ym_frame2r({params[0], params[1]}, {params[2], params[3]}, {params[4], params[5]});
-//                    auto frame_diff = ym_identity_frame2r;
-//                    auto mu2 = (1 - cos(2.0 * delta * ym_pif)) / 2.0;
-//                    if (cos(2.0 * delta * ym_pif) > 0){
-//                        auto boh = ym_frame2r(frame_diff.m * (1.0 - mu2) + frame.m * mu2,
-//                                              frame_diff.t * (1.0 - mu2) + frame.t * mu2);
-//                        s->poly = transform_polygon(boh, poly);
-//                    }
-//                    else{
-//                        frame.m = ym_inverse(frame.m);
-//                        frame.t = frame.t * -1.0;
-//                        mu2 = (1 - cos(delta * ym_pif)) / 2.0;
-//                        auto boh = ym_frame2r(frame_diff.m * (1.0 - mu2) + frame.m * mu2,
-//                                              frame_diff.t * (1.0 - mu2) + frame.t * mu2);
-//                        s->poly = transform_polygon(boh, poly);
-//                    }
-//                }
-//                return shape;
-//                break;
-//            }
-//            case anim_perturb:
-//            {
-//                return vector<AnimatedShape*>();
-//                break;
-//            }
-//            default:
-//            {
-//                printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid animator type\n");
-//                break;
-//            }
-//        }
-//        return vector<AnimatedShape*>();
-//    }
-    
-    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double frame, double total) {
+    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double frame, double incr) {
         switch(animator_name){
             case anim_single:
             {
                 if (frame < akf.offset) return shape;
                 auto m = get_matrix(akf, frame);
                 
-                auto delta = frame - prev_frame;
-                
                 for (auto&& as : shape){
-                    auto new_poly = transform(m, as->poly);
+                    auto new_poly = transform(m, as->poly, incr);
                     as->poly = new_poly;
                 }
-                prev_frame = frame;
+                
                 return shape;
                 break;
             }
@@ -100,7 +45,7 @@ struct Animator{
                 if (frame < akf.offset) return shape;
                 auto m = get_matrix(akf, frame);
                 for (auto&& as : shape){
-                    auto new_poly = transform_group(m, as->poly);
+                    auto new_poly = transform_group(m, as->poly, incr);
                     as->poly = new_poly;
                 }
                 return shape;

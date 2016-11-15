@@ -152,9 +152,9 @@ CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CS
 //    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
 //}
 
-void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double frame, double total_duration, bool update){
+void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double frame, double incr, bool update){
     if (update){
-        auto new_shapes = anim(a->content->shapes, frame, total_duration);
+        auto new_shapes = anim(a->content->shapes, frame, incr);
         a->content = new NodeContent(new_shapes);
     }
     

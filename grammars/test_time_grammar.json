@@ -29,15 +29,6 @@
 			"init_value" : ""
 		},
 
-		// { 	
-		// 	"rule_name" : "time_rule_4",
-		// 	"matching_tags" : ["b"],
-		// 	"produced_tags" : ["d", "c", "d"],
-		// 	"operator" : "time_slice",
-		// 	"parameters" : [0.30, 0.30, 0.40],
-		// 	"init_value" : ""
-		// }, 
-
 		{ 	
 			"rule_name" : "time_rule_5",
 			"matching_tags" : ["b"],
@@ -54,7 +45,7 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["inv_l_s"],
 			"operator" : "affine",
-			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 1.1, -1.1, 0.0],
+			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
 			"init_value" : "d"
 		},
 
@@ -63,7 +54,7 @@
 			"matching_tags" : ["aal_s"],
 			"produced_tags" : ["inv_l_s"],
 			"operator" : "move_towards",
-			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 1.1, -1.1, 0.0],
+			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
 			"init_value" : "d"
 		}, 
 
@@ -72,7 +63,7 @@
 			"matching_tags" : ["m_s"],
 			"produced_tags" : ["inv_m_s"],
 			"operator" : "affine",
-			"parameters" : [1.0, 1.01, 0.0, 0.0, 1.01, 0.0, 0.0, 0.0],
+			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0],
 			"init_value" : "d"
 		}, 
 
@@ -81,7 +72,7 @@
 			"matching_tags" : ["b_s"],
 			"produced_tags" : ["inv_b_s"],
 			"operator" : "affine",
-			"parameters" : [1.0, 0.99, 0.0, 0.0, 0.99, 0.0, 0.0, 0.0],
+			"parameters" : [1.0, 0.5, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0],
 			"init_value" : "d"
 		},
 
@@ -90,25 +81,16 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["l_s_2"],
 			"operator" : "affine",
-			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.00, 1.0, 1.0, 0.0],
+			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 25.0, 25.0, 0.0],
 			"init_value" : "d"
 		}, 
-
-		// { 	
-		// 	"rule_name" : "space_rule_5",
-		// 	"matching_tags" : ["seg"],
-		// 	"produced_tags" : ["asd"],
-		// 	"operator" : "affine",
-		// 	"parameters" : [1.0, 0.99, 0.0, 0.0, 0.99, -1.5, -1.5, 0.0],
-		// 	"init_value" : "d"
-		// }, 
 
 		{ 	
 			"rule_name" : "space_rule_21",
 			"matching_tags" : ["m_s"],
 			"produced_tags" : ["inv_m_s"],
 			"operator" : "affine",
-			"parameters" : [1.0, 0.95, 0.0, 0.0, 0.95, 1.0, -1.0, 0.0],
+			"parameters" : [1.0, 0.5, 0.0, 0.0, 0.5, 15.0, -15.0, 0.0],
 			"init_value" : "c"
 		}, 
 
@@ -117,7 +99,7 @@
 			"matching_tags" : ["b_s"],
 			"produced_tags" : ["inv_b_s"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 15.0, 0.0],
+			"parameters" : [1.0, 90.0, 0.0],
 			"init_value" : "c"
 		},
 
@@ -126,16 +108,7 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["l_s_3"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 15.0, 0.1],
-			"init_value" : "c"
-		}, 
-
-		{ 	
-			"rule_name" : "space_rule_62",
-			"matching_tags" : ["seg"],
-			"produced_tags" : ["l_s_3"],
-			"operator" : "affine",
-			"parameters" : [1.0, 1.1, 0.0, 0.0, 1.1, -1.0, 1.0, 0.0],
+			"parameters" : [1.0, 90.0, 0.1],
 			"init_value" : "c"
 		}, 
 

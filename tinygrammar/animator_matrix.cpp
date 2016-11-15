@@ -36,28 +36,38 @@ void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx)
     }
 }
 
-polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly){
+polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr){
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
             auto m = get_matrix(am, p);
-            auto new_p = ym_transform_point(m, p - centroid);
+            auto mat = ym_mat<double, 3, 3>(m);
+            auto log_m = ln(mat);
+            log_m = log_m * incr;  
+            log_m = exp(log_m);
+            auto incr_aff = ym_affine2r(log_m);
+            auto new_p = ym_transform_point(incr_aff, p - centroid);
             new_shape.back() += (new_p + centroid);
         }
     }
     return new_shape;
 }
 
-polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly){
+polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr){
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
     auto m = get_matrix(am, centroid);
+    auto mat = ym_mat<double, 3, 3>(m);
+    auto log_m = ln(mat);
+    log_m = log_m * incr;
+    log_m = exp(log_m);
+    auto incr_aff = ym_affine2r(log_m);
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
-            auto new_p = ym_transform_point(m, p);
+            auto new_p = ym_transform_point(incr_aff, p);
             new_shape.back() += new_p;
         }
     }
