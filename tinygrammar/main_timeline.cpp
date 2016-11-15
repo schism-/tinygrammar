@@ -39,7 +39,7 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
     auto n3   = CSGTree::AddShape(tree, new AnimatedShape({s3}, b_s_tag[0], 0));
     
     // Segment
-    auto n4   = CSGTree::AddShape(tree, new AnimatedShape({s4}, seg_tag[0], 0));
+    //auto n4   = CSGTree::AddShape(tree, new AnimatedShape({s4}, seg_tag[0], 0));
     
     // Little squares
     auto n5_1 = CSGTree::AddShape(tree, new AnimatedShape({s5_1}, l_s_tag[0], 0));
@@ -52,7 +52,7 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
     
     // Tree creation
     auto op1    = CSGTree::Union(tree, n1, n2);
-    auto op2    = CSGTree::Union(tree, op1, n4);
+    //auto op2    = CSGTree::Union(tree, op1, n4);
     auto op3    = CSGTree::Union(tree, n5_1,  n5_2);
     auto op3_1  = CSGTree::Union(tree, op3,   n5_3);
     auto op3_2  = CSGTree::Union(tree, op3_1, n5_4);
@@ -60,7 +60,7 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
     auto op3_4  = CSGTree::Union(tree, op3_3, n5_6);
     auto op3_5  = CSGTree::Union(tree, op3_4, n5_7);
     auto op3_6  = CSGTree::Union(tree, op3_5, n3);
-    auto op6    = CSGTree::PlaceInShape(tree, op3_6, op2);
+    auto op6    = CSGTree::PlaceInShape(tree, op3_6, op1);
     
     return tree;
 }
@@ -92,10 +92,11 @@ int main(int argc, const char * argv[]) {
 
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
     auto duration = last_exp->timeline->duration;
-    auto frame_rate = 8.0;
+    auto frame_rate = 30.0;
     auto frame_step = 1.0 / frame_rate;
     
     auto k = 0;
+    
     for (auto i = 0.0; i < duration; i = i + frame_step){
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, i);
         stringstream ss;
@@ -109,11 +110,11 @@ int main(int argc, const char * argv[]) {
     //      |===================|
     //          ###########
     //              ANIM
-    // - easing
+    // - easing <=> implementation of log mat
     // - [x] play with grouping -> all the rules (matching included) should be the same,
     //   it changes only on what type of slice+shape they act
     
-    //convert -density 100 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
+    //convert -density 40 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
     //convert -delay 1/8 -loop 0 png/*.png animated4.gif
     
     printf("end main\n");

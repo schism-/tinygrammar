@@ -59,7 +59,7 @@ namespace CSGTree
     OpNode* PlaceInShape(Tree* tree, Node* a, Node* b, bool update = true);
     
 //    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double delta, bool update = true);
-    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double frame, bool update = true);
+    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double frame, double total_duration, bool update = true);
     void UpdateLeafNode(Tree* tree, vector<LeafNode*> as, Animator anim, int frame, bool update = true);
     void UpdateContent(Tree* tree, LeafNode* a);
     void UpdateOpNode(Tree* tree, OpNode* a);

@@ -87,6 +87,8 @@ enum {
 typedef ym_vec<double, 2> ym_vec2r;
 typedef ym_affine<double, 2, false> ym_affine2r;
 
+typedef ym_mat<double, 3, 3> ym_mat3r;
+
 const ym_vec2r ym_x2r = ym_vec2r(1, 0);
 const ym_vec2r ym_y2r = ym_vec2r(0, 1);
 
@@ -103,6 +105,111 @@ typedef ym_vec<int, TAG_SIZE> rule_tags;
 typedef ym_vec<double, PARAM_SIZE> anim_params;
 
 static string grammar_filename = "grammars/test_time_grammar.json";
+
+// ==============================================
+// ====== METHODS FOR LOG/EXP OF MATRICES =======
+// ==============================================
+
+#define EPS_1 0.0001
+#define EPS_2 0.000000001
+#define EPS_3 0.000001
+
+inline double frobenius_norm(const ym_mat3r& m) {
+    return sqrt( m[0][0] * m[0][0] + m[0][1] * m[0][1] + m[0][2] * m[0][2] +
+                 m[1][0] * m[1][0] + m[1][1] * m[1][1] + m[1][2] * m[1][2] +
+                 m[2][0] * m[2][0] + m[2][1] * m[2][1] + m[2][2] * m[2][2] );
+}
+
+inline ym_mat3r pow(const ym_mat3r& m, int exponent) {
+    auto ret = ym_mat3r(m);
+    auto factor = ym_mat3r(m);
+    for(auto t = 1; t < exponent; t++) ret = ret * factor;
+    return ret;
+}
+
+inline ym_mat3r sqrt(const ym_mat3r& m) {
+    auto A = ym_mat3r(m);
+    auto x = ym_mat3r(m);
+    auto y = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    
+    int i = 0;
+    auto min_A = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    double min_norm = 1000000.0f;
+    
+    while(frobenius_norm((- A) + (x * x)) > EPS_3) {
+        auto ix = ym_inverse(x);
+        auto iy = ym_inverse(y);
+        
+        x = (x + iy) * 0.5;
+        y = (y + ix) * 0.5;
+        i++;
+        
+        if(frobenius_norm((- A) + (x * x)) < min_norm){
+            min_A = x;
+            min_norm = frobenius_norm((- A) + (x * x));
+        }
+        if(i>=5) {
+            break;
+        }
+    }
+    
+    return min_A;
+}
+
+inline ym_mat3r ln(const ym_mat3r& m){
+    auto k = 0;
+    auto A = ym_mat3r(m);
+    auto idm = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    
+    while(frobenius_norm(A + (-idm)) > EPS_1) {
+        A = sqrt(A);
+        k += 1;
+    }
+    
+    A = A + (-idm);
+    
+    auto Z = ym_mat3r(A);
+    auto X = ym_mat3r(A);
+    auto i = 1.;
+
+    while(frobenius_norm(Z) > EPS_2) {
+        Z = Z * A;
+        i += 1.;
+        X = X + (Z * (1.0 / i));
+    }
+    
+    return X * pow(2, k);
+}
+
+inline ym_mat3r exp(const ym_mat3r& m) {
+    auto A = ym_mat3r(m);
+    
+    int tmp = (1 + floor(log2(frobenius_norm(A))));
+    
+    double j = max(0,tmp);
+    
+    A = A * pow(2.0, -j);
+    
+    auto D = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    auto N = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    auto X = ym_mat3r({{1, 0, 0}, {0, 1, 0}, {0, 0, 1}});
+    
+    double c = 1;
+    double q = 6;
+    double q1 = q + 1;
+    
+    for(float k = 1; k < q1; k++) {
+        c = c * (q1 - k + 1.) / (k * (2.0 * q1 - k + 1.));
+        X = A * X;
+        N = N + X * c;
+        D = D + X * (pow(-1, k) * c);
+    }
+    
+    X = ym_inverse(D) * N;
+    X = pow(X, pow(2.0, j));
+    
+    return X;
+}
 
 
 

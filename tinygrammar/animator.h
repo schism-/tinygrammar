@@ -17,6 +17,7 @@ struct Animator{
     int animator_name;
     anim_params params;
     AnimatorKeyframes akf;
+    double prev_frame = 0.0;
     
     Animator (){}
     Animator (int animator_name) : animator_name(animator_name) {}
@@ -77,16 +78,20 @@ struct Animator{
 //        return vector<AnimatedShape*>();
 //    }
     
-    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double frame) {
+    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double frame, double total) {
         switch(animator_name){
             case anim_single:
             {
                 if (frame < akf.offset) return shape;
                 auto m = get_matrix(akf, frame);
+                
+                auto delta = frame - prev_frame;
+                
                 for (auto&& as : shape){
                     auto new_poly = transform(m, as->poly);
                     as->poly = new_poly;
                 }
+                prev_frame = frame;
                 return shape;
                 break;
             }
@@ -109,7 +114,7 @@ struct Animator{
             default:
             {
                 printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid animator type\n");
-                return vector<AnimatedShape*>();
+                return shape;
                 break;
             }
         }

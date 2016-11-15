@@ -7,7 +7,7 @@
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
-			"parameters" : [6.0, 1.0],
+			"parameters" : [5.0, 1.0],
 			"init_value" : "square"
 		}, 
 
@@ -94,14 +94,14 @@
 			"init_value" : "d"
 		}, 
 
-		{ 	
-			"rule_name" : "space_rule_5",
-			"matching_tags" : ["seg"],
-			"produced_tags" : ["asd"],
-			"operator" : "affine",
-			"parameters" : [1.0, 0.99, 0.0, 0.0, 0.99, -1.5, -1.5, 0.0],
-			"init_value" : "d"
-		}, 
+		// { 	
+		// 	"rule_name" : "space_rule_5",
+		// 	"matching_tags" : ["seg"],
+		// 	"produced_tags" : ["asd"],
+		// 	"operator" : "affine",
+		// 	"parameters" : [1.0, 0.99, 0.0, 0.0, 0.99, -1.5, -1.5, 0.0],
+		// 	"init_value" : "d"
+		// }, 
 
 		{ 	
 			"rule_name" : "space_rule_21",
