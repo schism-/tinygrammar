@@ -338,12 +338,19 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_s
                     if(rule) break;
                 }
                 if(not rule) return res;
+                
+                auto g = get_grammar(grammar_filename);
                 for(auto shape : active_shapes) {
                     if(((AnimatedShape*)shape)->tag == start->tag) {
                         auto ntl = shape_map.at((AnimatedShape*)shape);
                         auto ntl_tags = make_vector(ntl->slices, [&](TimeManager::TimeSlice* slice){return slice->ts_tag;});
                         
-                        if (std::find(ntl_tags.begin(), ntl_tags.end(), rule->op.init_value) != ntl_tags.end()) { res.match.push_back(shape); }
+                        if (std::find(ntl_tags.begin(), ntl_tags.end(), rule->op.init_value) != ntl_tags.end()) {
+                            res.match.push_back(shape);
+                        }
+                        else if (std::find(ntl_tags.begin(), ntl_tags.end(), invert_tag(g, rule->op.init_value)) != ntl_tags.end()) {
+                            res.match.push_back(shape);
+                        }
                         else { res.remainder.push_back(shape); }
                     }
                     else {

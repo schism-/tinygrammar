@@ -262,7 +262,7 @@ bool expand(HistoryAnim* h) {
         
         if (grammar_step.second != nullptr){
             //if an appliable rule has been found, apply it and retrieve results
-            printf("[SPACE] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
+            printf("[SPACE] Rule applied : %s on %d shapes\n", grammar_step.second->rule_name_str.c_str(), grammar_step.first.match.size());
             
             // Got the shapes, now retrieve the Nodes in the Tree
             auto ntls = vector<TimeManager::NodeTimeLine*>();
@@ -274,7 +274,7 @@ bool expand(HistoryAnim* h) {
             auto shapes = ShapeGroup();
             for (auto&& ntl : ntls){
                 for (auto&& s : ntl->slices)
-                    if (grammar_step.second->op.init_value == s->ts_tag)
+                    if (grammar_step.second->op.init_value == s->ts_tag || grammar_step.second->op.init_value == invert_tag(grammar, s->ts_tag))
                         shapes.push_back(new TimeSliceShape(s));
             }
             // Note: maybe create upfront a NodeTimeLine per Node

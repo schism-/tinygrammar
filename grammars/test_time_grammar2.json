@@ -7,7 +7,7 @@
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
-			"parameters" : [3.0, 1.0],
+			"parameters" : [6.0, 1.0],
 			"init_value" : "square"
 		}, 
 
@@ -30,59 +30,93 @@
 		},
 
 		{ 	
+			"rule_name" : "time_rule_3",
+			"matching_tags" : ["c"],
+			"produced_tags" : ["e", "f"],
+			"operator" : "time_slice",
+			"parameters" : [0.4, 0.6],
+			"init_value" : ""
+		},
+
+		{ 	
 			"rule_name" : "space_rule_bs1",
 			"matching_tags" : ["b_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term1"],
 			"operator" : "affine",
 			"parameters" : [1.0, 0.5, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0],
-			"init_value" : "b"
+			"init_value" : "d"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_bs2",
 			"matching_tags" : ["b_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term2"],
 			"operator" : "rotation",
 			"parameters" : [1.0, 90.0, 0.0],
-			"init_value" : "c"
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs3",
+			"matching_tags" : ["b_s"],
+			"produced_tags" : ["term3"],
+			"operator" : "affine",
+			"parameters" : [1.0, 0.5, 0.0, 0.0, 0.5, 0.0, 0.0, 0.0],
+			"init_value" : "f"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_ls1",
 			"matching_tags" : ["l_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term1"],
 			"operator" : "affine",
 			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
-			"init_value" : "b"
+			"init_value" : "d"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_ls2",
 			"matching_tags" : ["l_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term2"],
 			"operator" : "rotation",
 			"parameters" : [1.0, 90.0, 0.1],
-			"init_value" : "c"
+			"init_value" : "e"
 		}, 
 
+		{ 	
+			"rule_name" : "space_rule_ls3",
+			"matching_tags" : ["l_s"],
+			"produced_tags" : ["term3"],
+			"operator" : "affine",
+			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
+			"init_value" : "f"
+		},
 
 		{ 	
 			"rule_name" : "space_rule_ms1",
 			"matching_tags" : ["m_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term1"],
 			"operator" : "affine",
 			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0],
-			"init_value" : "b"
+			"init_value" : "d"
 		}, 
 
 		{ 	
 			"rule_name" : "space_rule_ms2",
 			"matching_tags" : ["m_s"],
-			"produced_tags" : ["term"],
+			"produced_tags" : ["term2"],
 			"operator" : "affine",
 			"parameters" : [1.0, 0.5, 0.0, 0.0, 0.5, 15.0, -15.0, 0.0],
-			"init_value" : "c"
-		}, 
+			"init_value" : "e"
+		},
 
+		{ 	
+			"rule_name" : "space_rule_ms3",
+			"matching_tags" : ["m_s"],
+			"produced_tags" : ["term3"],
+			"operator" : "affine",
+			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0],
+			"init_value" : "f"
+		},
 	],
 }

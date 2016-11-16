@@ -94,7 +94,7 @@ int main(int argc, const char * argv[]) {
     auto duration = last_exp->timeline->duration;
     double frame_rate = 10.0;
     double frame_step = 1.0 / frame_rate;
-    auto k = 0;
+    auto k = 1;
     double prev_step = 0.0;
     
     stringstream ss;

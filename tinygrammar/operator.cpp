@@ -170,21 +170,29 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
     bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
     
     auto off_count = 1;
+    auto g = get_grammar(grammar_filename);
+    
     for(auto&& d : data) {
-        if (animator_type == anim_single){
-//            auto am  = AnimatorMatrix(bounds_polygons(make_vector(d.second->node->content->shapes, [&](AnimatedShape* as){return as->poly;})),
-//                                      {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
-            auto am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
-            auto akf = AnimatorKeyframes(am, 1, anim_single, parameters[7] * off_count);
-            d.first->slice->animation = akf;
-            d.first->slice->ts_tag = tags[0];
+        auto am  = AnimatorMatrix();
+        
+        if (is_tag_invert(g, d.first->slice->ts_tag)){
+            auto mat = ym_affine<double, 3, false>();
+            mat.x = {parameters[1], parameters[2], 0.0};
+            mat.y = {parameters[3], parameters[4], 0.0};
+            mat.z = {parameters[5], parameters[6], 1.0};
+            mat = ym_inverse(mat);
+            am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {mat.z.x, mat.z.y}});
         }
         else {
-            auto am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
-            auto akf = AnimatorKeyframes(am, 1, anim_group, parameters[7] * off_count);
-            d.first->slice->animation = akf;
-            d.first->slice->ts_tag = tags[0];
+            am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
         }
+        
+        auto akf = AnimatorKeyframes();
+        if (animator_type == anim_single)   akf = AnimatorKeyframes(am, 1, anim_single, parameters[7] * off_count);
+        else                                akf = AnimatorKeyframes(am, 1, anim_group, parameters[7] * off_count);
+        
+        d.first->slice->animation = akf;
+        d.first->slice->ts_tag = tags[0];
         off_count++;
         children.push_back(d.first);
     }

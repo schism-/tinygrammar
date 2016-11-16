@@ -19,6 +19,8 @@ struct AnimatorMatrix{
     ym_range2r bounding_box;
     ym_vec2r step;
     
+    AnimatorMatrix () {}
+    
     AnimatorMatrix (const ym_range2r& bb) {
         bounding_box = bb;
         step = bounding_box.max - bounding_box.min;
@@ -66,6 +68,8 @@ struct AnimatorKeyframes{
     double offset;
     int anim_type;
     
+    AnimatorKeyframes () { }
+    
     AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<int>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
     
     AnimatorKeyframes (const AnimatorMatrix kf, int kf_num, int a_t, double off = 0.0) {
@@ -78,8 +82,6 @@ struct AnimatorKeyframes{
         offset = off;
         anim_type = a_t;
     }
-    
-    AnimatorKeyframes(){}
     
     // TODO: we now suppose there are either one AM per frame, or one AM for all frames.
     // Remember to implement interpolation
