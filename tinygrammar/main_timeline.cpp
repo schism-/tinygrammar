@@ -116,7 +116,9 @@ int main(int argc, const char * argv[]) {
     //      |===================|
     //          ###########
     //              ANIM
-    // - easing <=> implementation of log mat
+    // - [ ]easing
+    //    - [x]implementation of log mat
+
     // - [x] play with grouping -> all the rules (matching included) should be the same,
     //   it changes only on what type of slice+shape they act
     

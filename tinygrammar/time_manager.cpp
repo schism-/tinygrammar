@@ -43,7 +43,7 @@ vector<TimeManager::TimeSlice*> TimeManager::TimeSliceCut (TimeManager::TimeLine
     if (ntm != nullptr){
         auto new_slices = vector<TimeManager::TimeSlice*>();
         for (auto i = 0; i < PARAM_SIZE; i++) {
-            if (cutPoints[i] == 0.0) break;
+            if (cutPoints[i] == INFINITY) break;
             auto temp = new TimeManager::TimeSlice(slice->duration * cutPoints[i]);
             temp->animation = copy(slice->animation);
             if (new_tag[i] != -1) temp->ts_tag = new_tag[i];

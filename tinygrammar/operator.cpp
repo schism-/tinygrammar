@@ -8,6 +8,7 @@
 
 #include "operator.h"
 #include "clipper_methods.h"
+#include "grammar_core.h"
 
 ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid, const ym_frame2r& shape_frame, rule_tags tags) {
     auto children = ShapeGroup();
@@ -106,10 +107,36 @@ ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_v
 
 ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& rn, TimeManager::TimeLine* timeline){
     auto children = ShapeGroup();
-    
+    auto g = get_grammar(grammar_filename);
     for(auto&& shape : shapes) {
         auto temp = (TimeSliceShape*)shape;
-        auto new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
+        auto new_slices = vector<TimeManager::TimeSlice*>();
+        if (is_tag_invert(g, temp->slice->ts_tag)){
+            auto temp_v = vector<double>();
+            auto new_params = rule_params();
+            for(auto i = 0 ; i < PARAM_SIZE; i++){
+                if (parameters[i] != INFINITY) temp_v.insert(temp_v.begin(), parameters[i]);
+                else temp_v.push_back(INFINITY);
+            }
+            for(auto i = 0 ; i < PARAM_SIZE; i++) new_params[i] = temp_v[i];
+            
+            auto t_temp_v = vector<int>();
+            auto new_tags = rule_tags();
+            for(auto i = 0 ; i < TAG_SIZE; i++){
+                if (tags[i] != 0) t_temp_v.insert(t_temp_v.begin(), tags[i]);
+                else t_temp_v.push_back(0);
+            }
+            for(auto i = 0 ; i < TAG_SIZE; i++) {
+                if (t_temp_v[i] == 0) new_tags[i] = t_temp_v[i];
+                else new_tags[i] = invert_tag(g, t_temp_v[i]);
+            }
+            
+            new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, new_params, new_tags);
+        }
+        else{
+            new_slices = TimeManager::TimeSliceCut(timeline, temp->slice, parameters, tags);
+        }
+        
         for (auto&& ns : new_slices){
             children.push_back(new TimeSliceShape(ns));
         }

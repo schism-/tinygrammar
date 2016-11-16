@@ -28,6 +28,10 @@ struct Grammar {
 
 int add_rule_to_mapping(Grammar* grammar, string rulename);
 rule_tags add_tags(Grammar* grammar, vector<string> tags);
+int tag_to_mapping(Grammar* grammar, string tag);
+string mapping_to_tag(Grammar* grammar, int tag);
+bool is_tag_invert(Grammar* grammar, int tag);
+int invert_tag(Grammar* grammar, int tag);
 
 Grammar* get_grammar(string filename);
 vector<Rule*> get_inits(Grammar* g);
@@ -43,7 +47,5 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
 
 PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
-
-
 
 #endif /* grammar_core_h */

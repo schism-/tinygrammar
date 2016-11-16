@@ -32,6 +32,38 @@ rule_tags add_tags(Grammar* grammar, vector<string> tags){
     return res;
 }
 
+int tag_to_mapping(Grammar* grammar, string tag) {
+    if (grammar->tag_mapping.count(tag) > 0) { return grammar->tag_mapping[tag]; }
+    else { printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str()); return -1; }
+}
+
+string mapping_to_tag(Grammar* grammar, int tag) {
+    for( auto&& pair : grammar->tag_mapping ){
+        if (pair.second == tag) return pair.first;
+    }
+    printf("[MAPPING->TAG] [ERROR] tag not found : %d\n", tag);
+    return "";
+}
+
+bool is_tag_invert(Grammar* grammar, int tag){
+    auto s_tag = mapping_to_tag(grammar, tag);
+    if (contains(s_tag, "inv_")) return true;
+    else return false;
+}
+
+int invert_tag(Grammar* grammar, int tag){
+    auto s_tag = mapping_to_tag(grammar, tag);
+    if (contains(s_tag, "inv_")) {
+        return tag_to_mapping(grammar, s_tag.substr(4));
+    }
+    else{
+        auto res = tag_to_mapping(grammar, "inv_" + s_tag);
+        if (res == -1) { auto temp = add_tags(grammar, {"inv_" + s_tag}); res = temp[0]; }
+        return res;
+    }
+}
+
+
 Grammar* get_grammar(string filename){
     if (main_grammar == nullptr){
         auto res = new Grammar();
@@ -105,7 +137,7 @@ Grammar* get_grammar(string filename){
             else
                 rule->op = Operator(op_default, -1);
             
-            auto json_params = rule_params();
+            auto json_params = rule_params(INFINITY);
             auto p_arr = rule_json.get<Array>("parameters");
             for (auto j = 0; j < p_arr.size(); j++) json_params[j] = p_arr.get<Number>(j);
             rule->parameters = json_params;
@@ -275,15 +307,21 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_s
                 if(not rule) return res;
                 auto start_node = shape_map.at(start);
                 auto shape_tags = make_set(make_vector(start_node->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
+                auto g = get_grammar(grammar_filename);
+                auto inv_tag = tag_to_mapping(g, "inv_" + mapping_to_tag(g, start->slice->ts_tag));
                 
                 for(auto shape : active_shapes) {
+                    auto temp_ts = (TimeSliceShape*)shape;
                     auto temp_node = shape_map.at((TimeSliceShape*)shape);
                     auto temp_tags = make_set(make_vector(temp_node->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
                     std::vector<int> intersection;
                     set_intersection(shape_tags.begin(),shape_tags.end(),temp_tags.begin(),temp_tags.end(), std::back_inserter(intersection));
                     
-                    if( (((TimeSliceShape*)shape)->slice->ts_tag == start->slice->ts_tag) && (!intersection.empty()) )
+                    if( (temp_ts->slice->ts_tag == start->slice->ts_tag) && (!intersection.empty()) )
                         res.match.push_back(shape);
+                    else if ((temp_ts->slice->ts_tag == inv_tag) && (!intersection.empty())) {
+                        res.match.push_back(shape);
+                    }
                     else res.remainder.push_back(shape);
                 }
             }

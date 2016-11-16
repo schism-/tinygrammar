@@ -46,7 +46,7 @@ struct Operator{
             case op_time_slice:
                 return time_slice_operator(shapes, tags, parameters, sampler, timeline);
                 break;
-            case op_affine:
+            case op_affine:    
                 return affine_operator(shapes, tags, parameters, sampler, timeline);
                 break;
             case op_affine_rot:
