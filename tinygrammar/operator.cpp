@@ -199,4 +199,46 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
     return children;
 }
 
+ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+    auto children = ShapeGroup();
+    
+    auto off_count = 1;
+    auto g = get_grammar(grammar_filename);
+    
+    auto bbox = ym_range2r({-100.0, -100.0}, {100.0, 100.0});
+    
+    for(auto&& s : shapes) {
+        auto am  = AnimatorMatrix();
+        auto temp = (TimeSliceShape*) s;
+        if (is_tag_invert(g, temp->slice->ts_tag)){
+            am  = AnimatorMatrix(bbox, {{1.0, 0.0},{0.0, 1.0}, {0.0, 0.0}});
+            //put the original values
+            am.start_b_color = {(float)parameters[0], (float)parameters[1], (float)parameters[2], (float)parameters[3]};
+            am.end_b_color =   {(float)parameters[4], (float)parameters[5], (float)parameters[6], (float)parameters[7]};
+            
+            am.start_f_color = {(float)parameters[8], (float)parameters[9], (float)parameters[10], (float)parameters[11]};
+            am.end_f_color =   {(float)parameters[12], (float)parameters[13], (float)parameters[14], (float)parameters[15]};
+            if (parameters[16] == 1.0) am.has_trail = true;
+        }
+        else {
+            am  = AnimatorMatrix(bbox, {{1.0, 0.0},{0.0, 1.0}, {0.0, 0.0}});
+            //change attributes here
+            am.start_b_color = {(float)parameters[0], (float)parameters[1], (float)parameters[2], (float)parameters[3]};
+            am.end_b_color =   {(float)parameters[4], (float)parameters[5], (float)parameters[6], (float)parameters[7]};
+            
+            am.start_f_color = {(float)parameters[8], (float)parameters[9], (float)parameters[10], (float)parameters[11]};
+            am.end_f_color =   {(float)parameters[12], (float)parameters[13], (float)parameters[14], (float)parameters[15]};
+            if (parameters[16] == 1.0) am.has_trail = true;
+        }
+        
+        auto akf = AnimatorKeyframes(am, 1, anim_attribute, parameters[17] * off_count);
+        
+        temp->slice->animation = akf;
+        temp->slice->ts_tag = tags[0];
+        off_count++;
+        children.push_back(temp);
+    }
+    return children;
+}
+
 

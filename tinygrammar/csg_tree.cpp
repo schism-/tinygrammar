@@ -1,4 +1,4 @@
-#include "csg_tree.h"
+    #include "csg_tree.h"
 
 CSGTree::Tree* CSGTree::InitTree() {
     return new Tree();
@@ -45,8 +45,23 @@ CSGTree::OpNode* CSGTree::BuildResult(const vector<polygon2r>& shapes, CSGTree::
     for (auto&& r : shapes){
         auto as = new AnimatedShape();
         as->poly = r;
+        for (auto&& acs : a->content->shapes){
+            if (r == acs->poly) {
+                as->border_color = acs->border_color;
+                as->fill_color = acs->fill_color;
+                break;
+            }
+        }
+        for (auto&& bcs : b->content->shapes){
+            if (r == bcs->poly) {
+                as->border_color = bcs->border_color;
+                as->fill_color = bcs->fill_color;
+                break;
+            }
+        }
         result_shapes.push_back(as);
     }
+    
     auto node = new CSGTree::OpNode();
     node->child_left = a;
     node->child_right = b;
@@ -158,7 +173,13 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
         a->content = new NodeContent(new_shapes);
     }
     
-    UpdateContent(tree, a);
+    if (anim.animator_name == anim_attribute) {
+        printf("");
+        UpdateContent(tree, a);
+    }
+    else {
+        UpdateContent(tree, a);
+    }
     
     //for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, frame, false);
 }
@@ -220,6 +241,18 @@ void CSGTree::UpdateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
                 break;
         }
         cur_node = (OpNode*)(cur_node->parent);
+    }
+}
+
+void CSGTree::PropagateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
+    auto root = tree->root;
+    for (auto as : a->content->shapes){
+        for (auto r_as : root->content->shapes){
+            if (r_as->poly == as->poly){
+                r_as->border_color = as->border_color;
+                r_as->fill_color = as->fill_color;
+            }
+        }
     }
 }
 

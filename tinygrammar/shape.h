@@ -89,6 +89,11 @@ struct AnimatedShape : Shape {
     
     Shape*                  annotation;
     
+    ym_vec4f                fill_color =   {255.0, 255.0, 255.0, 1.0};
+    ym_vec4f                border_color = {0.0, 0.0, 0.0, 1.0};
+    
+    vector<polygon2r>       trail;
+    
     AnimatedShape() {shape_type = animated_shape;};
     AnimatedShape(polygon2r poly) : poly(poly) {shape_type = animated_shape;};
     AnimatedShape(polygon2r poly, int tag, int tid) : poly(poly), tag(tag), tid(tid) {shape_type = animated_shape;};

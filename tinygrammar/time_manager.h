@@ -22,7 +22,7 @@ namespace TimeManager {
         AnimatorKeyframes animation;
         
         TimeSlice (double d) : duration(d){}
-        TimeSlice (double d, int tag) : duration(d), ts_tag(tag) {}
+        TimeSlice (double d, int tag) : duration(d), ts_tag(tag) {animation = AnimatorKeyframes();}
         TimeSlice (double d, AnimatorKeyframes akf) : duration(d), animation(akf) {}
     };
 

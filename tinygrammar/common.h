@@ -25,7 +25,7 @@
 
 using namespace std;
 
-#define PARAM_SIZE 16
+#define PARAM_SIZE 20
 #define TAG_SIZE 4
 
 #define ACTIVE_GRAMMAR 2
@@ -63,7 +63,8 @@ enum {
     op_time_slice,
     op_affine,
     op_affine_rot,
-    op_move_towards
+    op_move_towards,
+    op_attribute
 };
 
 enum {
@@ -72,7 +73,9 @@ enum {
     anim_wave,
     anim_single,
     anim_group,
-    anim_morph
+    anim_morph,
+    anim_attribute,
+    anim_noop
 };
 
 enum {

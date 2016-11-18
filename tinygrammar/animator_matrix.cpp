@@ -74,6 +74,12 @@ polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, doubl
     return new_shape;
 }
 
+AnimatedShape* transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double frame){
+    shape->border_color = (1.0 - frame) * am.start_b_color + frame * am.end_b_color;
+    shape->fill_color   = (1.0 - frame) * am.start_f_color + frame * am.end_f_color;
+    return shape;
+}
+
 AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
     auto key_idx = std::distance(akf.keyframes_idx.begin(), std::find(akf.keyframes_idx.begin(), akf.keyframes_idx.end(), keyframe));
     return akf.keyframes.at(key_idx);

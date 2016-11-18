@@ -14,9 +14,9 @@
 		{ 	
 			"rule_name" : "time_rule_1",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["b", "inv_b"],
+			"produced_tags" : ["b", "inv_b", "red"],
 			"operator" : "time_slice",
-			"parameters" : [0.5, 0.5],
+			"parameters" : [0.5, 0.3, 0.2],
 			"init_value" : ""
 		},
 
@@ -117,6 +117,28 @@
 			"operator" : "affine",
 			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0],
 			"init_value" : "f"
+		},
+
+		{ 	
+			"rule_name" : "attr_ls3",
+			"matching_tags" : ["l_s"],
+			"produced_tags" : ["term3"],
+			"operator" : "attribute",
+			"parameters" : [0.0, 0.0, 0.0, 1.0, 
+							0.0, 0.0, 0.0, 0.0, 
+							255.0, 255.0, 255.0, 1.0, 
+							255.0, 80.0, 80.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "red"
+		},
+
+		{ 	
+			"rule_name" : "attr_bs4",
+			"matching_tags" : ["b_s"],
+			"produced_tags" : ["term3"],
+			"operator" : "affine",
+			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 50.0, 0.0],
+			"init_value" : "red"
 		},
 	],
 }

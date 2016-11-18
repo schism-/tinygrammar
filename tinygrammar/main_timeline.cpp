@@ -52,15 +52,17 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
     
     // Tree creation
     auto op1    = CSGTree::Union(tree, n1, n2);
-    //auto op2    = CSGTree::Union(tree, op1, n4);
-    auto op3    = CSGTree::Union(tree, n5_1,  n5_2);
-    auto op3_1  = CSGTree::Union(tree, op3,   n5_3);
-    auto op3_2  = CSGTree::Union(tree, op3_1, n5_4);
-    auto op3_3  = CSGTree::Union(tree, op3_2, n5_5);
-    auto op3_4  = CSGTree::Union(tree, op3_3, n5_6);
-    auto op3_5  = CSGTree::Union(tree, op3_4, n5_7);
-    auto op3_6  = CSGTree::Union(tree, op3_5, n3);
-    auto op6    = CSGTree::PlaceInShape(tree, op3_6, op1);
+
+    auto op3    = CSGTree::Sum(tree, n5_1,  n5_2);
+    auto op3_1  = CSGTree::Sum(tree, op3,   n5_3);
+    auto op3_2  = CSGTree::Sum(tree, op3_1, n5_4);
+    auto op3_3  = CSGTree::Sum(tree, op3_2, n5_5);
+    auto op3_4  = CSGTree::Sum(tree, op3_3, n5_6);
+    auto op3_5  = CSGTree::Sum(tree, op3_4, n5_7);
+    
+    auto op6    = CSGTree::PlaceInShape(tree, n3, op1);
+    
+    auto op3_6  = CSGTree::Sum(tree, op3_5, op6);
     
     return tree;
 }
@@ -92,7 +94,7 @@ int main(int argc, const char * argv[]) {
 
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
     auto duration = last_exp->timeline->duration;
-    double frame_rate = 10.0;
+    double frame_rate = 6.0;
     double frame_step = 1.0 / frame_rate;
     auto k = 1;
     double prev_step = 0.0;

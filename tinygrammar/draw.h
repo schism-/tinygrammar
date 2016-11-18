@@ -26,8 +26,7 @@ struct DrawContext {
     
     virtual void draw_shape(TangleShape* shape, bool draw_frames = false, bool draw_as_points = false,
                             const ym_vec4f& stroke = {0,0,0,1}, const ym_vec4f& fill = {0,0,0,0});
-    virtual void draw_shape(AnimatedShape* shape, bool draw_frames = false, bool draw_as_points = false,
-                            const ym_vec4f& stroke = {0,0,0,1}, const ym_vec4f& fill = {0,0,0,0});
+    virtual void draw_shape(AnimatedShape* shape);
     virtual void draw_labels(const vector<string>& labels);
     
     virtual void draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill) = 0;

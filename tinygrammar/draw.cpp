@@ -22,14 +22,8 @@ void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_
     }
 }
 
-void DrawContext::draw_shape(AnimatedShape* shape, bool draw_frames, bool draw_as_points,
-                             const ym_vec4f& stroke, const ym_vec4f& fill) {
-    if(draw_as_points) {
-        for(auto& curve : shape->poly) for(auto&& p : curve) draw_point(p, stroke);
-    }
-    else{
-        draw_polygon(shape->poly, stroke, fill);
-    }
+void DrawContext::draw_shape(AnimatedShape* shape) {
+    draw_polygon(shape->poly, shape->border_color, shape->fill_color);
 }
 
 void DrawContext::draw_labels(const vector<string>& labels) {
@@ -136,10 +130,10 @@ void SVGContext::draw_text(const ym_vec2r& p, const string& text, double size, c
 
 string SVGContext::_svg_style(const ym_vec4f& stroke, const ym_vec4f& fill) {
     string svg = "";
-    if(stroke.w != 0) svg += fmt::format("stroke=\"rgb({},{},{})\" stroke-opacity=\"{}\"", stroke.x, stroke.y, stroke.z, stroke.w);
+    if(stroke.w != 0) svg += fmt::format("stroke=\"rgb({},{},{})\" stroke-opacity=\"{}\"", (int)stroke.x, (int)stroke.y, (int)stroke.z, stroke.w);
     else svg += "stroke=\"none\"";
     svg += " ";
-    if(fill.w != 0) svg += fmt::format("fill=\"rgb({},{},{})\" fill-opacity=\"{}\"", fill.x, fill.y, fill.z, fill.w);
+    if(fill.w != 0) svg += fmt::format("fill=\"rgb({},{},{})\" fill-opacity=\"{}\"", (int)fill.x, (int)(int)fill.y, (int)fill.z, fill.w);
     else svg += "fill=\"none\"";
     return svg;
 }

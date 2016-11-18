@@ -22,6 +22,8 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
 
 ShapeGroup rotation_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
+ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+
 struct Operator{
     int operator_name;
     int init_value;
@@ -61,6 +63,9 @@ struct Operator{
                 return affine_operator(shapes, tags, new_param, sampler, timeline);
                 break;
             }
+            case op_attribute:
+                return attributes_operator(shapes, tags, parameters, sampler, timeline);
+                break;
             default:
                 printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid op type\n");
                 break;

@@ -19,6 +19,14 @@ struct AnimatorMatrix{
     ym_range2r bounding_box;
     ym_vec2r step;
     
+    ym_vec4f start_b_color = {0.0, 0.0, 0.0, 1.0};
+    ym_vec4f end_b_color   = {0.0, 0.0, 0.0, 1.0};
+    
+    ym_vec4f start_f_color = {255.0, 255.0, 255.0, 1.0};
+    ym_vec4f end_f_color   = {255.0, 255.0, 255.0, 1.0};
+    
+    bool has_trail = false;
+    
     AnimatorMatrix () {}
     
     AnimatorMatrix (const ym_range2r& bb) {
@@ -58,6 +66,7 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
+AnimatedShape* transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double frame);
 
 AnimatorMatrix copy(const AnimatorMatrix& am);
 
@@ -68,7 +77,12 @@ struct AnimatorKeyframes{
     double offset;
     int anim_type;
     
-    AnimatorKeyframes () { }
+    AnimatorKeyframes () {
+        keyframes = vector<AnimatorMatrix>();
+        keyframes_idx = vector<int>();
+        offset = 0.0;
+        anim_type = anim_noop;
+    }
     
     AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<int>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
     

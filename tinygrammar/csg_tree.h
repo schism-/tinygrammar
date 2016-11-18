@@ -62,6 +62,8 @@ namespace CSGTree
     void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double frame, double total_duration, bool update = true);
     void UpdateLeafNode(Tree* tree, vector<LeafNode*> as, Animator anim, int frame, bool update = true);
     void UpdateContent(Tree* tree, LeafNode* a);
+    void PropagateContent(Tree* tree, LeafNode* a);
+    
     void UpdateOpNode(Tree* tree, OpNode* a);
     
     void AddNode(Tree* tree, LeafNode* node);

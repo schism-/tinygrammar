@@ -18,7 +18,7 @@ struct Animator{
     anim_params params;
     AnimatorKeyframes akf;
     
-    Animator (){}
+    Animator (){animator_name = anim_noop;}
     Animator (int animator_name) : animator_name(animator_name) {}
     Animator (int animator_name, anim_params p) : animator_name(animator_name), params(p) {}
     Animator (int animator_name, AnimatorKeyframes akf) : animator_name(animator_name), akf(akf) {}
@@ -51,9 +51,24 @@ struct Animator{
                 return shape;
                 break;
             }
+            case anim_attribute:
+            {
+                if (frame < akf.offset) return shape;
+                auto m = get_matrix(akf, frame);
+                for (auto&& as : shape){
+                    as = transform_attributes(m, as, frame);
+                }
+                return shape;
+                break;
+            }
             case anim_morph:
             {
                 return vector<AnimatedShape*>();
+                break;
+            }
+            case anim_noop:
+            {
+                return shape;
                 break;
             }
             default:

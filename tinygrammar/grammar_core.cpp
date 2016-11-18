@@ -132,6 +132,8 @@ Grammar* get_grammar(string filename){
                 rule->op = Operator(op_affine, init_value[0]);
             else if (rule_json.get<String>("operator") == "rotation")
                 rule->op = Operator(op_affine_rot, init_value[0]);
+            else if (rule_json.get<String>("operator") == "attribute")
+                rule->op = Operator(op_attribute, init_value[0]);
             else if (rule_json.get<String>("operator") == "move_towards")
                 rule->op = Operator(op_move_towards, init_value[0]);
             else
