@@ -73,25 +73,40 @@ AnimatorMatrix copy(const AnimatorMatrix& am);
 struct AnimatorKeyframes{
     
     vector<AnimatorMatrix> keyframes;
-    vector<int> keyframes_idx;
+    vector<double> keyframes_idx;
     double offset;
     int anim_type;
     
     AnimatorKeyframes () {
         keyframes = vector<AnimatorMatrix>();
-        keyframes_idx = vector<int>();
+        keyframes_idx = vector<double>();
         offset = 0.0;
         anim_type = anim_noop;
     }
     
-    AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<int>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
+    AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<double>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
     
-    AnimatorKeyframes (const AnimatorMatrix kf, int kf_num, int a_t, double off = 0.0) {
+    AnimatorKeyframes (const AnimatorMatrix& kf, const vector<double>& kf_num, int a_t, double off = 0.0) {
         keyframes = vector<AnimatorMatrix>();
-        keyframes_idx = vector<int>();
-        for (auto i = 0 ; i < kf_num; i++) {
+        keyframes_idx = vector<double>();
+        for (auto&& kfn : kf_num) {
             keyframes.push_back(kf);
-            keyframes_idx.push_back(i);
+            keyframes_idx.push_back(kfn);
+        }
+        offset = off;
+        anim_type = a_t;
+    }
+    
+    AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<double>& kf_num, int a_t, double off = 0.0) {
+        if ((int)(kf.size()) != (int)(kf_num.size())){
+            printf("[ERROR] AKF CONSTRUCTOR : kf length and kf_num doesn't match ");
+            return;
+        }
+        keyframes = vector<AnimatorMatrix>();
+        keyframes_idx = vector<double>();
+        for (auto i = 0;  i < (int)kf_num.size(); i++) {
+            keyframes.push_back(kf[i]);
+            keyframes_idx.push_back(kf_num[i]);
         }
         offset = off;
         anim_type = a_t;
@@ -102,7 +117,7 @@ struct AnimatorKeyframes{
 };
 
 AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe);
-AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, double delta);
+pair<AnimatorMatrix, ym_vec2r> get_matrix(const AnimatorKeyframes& akf, double delta);
 AnimatorKeyframes copy(const AnimatorKeyframes& akf);
 
 #endif /* animator_matrix_h */

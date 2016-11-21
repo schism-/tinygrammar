@@ -167,9 +167,9 @@ CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CS
 //    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
 //}
 
-void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double frame, double incr, bool update){
+void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double current_time, double incr, double total_dur, bool update){
     if (update){
-        auto new_shapes = anim(a->content->shapes, frame, incr);
+        auto new_shapes = anim(a->content->shapes, current_time, incr, total_dur);
         a->content = new NodeContent(new_shapes);
     }
     
@@ -186,7 +186,7 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as, Animator anim, int frame, bool update){
     for (auto&& a : as){
-        UpdateLeafNode(tree, a, anim, frame, update);
+        UpdateLeafNode(tree, a, anim, frame, frame, update);
     }
 }
 

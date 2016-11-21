@@ -11,32 +11,41 @@
 			"init_value" : "square"
 		}, 
 
+		// { 	
+		// 	"rule_name" : "time_rule_1",
+		// 	"matching_tags" : ["a"],
+		// 	"produced_tags" : ["b", "inv_b", "red"],
+		// 	"operator" : "time_slice",
+		// 	"parameters" : [0.4, 0.4, 0.2],
+		// 	"init_value" : ""
+		// },
+
 		{ 	
-			"rule_name" : "time_rule_1",
+			"rule_name" : "time_rule_4",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["b", "inv_b", "red"],
+			"produced_tags" : ["d", "e"],
 			"operator" : "time_slice",
-			"parameters" : [0.5, 0.3, 0.2],
+			"parameters" : [0.5, 0.5],
 			"init_value" : ""
 		},
 
-		{ 	
-			"rule_name" : "time_rule_2",
-			"matching_tags" : ["b"],
-			"produced_tags" : ["c", "d"],
-			"operator" : "time_slice",
-			"parameters" : [0.6, 0.4],
-			"init_value" : ""
-		},
+		// { 	
+		// 	"rule_name" : "time_rule_2",
+		// 	"matching_tags" : ["b"],
+		// 	"produced_tags" : ["c", "d"],
+		// 	"operator" : "time_slice",
+		// 	"parameters" : [0.6, 0.4],
+		// 	"init_value" : ""
+		// },
 
-		{ 	
-			"rule_name" : "time_rule_3",
-			"matching_tags" : ["c"],
-			"produced_tags" : ["e", "f"],
-			"operator" : "time_slice",
-			"parameters" : [0.4, 0.6],
-			"init_value" : ""
-		},
+		// { 	
+		// 	"rule_name" : "time_rule_3",
+		// 	"matching_tags" : ["c"],
+		// 	"produced_tags" : ["e", "f"],
+		// 	"operator" : "time_slice",
+		// 	"parameters" : [0.4, 0.6],
+		// 	"init_value" : ""
+		// },
 
 		{ 	
 			"rule_name" : "space_rule_bs1",
@@ -79,7 +88,7 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["term2"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 90.0, 0.1],
+			"parameters" : [1.0, 90.0, 0.25],
 			"init_value" : "e"
 		}, 
 

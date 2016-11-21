@@ -145,35 +145,41 @@ ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_pa
 }
 
 ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+    auto g = get_grammar(grammar_filename);
     auto children = ShapeGroup();
-    
     int animator_type;
     ym_range2r bbox;
     
     auto data = vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>>();
+    auto normal_count = 0;
+    auto inv_count = 0;
+    auto normal_min_dur = 10000.0;
+    auto inv_min_dur = 10000.0;
     for (auto&& s : shapes){
         auto temp = (TimeSliceShape*)s;
+        if (is_tag_invert(g, temp->slice->ts_tag)) { inv_count++; inv_min_dur = min(inv_min_dur, temp->slice->duration); }
+        else { normal_count++; normal_min_dur = min(normal_min_dur, temp->slice->duration); }
         data.push_back(make_pair(temp, TimeManager::FindTimeLine(timeline, temp->slice)));
     }
     
-    if (parameters[0] == 1.0) {
-        animator_type = anim_single;
-    }
-    else {
-        animator_type = anim_group;
-    }
+    if (parameters[0] == 1.0) animator_type = anim_single;
+    else animator_type = anim_group;
     
     auto anim_shapes = vector<AnimatedShape*>();
     for (auto&& ntl : data) anim_shapes.insert(anim_shapes.end(), ntl.second->node->content->shapes.begin(), ntl.second->node->content->shapes.end());
     bbox = bounds_polygons(make_vector(anim_shapes, [&](AnimatedShape* as){return as->poly;}));
-    
     bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
     
-    auto off_count = 1;
-    auto g = get_grammar(grammar_filename);
+    auto n_off_count = 1;
+    auto i_off_count = 1;
+    double n_max_offset = parameters[7] * normal_count;
+    double n_max_dur = max(0.0, normal_min_dur - n_max_offset);
+    double i_max_offset = parameters[7] * inv_count;
+    double i_max_dur = max(0.0, inv_min_dur - i_max_offset);
     
     for(auto&& d : data) {
         auto am  = AnimatorMatrix();
+        double start_delta, end_delta;
         
         if (is_tag_invert(g, d.first->slice->ts_tag)){
             auto mat = ym_affine<double, 3, false>();
@@ -182,18 +188,25 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
             mat.z = {parameters[5], parameters[6], 1.0};
             mat = ym_inverse(mat);
             am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {mat.z.x, mat.z.y}});
+            start_delta = (parameters[7] * i_off_count) / d.first->slice->duration;
+            end_delta = (parameters[7] * i_off_count + i_max_dur) / d.first->slice->duration;
+            i_off_count++;
         }
         else {
             am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
+            start_delta = (parameters[7] * n_off_count) / d.first->slice->duration;
+            end_delta = (parameters[7] * n_off_count + n_max_dur) / d.first->slice->duration;
+            n_off_count++;
         }
         
+        if (parameters[7] == 0.0) { start_delta = 0.0; end_delta = 1.0; }
+        
         auto akf = AnimatorKeyframes();
-        if (animator_type == anim_single)   akf = AnimatorKeyframes(am, 1, anim_single, parameters[7] * off_count);
-        else                                akf = AnimatorKeyframes(am, 1, anim_group, parameters[7] * off_count);
+        if (animator_type == anim_single)   akf = AnimatorKeyframes(am, {start_delta, end_delta}, anim_single, 0.0);
+        else                                akf = AnimatorKeyframes(am, {start_delta, end_delta}, anim_group, 0.0);
         
         d.first->slice->animation = akf;
         d.first->slice->ts_tag = tags[0];
-        off_count++;
         children.push_back(d.first);
     }
     return children;
@@ -231,7 +244,7 @@ ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_pa
             if (parameters[16] == 1.0) am.has_trail = true;
         }
         
-        auto akf = AnimatorKeyframes(am, 1, anim_attribute, parameters[17] * off_count);
+        auto akf = AnimatorKeyframes(am, {0.0, 1.0}, anim_attribute, parameters[17] * off_count);
         
         temp->slice->animation = akf;
         temp->slice->ts_tag = tags[0];

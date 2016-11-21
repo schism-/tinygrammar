@@ -94,7 +94,7 @@ int main(int argc, const char * argv[]) {
 
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
     auto duration = last_exp->timeline->duration;
-    double frame_rate = 6.0;
+    double frame_rate = 30.0;
     double frame_step = 1.0 / frame_rate;
     auto k = 1;
     double prev_step = 0.0;

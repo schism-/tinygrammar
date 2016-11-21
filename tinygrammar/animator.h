@@ -25,15 +25,19 @@ struct Animator{
     
     ~Animator(){}
     
-    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double frame, double incr) {
+    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double current_time, double incr, double total_dur) {
         switch(animator_name){
             case anim_single:
             {
-                if (frame < akf.offset) return shape;
-                auto m = get_matrix(akf, frame);
+                auto m = get_matrix(akf, current_time / total_dur);
+                auto alpha_s = m.second[0];
+                auto alpha_e = m.second[1];
+                auto alpha_diff = alpha_e - alpha_s;
                 
                 for (auto&& as : shape){
-                    auto new_poly = transform(m, as->poly, incr);
+                    auto new_incr = incr / (alpha_diff * total_dur);
+                    new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
+                    auto new_poly = transform(m.first, as->poly, new_incr);
                     as->poly = new_poly;
                 }
                 
@@ -42,10 +46,15 @@ struct Animator{
             }
             case anim_group:
             {
-                if (frame < akf.offset) return shape;
-                auto m = get_matrix(akf, frame);
+                auto m = get_matrix(akf, current_time / total_dur);
+                auto alpha_s = m.second[0];
+                auto alpha_e = m.second[1];
+                auto alpha_diff = alpha_e - alpha_s;
+                
                 for (auto&& as : shape){
-                    auto new_poly = transform_group(m, as->poly, incr);
+                    auto new_incr = incr / (alpha_diff * total_dur);
+                    new_incr = min (new_incr, total_dur * alpha_e - (current_time - alpha_s * total_dur));
+                    auto new_poly = transform_group(m.first, as->poly, new_incr);
                     as->poly = new_poly;
                 }
                 return shape;
@@ -53,10 +62,16 @@ struct Animator{
             }
             case anim_attribute:
             {
-                if (frame < akf.offset) return shape;
-                auto m = get_matrix(akf, frame);
+                if (current_time / total_dur < akf.offset) return shape;
+                auto m = get_matrix(akf, current_time / total_dur);
+                auto alpha_s = m.second[0];
+                auto alpha_e = m.second[1];
+                auto alpha_diff = alpha_e - alpha_s;
+                
                 for (auto&& as : shape){
-                    as = transform_attributes(m, as, frame);
+                    auto new_incr = incr / (alpha_diff * total_dur);
+                    new_incr = min (new_incr, total_dur * alpha_e - (current_time - alpha_s * total_dur));
+                    as = transform_attributes(m.first, as, new_incr);
                 }
                 return shape;
                 break;

@@ -85,11 +85,41 @@ AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
     return akf.keyframes.at(key_idx);
 }
 
-AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, double delta){
+pair<AnimatorMatrix, ym_vec2r> get_matrix(const AnimatorKeyframes& akf, double delta){
     // For now it's just an hack for constant matrices.
     // If more keyframes are present, we should interpolate
     // to get the final matrix.
-    return akf.keyframes.at(0);
+    if (delta < akf.keyframes_idx[0] || delta > akf.keyframes_idx.back()){
+        auto bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
+        return make_pair(AnimatorMatrix(bbox, ym_identity_affine_2r), ym_vec2r(0.0, 1.0));
+    }
+    else{
+        auto start_idx = 0.0, end_idx = 1.0;
+        for (auto i = 1; i < (int)akf.keyframes_idx.size(); i++){
+            if (delta <= akf.keyframes_idx[i]) { start_idx = i - 1; end_idx = i; break;}
+        }
+        auto local_delta = (delta - akf.keyframes_idx[start_idx])/(akf.keyframes_idx[end_idx] - akf.keyframes_idx[start_idx]);
+        
+        auto new_am = AnimatorMatrix(akf.keyframes[start_idx].bounding_box);
+        new_am.mats_centers = akf.keyframes[start_idx].mats_centers;
+        new_am.has_trail = akf.keyframes[start_idx].has_trail;
+        new_am.start_b_color = akf.keyframes[start_idx].start_b_color;
+        new_am.start_f_color = akf.keyframes[start_idx].start_f_color;
+        new_am.end_b_color = akf.keyframes[start_idx].end_b_color;
+        new_am.end_f_color = akf.keyframes[start_idx].end_f_color;
+        
+        for (auto k = 0; k < (int)akf.keyframes[start_idx].mats.size(); k++){
+            auto mat_s = ym_mat<double, 3, 3>(akf.keyframes[start_idx].mats[k]);
+            auto mat_e = ym_mat<double, 3, 3>(akf.keyframes[start_idx].mats[k]);
+            auto log_ms = ln(mat_s);
+            auto log_me = ln(mat_e);
+            auto log_comb = log_ms * (1.0 - local_delta) + log_me * local_delta;
+            log_comb = exp(log_comb);
+            new_am.mats[k] = ym_affine2r(log_comb);
+        }
+        
+        return make_pair(new_am, ym_vec2r(akf.keyframes_idx[start_idx], akf.keyframes_idx[end_idx]));
+    }
 }
 
 AnimatorKeyframes copy(const AnimatorKeyframes& akf){

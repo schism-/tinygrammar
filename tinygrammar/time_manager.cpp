@@ -164,8 +164,10 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
         return;
     }
     
+    //delta = min( delta, selected_slice->duration - slice_current_time );
+    
     //Update the node linked to the ntl with the animation associated to the active slice
     CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, Animator(selected_slice->animation.anim_type, selected_slice->animation),
-                            slice_current_time/selected_slice->duration, delta/selected_slice->duration);
+                            slice_current_time, delta, selected_slice->duration);
     
 }

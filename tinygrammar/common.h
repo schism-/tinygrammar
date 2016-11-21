@@ -89,6 +89,7 @@ enum {
 
 typedef ym_vec<double, 2> ym_vec2r;
 typedef ym_affine<double, 2, false> ym_affine2r;
+const ym_affine2r ym_identity_affine_2r = ym_affine2r({{1.0, 0.0}, {0.0, 1.0}, {0.0, 0.0}});
 
 typedef ym_mat<double, 3, 3> ym_mat3r;
 
