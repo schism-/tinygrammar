@@ -39,6 +39,7 @@ namespace CSGTree
     
     struct Tree
     {
+        int node_id = 0;
         Node* root;
         vector<OpNode*> nodes;
         vector<LeafNode*> leaves;
@@ -71,6 +72,7 @@ namespace CSGTree
     
     LeafNode* FindNode(Tree* tree, AnimatedShape* shape);
     
-    OpNode* BuildResult(const vector<polygon2r>& shapes, Node* a, Node* b);
+    OpNode* BuildResult(Tree* tree, const vector<polygon2r>& shapes, Node* a, Node* b);
     
+    int get_node_id(Tree* tree);
 }

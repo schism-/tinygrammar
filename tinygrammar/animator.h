@@ -34,9 +34,16 @@ struct Animator{
                 auto alpha_e = m.second[1];
                 auto alpha_diff = alpha_e - alpha_s;
                 
+                if (alpha_e - alpha_s <= EPS_2)
+                    printf("houston, we have a problem! \n");
+                
+                auto new_incr = incr / (alpha_diff * total_dur);
+                //new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
+                
+                printf("\t new_incr %f | incr %.2f |  %.2f / %.2f |  [%.2f, %.2f]->%.2f \n",
+                       new_incr, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
+                
                 for (auto&& as : shape){
-                    auto new_incr = incr / (alpha_diff * total_dur);
-                    new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
                     auto new_poly = transform(m.first, as->poly, new_incr);
                     as->poly = new_poly;
                 }
@@ -50,10 +57,11 @@ struct Animator{
                 auto alpha_s = m.second[0];
                 auto alpha_e = m.second[1];
                 auto alpha_diff = alpha_e - alpha_s;
+                auto new_incr = incr / (alpha_diff * total_dur);
+                //new_incr = min (new_incr, total_dur * alpha_e - (current_time - alpha_s * total_dur));
+                //new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
                 
                 for (auto&& as : shape){
-                    auto new_incr = incr / (alpha_diff * total_dur);
-                    new_incr = min (new_incr, total_dur * alpha_e - (current_time - alpha_s * total_dur));
                     auto new_poly = transform_group(m.first, as->poly, new_incr);
                     as->poly = new_poly;
                 }
@@ -68,9 +76,10 @@ struct Animator{
                 auto alpha_e = m.second[1];
                 auto alpha_diff = alpha_e - alpha_s;
                 
+                auto new_incr = incr / (alpha_diff * total_dur);
+                //new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
+                
                 for (auto&& as : shape){
-                    auto new_incr = incr / (alpha_diff * total_dur);
-                    new_incr = min (new_incr, total_dur * alpha_e - (current_time - alpha_s * total_dur));
                     as = transform_attributes(m.first, as, new_incr);
                 }
                 return shape;

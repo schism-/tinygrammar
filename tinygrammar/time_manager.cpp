@@ -147,12 +147,12 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
     //Find the right active slice for the current_time
 
     auto selected_slice = (TimeManager::TimeSlice*) nullptr;
-    auto slice_current_time = 0.0;
-    auto incr = 0.0;
+    double slice_current_time = 0.0;
+    double incr = 0.0;
     
     for (auto&& sl : ntl->slices){
         incr += sl->duration;
-        if (current_time <= incr) {
+        if (current_time <= incr + EPS_2) {
             selected_slice = sl;
             slice_current_time = current_time + sl->duration - incr;
             break;
@@ -164,10 +164,13 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
         return;
     }
     
-    //delta = min( delta, selected_slice->duration - slice_current_time );
+    if( delta > (selected_slice->duration - slice_current_time) ){
+        //delta = min( delta, selected_slice->duration - slice_current_time );
+        //if (delta == 0.0) return;
+    }
     
     //Update the node linked to the ntl with the animation associated to the active slice
+    printf("n %d s %d ", (CSGTree::LeafNode*)ntl->node->node_tag, selected_slice->ts_tag);
     CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, Animator(selected_slice->animation.anim_type, selected_slice->animation),
                             slice_current_time, delta, selected_slice->duration);
-    
 }
