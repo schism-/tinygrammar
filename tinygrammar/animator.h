@@ -36,7 +36,7 @@ struct Animator{
         auto local_alpha_prev = ym_clamp(local_alpha - incr, 0.0f, 1.0f);
         auto local_alpha_ease = cubicInOut(local_alpha);
         auto local_alpha_prev_ease = cubicInOut(local_alpha_prev);
-        new_incr = local_alpha_ease - local_alpha_prev_ease;
+        new_incr = (local_alpha_ease - local_alpha_prev_ease) / ((alpha_e - alpha_s) * total_dur);
         printf(" n_i %f | l_a %.4f | i %.4f | %.4f / %.4f | [%.2f, %.2f]->%.2f \n",
                new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_e - alpha_s);
         return new_incr;
@@ -50,12 +50,13 @@ struct Animator{
                 auto alpha_s = m.second[0];
                 auto alpha_e = m.second[1];
                 
-                if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
+                if (alpha_e - alpha_s <= EPS_2)
+                    printf("houston, we have a problem! \n");
                 
-                if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
-                    printf(" \n");
-                    return shape;
-                }
+//                if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
+//                    printf(" \n");
+//                    return shape;
+//                }
                 
                 auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
                 for (auto&& as : shape) as->poly = transform(m.first, as->poly, new_incr);
@@ -72,10 +73,10 @@ struct Animator{
                 
                 if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
                 
-                if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
-                    printf(" \n");
-                    return shape;
-                }
+//                if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
+//                    printf(" \n");
+//                    return shape;
+//                }
                 
                 auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
                 for (auto&& as : shape) as->poly = transform_group(m.first, as->poly, new_incr);
@@ -100,8 +101,8 @@ struct Animator{
                 
                 auto new_incr = incr / (alpha_diff * total_dur);
                 auto local_alpha = (current_time - alpha_s * total_dur) / (alpha_diff * total_dur);
-                printf(" n_i %f | l_a %.4f | i %.4f | %.2f / %.2f | [%f, %f]->%f \n",
-                       new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
+                printf(" n_i %f | l_a %.4f | i %.4f | %.4f / %.4f | [%.2f, %.2f]->%.2f \n",
+                       new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_e - alpha_s);
                 
                 for (auto&& as : shape) as = transform_attributes(m.first, as, cubicInOut(local_alpha));
 

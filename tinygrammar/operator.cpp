@@ -226,11 +226,11 @@ ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_pa
         if (is_tag_invert(g, temp->slice->ts_tag)){
             am  = AnimatorMatrix(bbox, {{1.0, 0.0},{0.0, 1.0}, {0.0, 0.0}});
             //put the original values
-            am.start_b_color = {(float)parameters[0], (float)parameters[1], (float)parameters[2], (float)parameters[3]};
-            am.end_b_color =   {(float)parameters[4], (float)parameters[5], (float)parameters[6], (float)parameters[7]};
+            am.end_b_color = {(float)parameters[0], (float)parameters[1], (float)parameters[2], (float)parameters[3]};
+            am.start_b_color =   {(float)parameters[4], (float)parameters[5], (float)parameters[6], (float)parameters[7]};
             
-            am.start_f_color = {(float)parameters[8], (float)parameters[9], (float)parameters[10], (float)parameters[11]};
-            am.end_f_color =   {(float)parameters[12], (float)parameters[13], (float)parameters[14], (float)parameters[15]};
+            am.end_f_color = {(float)parameters[8], (float)parameters[9], (float)parameters[10], (float)parameters[11]};
+            am.start_f_color =   {(float)parameters[12], (float)parameters[13], (float)parameters[14], (float)parameters[15]};
             if (parameters[16] == 1.0) am.has_trail = true;
         }
         else {

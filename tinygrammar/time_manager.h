@@ -15,6 +15,8 @@
 
 
 namespace TimeManager {
+
+    static double anim_current_time = 0.0;
     
     struct TimeSlice{
         int ts_tag = -1;

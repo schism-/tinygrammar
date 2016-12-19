@@ -145,7 +145,7 @@ void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree,
 
 void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time, double delta){
     //Find the right active slice for the current_time
-
+    
     auto selected_slice = (TimeManager::TimeSlice*) nullptr;
     double slice_current_time = 0.0;
     double incr = 0.0;
@@ -164,7 +164,12 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
         return;
     }
     
-    if( slice_current_time + delta > selected_slice->duration ){
+//    if (slice_current_time < delta){
+//        slice_current_time = delta;
+//        anim_current_time += delta;
+//    }
+//    
+    if( slice_current_time + delta > selected_slice->duration + EPS_2 ){
         delta = delta + (selected_slice->duration - slice_current_time);
         slice_current_time = selected_slice->duration;
     }

@@ -67,6 +67,55 @@ CSGTree::Tree* initialize_tree(Grammar* g) {
     return tree;
 }
 
+void printTimeLine(Grammar* g, TimeManager::TimeLine* t){
+    int scale = 80;
+    std::cout << std::endl;
+    std::cout << " ~~~ Printing Timeline ~~~ " << std::endl;
+    auto k = 0;
+    for (auto&& ntl : t->timelines){
+        std::cout << (k++) << " " << mapping_to_tag(g, ntl->node->content->shapes[0]->tag) << "\t|";
+        auto ntl_duration = ntl->duration;
+        char slice_char = '-';
+        for (auto&& s : ntl->slices){
+            int num = (int)(scale * (s->duration / ntl_duration));
+            std::cout << "{";
+            std::cout << std::string(num, slice_char);
+            std::cout << "}";
+        }
+        std::cout << "|" << std::endl;
+        
+        std::cout << "\t\t|";
+        slice_char = ' ';
+        for (auto&& s : ntl->slices){
+            int num = (int)(scale * (s->duration / ntl_duration));
+            stringstream ss;
+            ss << mapping_to_tag(g, s->ts_tag) << " (" << s->duration << ")";
+            int padding = num - (int)ss.str().length();
+            
+            if (padding > 0){
+                std::cout << "{" << std::string(padding / 2, slice_char);
+                
+                std::cout << ss.str();
+                
+                if (padding % 2 == 0) std::cout << std::string(padding / 2, slice_char);
+                else std::cout << std::string(padding / 2 + 1, slice_char);
+            }
+            else {
+                padding = num - (int)(mapping_to_tag(g, s->ts_tag).length());
+                std::cout << "{" << std::string(padding / 2, slice_char);
+                
+                std::cout << mapping_to_tag(g, s->ts_tag);
+                
+                if (padding % 2 == 0) std::cout << std::string(padding / 2, slice_char);
+                else std::cout << std::string(padding / 2 + 1, slice_char);
+            }
+            
+            std::cout << "}";
+        }
+        std::cout << "|" << std::endl;
+    }
+    std::cout << std::endl;
+}
 
 int main(int argc, const char * argv[]) {
     
@@ -85,11 +134,11 @@ int main(int argc, const char * argv[]) {
     
     ((ExpansionAnim*)(em->history.back()))->tree = tree;
     
-    TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
+    printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     
     while (expand(em)){
         printf("Expanding... \n");
-        TimeManager::printTimeLine(((ExpansionAnim*)(em->history.back()))->timeline);
+        printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     };
     
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
