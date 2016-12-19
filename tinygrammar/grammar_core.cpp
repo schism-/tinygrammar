@@ -78,6 +78,8 @@ Grammar* get_grammar(string filename){
         //cout << o.json() << endl;
         
         assert(o.has<String>("grammar_name"));
+        assert(o.has<Number>("seed"));
+        assert(o.has<Number>("framerate"));
         assert(o.has<Array>("rules"));
         
         res->name = o.get<String>("grammar_name");
@@ -146,6 +148,9 @@ Grammar* get_grammar(string filename){
             
             res->rules.push_back(rule);
         }
+        
+        res->framerate = (double) o.get<Number>("framerate");
+        
         main_grammar = res;
         return main_grammar;
     }

@@ -25,6 +25,23 @@ struct Animator{
     
     ~Animator(){}
     
+    double cubicInOut(double t){
+        if  (t < 0.5) return 4*t*t*t;
+        else return (t-1) * (2 * t - 2) * (2 * t - 2) + 1;
+    }
+    
+    double easing(double incr, double alpha_s, double alpha_e, double current_time, double total_dur){
+        auto new_incr = incr / ((alpha_e - alpha_s) * total_dur);
+        auto local_alpha = (current_time - alpha_s * total_dur) / ((alpha_e - alpha_s) * total_dur);
+        auto local_alpha_prev = ym_clamp(local_alpha - incr, 0.0f, 1.0f);
+        auto local_alpha_ease = cubicInOut(local_alpha);
+        auto local_alpha_prev_ease = cubicInOut(local_alpha_prev);
+        new_incr = local_alpha_ease - local_alpha_prev_ease;
+        printf(" n_i %f | l_a %.4f | i %.4f | %.4f / %.4f | [%.2f, %.2f]->%.2f \n",
+               new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_e - alpha_s);
+        return new_incr;
+    }
+    
     vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double current_time, double incr, double total_dur) {
         switch(animator_name){
             case anim_single:
@@ -32,26 +49,16 @@ struct Animator{
                 auto m = get_matrix(akf, current_time / total_dur);
                 auto alpha_s = m.second[0];
                 auto alpha_e = m.second[1];
-                auto alpha_diff = alpha_e - alpha_s;
                 
-                if (alpha_e - alpha_s <= EPS_2)
-                    printf("houston, we have a problem! \n");
+                if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
                 
                 if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
                     printf(" \n");
                     return shape;
                 }
                 
-                auto new_incr = incr / (alpha_diff * total_dur);
-                //new_incr = min (new_incr, (total_dur * alpha_e - (current_time - alpha_s * total_dur)) / alpha_diff * total_dur);
-                
-                printf(" n_i %f | i %.4f | %.2f / %.2f | [%f, %f]->%f \n",
-                       new_incr, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
-                
-                for (auto&& as : shape){
-                    auto new_poly = transform(m.first, as->poly, new_incr);
-                    as->poly = new_poly;
-                }
+                auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
+                for (auto&& as : shape) as->poly = transform(m.first, as->poly, new_incr);
                 
                 return shape;
                 break;
@@ -63,22 +70,16 @@ struct Animator{
                 auto alpha_e = m.second[1];
                 auto alpha_diff = alpha_e - alpha_s;
                 
-                if (alpha_e - alpha_s <= EPS_2)
-                    printf("houston, we have a problem! \n");
+                if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
                 
                 if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
                     printf(" \n");
                     return shape;
                 }
                 
-                auto new_incr = incr / (alpha_diff * total_dur);
-                printf(" n_i %f | i %.4f | %.2f / %.2f | [%f, %f]->%f \n",
-                       new_incr, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
+                auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
+                for (auto&& as : shape) as->poly = transform_group(m.first, as->poly, new_incr);
                 
-                for (auto&& as : shape){
-                    auto new_poly = transform_group(m.first, as->poly, new_incr);
-                    as->poly = new_poly;
-                }
                 return shape;
                 break;
             }
@@ -90,8 +91,7 @@ struct Animator{
                 auto alpha_e = m.second[1];
                 auto alpha_diff = alpha_e - alpha_s;
                 
-                if (alpha_e - alpha_s <= EPS_2)
-                    printf("houston, we have a problem! \n");
+                if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
                 
                 if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
                     printf(" \n");
@@ -99,22 +99,24 @@ struct Animator{
                 }
                 
                 auto new_incr = incr / (alpha_diff * total_dur);
-                printf(" n_i %f | i %.4f | %.2f / %.2f | [%f, %f]->%f \n",
-                       new_incr, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
+                auto local_alpha = (current_time - alpha_s * total_dur) / (alpha_diff * total_dur);
+                printf(" n_i %f | l_a %.4f | i %.4f | %.2f / %.2f | [%f, %f]->%f \n",
+                       new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_diff);
                 
-                for (auto&& as : shape){
-                    as = transform_attributes(m.first, as, (current_time - alpha_s * total_dur) / (alpha_diff * total_dur));
-                }
+                for (auto&& as : shape) as = transform_attributes(m.first, as, cubicInOut(local_alpha));
+
                 return shape;
                 break;
             }
             case anim_morph:
             {
+                printf("anim_morph \n");
                 return vector<AnimatedShape*>();
                 break;
             }
             case anim_noop:
             {
+                printf("noop \n");
                 return shape;
                 break;
             }

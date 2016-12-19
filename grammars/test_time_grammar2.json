@@ -1,6 +1,7 @@
 {
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
+	"framerate" : 30.0,
 	"rules" : [
 		{ 
 			"rule_name" : "init_1",
@@ -146,7 +147,7 @@
 			"matching_tags" : ["b_s"],
 			"produced_tags" : ["term3"],
 			"operator" : "affine",
-			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 50.0, 0.0],
+			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0],
 			"init_value" : "red"
 		},
 	],

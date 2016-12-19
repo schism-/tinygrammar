@@ -35,6 +35,7 @@ namespace CSGTree
     struct LeafNode : Node
     {
         vector<LeafNode*> copies;
+        Animator animation;
     };
     
     struct Tree

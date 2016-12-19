@@ -21,6 +21,9 @@ struct Grammar {
     map<string, int> rule_mapping;
     map<string, int> tag_mapping;
     
+    // Animation data
+    double framerate;
+    
     Grammar() {rules = vector<Rule*>(); rule_mapping = map<string, int>(); tag_mapping = map<string, int>();}
     
     ~Grammar() {};
