@@ -1,7 +1,7 @@
 {
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
-	"framerate" : 30.0,
+	"framerate" : 20.0,
 	"rules" : [
 		{ 
 			"rule_name" : "init_1",
@@ -62,7 +62,7 @@
 			"matching_tags" : ["b_s"],
 			"produced_tags" : ["bt2"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 90.0, 0.0],
+			"parameters" : [1.0, 180.0, 0.0],
 			"init_value" : "e"
 		},
 
@@ -75,21 +75,13 @@
 			"init_value" : "f"
 		},
 
-		// { 	
-		// 	"rule_name" : "space_rule_ls1",
-		// 	"matching_tags" : ["l_s"],
-		// 	"produced_tags" : ["term1"],
-		// 	"operator" : "affine",
-		// 	"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
-		// 	"init_value" : "d"
-		// },
 
 		{ 	
 			"rule_name" : "space_rule_ls2",
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["lt1"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 90.0, 0.05],
+			"parameters" : [1.0, 90.0, 0.02],
 			"init_value" : "d"
 		},
 
@@ -98,7 +90,7 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["lt2"],
 			"operator" : "rotation",
-			"parameters" : [1.0, -180.0, 0.05],
+			"parameters" : [1.0, -180.0, 0.02],
 			"init_value" : "e"
 		}, 
 
@@ -107,7 +99,7 @@
 			"matching_tags" : ["l_s"],
 			"produced_tags" : ["lt3"],
 			"operator" : "affine",
-			"parameters" : [1.0, 1.0, 0.0, 0.0, 1.0, 50.0, -50.0, 0.0],
+			"parameters" : [1.0, 1.2, 0.0, 0.0, 1.2, 0.0, 0.0, 0.02],
 			"init_value" : "f"
 		},
 
@@ -115,8 +107,8 @@
 			"rule_name" : "space_rule_ms1",
 			"matching_tags" : ["m_s"],
 			"produced_tags" : ["mt1"],
-			"operator" : "affine",
-			"parameters" : [1.0, 1.5, 0.0, 0.0, 1.5, 0.0, 0.0, 0.0],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0],
 			"init_value" : "d"
 		}, 
 
@@ -144,7 +136,7 @@
 			"produced_tags" : ["lt4"],
 			"operator" : "attribute",
 			"parameters" : [0.0, 0.0, 0.0, 1.0, 
-							0.0, 0.0, 0.0, 0.0, 
+							0.0, 0.0, 0.0, 1.0, 
 							255.0, 255.0, 255.0, 1.0, 
 							255.0, 80.0, 80.0, 1.0,
 							0.0, 0.0],

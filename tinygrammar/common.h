@@ -30,6 +30,8 @@ using namespace std;
 
 #define ACTIVE_GRAMMAR 2
 
+#define IS_DEBUG 1
+
 static constexpr double resolution = 2;
 static constexpr double matrix_resolution = 10;
 static constexpr int matrix_num = (int)(matrix_resolution * matrix_resolution);

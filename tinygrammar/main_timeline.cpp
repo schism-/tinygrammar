@@ -101,7 +101,7 @@ void printTimeLine(Grammar* g, TimeManager::TimeLine* t){
                 else std::cout << std::string(padding / 2 + 1, slice_char);
             }
             else {
-                padding = num - (int)(mapping_to_tag(g, s->ts_tag).length());
+                padding = ym_clamp(num - (int)(mapping_to_tag(g, s->ts_tag).length()), 0, 10);
                 std::cout << "{" << std::string(padding / 2, slice_char);
                 
                 std::cout << mapping_to_tag(g, s->ts_tag);
@@ -152,7 +152,8 @@ int main(int argc, const char * argv[]) {
     save_svg(last_exp->tree, {1000, 1000}, {500, 500}, {1.0, 1.0}, ss.str());
     
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
-        printf("Animating frame %d\n", k);
+        if (IS_DEBUG) printf("Animating frame %d\n", k);
+        else  printf("#%d...", k);
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
         stringstream ss1;
         ss1 << std::setfill('0') << std::setw(3) << k;
