@@ -92,7 +92,7 @@ ShapeGroup load_svg(string filename, bool flipy){
     auto polys = make_vector(data, [&](pair<polygon2r, string> d){return d.first;});
     auto tags = make_vector(data, [&](pair<polygon2r, string> d){return d.second;});
     auto offset = ym_rcenter(bounds_polygons(polys));
-    for(auto& poly : polys) poly = transform_polygon({ym_x2r, ym_y2r, offset}, poly);
+    for(auto& poly : polys) poly = transform_polygon({ym_x2r, ym_y2r, -offset}, poly);
     if(flipy) {
         auto bbox = bounds_polygons(polys);
         for(auto& poly : polys) for(auto& curve : poly) for(auto& p : curve) p.y = bbox.max.y-p.y;

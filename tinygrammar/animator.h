@@ -67,7 +67,6 @@ struct Animator{
                 auto m = get_matrix(akf, current_time / total_dur);
                 auto alpha_s = m.second[0];
                 auto alpha_e = m.second[1];
-                auto alpha_diff = alpha_e - alpha_s;
                 
                 if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
                 

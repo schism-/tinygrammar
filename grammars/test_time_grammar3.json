@@ -15,9 +15,9 @@
 		{ 	
 			"rule_name" : "time_rule_1",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["d", "b", "inv_b", "inv_d"],
+			"produced_tags" : ["d", "b", "c", "inv_c", "inv_b", "inv_d"],
 			"operator" : "time_slice",
-			"parameters" : [0.1, 0.4, 0.4, 0.1],
+			"parameters" : [0.1, 0.3, 0.1, 0.1, 0.3, 0.1],
 			"init_value" : ""
 		},
 
@@ -50,15 +50,15 @@
 			"rule_name" : "space_rule_ms1",
 			"matching_tags" : ["m_s"], "produced_tags" : ["mt1"],
 			"operator" : "translation",
-			"parameters" : [1.0, 50.0, 50.0, 0.05],
+			"parameters" : [1.0, 50.0, 50.0, 0.0],
 			"init_value" : "b"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_ms2",
 			"matching_tags" : ["m_s"], "produced_tags" : ["mt2"],
-			"operator" : "rot_tran",
-			"parameters" : [1.0, -90.0, -50.0, -50.0, 0.05],
+			"operator" : "rotation",
+			"parameters" : [1.0, -90.0, 0.0],
 			"init_value" : "c"
 		},
 
@@ -66,7 +66,7 @@
 			"rule_name" : "space_rule_ms3",
 			"matching_tags" : ["m_s"], "produced_tags" : ["mt3"],
 			"operator" : "scale",
-			"parameters" : [1.0, 0.75, 0.0],
+			"parameters" : [1.0, 0.5, 0.0],
 			"init_value" : "d"
 		},
 
@@ -75,7 +75,7 @@
 			"rule_name" : "space_rule_ls1",
 			"matching_tags" : ["l_s"], "produced_tags" : ["lt1"],
 			"operator" : "rot_scale",
-			"parameters" : [1.0, 90.0, 0.5, 0.01],
+			"parameters" : [0.0, 90.0, 0.5, 0.01],
 			"init_value" : "b"
 		},
 

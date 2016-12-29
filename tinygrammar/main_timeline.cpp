@@ -96,31 +96,29 @@ int main(int argc, const char * argv[]) {
     
     stringstream ss;
     ss << std::setfill('0') << std::setw(3) << 0;
-    auto sca_svg = 1.0;
+    auto sca_bbox = 1.2;
     auto bbox = bounds_polygons(make_vector(last_exp->tree->leaves, [&](CSGTree::LeafNode* node){return node->content->shapes[0]->poly;}));
-    bbox = {ym_rcenter(bbox) - ym_rsize(bbox) * sca_svg / 2.0, ym_rcenter(bbox) + ym_rsize(bbox) * sca_svg / 2.0};
+    bbox = {ym_rcenter(bbox) - ym_rsize(bbox) * sca_bbox / 2.0, ym_rcenter(bbox) + ym_rsize(bbox) * sca_bbox / 2.0};
     auto size = ym_rsize(bbox);
-    auto center = ym_rcenter(bbox);
     
-
     TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
-    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {-center.x/2.0, -center.y/2.0}, {sca_svg, sca_svg}, ss.str());
-    
+    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.0, 1.0}, ss.str());
+
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
         if (IS_DEBUG) printf("Animating frame %d\n", k);
         else  printf("#%d...", k);
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
         stringstream ss1;
         ss1 << std::setfill('0') << std::setw(3) << k;
-        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {-center.x/2.0, -center.y/2.0}, {sca_svg, sca_svg}, ss1.str());
+        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.0, 1.0}, ss1.str());
         k++;
     }
     
     // !!!!!!!!!!!!!!!! TODO IMPORTANT !!!!!!!!!!!!!!!!!!!
     // - OPTIMIZATION OF ANIMATION ROUTINE -> ONE TREE UPDATE ONCE *ALL* LEAVES ARE UPDATED
-    // - fix offset and document size of saved svg
-    // - test animation with big svg
-    // - consider change resolution of imported svg
+    // + fix offset and document size of saved svg
+    // + test animation with big svg
+    // + consider change resolution of imported svg
     
     //convert -density 40 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
     //convert -delay 1/8 -loop 0 png/*.png animated4.gif
