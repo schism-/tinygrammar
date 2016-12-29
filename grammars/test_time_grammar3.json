@@ -26,7 +26,7 @@
 			"matching_tags" : ["a"],
 			"produced_tags" : ["d", "b", "c", "inv_c", "inv_b", "inv_d"],
 			"operator" : "time_slice",
-			"parameters" : [0.1, 0.3, 0.1, 0.1, 0.3, 0.1],
+			"parameters" : [0.15, 0.25, 0.1, 0.1, 0.25, 0.15],
 			"init_value" : ""
 		},
 

@@ -115,7 +115,7 @@ int main(int argc, const char * argv[]) {
     }
     
     // !!!!!!!!!!!!!!!! TODO IMPORTANT !!!!!!!!!!!!!!!!!!!
-    // - OPTIMIZATION OF ANIMATION ROUTINE -> ONE TREE UPDATE ONCE *ALL* LEAVES ARE UPDATED
+    // + OPTIMIZATION OF ANIMATION ROUTINE -> ONE TREE UPDATE ONCE *ALL* LEAVES ARE UPDATED
     // + fix offset and document size of saved svg
     // + test animation with big svg
     // + consider change resolution of imported svg
