@@ -135,7 +135,7 @@ struct Operator{
             }
             case op_move_towards:
             {
-                // 0 : group or single | 1 : pos_x | 2 : pos_y | 3 : offset
+                // 0 : group or single | 1 : pos_x | 2 : pos_y | 3 : strength | 4 : offset
                 return move_towards_operator(shapes, tags, parameters, sampler, timeline);
                 break;
             }

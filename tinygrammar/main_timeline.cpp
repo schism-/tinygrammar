@@ -119,6 +119,7 @@ int main(int argc, const char * argv[]) {
     // + fix offset and document size of saved svg
     // + test animation with big svg
     // + consider change resolution of imported svg
+    // + consider implementing a wandering behaviour -> same as move_towards but with random directions (maybe perlin to smooth?)
     
     //convert -density 40 -resize 500x500 svg/*.svg -set filename:base "%[base]" png/"%[filename:base].png"
     //convert -delay 1/8 -loop 0 png/*.png animated4.gif

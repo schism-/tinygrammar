@@ -8,6 +8,7 @@ namespace CSGTree
     struct NodeContent
     {
         vector<AnimatedShape*> shapes;
+        NodeContent() { }
         NodeContent(vector<AnimatedShape*> shapes) : shapes(shapes) {}
         NodeContent(AnimatedShape* shape) { shapes = vector<AnimatedShape*>(); shapes.push_back(shape); }
         ~NodeContent() {}
@@ -64,6 +65,7 @@ namespace CSGTree
     void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double current_time, double incr, double total_dur, bool update = true);
     void UpdateLeafNode(Tree* tree, vector<LeafNode*> as, Animator anim, int frame, bool update = true);
     void UpdateContent(Tree* tree, LeafNode* a);
+    void UpdateTree(Tree* tree);
     void PropagateContent(Tree* tree, LeafNode* a);
     
     void UpdateOpNode(Tree* tree, OpNode* a);

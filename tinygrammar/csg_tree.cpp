@@ -178,7 +178,6 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator
         auto new_shapes = anim(a->content->shapes, current_time, incr, total_dur);
         a->content = new NodeContent(new_shapes);
     }
-    UpdateContent(tree, a);
 }
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as, Animator anim, int frame, bool update){
@@ -190,60 +189,18 @@ void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, vector<CSGTree::LeafNode*> as,
 void CSGTree::UpdateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
     auto cur_node = (OpNode*)(a->parent);
     while (cur_node != nullptr){
-        switch (cur_node->op_type) {
-            case union_op:
-            {
-                //printf("Updating union \n");
-                auto temp = CSGTree::Union(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            case intersection_op:
-            {
-                //printf("Updating intersection \n");
-                auto temp = CSGTree::Intersection(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            case difference_op:
-            {
-                //printf("Updating difference \n");
-                auto temp = CSGTree::Difference(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            case xor_op:
-            {
-                //printf("Updating xor \n");
-                auto temp = CSGTree::XOR(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            case sum_op:
-            {
-                //printf("Updating sum \n");
-                auto temp = CSGTree::Sum(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            case place_in_op:
-            {
-                //printf("Updating place_in \n");
-                auto temp = CSGTree::PlaceInShape(tree, cur_node->child_left, cur_node->child_right, false);
-                cur_node->content = temp->content;
-                break;
-            }
-            default:
-                printf("ERROR - Invalid animator op for update leaf content. \n");
-                break;
-        }
+        UpdateOpNode(tree, cur_node);
         cur_node = (OpNode*)(cur_node->parent);
     }
 }
 
+void CSGTree::UpdateTree(CSGTree::Tree* tree){
+    for (auto&& nl : tree->nodes) UpdateOpNode(tree, nl);
+}
+
 void CSGTree::PropagateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
     auto root = tree->root;
-    for (auto as : a->content->shapes){
+    for (auto&& as : a->content->shapes){
         for (auto r_as : root->content->shapes){
             if (r_as->poly == as->poly){
                 r_as->border_color = as->border_color;
@@ -255,5 +212,51 @@ void CSGTree::PropagateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
 
 
 void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a){
-    
+    switch (a->op_type) {
+        case union_op:
+        {
+            //printf("Updating union \n");
+            auto temp = CSGTree::Union(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        case intersection_op:
+        {
+            //printf("Updating intersection \n");
+            auto temp = CSGTree::Intersection(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        case difference_op:
+        {
+            //printf("Updating difference \n");
+            auto temp = CSGTree::Difference(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        case xor_op:
+        {
+            //printf("Updating xor \n");
+            auto temp = CSGTree::XOR(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        case sum_op:
+        {
+            //printf("Updating sum \n");
+            auto temp = CSGTree::Sum(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        case place_in_op:
+        {
+            //printf("Updating place_in \n");
+            auto temp = CSGTree::PlaceInShape(tree, a->child_left, a->child_right, false);
+            a->content = temp->content;
+            break;
+        }
+        default:
+            printf("ERROR - Invalid animator op for update leaf content. \n");
+            break;
+    }
 }

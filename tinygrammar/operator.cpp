@@ -172,7 +172,7 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
     auto anim_shapes = vector<AnimatedShape*>();
     for (auto&& ntl : data) anim_shapes.insert(anim_shapes.end(), ntl.second->node->content->shapes.begin(), ntl.second->node->content->shapes.end());
     bbox = bounds_polygons(make_vector(anim_shapes, [&](AnimatedShape* as){return as->poly;}));
-    bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
+    bbox = ym_range2r({-3000.0, -3000.0}, {3000.0, 3000.0});
     
     auto n_off_count = 1;
     auto i_off_count = 1;
@@ -242,21 +242,32 @@ ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_
         anim_shapes.insert(anim_shapes.end(), ntl.second->node->content->shapes.begin(), ntl.second->node->content->shapes.end());
     
     bbox = bounds_polygons(make_vector(anim_shapes, [&](AnimatedShape* as){return as->poly;}));
-    bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
+    bbox = ym_range2r({-3000.0, -3000.0}, {3000.0, 3000.0});
     
-    auto offset = parameters[3];
+    auto offset = parameters[4];
     auto n_off_count = 1;
+    auto i_off_count = 1;
     double n_max_offset = offset * normal_count;
     double n_max_dur = max(0.0, normal_min_dur - n_max_offset);
+    double i_max_offset = offset * inv_count;
+    double i_max_dur = max(0.0, inv_min_dur - i_max_offset);
     
     for(auto&& d : data) {
         auto am  = AnimatorMatrix();
         double start_delta, end_delta;
         
-        am  = move_towards_point(bbox, {parameters[1], parameters[2]}, 10.0);
-        start_delta = (offset * n_off_count) / d.first->slice->duration;
-        end_delta = (offset * n_off_count + n_max_dur) / d.first->slice->duration;
-        n_off_count++;
+        if (is_tag_invert(g, d.first->slice->ts_tag)){
+            am  = move_towards_point(bbox, {parameters[1], parameters[2]}, -parameters[3]);
+            start_delta = (offset * i_off_count) / d.first->slice->duration;
+            end_delta = (offset * i_off_count + i_max_dur) / d.first->slice->duration;
+            i_off_count++;
+        }
+        else {
+            am  = move_towards_point(bbox, {parameters[1], parameters[2]}, parameters[3]);
+            start_delta = (offset * n_off_count) / d.first->slice->duration;
+            end_delta = (offset * n_off_count + n_max_dur) / d.first->slice->duration;
+            n_off_count++;
+        }
         
         if (offset == 0.0) { start_delta = 0.0; end_delta = 1.0; }
         
@@ -286,7 +297,7 @@ ShapeGroup morph_operator(const ShapeGroup& shapes, rule_tags tags, rule_params 
     if (parameters[0] == 1.0) animator_type = anim_single;
     else animator_type = anim_group;
     
-    bbox = ym_range2r({-10000.0, -10000.0}, {10000.0, 10000.0});
+    bbox = ym_range2r({-3000.0, -3000.0}, {3000.0, 3000.0});
     
     for(auto&& d : data) {
         auto am  = AnimatorMatrix();

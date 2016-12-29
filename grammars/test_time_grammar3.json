@@ -1,7 +1,7 @@
 {
 	"grammar_name" : "Test Time Grammar", 
-	"seed" : -1, 
-	"framerate" : 10.0,
+	"seed" : 49, 
+	"framerate" : 30.0,
 	"rules" : [
 		{ 
 			"rule_name" : "init_1",
@@ -14,6 +14,15 @@
 
 		{ 	
 			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["d", "inv_b", "c", "inv_c", "b", "inv_d"],
+			"operator" : "time_slice",
+			"parameters" : [0.1, 0.3, 0.1, 0.1, 0.3, 0.1],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_2",
 			"matching_tags" : ["a"],
 			"produced_tags" : ["d", "b", "c", "inv_c", "inv_b", "inv_d"],
 			"operator" : "time_slice",
@@ -49,16 +58,20 @@
 		{ 	
 			"rule_name" : "space_rule_ms1",
 			"matching_tags" : ["m_s"], "produced_tags" : ["mt1"],
-			"operator" : "translation",
-			"parameters" : [1.0, 50.0, 50.0, 0.0],
+			// "operator" : "translation",
+			// "parameters" : [1.0, 50.0, 50.0, 0.0],
+			"operator" : "move_towards",
+			"parameters" : [0.0, 0.0, 0.0, 1000.0, 0.0],
 			"init_value" : "b"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_ms2",
 			"matching_tags" : ["m_s"], "produced_tags" : ["mt2"],
-			"operator" : "rotation",
-			"parameters" : [1.0, -90.0, 0.0],
+			// "operator" : "rotation",
+			// "parameters" : [1.0, -90.0, 0.0],
+			"operator" : "scale",
+			"parameters" : [0.0, 1.0, 0.0],
 			"init_value" : "c"
 		},
 
@@ -74,16 +87,16 @@
 		{ 	
 			"rule_name" : "space_rule_ls1",
 			"matching_tags" : ["l_s"], "produced_tags" : ["lt1"],
-			"operator" : "rot_scale",
-			"parameters" : [0.0, 90.0, 0.5, 0.01],
+			"operator" : "scale",
+			"parameters" : [0.0, 0.5, 0.0],
 			"init_value" : "b"
 		},
 
 		{ 	
 			"rule_name" : "space_rule_ls2",
 			"matching_tags" : ["l_s"], "produced_tags" : ["lt2"],
-			"operator" : "rot_scale",
-			"parameters" : [0.0, 90.0, 0.5, 0.01],
+			"operator" : "translation",
+			"parameters" : [0.0, -1000.0, 0.0, 0.03],
 			"init_value" : "c"
 		},
 
