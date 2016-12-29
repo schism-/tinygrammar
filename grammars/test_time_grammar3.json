@@ -1,0 +1,103 @@
+{
+	"grammar_name" : "Test Time Grammar", 
+	"seed" : -1, 
+	"framerate" : 10.0,
+	"rules" : [
+		{ 
+			"rule_name" : "init_1",
+			"matching_tags" : [],
+			"produced_tags" : ["a"],
+			"operator" : "time_init",
+			"parameters" : [5.0, 1.0],
+			"init_value" : "square"
+		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["d", "b", "inv_b", "inv_d"],
+			"operator" : "time_slice",
+			"parameters" : [0.1, 0.4, 0.4, 0.1],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs1",
+			"matching_tags" : ["b_s"], "produced_tags" : ["bt1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.5, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs2",
+			"matching_tags" : ["b_s"], "produced_tags" : ["bt2"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -90.0, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs3",
+			"matching_tags" : ["b_s"], "produced_tags" : ["bt3"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.0, 0.0],
+			"init_value" : "d"
+		},
+
+
+		{ 	
+			"rule_name" : "space_rule_ms1",
+			"matching_tags" : ["m_s"], "produced_tags" : ["mt1"],
+			"operator" : "translation",
+			"parameters" : [1.0, 50.0, 50.0, 0.05],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_ms2",
+			"matching_tags" : ["m_s"], "produced_tags" : ["mt2"],
+			"operator" : "rot_tran",
+			"parameters" : [1.0, -90.0, -50.0, -50.0, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_ms3",
+			"matching_tags" : ["m_s"], "produced_tags" : ["mt3"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.75, 0.0],
+			"init_value" : "d"
+		},
+
+
+		{ 	
+			"rule_name" : "space_rule_ls1",
+			"matching_tags" : ["l_s"], "produced_tags" : ["lt1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 90.0, 0.5, 0.01],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_ls2",
+			"matching_tags" : ["l_s"], "produced_tags" : ["lt2"],
+			"operator" : "rot_scale",
+			"parameters" : [0.0, 90.0, 0.5, 0.01],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_ls3",
+			"matching_tags" : ["l_s"], "produced_tags" : ["lt3"],
+			"operator" : "attribute",
+			"parameters" : [0.0, 0.0, 0.0, 0.0, 
+							0.0, 0.0, 0.0, 1.0, 
+							255.0, 255.0, 255.0, 1.0, 
+							255.0, 255.0, 255.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "d"
+		},
+
+	],
+}

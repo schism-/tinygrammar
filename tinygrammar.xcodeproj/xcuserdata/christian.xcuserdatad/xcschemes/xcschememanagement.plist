@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>tag_svg.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 		<key>tinygrammar.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 			<true/>
 		</dict>
 		<key>AA8164141DB6738000A66F22</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AABD91F61E13DE1C00CFB209</key>
 		<dict>
 			<key>primary</key>
 			<true/>

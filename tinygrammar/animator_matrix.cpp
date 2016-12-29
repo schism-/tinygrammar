@@ -11,7 +11,17 @@
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale){
     auto res_am = AnimatorMatrix(bb);
     for (auto i = 0; i <= res_am.mats.size(); i++){
-        res_am.mats[i].t = ym_normalize( pos - res_am.mats_centers[i] ) * scale;
+        res_am.mats[i].t = pos - res_am.mats_centers[i];
+    }
+    return res_am;
+}
+
+AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double scale){
+    auto res_am = AnimatorMatrix(bb);
+    auto circle = make_polyline_circle({0.0, 0.0}, 25.0, 4.0);
+    
+    for (auto i = 0; i <= res_am.mats.size(); i++){
+        res_am.mats[i].t = pos - res_am.mats_centers[i];
     }
     return res_am;
 }
@@ -43,12 +53,23 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
         new_shape += polyline2r();
         for (auto&& p : line){
             auto m = get_matrix(am, p);
-            auto mat = ym_mat<double, 3, 3>(m);
+            
+            auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
             auto log_m = ln(mat);
             log_m = log_m * incr;  
             log_m = exp(log_m);
+            
+            auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+            auto log_m_t = ln(mat_t);
+            log_m_t = log_m_t * incr;
+            log_m_t = exp(log_m_t);
+            
             auto incr_aff = ym_affine2r(log_m);
+            auto incr_aff_t = ym_affine2r(log_m_t);
+            
             auto new_p = ym_transform_point(incr_aff, p - centroid);
+            new_p = ym_transform_point(incr_aff_t, new_p);
+            
             new_shape.back() += (new_p + centroid);
         }
     }
@@ -59,15 +80,25 @@ polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, doubl
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
     auto m = get_matrix(am, centroid);
-    auto mat = ym_mat<double, 3, 3>(m);
+    
+    auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
     auto log_m = ln(mat);
     log_m = log_m * incr;
     log_m = exp(log_m);
+    
+    auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+    auto log_m_t = ln(mat_t);
+    log_m_t = log_m_t * incr;
+    log_m_t = exp(log_m_t);
+    
     auto incr_aff = ym_affine2r(log_m);
+    auto incr_aff_t = ym_affine2r(log_m_t);
+    
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
             auto new_p = ym_transform_point(incr_aff, p);
+            new_p = ym_transform_point(incr_aff_t, new_p);
             new_shape.back() += new_p;
         }
     }

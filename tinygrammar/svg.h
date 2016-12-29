@@ -14,5 +14,7 @@
 
 void save_svg(History* h, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor);
 void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor, string postfix);
+void save_svg(const ShapeGroup& shapes, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor, string postfix);
+ShapeGroup load_svg(string filename, bool flipy = false);
 
 #endif /* svg_h */

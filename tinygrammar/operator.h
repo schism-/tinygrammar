@@ -22,6 +22,8 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
 
 ShapeGroup rotation_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
+ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline);
+
 ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
 struct Operator{
@@ -53,14 +55,88 @@ struct Operator{
                 break;
             case op_affine_rot:
             {
+                // 0 : group or single | 1 : angle | 2 : offset
                 auto new_param = rule_params();
                 new_param[0] = parameters[0];
                 auto angle = parameters[1] * ym_pi / 180.0;
-                new_param[1] = cos(angle);  new_param[2] = -1.0 * sin(angle);
-                new_param[3] = sin(angle);  new_param[4] = cos(angle);
-                new_param[5] = 0.0;                 new_param[6] = 0.0;
+                new_param[1] = cos(angle);      new_param[2] = -1.0 * sin(angle);
+                new_param[3] = sin(angle);      new_param[4] = cos(angle);
+                new_param[5] = 0.0;             new_param[6] = 0.0;
                 new_param[7] = parameters[2];
                 return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_affine_tran:
+            {
+                // 0 : group or single | 1 : tran_x | 2 : tran_y | 3 : offset
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                new_param[1] = 1.0;             new_param[2] = 0.0;
+                new_param[3] = 0.0;             new_param[4] = 1.0;
+                new_param[5] = parameters[1];   new_param[6] = parameters[2];
+                new_param[7] = parameters[3];
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_affine_scale:
+            {
+                // 0 : group or single | 1 : scale factor | 2 : offset
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                new_param[1] = parameters[1];   new_param[2] = 0.0;
+                new_param[3] = 0.0;             new_param[4] = parameters[1];
+                new_param[5] = 0.0;             new_param[6] = 0.0;
+                new_param[7] = parameters[2];
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_affine_rot_tran:
+            {
+                // 0 : group or single | 1 : angle | 2 : tran_x | 3 : tran_y | 4 : offset
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                auto angle = parameters[1] * ym_pi / 180.0;
+                new_param[1] = cos(angle);      new_param[2] = -1.0 * sin(angle);
+                new_param[3] = sin(angle);      new_param[4] = cos(angle);
+                new_param[5] = parameters[2];   new_param[6] = parameters[3];
+                new_param[7] = parameters[4];
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_affine_rot_scale:
+            {
+                // 0 : group or single | 1 : angle | 2 : scale factor | 3 : offset
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                auto angle = parameters[1] * ym_pi / 180.0;
+                auto rot = ym_affine2r({{cos(angle), -1.0 * sin(angle)}, {sin(angle), cos(angle)}, {0.0, 0.0}});
+                auto scale = ym_affine2r({{parameters[2], 0.0}, {0.0, parameters[2]}, {0.0, 0.0}});
+                ym_affine2r rot_scale = rot * scale;
+                
+                new_param[1] = rot_scale.x.x;   new_param[2] = rot_scale.x.y;
+                new_param[3] = rot_scale.y.x;   new_param[4] = rot_scale.y.y;
+                new_param[5] = rot_scale.t.x;   new_param[6] = rot_scale.t.y;
+                new_param[7] = parameters[3];
+                
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_affine_scale_tran:
+            {
+                // 0 : group or single | 1 : scale factor | 2 : tran_x | 3 : tran_y | 4 : offset
+                auto new_param = rule_params();
+                new_param[0] = parameters[0];
+                new_param[1] = parameters[1];   new_param[2] = 0.0;
+                new_param[3] = 0.0;             new_param[4] = parameters[1];
+                new_param[5] = parameters[2];   new_param[6] = parameters[3];
+                new_param[7] = parameters[4];
+                return affine_operator(shapes, tags, new_param, sampler, timeline);
+                break;
+            }
+            case op_move_towards:
+            {
+                // 0 : group or single | 1 : pos_x | 2 : pos_y | 3 : offset
+                return move_towards_operator(shapes, tags, parameters, sampler, timeline);
                 break;
             }
             case op_attribute:

@@ -61,6 +61,7 @@ struct AnimatorMatrix{
 };
 
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
+AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
 
 ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);

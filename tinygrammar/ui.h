@@ -6,6 +6,7 @@
 #include "../external/glfw/glfw3.h"
 
 #define UI_WIDGETS
+#define IM_ARRAYSIZE(_ARR)  ((int)(sizeof(_ARR)/sizeof(*_ARR)))
 
 // types
 using ui_window = GLFWwindow;

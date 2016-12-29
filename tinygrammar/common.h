@@ -26,11 +26,11 @@
 using namespace std;
 
 #define PARAM_SIZE 20
-#define TAG_SIZE 4
+#define TAG_SIZE 6
 
 #define ACTIVE_GRAMMAR 2
 
-#define IS_DEBUG 1
+#define IS_DEBUG 0
 
 static constexpr double resolution = 2;
 static constexpr double matrix_resolution = 10;
@@ -65,7 +65,13 @@ enum {
     op_time_slice,
     op_affine,
     op_affine_rot,
+    op_affine_tran,
+    op_affine_scale,
+    op_affine_rot_tran,
+    op_affine_rot_scale,
+    op_affine_scale_tran,
     op_move_towards,
+    op_explode,
     op_attribute
 };
 
@@ -110,7 +116,7 @@ typedef ym_vec<int, TAG_SIZE> rule_tags;
 
 typedef ym_vec<double, PARAM_SIZE> anim_params;
 
-static string grammar_filename = "grammars/test_time_grammar2.json";
+static string grammar_filename = "grammars/test_time_grammar3.json";
 
 // ==============================================
 // ====== METHODS FOR LOG/EXP OF MATRICES =======
@@ -305,6 +311,16 @@ template<typename T>
 inline set<T> make_set(const vector<T>& v) { return set<T>(v.begin(),v.end()); }
 template<typename T>
 inline vector<T> make_vector(const set<T>& v) { return vector<T>(v.begin(),v.end()); }
+
+inline string load_text_file(const char* filename) {
+    auto text = string("");
+    auto f = fopen(filename,"r");
+    error_if_not(f, "could not open file: %s\n", filename);
+    char line[4096];
+    while (fgets(line, 4096, f)) text += line;
+    fclose(f);
+    return text;
+}
 
 inline string load_text_file(const string& filename) { return load_text_file(filename.c_str()); }
 inline void save_text_file(const string& filename, const string& str) {

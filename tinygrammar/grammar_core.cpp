@@ -130,12 +130,25 @@ Grammar* get_grammar(string filename){
                 rule->op = Operator(op_time_init, init_value[0]);
             else if (rule_json.get<String>("operator") == "time_slice")
                 rule->op = Operator(op_time_slice, init_value[0]);
+            
             else if (rule_json.get<String>("operator") == "affine")
                 rule->op = Operator(op_affine, init_value[0]);
             else if (rule_json.get<String>("operator") == "rotation")
                 rule->op = Operator(op_affine_rot, init_value[0]);
+            else if (rule_json.get<String>("operator") == "scale")
+                rule->op = Operator(op_affine_scale, init_value[0]);
+            else if (rule_json.get<String>("operator") == "translation")
+                rule->op = Operator(op_affine_tran, init_value[0]);
+            else if (rule_json.get<String>("operator") == "rot_scale")
+                rule->op = Operator(op_affine_rot_scale, init_value[0]);
+            else if (rule_json.get<String>("operator") == "rot_tran")
+                rule->op = Operator(op_affine_rot_tran, init_value[0]);
+            else if (rule_json.get<String>("operator") == "scale_tran")
+                rule->op = Operator(op_affine_scale_tran, init_value[0]);
+            
             else if (rule_json.get<String>("operator") == "attribute")
                 rule->op = Operator(op_attribute, init_value[0]);
+            
             else if (rule_json.get<String>("operator") == "move_towards")
                 rule->op = Operator(op_move_towards, init_value[0]);
             else

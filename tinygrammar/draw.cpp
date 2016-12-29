@@ -22,8 +22,8 @@ void DrawContext::draw_shape(TangleShape* shape, bool draw_frames, bool draw_as_
     }
 }
 
-void DrawContext::draw_shape(AnimatedShape* shape) {
-    draw_polygon(shape->poly, shape->border_color, shape->fill_color);
+void DrawContext::draw_shape(AnimatedShape* shape, const ym_vec4f& stroke, const ym_vec4f& fill, bool use_colors) {
+    draw_polygon(shape->poly, use_colors ? stroke : shape->border_color, use_colors ? fill : shape->fill_color, shape->literal_tag);
 }
 
 void DrawContext::draw_labels(const vector<string>& labels) {
@@ -33,10 +33,10 @@ void DrawContext::draw_labels(const vector<string>& labels) {
     }
 }
 
-void NVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill) {
+void NVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag) {
     nvgBeginPath(vg);
     auto hole = false;
-    if (stroke.y == 1.0f) nvgStrokeWidth(vg, 5.0f);
+    nvgStrokeWidth(vg, 1.0f);
     for(auto&& curve : poly) {
         auto first = true;
         for(auto&& p : curve) {
@@ -49,13 +49,12 @@ void NVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, con
         if(hole) nvgPathWinding(vg, NVG_HOLE);
         hole = true;
     }
-    if (stroke.y == 1) nvgStrokeWidth(vg, 1.0f);
     if(fill.w > 0) {
-        nvgFillColor(vg, nvgRGBA(255*fill.x, 255*fill.y, 255*fill.z, 255*fill.w));
+        nvgFillColor(vg, nvgRGBA(fill.x, fill.y, fill.z, fill.w * 255.0));
         nvgFill(vg);
     }
     if(stroke.w > 0) {
-        nvgStrokeColor(vg, nvgRGBA(255*stroke.x, 255*stroke.y, 255*stroke.z, 255*stroke.w));
+        nvgStrokeColor(vg, nvgRGBA(stroke.x, stroke.y, stroke.z, stroke.w * 255.0));
         nvgStroke(vg);
     }
 }
@@ -109,9 +108,10 @@ void NVGContext::end_frame(const ym_vec2r& offset, const ym_vec2r& scale) {
     nvgEndFrame(vg);
 }
 
-void SVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill) {
+void SVGContext::draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag) {
     auto style = _svg_style(stroke, fill);
-    svg += fmt::format("<path {} d=\"", style);
+    if (tag != "") svg += fmt::format("<path {} id=\"{}\" d=\"", style, tag);
+    else svg += fmt::format("<path {} d=\"", style);
     for(auto&& curve : poly) svg += _svg_points(curve) + " ";
     svg += fmt::format("\" />\n");
 }

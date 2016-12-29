@@ -83,6 +83,8 @@ struct AnimatedShape : Shape {
     int                     gid = 0;
     int                     tid = 0;
     
+    string                  literal_tag = "";
+    
     // shape
     ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
