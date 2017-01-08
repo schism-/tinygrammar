@@ -1,9 +1,9 @@
 {
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
-	"framerate" : 10.0,
-	"bbox" : [-250.0, -225.0, 250.0, 225.0],
-	"dry_run" : true,
+	"framerate" : 30.0,
+	"bbox" : [-250.0, -178.0, 250.0, 178.0],
+	"dry_run" : false,
 
 	"rules" : [
 		{ 
@@ -11,9 +11,18 @@
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
-			"parameters" : [6.0, 1.0],
+			"parameters" : [5.0, 1.0],
 			"init_value" : "square"
 		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["c", "b", "inv_b", "inv_c"],
+			"operator" : "time_slice",
+			"parameters" : [0.2, 0.3, 0.3, 0.2],
+			"init_value" : "tri"
+		},
 
 		{ 	
 			"rule_name" : "time_rule_1",
@@ -24,12 +33,13 @@
 			"init_value" : ""
 		},
 
+
 		{ 	
 			"rule_name" : "space_rule_bs2",
 			"matching_tags" : ["lc"],
 			"produced_tags" : ["bt2"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 12.0, 0.0],
+			"parameters" : [1.0, 0.0, 14.0, 0.01],
 			"init_value" : "b"
 		},
 
@@ -38,7 +48,7 @@
 			"matching_tags" : ["lc"],
 			"produced_tags" : ["bt3"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 33.0, 0.0],
+			"parameters" : [1.0, 0.0, 29.0, 0.01],
 			"init_value" : "c"
 		},
 
@@ -47,7 +57,7 @@
 			"matching_tags" : ["lc"],
 			"produced_tags" : ["bt2"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 12.0, 0.05],
+			"parameters" : [1.0, 0.0, 14.0, 0.01],
 			"init_value" : "d"
 		},
 
@@ -56,18 +66,17 @@
 			"matching_tags" : ["lc"],
 			"produced_tags" : ["bt3"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 33.0, 0.0],
+			"parameters" : [1.0, 0.0, 29.0, 0.01],
 			"init_value" : "e"
 		},
 
 
-
 		{ 	
 			"rule_name" : "space_rule_bs2",
 			"matching_tags" : ["ls"],
 			"produced_tags" : ["bt2"],
 			"operator" : "rotation",
-			"parameters" : [1.0, 90.0, 0.0],
+			"parameters" : [1.0, 90.0, 0.01],
 			"init_value" : "b"
 		},
 
@@ -76,7 +85,7 @@
 			"matching_tags" : ["ls"],
 			"produced_tags" : ["bt3"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 45.0, 0.0],
+			"parameters" : [1.0, 0.0, 43.0, 0.01],
 			"init_value" : "c"
 		},
 
@@ -85,7 +94,7 @@
 			"matching_tags" : ["ls"],
 			"produced_tags" : ["bt2"],
 			"operator" : "rotation",
-			"parameters" : [1.0, -90.0, 0.0],
+			"parameters" : [1.0, -90.0, 0.01],
 			"init_value" : "d"
 		},
 
@@ -94,7 +103,7 @@
 			"matching_tags" : ["ls"],
 			"produced_tags" : ["bt3"],
 			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 45.0, 0.0],
+			"parameters" : [1.0, 0.0, 43.0, 0.01],
 			"init_value" : "e"
 		},
 
@@ -105,7 +114,7 @@
 			"matching_tags" : ["ms"],
 			"produced_tags" : ["bt3"],
 			"operator" : "rotation",
-			"parameters" : [1.0, -90.0, 0.1],
+			"parameters" : [1.0, -90.0, 0.05],
 			"init_value" : "b"
 		},
 
@@ -114,7 +123,7 @@
 			"matching_tags" : ["ic"],
 			"produced_tags" : ["bt3"],
 			"operator" : "scale",
-			"parameters" : [1.0, 0.5, 0.0],
+			"parameters" : [1.0, 0.5, 0.05],
 			"init_value" : "b"
 		},
 
@@ -123,7 +132,7 @@
 			"matching_tags" : ["ic"],
 			"produced_tags" : ["bt3"],
 			"operator" : "scale",
-			"parameters" : [1.0, 2.0, 0.1],
+			"parameters" : [1.0, 2.0, 0.05],
 			"init_value" : "c"
 		},
 
@@ -132,7 +141,7 @@
 			"matching_tags" : ["ms", "ic"],
 			"produced_tags" : ["bt3"],
 			"operator" : "rot_scale",
-			"parameters" : [0.0, -90.0, 0.5, 0.1],
+			"parameters" : [0.0, -90.0, 0.4, 0.05],
 			"init_value" : "d"
 		},
 
@@ -141,7 +150,7 @@
 			"matching_tags" : ["ms"],
 			"produced_tags" : ["bt3"],
 			"operator" : "rot_scale",
-			"parameters" : [0.0, 90.0, 2.0, 0.1],
+			"parameters" : [0.0, 90.0, 2.5, 0.05],
 			"init_value" : "e"
 		},
 
@@ -150,7 +159,7 @@
 			"matching_tags" : ["ic"],
 			"produced_tags" : ["bt3"],
 			"operator" : "rot_scale",
-			"parameters" : [0.0, -90.0, 2.0, 0.1],
+			"parameters" : [0.0, -90.0, 2.5, 0.05],
 			"init_value" : "e"
 		},
 
@@ -160,17 +169,22 @@
 			"rule_name" : "space_rule_bs4",
 			"matching_tags" : ["tri"],
 			"produced_tags" : ["bt3"],
-			"operator" : "translation",
-			"parameters" : [1.0, 20.0, -20.0, 0.1],
+			// "operator" : "translation",
+			// "parameters" : [1.0, 20.0, -20.0, 0.1],
+			"operator" : "move_towards",
+			"parameters" : [0.0, 0.0, 0.0, 40.0, 0.08],
 			"init_value" : "b"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_bs4",
-			"matching_tags" : ["tri"],
-			"produced_tags" : ["bt3"],
-			"operator" : "translation",
-			"parameters" : [1.0, -40.0, 40.0, 0.1],
+			"rule_name" : "space_rule_ls3",
+			"matching_tags" : ["tri"], "produced_tags" : ["lt3"],
+			"operator" : "attribute",
+			"parameters" : [0.0, 0.0, 0.0, 0.0, 
+							0.0, 0.0, 0.0, 1.0, 
+							255.0, 255.0, 255.0, 1.0, 
+							255.0, 255.0, 255.0, 1.0,
+							0.0, 0.0],
 			"init_value" : "c"
 		},
 
@@ -179,7 +193,7 @@
 			"matching_tags" : ["tri"],
 			"produced_tags" : ["bt3"],
 			"operator" : "translation",
-			"parameters" : [1.0, 20.0, -20.0, 0.1],
+			"parameters" : [1.0, 20.0, -20.0, 0.0],
 			"init_value" : "e"
 		},
 

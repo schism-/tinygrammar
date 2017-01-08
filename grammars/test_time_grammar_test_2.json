@@ -1,0 +1,29 @@
+{
+	"grammar_name" : "Test 2 Time Grammar", 
+	"seed" : -1, 
+	"framerate" : 10.0,
+	"bbox" : [-250.0, -250.0, 250.0, 250.0],
+	"dry_run" : true,
+
+	"rules" : [
+		{ 
+			"rule_name" : "init_1",
+			"matching_tags" : [],
+			"produced_tags" : ["a"],
+			"operator" : "time_init",
+			"parameters" : [3.0, 1.0],
+			"init_value" : "square"
+		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c"],
+			"operator" : "time_slice",
+			"parameters" : [0.5, 0.5],
+			"init_value" : ""
+		},
+
+		
+	],
+}
