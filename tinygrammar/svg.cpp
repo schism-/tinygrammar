@@ -64,7 +64,9 @@ vector<pair<polyline2r, string>> parse_svg_polylines(const string& svg, double r
 
 vector<pair<polygon2r, string>> parse_svg_polygons(const string& svg, double resolution) {
     auto curves = parse_svg_polylines(svg, resolution);
+    printf ("%d curves \n", (int)curves.size());
     for(auto& curve : curves) curve.first = close_polyline(curve.first);
+    printf ("%d curves \n", (int)curves.size());
     auto inside = vector<vector<bool>>(curves.size());
     for(auto i : range(curves)) {
         inside[i] = vector<bool>(curves.size(),false);
@@ -79,10 +81,11 @@ vector<pair<polygon2r, string>> parse_svg_polygons(const string& svg, double res
     for(auto i : range(curves)) {
         auto inner = false;
         for(auto j : range(curves)) inner = inner or inside[i][j];
-        if(inner) continue;
+        //if(inner) continue;
         polys.push_back(make_pair(polygon2r({curves[i].first}), curves[i].second));
-        for(auto j : range(curves)) if(inside[j][i]) polys.back().first += curves[j].first;
+        //for(auto j : range(curves)) if(inside[j][i]) polys.back().first += curves[j].first;
     }
+    printf ("%d polys \n", (int)polys.size());
     return polys;
 }
 
@@ -104,7 +107,7 @@ ShapeGroup load_svg(string filename, bool flipy){
         temp->literal_tag = tags[k];
         shapes.push_back(temp);
     }
-    
+    printf ("%d shapes \n", (int)shapes.size());
     return shapes;
 }
 

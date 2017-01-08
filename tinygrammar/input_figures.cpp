@@ -111,7 +111,6 @@ CSGTree::Tree* squares_and_circles(Grammar* g, int extra_value) {
     
     auto l_s_tag = add_tags(g, {"l_s"});
     auto l_c_tag = add_tags(g, {"l_c"});
-    auto boh_tag = add_tags(g, {"boh"});
     auto last_op = (CSGTree::Node*)nullptr;
     
     auto poly = polyline2r();
@@ -158,12 +157,20 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
     auto first = true;
     for (auto&& s : shapes){
         auto temp = (AnimatedShape*)s;
-        auto tag_id = add_tags(g, {temp->literal_tag});
-        if (contains(tag_count, tag_id[0])) {tag_count[tag_id[0]] += 1;}
-        else {tag_count[tag_id[0]] = 0;}
+        
+        std::stringstream test(temp->literal_tag);
+        std::string segment;
+        std::vector<std::string> seglist;
+        while(std::getline(test, segment, '_'))
+        {
+            seglist.push_back(segment);
+        }
+        
+        auto tag_id = add_tags(g, {seglist[0]});
         temp->tag = tag_id[0];
-        temp->tid = tag_count[tag_id[0]];
+        temp->tid = atoi(seglist[1].c_str());;
         shape = CSGTree::AddShape(tree, temp);
+        
         if (first) { last_op = shape; first = false; }
         else last_op = CSGTree::Sum(tree, last_op, shape);
     }

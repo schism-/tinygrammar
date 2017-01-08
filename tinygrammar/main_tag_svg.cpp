@@ -165,12 +165,19 @@ ym_vec2r window_to_tangle(ym_vec2r p, GLFWwindow* window, ShapeGroup loaded_shap
 
 AnimatedShape* select_shape(ym_vec2r pos, ShapeGroup shapes) {
     auto picked = (AnimatedShape*)nullptr;
+    auto v_picked = vector<AnimatedShape*>();
     for(auto shape : shapes) {
-        if(inside_polygon(((AnimatedShape*)shape)->poly, pos)) picked = (AnimatedShape*)shape;
-        if(picked) break;
+        if(inside_polygon(((AnimatedShape*)shape)->poly, pos)) { picked = (AnimatedShape*)shape; v_picked.push_back((AnimatedShape*)shape); }
+        //if(picked) break;
     }
     if(not picked) return nullptr;
-    else return picked;
+    auto p_bounds = bounds_polygon(picked->poly).size();
+    for (auto p : v_picked){
+        p_bounds = bounds_polygon(picked->poly).size();
+        auto bb_temp = bounds_polygon(p->poly).size();
+        if (bb_temp.x < p_bounds.x && bb_temp.x < p_bounds.x) picked = p;
+    }
+    return picked;
 }
 
 void run() {
@@ -252,7 +259,7 @@ void run() {
      +                                      +
      ======================================== */
     
-    init("resources/svg/woman.svg");
+    init("resources/svg/trivial.svg");
         
     setupStyle();
     
@@ -294,9 +301,11 @@ void run() {
         
         if (ImGui::Button("Assign tag")){
             ym_vec4f rand_col = ym_vec4f(rand() % 255 + 1, rand() % 255 + 1, rand() % 255 + 1, 1.0);
+            auto k = 0;
             for (auto ss : selected){
-                ss->literal_tag = (string)tag;
+                ss->literal_tag = (string)tag + "_" + std::to_string(k);
                 color_map.push_back(make_pair(ss, rand_col));
+                k++;
             }
             selected.clear();
         };

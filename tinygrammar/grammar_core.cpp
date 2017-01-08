@@ -81,6 +81,8 @@ Grammar* get_grammar(string filename){
         assert(o.has<Number>("seed"));
         assert(o.has<Number>("framerate"));
         assert(o.has<Array>("rules"));
+        assert(o.has<Array>("bbox"));
+        assert(o.has<Boolean>("dry_run"));
         
         res->name = o.get<String>("grammar_name");
         auto g_seed = o.get<Number>("seed");
@@ -93,10 +95,15 @@ Grammar* get_grammar(string filename){
             res->seed = random_integer;
             std::cout << "[GRAMMAR] Random seed initialized to " << random_integer << std::endl;
         }
-        
         uint64_t initseq = ym_hash_uint64(res->seed);
         uint64_t initstate = ym_hash_uint64(res->seed * 3202034522624059733ull + 1ull);
         ym_rng_init(&res->rn, initstate, initseq);
+        
+        auto bbox_arr = o.get<Array>("bbox");
+        res->output_bbox = ym_range2r({(double)bbox_arr.get<Number>(0), (double)bbox_arr.get<Number>(1)},
+                                      {(double)bbox_arr.get<Number>(2), (double)bbox_arr.get<Number>(3)});
+        
+        res->dry_run = o.get<Boolean>("dry_run");
         
         auto r_arr = o.get<Array>("rules");
         for (auto i = 0; i < r_arr.size(); i++){

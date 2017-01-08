@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/woman_tagged.svg");
+    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/test_tagged.svg");
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);
@@ -96,14 +96,14 @@ int main(int argc, const char * argv[]) {
     
     stringstream ss;
     ss << std::setfill('0') << std::setw(3) << 0;
-    auto sca_bbox = 1.2;
-    auto bbox = bounds_polygons(make_vector(last_exp->tree->leaves, [&](CSGTree::LeafNode* node){return node->content->shapes[0]->poly;}));
-    bbox = {ym_rcenter(bbox) - ym_rsize(bbox) * sca_bbox / 2.0, ym_rcenter(bbox) + ym_rsize(bbox) * sca_bbox / 2.0};
+    
+    auto bbox = grammar->output_bbox;
     auto size = ym_rsize(bbox);
     
     TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
     save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.0, 1.0}, ss.str());
-
+    if (grammar->dry_run) return 0;
+    
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
         if (IS_DEBUG) printf("Animating frame %d\n", k);
         else  printf("#%d...", k);

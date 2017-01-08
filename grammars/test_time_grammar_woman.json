@@ -1,0 +1,43 @@
+{
+	"grammar_name" : "Test Time Grammar", 
+	"seed" : -1, 
+	"framerate" : 10.0,
+	"rules" : [
+		{ 
+			"rule_name" : "init_1",
+			"matching_tags" : [],
+			"produced_tags" : ["a"],
+			"operator" : "time_init",
+			"parameters" : [5.0, 1.0],
+			"init_value" : "square"
+		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "inv_b"],
+			"operator" : "time_slice",
+			"parameters" : [0.5, 0.5],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs2",
+			"matching_tags" : ["union"],
+			"produced_tags" : ["bt2"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.5, 0.05],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs1",
+			"matching_tags" : ["add"],
+			"produced_tags" : ["bt3"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0.05],
+			"init_value" : "b"
+		},
+
+	],
+}

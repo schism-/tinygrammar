@@ -23,6 +23,8 @@ struct Grammar {
     
     // Animation data
     double framerate;
+    ym_range2r output_bbox;
+    bool dry_run;
     
     Grammar() {rules = vector<Rule*>(); rule_mapping = map<string, int>(); tag_mapping = map<string, int>();}
     

@@ -197,14 +197,14 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
             mat.z = {parameters[5], parameters[6], 1.0};
             mat = ym_inverse(mat);
             am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {mat.z.x, mat.z.y}});
-            start_delta = (offset * i_off_count) / d.first->slice->duration;
-            end_delta = (offset * i_off_count + i_max_dur) / d.first->slice->duration;
+            start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
+            end_delta = (offset * d.second->node->content->shapes[0]->tid + i_max_dur) / d.first->slice->duration;
             i_off_count++;
         }
         else {
             am  = AnimatorMatrix(bbox, {{parameters[1], parameters[2]},{parameters[3], parameters[4]}, {parameters[5], parameters[6]}});
-            start_delta = (offset * n_off_count) / d.first->slice->duration;
-            end_delta = (offset * n_off_count + n_max_dur) / d.first->slice->duration;
+            start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
+            end_delta = (offset * d.second->node->content->shapes[0]->tid + n_max_dur) / d.first->slice->duration;
             n_off_count++;
         }
         
@@ -238,14 +238,14 @@ ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_
         
         if (is_tag_invert(g, d.first->slice->ts_tag)){
             am  = move_towards_point(bbox, {parameters[1], parameters[2]}, -parameters[3]);
-            start_delta = (offset * i_off_count) / d.first->slice->duration;
-            end_delta = (offset * i_off_count + i_max_dur) / d.first->slice->duration;
+            start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
+            end_delta = (offset * d.second->node->content->shapes[0]->tid + i_max_dur) / d.first->slice->duration;
             i_off_count++;
         }
         else {
             am  = move_towards_point(bbox, {parameters[1], parameters[2]}, parameters[3]);
-            start_delta = (offset * n_off_count) / d.first->slice->duration;
-            end_delta = (offset * n_off_count + n_max_dur) / d.first->slice->duration;
+            start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
+            end_delta = (offset * d.second->node->content->shapes[0]->tid + n_max_dur) / d.first->slice->duration;
             n_off_count++;
         }
         
