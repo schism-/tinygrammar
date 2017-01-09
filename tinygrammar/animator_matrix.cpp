@@ -11,7 +11,14 @@
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale){
     auto res_am = AnimatorMatrix(bb);
     for (auto i = 0; i <= res_am.mats.size(); i++){
-        res_am.mats[i].t = ym_normalize(pos - res_am.mats_centers[i]) * scale;
+        auto v_d = pos - res_am.mats_centers[i];
+        if (ym_length(v_d) < scale / 2.0) res_am.mats[i].t = {0.0, 0.0};
+        else {
+            v_d = ym_normalize(v_d);
+//            if (fabs((float)v_d.x) < 0.2) {v_d.y = 1.0; v_d.x = 0.0;}
+//            if (fabs((float)v_d.y) < 0.2) {v_d.y = 0.0; v_d.x = 1.0;}
+            res_am.mats[i].t = v_d * scale;
+        }
     }
     return res_am;
 }
@@ -33,7 +40,27 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
     }
     else{
         auto ins = (pos - am.bounding_box.min) / am.step;
-        return am.mats[(int)matrix_resolution * (int)ins.y + (int)ins.x];
+        auto x_idx = (int)ins.x, y_idx = (int)ins.y;
+//        
+//        ym_affine2r mat_00, mat_01, mat_02,
+//                    mat_10, mat_11, mat_12,
+//                    mat_20, mat_21, mat_22;
+//        
+//        mat_00 = am.mats[(int)matrix_resolution * (y_idx - 1) + (x_idx - 1)]; auto log_m00 = ln(mat_00); log_m00 = log_m00 * (1.0 / 9.0);
+//        mat_01 = am.mats[(int)matrix_resolution * (y_idx - 1) + (x_idx)];     auto log_m01 = ln(mat_01); log_m01 = log_m01 * (1.0 / 9.0);
+//        mat_02 = am.mats[(int)matrix_resolution * (y_idx - 1) + (x_idx + 1)]; auto log_m02 = ln(mat_02); log_m02 = log_m02 * (1.0 / 9.0);
+//        mat_10 = am.mats[(int)matrix_resolution * (y_idx) + (x_idx - 1)];     auto log_m10 = ln(mat_10); log_m10 = log_m10 * (1.0 / 9.0);
+//        mat_11 = am.mats[(int)matrix_resolution * (y_idx) + (x_idx)];         auto log_m11 = ln(mat_11); log_m11 = log_m11 * (1.0 / 9.0);
+//        mat_12 = am.mats[(int)matrix_resolution * (y_idx) + (x_idx + 1)];     auto log_m12 = ln(mat_12); log_m12 = log_m12 * (1.0 / 9.0);
+//        mat_20 = am.mats[(int)matrix_resolution * (y_idx + 1) + (x_idx - 1)]; auto log_m20 = ln(mat_20); log_m20 = log_m20 * (1.0 / 9.0);
+//        mat_21 = am.mats[(int)matrix_resolution * (y_idx + 1) + (x_idx)];     auto log_m21 = ln(mat_21); log_m21 = log_m21 * (1.0 / 9.0);
+//        mat_22 = am.mats[(int)matrix_resolution * (y_idx + 1) + (x_idx + 1)]; auto log_m22 = ln(mat_22); log_m22 = log_m22 * (1.0 / 9.0);
+        
+        auto mat = am.mats[(int)matrix_resolution * (int)ins.y + (int)ins.x];
+        
+//        mat = ym_affine2r(exp(log_m00 + log_m01 + log_m02 + log_m10 + log_m11 + log_m12 + log_m20 + log_m21 + log_m22));
+        
+        return mat;
     }
 }
 

@@ -259,7 +259,7 @@ void run() {
      +                                      +
      ======================================== */
     
-    init("resources/svg/trivial.svg");
+    init("resources/svg/control_panel.svg");
         
     setupStyle();
     

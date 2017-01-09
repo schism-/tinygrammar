@@ -68,7 +68,7 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/test_tagged.svg");
+    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/control_panel.svg");
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);

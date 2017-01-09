@@ -34,7 +34,10 @@ rule_tags add_tags(Grammar* grammar, vector<string> tags){
 
 int tag_to_mapping(Grammar* grammar, string tag) {
     if (grammar->tag_mapping.count(tag) > 0) { return grammar->tag_mapping[tag]; }
-    else { printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str()); return -1; }
+    else {
+        //printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str());
+        return -1;
+    }
 }
 
 string mapping_to_tag(Grammar* grammar, int tag) {
