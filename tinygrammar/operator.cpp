@@ -160,15 +160,20 @@ vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>> get_data(Grammar* g, T
 
     double n_m_d = 10000.0, i_m_d = 10000.0;
     int n_c = 0, i_c = 0;
+    int n_tid_max = 0, i_tid_max = 0;
     auto data = vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>>();
     for (auto&& s : shapes){
         auto temp = (TimeSliceShape*)s;
-        if (is_tag_invert(g, temp->slice->ts_tag)) { i_c++; i_m_d = min(i_m_d, temp->slice->duration); }
-        else { n_c++; n_m_d = min(n_m_d, temp->slice->duration); }
-        data.push_back(make_pair(temp, TimeManager::FindTimeLine(timeline, temp->slice)));
+        auto ntl = TimeManager::FindTimeLine(timeline, temp->slice);
+        if (is_tag_invert(g, temp->slice->ts_tag)) { i_c++; i_m_d = min(i_m_d, temp->slice->duration); i_tid_max = max(i_tid_max, ntl->node->content->shapes[0]->tid);}
+        else { n_c++; n_m_d = min(n_m_d, temp->slice->duration); n_tid_max = max(n_tid_max, ntl->node->content->shapes[0]->tid);}
+        data.push_back(make_pair(temp, ntl));
     }
-    n_ma_d = max(0.0, n_m_d - offset * n_c);
-    i_ma_d = max(0.0, i_m_d - offset * i_c);
+//    n_ma_d = max(0.0, n_m_d - offset * n_c);
+//    i_ma_d = max(0.0, i_m_d - offset * i_c);
+    n_ma_d = max(0.0, n_m_d - offset * (n_tid_max + 1));
+    i_ma_d = max(0.0, i_m_d - offset * (i_tid_max + 1));
+
     return data;
 }
 
@@ -196,7 +201,9 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
             mat.y = {parameters[3], parameters[4], 0.0};
             mat.z = {parameters[5], parameters[6], 1.0};
             mat = ym_inverse(mat);
-            am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {mat.z.x, mat.z.y}});
+//            am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {mat.z.x, mat.z.y}});
+            am  = AnimatorMatrix(bbox, {{mat.x.x, mat.x.y},{mat.y.x, mat.y.y}, {-parameters[5], -parameters[6]}});
+
             start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
             end_delta = (offset * d.second->node->content->shapes[0]->tid + i_max_dur) / d.first->slice->duration;
             i_off_count++;

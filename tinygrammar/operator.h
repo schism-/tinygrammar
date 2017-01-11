@@ -128,7 +128,7 @@ struct Operator{
                 new_param[0] = parameters[0];
                 new_param[1] = parameters[1];   new_param[2] = 0.0;
                 new_param[3] = 0.0;             new_param[4] = parameters[1];
-                new_param[5] = parameters[2];   new_param[6] = parameters[3];
+                new_param[5] = parameters[1] * parameters[2];   new_param[6] = parameters[1] * parameters[3];
                 new_param[7] = parameters[4];
                 return affine_operator(shapes, tags, new_param, sampler, timeline);
                 break;

@@ -26,7 +26,7 @@
 using namespace std;
 
 #define PARAM_SIZE 20
-#define TAG_SIZE 6
+#define TAG_SIZE 10
 
 #define ACTIVE_GRAMMAR 2
 

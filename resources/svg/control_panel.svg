@@ -3,8 +3,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="360px" height="360px" viewBox="0 0 360 360" enable-background="new 0 0 360 360" xml:space="preserve">
-
-<g id="Layer_1_1_">
+<g>
 	<path id="pill_6_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M36.583,48.833c-8.239,0-14.917-6.678-14.917-14.917
 		C21.667,25.678,28.345,19,36.583,19h41.333c8.238,0,14.917,6.678,14.917,14.917c0,8.238-6.679,14.917-14.917,14.917L36.583,48.833
 		L36.583,48.833z"/>
@@ -47,14 +46,14 @@
 		<rect id="bull_2_" x="277.875" y="147.708" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="12.75" height="12.75"/>
 	<polygon id="bull_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="199.475,81.88 196.031,75.917 
 		199.475,69.954 206.359,69.954 209.803,75.917 206.359,81.88 	"/>
-	<circle id="c_4" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="193.584" r="14.917"/>
+	<circle id="c_1_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="193.584" r="14.917"/>
 	<circle id="c_2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="321.917" cy="33.917" r="14.917"/>
 	<circle id="c_1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="241.916" cy="193.584" r="14.917"/>
-	<circle id="ic_1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="241.917" cy="193.584" r="5.417"/>
-	<circle id="c_5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="75.917" r="14.917"/>
-	<circle id="ic_5" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="75.917" r="5.417"/>
-	<circle id="c_3" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="118.25" cy="33.917" r="14.917"/>
-	<circle id="ic_3" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="118.25" cy="33.917" r="5.417"/>
+	<circle id="ic_2_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="241.917" cy="193.584" r="5.417"/>
+	<circle id="c_1_3_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="75.917" r="14.917"/>
+	<circle id="ic_2_4_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="77.917" cy="75.917" r="5.417"/>
+	<circle id="c_0_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="118.25" cy="33.917" r="14.917"/>
+	<circle id="ic_2_5_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="118.25" cy="33.917" r="5.417"/>
 	<circle id="c_0" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="322.916" cy="152.917" r="14.917"/>
 	<rect id="bar_2_" x="25.667" y="61" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="3.667" height="29.833"/>
 	<rect id="bar_1_" x="35.667" y="61" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="3.667" height="29.833"/>
@@ -121,8 +120,8 @@
 		<rect id="sliderdown_4_" x="205.334" y="241.083" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="9.333" height="2.786"/>
 	
 		<rect id="sliderup_2_" x="195.334" y="225.334" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="9.333" height="2.785"/>
-	<circle id="c_3_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="283.666" cy="74.917" r="14.917"/>
-	<circle id="ic_3_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="283.667" cy="74.917" r="5.417"/>
+	<circle id="c_1_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="283.666" cy="74.917" r="14.917"/>
+	<circle id="ic_2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="283.667" cy="74.917" r="5.417"/>
 	<circle id="lc_0" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="233.166" cy="22.25" r="2.5"/>
 	<circle id="lc_1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="243.666" cy="22.25" r="2.5"/>
 	<circle id="lc_2" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="254.166" cy="22.25" r="2.5"/>
@@ -174,9 +173,23 @@
 	<rect id="graph" x="268.75" y="100.999" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="28.916" height="28.917"/>
 	<polygon id="tachi" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="288.458,241.248 273.542,241.248 
 		266.542,222.332 295.458,222.332 	"/>
-	<circle id="c_8" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="160.583" cy="154.084" r="14.917"/>
-	<circle id="c_10" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="39.333" cy="114.499" r="14.917"/>
-	<circle id="c_12" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="200.835" cy="33.917" r="14.917"/>
-	<circle id="c_0_5_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="324.249" cy="114.499" r="14.917"/>
+	<circle id="c_2_3_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="160.583" cy="154.084" r="14.917"/>
+	<circle id="c_2_4_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="39.333" cy="114.499" r="14.917"/>
+	<circle id="c_2_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="200.835" cy="33.917" r="14.917"/>
+	<circle id="c_2_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="324.249" cy="114.499" r="14.917"/>
+	<circle id="ic_0_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="160.583" cy="154.084" r="5.417"/>
+	<circle id="ic_2_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="322.916" cy="152.917" r="5.417"/>
+	
+		<rect id="ic_2_3_" x="195.446" y="28.529" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="10.777" height="10.776"/>
+	
+		<rect id="ic_0_3_" x="72.945" y="188.195" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="10.777" height="10.777"/>
+	<polygon id="ic_1" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="35.891,120.461 32.447,114.499 35.891,108.536 
+		42.775,108.536 46.219,114.499 42.775,120.461 	"/>
+	<polygon id="ic_2_6_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="239.474,120.462 236.03,114.499 
+		239.474,108.536 246.358,108.536 249.802,114.499 246.358,120.462 	"/>
+	<circle id="ic_0" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="321.917" cy="33.917" r="10.515"/>
+	<circle id="ic_1_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="321.917" cy="33.917" r="5.417"/>
+	<circle id="ic_1_2_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="324.249" cy="114.499" r="10.515"/>
+	<circle id="ic_0_1_" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" cx="324.249" cy="114.499" r="5.417"/>
 </g>
 </svg>
