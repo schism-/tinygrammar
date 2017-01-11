@@ -244,13 +244,21 @@ ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_
         double start_delta, end_delta;
         
         if (is_tag_invert(g, d.first->slice->ts_tag)){
-            am  = move_towards_point(bbox, {parameters[1], parameters[2]}, -parameters[3]);
+            if (parameters[0] == 1.0) {
+                auto c = ym_rcenter(bounds_polygon(d.second->node->content->shapes[0]->poly));
+                am  = move_towards_point(bbox, {c.x + parameters[1], c.y + parameters[2]}, -parameters[3]);
+            }
+            else am  = move_towards_point(bbox, {parameters[1], parameters[2]}, -parameters[3]);
             start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
             end_delta = (offset * d.second->node->content->shapes[0]->tid + i_max_dur) / d.first->slice->duration;
             i_off_count++;
         }
         else {
-            am  = move_towards_point(bbox, {parameters[1], parameters[2]}, parameters[3]);
+            if (parameters[0] == 1.0) {
+                auto c = ym_rcenter(bounds_polygon(d.second->node->content->shapes[0]->poly));
+                am  = move_towards_point(bbox, {c.x + parameters[1], c.y + parameters[2]}, parameters[3]);
+            }
+            else am  = move_towards_point(bbox, {parameters[1], parameters[2]}, parameters[3]);
             start_delta = (offset * d.second->node->content->shapes[0]->tid) / d.first->slice->duration;
             end_delta = (offset * d.second->node->content->shapes[0]->tid + n_max_dur) / d.first->slice->duration;
             n_off_count++;
@@ -258,7 +266,7 @@ ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_
         
         if (offset == 0.0) { start_delta = 0.0; end_delta = 1.0; }
         
-        auto akf = AnimatorKeyframes(am, {start_delta, end_delta}, parameters[0] == 1.0 ? anim_single : anim_group, 0.0);
+        auto akf = AnimatorKeyframes(am, {start_delta, end_delta}, anim_group, 0.0);
         
         d.first->slice->animation = akf;
         d.first->slice->ts_tag = tags[0];

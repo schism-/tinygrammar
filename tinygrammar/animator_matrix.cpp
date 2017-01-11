@@ -12,13 +12,16 @@ AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, dou
     auto res_am = AnimatorMatrix(bb);
     for (auto i = 0; i <= res_am.mats.size(); i++){
         auto v_d = pos - res_am.mats_centers[i];
-        if (ym_length(v_d) < scale / 2.0) res_am.mats[i].t = {0.0, 0.0};
-        else {
-            v_d = ym_normalize(v_d);
-//            if (fabs((float)v_d.x) < 0.2) {v_d.y = 1.0; v_d.x = 0.0;}
-//            if (fabs((float)v_d.y) < 0.2) {v_d.y = 0.0; v_d.x = 1.0;}
-            res_am.mats[i].t = v_d * scale;
-        }
+//        if (ym_length(v_d) < scale / 2.0) res_am.mats[i].t = {0.0, 0.0};
+//        else {
+//            v_d = ym_normalize(v_d);
+////            if (fabs((float)v_d.x) < 0.2) {v_d.y = 1.0; v_d.x = 0.0;}
+////            if (fabs((float)v_d.y) < 0.2) {v_d.y = 0.0; v_d.x = 1.0;}
+//            res_am.mats[i].t = v_d * scale;
+//        }
+        v_d = ym_normalize(v_d);
+        res_am.mats[i].t = v_d * scale;
+
     }
     return res_am;
 }

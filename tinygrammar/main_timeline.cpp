@@ -81,11 +81,11 @@ int main(int argc, const char * argv[]) {
     
     ((ExpansionAnim*)(em->history.back()))->tree = tree;
     
-    printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
+    //printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     
     while (expand(em)){
         printf("Expanding... \n");
-        printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
+        //printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     };
     
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
@@ -101,7 +101,7 @@ int main(int argc, const char * argv[]) {
     auto size = ym_rsize(bbox);
     
     TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
-    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.0, 1.0}, ss.str());
+    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {2.0, 2.0}, ss.str());
     if (grammar->dry_run) return 0;
     
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
@@ -110,7 +110,7 @@ int main(int argc, const char * argv[]) {
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
         stringstream ss1;
         ss1 << std::setfill('0') << std::setw(3) << k;
-        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.0, 1.0}, ss1.str());
+        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {2.0, 2.0}, ss1.str());
         k++;
     }
     

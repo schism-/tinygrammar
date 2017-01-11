@@ -202,8 +202,8 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
                 auto s_shape = CSGTree::AddShape(tree, s_temp);
                 
                 auto s2_temp = new AnimatedShape();
-                auto s2_t = add_tags(g, {"seg"});
-                s2_temp->literal_tag = "seg";
+                auto s2_t = add_tags(g, {"seg2"});
+                s2_temp->literal_tag = "seg2";
                 s2_temp->tag = s2_t[0];
                 s2_temp->tid = 0;
                 s2_temp->poly = {seg2};

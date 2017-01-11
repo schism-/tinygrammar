@@ -1,8 +1,8 @@
 {
 	"grammar_name" : "Test 3 Time Grammar", 
 	"seed" : -1, 
-	"framerate" : 10.0,
-	"bbox" : [-200.0, -200.0, 200.0, 200.0],
+	"framerate" : 30.0,
+	"bbox" : [-400.0, -400.0, 400.0, 400.0],
 	"dry_run" : false,
 
 	"rules" : [
@@ -11,7 +11,7 @@
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
-			"parameters" : [10.0, 1.0],
+			"parameters" : [6.0, 1.0],
 			"init_value" : "square"
 		}, 
 
@@ -58,7 +58,7 @@
 			"matching_tags" : ["sliderup", "sliderdown"],
 			"produced_tags" : ["up_t1"],
 			"operator" : "translation",
-			"parameters" : [0.0, 0.0, 5.0, 0.05],
+			"parameters" : [0.0, 0.0, 5.0, 0.1],
 			"init_value" : "c"
 		},
 
@@ -270,5 +270,195 @@
 			"init_value" : "c"
 		},
 
+		// =========================================== 
+		// ============= tachi - graph =============== 
+		// ===========================================
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["c", "b", "c", "inv_c", "b", "inv_b", "inv_c", "inv_b", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.10, 0.05, 0.10, 0.10, 0.10, 0.25, 0.05, 0.1],
+			"init_value" : "seg"
+		},
+
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "inv_b", "c", "b", "b", "inv_b", "inv_c", "inv_b"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.15, 0.10, 0.10, 0.20, 0.15, 0.15, 0.05],
+			"init_value" : "seg2"
+		},
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["seg_tachi", "seg", "seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 30.0, 0.0],
+			"init_value" : "b"
+		},
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -45.0, 0.0],
+			"init_value" : "c"
+		},
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 5.0, 0.1],
+			"init_value" : "c"
+		},
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -10.0, 1.5, 0.0],
+			"init_value" : "c"
+		},
+
+		// =========================================== 
+		// ================= MC ====================== 
+		// ===========================================
+		
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "e", "inv_b", "id", "b", "c", "d", "e", "inv_b", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.10, 0.10, 0.10, 0.05, 0.05, 0.10, 0.10, 0.10, 0.10, 0.05, 0.05],
+			"init_value" : "mclu"
+		},
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "e", "inv_c", "id", "b", "c", "d", "e", "inv_c", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.10, 0.10, 0.10, 0.05, 0.05, 0.10, 0.10, 0.10, 0.10, 0.05, 0.05],
+			"init_value" : "mcru"
+		},
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "e", "inv_d", "id", "b", "c", "d", "e", "inv_d", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.10, 0.10, 0.10, 0.05, 0.05, 0.10, 0.10, 0.10, 0.10, 0.05, 0.05],
+			"init_value" : "mcld"
+		},
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "e", "inv_e", "id", "b", "c", "d", "e", "inv_e", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.10, 0.10, 0.10, 0.05, 0.05, 0.10, 0.10, 0.10, 0.10, 0.05, 0.05],
+			"init_value" : "mcrd"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "e"
+		},
+
+		// =========================================== 
+		// ================ COG ====================== 
+		// ===========================================
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "inv_b", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.25, 0.25, 0.25, 0.25],
+			"init_value" : "cog"//bsr
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 130.0, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -90.0, 0.0],
+			"init_value" : "c"
+		},
+
+		// =========================================== 
+		// ================= LS ====================== 
+		// ===========================================
+
+		// { 	
+		// 	"rule_name" : "time_rule_2",
+		// 	"matching_tags" : ["a"],
+		// 	"produced_tags" : ["b", "c", "d"],
+		// 	"operator" : "time_slice",
+		// 	"parameters" : [0.25, 0.5, 0.25],
+		// 	"init_value" : "ls" //inplace
+		// },
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["lc_t2"],
+			"operator" : "attribute",
+			"parameters" : [0.0, 0.0, 0.0, 0.0,
+							0.0, 0.0, 0.0, 1.0,
+							200.0, 255.0, 200.0, 0.0,
+							200.0, 255.0, 200.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -90.0, 0.5, 0.05],
+			"init_value" : "c"
+		},
 	],
 }
