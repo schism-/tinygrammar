@@ -1,8 +1,8 @@
 {
 	"grammar_name" : "Test 2 Time Grammar", 
 	"seed" : -1, 
-	"framerate" : 25.0,
-	"bbox" : [-220.0, -220.0, 220.0, 220.0],
+	"framerate" : 30.0,
+	"bbox" : [-440.0, -440.0, 440.0, 440.0],
 	"dry_run" : false,
 
 	"rules" : [
@@ -49,7 +49,7 @@
 			"matching_tags" : ["c"],
 			"produced_tags" : ["up_t1"],
 			"operator" : "move_towards",
-			"parameters" : [0.0, 0.0, -30.0, -150.0, 0.0],
+			"parameters" : [0.0, 0.0, -50.0, -150.0, 0.0],
 			"init_value" : "b"
 		},
 
@@ -143,7 +143,7 @@
 			"matching_tags" : ["c"],
 			"produced_tags" : ["ct_2"],
 			"operator" : "scale_tran",
-			"parameters" : [0.0, 0.2, 0.0, 250.0, 0.0],
+			"parameters" : [0.0, 0.2, 0.0, 650.0, 0.0],
 			"init_value" : "d"
 		},
 		

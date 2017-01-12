@@ -44,7 +44,7 @@ string mapping_to_tag(Grammar* grammar, int tag) {
     for( auto&& pair : grammar->tag_mapping ){
         if (pair.second == tag) return pair.first;
     }
-    printf("[MAPPING->TAG] [ERROR] tag not found : %d\n", tag);
+//    printf("[MAPPING->TAG] [ERROR] tag not found : %d\n", tag);
     return "";
 }
 
@@ -199,7 +199,7 @@ Rule* matching_init(){
     if (not inits.empty())
         return inits[(int)(ym_rng_nextf(&grammar->rn) * inits.size())];
     else {
-        printf("Didn't find any init rule for matching\n");
+//        printf("Didn't find any init rule for matching\n");
         return nullptr;
     }
 }
@@ -215,7 +215,7 @@ pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
             return make_pair(matched_shapes, rule_to_apply);
         }
     }
-    printf("Didn't find any rule for matching\n");
+//    printf("Didn't find any rule for matching\n");
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
@@ -229,7 +229,7 @@ pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& ac
             return make_pair(matched_shapes, rule_to_apply);
         }
     }
-    printf("[TIME] Didn't find any rule for matching\n");
+//    printf("[TIME] Didn't find any rule for matching\n");
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
@@ -243,7 +243,7 @@ pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGrou
             return make_pair(matched_shapes, rule_to_apply);
         }
     }
-    printf("[SPACE] Didn't find any rule for matching\n");
+//    printf("[SPACE] Didn't find any rule for matching\n");
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 

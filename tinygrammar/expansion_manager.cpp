@@ -208,7 +208,7 @@ bool expand(History* h) {
     
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
-        printf("Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
+//        printf("Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
         grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
@@ -239,7 +239,7 @@ bool expand(HistoryAnim* h) {
     
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
-        printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
+//        printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
         grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters,
                                                            grammar->rn, nullptr, h->history.back()->timeline);
         //update model
@@ -247,8 +247,8 @@ bool expand(HistoryAnim* h) {
         return true;
     }
     else{
-        printf("[TIME]  No more expansions available\n");
-        printf("[SPACE] Finding expansions \n");
+//        printf("[TIME]  No more expansions available\n");
+//        printf("[SPACE] Finding expansions \n");
         
         // Now we can start doing the spatial expansions
         auto anim_shapes = to_animated_shapes(front);
@@ -262,7 +262,7 @@ bool expand(HistoryAnim* h) {
         
         if (grammar_step.second != nullptr){
             //if an appliable rule has been found, apply it and retrieve results
-            printf("[SPACE] Rule applied : %s on %d shapes\n", grammar_step.second->rule_name_str.c_str(), (int)grammar_step.first.match.size());
+//            printf("[SPACE] Rule applied : %s on %d shapes\n", grammar_step.second->rule_name_str.c_str(), (int)grammar_step.first.match.size());
             
             // Got the shapes, now retrieve the Nodes in the Tree
             auto ntls = vector<TimeManager::NodeTimeLine*>();
@@ -286,7 +286,7 @@ bool expand(HistoryAnim* h) {
             return true;
         }
         else{
-            printf("[SPACE]  No more expansions available\n");
+//            printf("[SPACE]  No more expansions available\n");
             return false;
         }
     }
