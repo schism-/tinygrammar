@@ -12,6 +12,7 @@
 #include "common.h"
 #include "csg_tree.h"
 #include "animator_matrix.h"
+#include "threadpool.h"
 
 
 namespace TimeManager {
@@ -69,6 +70,9 @@ namespace TimeManager {
     
     void AnimateTimeLine(TimeLine* t, CSGTree::Tree* tree, double current_time, double incr);
     void AnimateNodeTimeLine(NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time, double incr);
+    
+    static ThreadPool pool(8);
+
 }
 
 struct TimeSliceShape : Shape {

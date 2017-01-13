@@ -125,13 +125,13 @@ CSGTree::Tree* squares_and_circles(Grammar* g, int extra_value) {
                 auto y_0 = (double)j * (padding + dim) - max_ver / 2.0;
                 auto y_1 = (double)j * (padding + dim) + dim  - max_ver / 2.0;
                 poly  = make_polyline_rect({x_0, y_0}, {x_1, y_1}, resolution);
-                shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_s_tag[0], i + j * num_hor));
+                shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_s_tag[0], i + j));
             }
             else {
                 auto center_x = (double)i * (padding + dim) - max_hor / 2.0 + dim/2.0;
                 auto center_y = (double)j * (padding + dim) - max_ver / 2.0 + dim/2.0;
                 poly  = make_polyline_circle({center_x, center_y}, 25.0, resolution);
-                shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_c_tag[0], i + j * num_hor));
+                shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_c_tag[0], i + j));
             }
             
             
@@ -172,70 +172,71 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
         shape = CSGTree::AddShape(tree, temp);
         
         if (first) { last_op = shape; first = false; }
-        else last_op = CSGTree::Union (tree, last_op, shape);  //test 2
-//        else {
-//            if (temp->tag == tag_to_mapping(g, "place")){
-//                auto t_bb = bounds_polygon(temp->poly);
-//                auto c = ym_rcenter(t_bb);
-//                auto sq = make_polyline_rect({c.x - 5.0, c.y - 5.0}, {c.x + 5.0, c.y + 5.0}, resolution);
-//                auto s_temp = new AnimatedShape();
-//                auto s_t = add_tags(g, {"in_place"});
-//                s_temp->literal_tag = "in_place";
-//                s_temp->tag = s_t[0];
-//                s_temp->tid = 0;
-//                s_temp->poly = {sq};
-//                auto s_shape = CSGTree::AddShape(tree, s_temp);
-//                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
-//                last_op = CSGTree::Sum(tree, last_op, res);
-//            }
-//            else if (temp->tag == tag_to_mapping(g, "graph")){
-//                auto t_bb = bounds_polygon(temp->poly);
-//                auto c = ym_rcenter(t_bb);
-//                auto seg1 = make_polyline_segment({t_bb.min.x - 10.0, c.y - 3.0}, {t_bb.max.x + 10.0, c.y + 10.0}, resolution);
-//                auto seg2 = make_polyline_segment({t_bb.min.x - 10.0, c.y - 6.0}, {t_bb.max.x + 10.0, c.y - 13.0}, resolution);
-//                auto s_temp = new AnimatedShape();
-//                auto s_t = add_tags(g, {"seg"});
-//                s_temp->literal_tag = "seg";
-//                s_temp->tag = s_t[0];
-//                s_temp->tid = 0;
-//                s_temp->poly = {seg1};
-//                auto s_shape = CSGTree::AddShape(tree, s_temp);
-//                
-//                auto s2_temp = new AnimatedShape();
-//                auto s2_t = add_tags(g, {"seg2"});
-//                s2_temp->literal_tag = "seg2";
-//                s2_temp->tag = s2_t[0];
-//                s2_temp->tid = 0;
-//                s2_temp->poly = {seg2};
-//                auto s2_shape = CSGTree::AddShape(tree, s2_temp);
-//
-//                
-//                auto res = CSGTree::Sum(tree, s_shape, s2_shape);
-//                res = CSGTree::PlaceInShape(tree, shape, res);
-//                
-//                last_op = CSGTree::Sum(tree, last_op, res);
-//            }
-//            else if (temp->tag == tag_to_mapping(g, "tachi")){
-//                auto t_bb = bounds_polygon(temp->poly);
-//                auto c = ym_rcenter(t_bb);
-//                auto seg1 = make_polyline_segment({c.x, t_bb.max.y + 10.0}, {c.x, t_bb.max.y - 10.0}, resolution);
-//
-//                auto s_temp = new AnimatedShape();
-//                auto s_t = add_tags(g, {"seg_tachi"});
-//                s_temp->literal_tag = "seg_tachi";
-//                s_temp->tag = s_t[0];
-//                s_temp->tid = 0;
-//                s_temp->poly = {seg1};
-//                auto s_shape = CSGTree::AddShape(tree, s_temp);
-//                
-//                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
-//                
-//                last_op = CSGTree::Sum(tree, last_op, res);
-//            }
-//            else {
-//                last_op = CSGTree::Sum(tree, last_op, shape);  //test 3
-//            }
-//        }
+//        else last_op = CSGTree::Union (tree, last_op, shape);  //test 2
+//        else last_op = CSGTree::Sum(tree, last_op, shape);  //test teaser
+        else {
+            if (temp->tag == tag_to_mapping(g, "place")){
+                auto t_bb = bounds_polygon(temp->poly);
+                auto c = ym_rcenter(t_bb);
+                auto sq = make_polyline_rect({c.x - 5.0, c.y - 5.0}, {c.x + 5.0, c.y + 5.0}, resolution);
+                auto s_temp = new AnimatedShape();
+                auto s_t = add_tags(g, {"in_place"});
+                s_temp->literal_tag = "in_place";
+                s_temp->tag = s_t[0];
+                s_temp->tid = 0;
+                s_temp->poly = {sq};
+                auto s_shape = CSGTree::AddShape(tree, s_temp);
+                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
+                last_op = CSGTree::Sum(tree, last_op, res);
+            }
+            else if (temp->tag == tag_to_mapping(g, "graph")){
+                auto t_bb = bounds_polygon(temp->poly);
+                auto c = ym_rcenter(t_bb);
+                auto seg1 = make_polyline_segment({t_bb.min.x - 10.0, c.y - 3.0}, {t_bb.max.x + 10.0, c.y + 10.0}, resolution);
+                auto seg2 = make_polyline_segment({t_bb.min.x - 10.0, c.y - 6.0}, {t_bb.max.x + 10.0, c.y - 13.0}, resolution);
+                auto s_temp = new AnimatedShape();
+                auto s_t = add_tags(g, {"seg"});
+                s_temp->literal_tag = "seg";
+                s_temp->tag = s_t[0];
+                s_temp->tid = 0;
+                s_temp->poly = {seg1};
+                auto s_shape = CSGTree::AddShape(tree, s_temp);
+                
+                auto s2_temp = new AnimatedShape();
+                auto s2_t = add_tags(g, {"seg2"});
+                s2_temp->literal_tag = "seg2";
+                s2_temp->tag = s2_t[0];
+                s2_temp->tid = 0;
+                s2_temp->poly = {seg2};
+                auto s2_shape = CSGTree::AddShape(tree, s2_temp);
+
+                
+                auto res = CSGTree::Sum(tree, s_shape, s2_shape);
+                res = CSGTree::PlaceInShape(tree, shape, res);
+                
+                last_op = CSGTree::Sum(tree, last_op, res);
+            }
+            else if (temp->tag == tag_to_mapping(g, "tachi")){
+                auto t_bb = bounds_polygon(temp->poly);
+                auto c = ym_rcenter(t_bb);
+                auto seg1 = make_polyline_segment({c.x, t_bb.max.y + 10.0}, {c.x, t_bb.max.y - 10.0}, resolution);
+
+                auto s_temp = new AnimatedShape();
+                auto s_t = add_tags(g, {"seg_tachi"});
+                s_temp->literal_tag = "seg_tachi";
+                s_temp->tag = s_t[0];
+                s_temp->tid = 0;
+                s_temp->poly = {seg1};
+                auto s_shape = CSGTree::AddShape(tree, s_temp);
+                
+                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
+                
+                last_op = CSGTree::Sum(tree, last_op, res);
+            }
+            else {
+                last_op = CSGTree::Sum(tree, last_op, shape);  //test 3
+            }
+        }
     }
     
     return tree;

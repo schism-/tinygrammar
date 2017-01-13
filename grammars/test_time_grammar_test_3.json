@@ -76,7 +76,7 @@
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["b", "c", "inv_b"],
+			"produced_tags" : ["b", "c", "inv_c"],
 			"operator" : "time_slice",
 			"parameters" : [0.25, 0.5, 0.25],
 			"init_value" : "place"

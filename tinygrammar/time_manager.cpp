@@ -8,6 +8,7 @@
 
 #include "time_manager.h"
 
+
 TimeManager::NodeTimeLine* TimeManager::FindTimeLine (TimeManager::TimeLine* t, TimeManager::TimeSlice* slice){
     for (auto&& ntm : t->timelines){
         if (find(ntm->slices.begin(), ntm->slices.end(), slice) != ntm->slices.end()) return ntm;
@@ -137,6 +138,16 @@ void TimeManager::TimeLineSplit (TimeManager::TimeLine* t, TimeManager::NodeTime
 }
 
 void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree, double current_time, double incr){
+    
+//    for(auto&& ntl : t->timelines)
+//            TimeManager::pool.enqueue([tree,current_time,incr,ntl](){
+//                TimeManager::AnimateNodeTimeLine(ntl, tree, current_time, incr);
+//            });
+//    
+
+    
+    
+    
     //For each NodeTimeLine, update its content.
     for (auto&& ntl : t->timelines){
         TimeManager::AnimateNodeTimeLine(ntl, tree, current_time, incr);

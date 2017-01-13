@@ -68,8 +68,8 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/test_tagged_2.svg");
-    auto tree = initialize_tree(grammar, 2, 5, "resources/svg/test_tagged_2.svg"); // squares and circles
+//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/control_panel.svg");
+    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
     
     
     auto init_step = matching_init();
@@ -85,10 +85,13 @@ int main(int argc, const char * argv[]) {
     
     //printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     std::chrono::steady_clock::time_point exp_begin = std::chrono::steady_clock::now();
+    int step = 0;
     while (expand(em)){
-        printf("Expanding... \n");
+        printf("Expanding %d...", step);
+        step++;
         //printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     };
+    printTimeLine(grammar, ((ExpansionAnim*)(em->history.back()))->timeline);
     std::chrono::steady_clock::time_point exp_end= std::chrono::steady_clock::now();
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(exp_end - exp_begin).count() <<std::endl;
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (exp_end - exp_begin).count() <<std::endl;

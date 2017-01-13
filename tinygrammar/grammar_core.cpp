@@ -282,9 +282,9 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
                 else{
                     if (tag_in_rule(tag, rules[i]->matching_tags)
                         and (std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end())){
-                        matches.clear();
+                        //matches.clear();
                         matches.push_back(i);
-                        break;
+                        //break;
                     }
                 }
             }
