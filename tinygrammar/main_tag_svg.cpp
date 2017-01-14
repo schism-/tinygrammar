@@ -259,7 +259,7 @@ void run() {
      +                                      +
      ======================================== */
     
-    init("resources/svg/control_panel.svg");
+    init("resources/svg/port.svg");
         
     setupStyle();
     

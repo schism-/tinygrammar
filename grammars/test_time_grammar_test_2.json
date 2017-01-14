@@ -4,7 +4,6 @@
 	"framerate" : 30.0,
 	"bbox" : [-440.0, -440.0, 440.0, 440.0],
 	"dry_run" : false,
-
 	"rules" : [
 		{ 
 			"rule_name" : "init_1",
@@ -145,7 +144,6 @@
 			"operator" : "scale_tran",
 			"parameters" : [0.0, 0.2, 0.0, 650.0, 0.0],
 			"init_value" : "d"
-		},
-		
-	],
+		}	
+	]
 }

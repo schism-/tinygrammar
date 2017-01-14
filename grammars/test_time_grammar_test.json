@@ -15,14 +15,7 @@
 			"init_value" : "square"
 		}, 
 
-		{ 	
-			"rule_name" : "time_rule_1",
-			"matching_tags" : ["a"],
-			"produced_tags" : ["c", "b", "inv_b", "inv_c"],
-			"operator" : "time_slice",
-			"parameters" : [0.2, 0.3, 0.3, 0.2],
-			"init_value" : "tri"
-		},
+
 
 		{ 	
 			"rule_name" : "time_rule_1",
@@ -32,6 +25,37 @@
 			"parameters" : [0.2, 0.3, 0.3, 0.2],
 			"init_value" : ""
 		},
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["c", "b", "inv_b", "inv_c", "id"],
+			"operator" : "time_slice",
+			"parameters" : [0.1, 0.4, 0.2, 0.1, 0.2],
+			"init_value" : "tri"
+		},
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "inv_b", "e", "inv_e"],
+			"operator" : "time_slice",
+			"parameters" : [0.2, 0.2, 0.4, 0.1, 0.1],
+			"init_value" : "ls"
+		},
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "e"],
+			"operator" : "time_slice",
+			"parameters" : [0.1, 0.3, 0.4, 0.2],
+			"init_value" : "lc"
+		},
+
+
+
+
+
+
 
 
 		{ 	
@@ -102,8 +126,8 @@
 			"rule_name" : "space_rule_bs3",
 			"matching_tags" : ["ls"],
 			"produced_tags" : ["bt3"],
-			"operator" : "translation",
-			"parameters" : [1.0, 0.0, 43.0, 0.01],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.7, 0.01],
 			"init_value" : "e"
 		},
 
@@ -169,8 +193,6 @@
 			"rule_name" : "space_rule_bs4",
 			"matching_tags" : ["tri"],
 			"produced_tags" : ["bt3"],
-			// "operator" : "translation",
-			// "parameters" : [1.0, 20.0, -20.0, 0.1],
 			"operator" : "move_towards",
 			"parameters" : [0.0, 0.0, 0.0, 40.0, 0.08],
 			"init_value" : "b"
@@ -195,7 +217,6 @@
 			"operator" : "translation",
 			"parameters" : [1.0, 20.0, -20.0, 0.0],
 			"init_value" : "e"
-		},
-
-	],
+		}
+	]
 }

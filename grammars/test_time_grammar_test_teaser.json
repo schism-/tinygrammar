@@ -15,8 +15,6 @@
 			"init_value" : "square"
 		}, 
 
-		// BASE SUBDIVISION
-
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["a"],
@@ -25,8 +23,6 @@
 			"parameters" : [0.01, 0.24, 0.75],
 			"init_value" : ""
 		},
-
-		// SETUP
 
 		{ 	
 			"rule_name" : "time_rule_2",
@@ -65,8 +61,6 @@
 			"init_value" : "rotate"
 		},
 
-		// ANIMATION
-
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["anim"],
@@ -75,8 +69,6 @@
 			"parameters" : [0.15, 0.15, 0.2, 0.2, 0.15, 0.15],
 			"init_value" : ""
 		},
-
-		// SPACE GENERAL
 
 		{ 	
 			"rule_name" : "space_rule_bs4",
@@ -156,8 +148,6 @@
 			"init_value" : "id"
 		},
 
-		// SPACE SETUP
-
 		{ 	
 			"rule_name" : "space_rule_bs4",
 			"matching_tags" : ["translider", "tri"],
@@ -194,8 +184,6 @@
 			"init_value" : "rot"
 		},
 
-		// ANIMATION SPACE
-		
 		{ 	
 			"rule_name" : "space_rule_bs4",
 			"matching_tags" : ["rotate"],
@@ -284,10 +272,8 @@
 			"matching_tags" : ["tri"],
 			"produced_tags" : ["up_t1"],
 			"operator" : "affine",
-			//"parameters" : [1.0, 0.75, -0.549038, 1.29904, 2.04904, 0.0, 0.0, 0.02],
 			"parameters" : [1.0, 1.0, -0.982051, 1.73205, 2.29904, 0.0, 0.0, 0.02],
 			"init_value" : "anim3"
-		},
-
-	],
+		}
+	]
 }

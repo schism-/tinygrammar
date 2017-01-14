@@ -53,6 +53,8 @@ vector<pair<polyline2r, string>> parse_svg_polylines(const string& svg, double r
                 curves.back().first += sample_bezier_polyline({cp[i+0],cp[i+1],cp[i+2],cp[i+3]}, (int)round(len / resolution));
             }
             curves.back().first = remove_duplicates_polyline(curves.back().first);
+            if(path == nullptr) continue;
+            if(curves.back().first.empty()) { curves.pop_back(); continue;}
             if(path->closed) curves.back().first = close_polyline(curves.back().first);
         }
     }

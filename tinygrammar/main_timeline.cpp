@@ -68,8 +68,8 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/control_panel.svg");
-    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
+    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/port_manual.svg");
+//    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
     
     
     auto init_step = matching_init();
@@ -111,7 +111,7 @@ int main(int argc, const char * argv[]) {
     
     std::chrono::steady_clock::time_point anim_begin = std::chrono::steady_clock::now();
     TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
-    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {2.0, 2.0}, ss.str());
+    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.55, 1.55}, ss.str());
     if (grammar->dry_run) return 0;
     
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
@@ -120,7 +120,7 @@ int main(int argc, const char * argv[]) {
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
         stringstream ss1;
         ss1 << std::setfill('0') << std::setw(3) << k;
-        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {2.0, 2.0}, ss1.str());
+        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {1.55, 1.55}, ss1.str());
         k++;
     }
     

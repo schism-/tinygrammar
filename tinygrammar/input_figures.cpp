@@ -168,7 +168,8 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
         
         auto tag_id = add_tags(g, {seglist[0]});
         temp->tag = tag_id[0];
-        temp->tid = atoi(seglist[1].c_str());;
+        if ((int)seglist.size() == 1) temp->tid = 0;
+        else temp->tid = atoi(seglist[1].c_str());
         shape = CSGTree::AddShape(tree, temp);
         
         if (first) { last_op = shape; first = false; }
