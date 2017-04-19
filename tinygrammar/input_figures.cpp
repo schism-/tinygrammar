@@ -125,15 +125,16 @@ CSGTree::Tree* squares_and_circles(Grammar* g, int extra_value) {
                 auto y_0 = (double)j * (padding + dim) - max_ver / 2.0;
                 auto y_1 = (double)j * (padding + dim) + dim  - max_ver / 2.0;
                 poly  = make_polyline_rect({x_0, y_0}, {x_1, y_1}, resolution);
+                printf("%f %f %f %f \n", x_0, y_0, x_1, y_1);
                 shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_s_tag[0], i + j));
             }
             else {
                 auto center_x = (double)i * (padding + dim) - max_hor / 2.0 + dim/2.0;
                 auto center_y = (double)j * (padding + dim) - max_ver / 2.0 + dim/2.0;
                 poly  = make_polyline_circle({center_x, center_y}, 25.0, resolution);
+                printf("%f %f \n", center_x, center_y);
                 shape = CSGTree::AddShape(tree, new AnimatedShape({poly}, l_c_tag[0], i + j));
             }
-            
             
             if (i == 0 && j == 0) {
                 last_op = shape;

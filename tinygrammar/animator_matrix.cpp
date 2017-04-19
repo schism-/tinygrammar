@@ -12,17 +12,35 @@ AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, dou
     auto res_am = AnimatorMatrix(bb);
     for (auto i = 0; i <= res_am.mats.size(); i++){
         auto v_d = pos - res_am.mats_centers[i];
-//        if (ym_length(v_d) < scale / 2.0) res_am.mats[i].t = {0.0, 0.0};
-//        else {
-//            v_d = ym_normalize(v_d);
-////            if (fabs((float)v_d.x) < 0.2) {v_d.y = 1.0; v_d.x = 0.0;}
-////            if (fabs((float)v_d.y) < 0.2) {v_d.y = 0.0; v_d.x = 1.0;}
-//            res_am.mats[i].t = v_d * scale;
-//        }
         v_d = ym_normalize(v_d);
         res_am.mats[i].t = v_d * scale;
 
     }
+    
+//    auto path = make_polyline_rect({pos.x - 75.0, pos.y - 75.0}, {pos.x + 75.0, pos.y + 75.0}, resolution);
+//    
+//    for (auto i = 0; i <= res_am.mats.size(); i++){
+//        
+//        auto min_dist = 100000.0;
+//        auto min_point = ym_vec2r();
+//        auto min_idx = -1;
+//        
+//        for (auto k = 0; k < (int)path.size(); k++){
+//            if (ym_length(res_am.mats_centers[i] - path[k]) < min_dist){
+//                min_dist = ym_length(res_am.mats_centers[i] - path[k]);
+//                min_point = path[k];
+//                min_idx = k;
+//            }
+//        }
+//        
+//        auto v_d = min_point - res_am.mats_centers[i];
+//        if (min_dist < 30.0) v_d = path[min_idx] - path[(min_idx + 1) % (int)path.size()];
+//            
+//        v_d = ym_normalize(v_d);
+//        res_am.mats[i].t = v_d * scale;
+//        
+//    }
+    
     return res_am;
 }
 

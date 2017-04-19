@@ -64,8 +64,6 @@
 			"init_value" : "diss"
 		},
 
-		// SETUP
-
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["setup"],
@@ -229,7 +227,6 @@
 			"init_value" : "s8"
 		},
 
-		// ANIMATION
 
 		{ 	
 			"rule_name" : "time_rule_2",
@@ -371,7 +368,6 @@
 		},
 
 		
-		// occhio
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["anim"],
@@ -424,8 +420,6 @@
 			"init_value" : "c"
 		},
 
-
-		// barba
 
 		{ 	
 			"rule_name" : "time_rule_2",
@@ -541,7 +535,6 @@
 			"init_value" : "c"
 		},
 
-		// shadorizz
 
 		{ 	
 			"rule_name" : "time_rule_2",
@@ -570,7 +563,6 @@
 			"init_value" : "c"
 		},
 
-		// shadbottom
 
 		{ 	
 			"rule_name" : "time_rule_2",

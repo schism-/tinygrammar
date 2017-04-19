@@ -2,8 +2,8 @@
 	"grammar_name" : "teaser Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-180.0, -250.0, 180.0, 150.0],
-	"dry_run" : false,
+	"bbox" : [-300.0, -350.0, 300.0, 250.0],
+	"dry_run" : true,
 
 	"rules" : [
 		{ 
