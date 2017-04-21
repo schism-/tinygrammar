@@ -1,0 +1,1256 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 221.38 220.02">
+  <title>edo_tris</title>
+  <rect x="0.24" width="214.5" height="214.5" transform="translate(0.72 4.45) rotate(-0.09)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  <g>
+    <polygon id="tri_0" data-name="tri 0" points="45.71 141.19 50.69 132.54 55.69 141.17 45.71 141.19" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-2" data-name="tri 0" points="40.74 149.84 45.71 141.19 50.71 149.82 40.74 149.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1" data-name="tri 1" points="50.71 149.82 55.69 141.17 60.69 149.8 50.71 149.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-3" data-name="tri 0" points="55.69 141.17 50.71 149.82 45.71 141.19 55.69 141.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-4" data-name="tri 0" points="35.77 158.49 40.74 149.84 45.74 158.47 35.77 158.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-2" data-name="tri 1" points="45.74 158.47 50.71 149.82 55.72 158.46 45.74 158.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-5" data-name="tri 0" points="50.71 149.82 45.74 158.47 40.74 149.84 50.71 149.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2" data-name="tri 2" points="55.72 158.46 60.69 149.8 65.69 158.44 55.72 158.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-3" data-name="tri 1" points="60.69 149.8 55.72 158.46 50.71 149.82 60.69 149.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-6" data-name="tri 0" points="30.79 167.14 35.77 158.49 40.77 167.12 30.79 167.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-4" data-name="tri 1" points="40.77 167.12 45.74 158.47 50.75 167.1 40.77 167.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-7" data-name="tri 0" points="45.74 158.47 40.77 167.12 35.77 158.49 45.74 158.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-2" data-name="tri 2" points="50.75 167.1 55.72 158.46 60.72 167.09 50.75 167.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-5" data-name="tri 1" points="55.72 158.46 50.75 167.1 45.74 158.47 55.72 158.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3" data-name="tri 3" points="60.72 167.09 65.69 158.44 70.7 167.07 60.72 167.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-3" data-name="tri 2" points="65.69 158.44 60.72 167.09 55.72 158.46 65.69 158.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-8" data-name="tri 0" points="25.82 175.78 30.79 167.14 35.8 175.77 25.82 175.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-6" data-name="tri 1" points="35.8 175.77 40.77 167.12 45.77 175.75 35.8 175.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-9" data-name="tri 0" points="40.77 167.12 35.8 175.77 30.79 167.14 40.77 167.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-4" data-name="tri 2" points="45.77 175.75 50.75 167.1 55.75 175.74 45.77 175.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-7" data-name="tri 1" points="50.75 167.1 45.77 175.75 40.77 167.12 50.75 167.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-2" data-name="tri 3" points="55.75 175.74 60.72 167.09 65.72 175.72 55.75 175.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-5" data-name="tri 2" points="60.72 167.09 55.75 175.74 50.75 167.1 60.72 167.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4" data-name="tri 4" points="65.72 175.72 70.7 167.07 75.7 175.7 65.72 175.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-3" data-name="tri 3" points="70.7 167.07 65.72 175.72 60.72 167.09 70.7 167.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-10" data-name="tri 0" points="20.85 184.44 25.82 175.78 30.82 184.42 20.85 184.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-8" data-name="tri 1" points="30.82 184.42 35.8 175.77 40.8 184.4 30.82 184.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-11" data-name="tri 0" points="35.8 175.77 30.82 184.42 25.82 175.78 35.8 175.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-6" data-name="tri 2" points="40.8 184.4 45.77 175.75 50.77 184.38 40.8 184.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-9" data-name="tri 1" points="45.77 175.75 40.8 184.4 35.8 175.77 45.77 175.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-4" data-name="tri 3" points="50.77 184.38 55.75 175.74 60.75 184.37 50.77 184.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-7" data-name="tri 2" points="55.75 175.74 50.77 184.38 45.77 175.75 55.75 175.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-2" data-name="tri 4" points="60.75 184.37 65.72 175.72 70.73 184.35 60.75 184.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-5" data-name="tri 3" points="65.72 175.72 60.75 184.37 55.75 175.74 65.72 175.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5" data-name="tri 5" points="70.73 184.35 75.7 175.7 80.7 184.33 70.73 184.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-3" data-name="tri 4" points="75.7 175.7 70.73 184.35 65.72 175.72 75.7 175.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-12" data-name="tri 0" points="15.87 193.09 20.85 184.44 25.85 193.07 15.87 193.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-10" data-name="tri 1" points="25.85 193.07 30.82 184.42 35.82 193.05 25.85 193.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-13" data-name="tri 0" points="30.82 184.42 25.85 193.07 20.85 184.44 30.82 184.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-8" data-name="tri 2" points="35.82 193.05 40.8 184.4 45.8 193.03 35.82 193.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-11" data-name="tri 1" points="40.8 184.4 35.82 193.05 30.82 184.42 40.8 184.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-6" data-name="tri 3" points="45.8 193.03 50.77 184.38 55.78 193.02 45.8 193.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-9" data-name="tri 2" points="50.77 184.38 45.8 193.03 40.8 184.4 50.77 184.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-4" data-name="tri 4" points="55.78 193.02 60.75 184.37 65.75 193 55.78 193.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-7" data-name="tri 3" points="60.75 184.37 55.78 193.02 50.77 184.38 60.75 184.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-2" data-name="tri 5" points="65.75 193 70.73 184.35 75.73 192.99 65.75 193" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-5" data-name="tri 4" points="70.73 184.35 65.75 193 60.75 184.37 70.73 184.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6" data-name="tri 6" points="75.73 192.99 80.7 184.33 85.7 192.96 75.73 192.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-3" data-name="tri 5" points="80.7 184.33 75.73 192.99 70.73 184.35 80.7 184.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-14" data-name="tri 0" points="10.9 201.74 15.87 193.09 20.88 201.72 10.9 201.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-12" data-name="tri 1" points="20.88 201.72 25.85 193.07 30.85 201.7 20.88 201.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-15" data-name="tri 0" points="25.85 193.07 20.88 201.72 15.87 193.09 25.85 193.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-10" data-name="tri 2" points="30.85 201.7 35.82 193.05 40.83 201.68 30.85 201.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-13" data-name="tri 1" points="35.82 193.05 30.85 201.7 25.85 193.07 35.82 193.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-8" data-name="tri 3" points="40.83 201.68 45.8 193.03 50.8 201.67 40.83 201.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-11" data-name="tri 2" points="45.8 193.03 40.83 201.68 35.82 193.05 45.8 193.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-6" data-name="tri 4" points="50.8 201.67 55.78 193.02 60.78 201.65 50.8 201.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-9" data-name="tri 3" points="55.78 193.02 50.8 201.67 45.8 193.03 55.78 193.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-4" data-name="tri 5" points="60.78 201.65 65.75 193 70.76 201.63 60.78 201.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-7" data-name="tri 4" points="65.75 193 60.78 201.65 55.78 193.02 65.75 193" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-2" data-name="tri 6" points="70.76 201.63 75.73 192.99 80.73 201.61 70.76 201.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-5" data-name="tri 5" points="75.73 192.99 70.76 201.63 65.75 193 75.73 192.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7" data-name="tri 7" points="80.73 201.61 85.7 192.96 90.7 201.6 80.73 201.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-3" data-name="tri 6" points="85.7 192.96 80.73 201.61 75.73 192.99 85.7 192.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-16" data-name="tri 0" points="5.93 210.38 10.9 201.74 15.9 210.37 5.93 210.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-14" data-name="tri 1" points="15.9 210.37 20.88 201.72 25.88 210.35 15.9 210.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-17" data-name="tri 0" points="20.88 201.72 15.9 210.37 10.9 201.74 20.88 201.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-12" data-name="tri 2" points="25.88 210.35 30.85 201.7 35.85 210.33 25.88 210.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-15" data-name="tri 1" points="30.85 201.7 25.88 210.35 20.88 201.72 30.85 201.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-10" data-name="tri 3" points="35.85 210.33 40.83 201.68 45.83 210.32 35.85 210.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-13" data-name="tri 2" points="40.83 201.68 35.85 210.33 30.85 201.7 40.83 201.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-8" data-name="tri 4" points="45.83 210.32 50.8 201.67 55.81 210.3 45.83 210.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-11" data-name="tri 3" points="50.8 201.67 45.83 210.32 40.83 201.68 50.8 201.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-6" data-name="tri 5" points="55.81 210.3 60.78 201.65 65.78 210.28 55.81 210.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-9" data-name="tri 4" points="60.78 201.65 55.81 210.3 50.8 201.67 60.78 201.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-4" data-name="tri 6" points="65.78 210.28 70.76 201.63 75.76 210.26 65.78 210.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-7" data-name="tri 5" points="70.76 201.63 65.78 210.28 60.78 201.65 70.76 201.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-2" data-name="tri 7" points="75.76 210.26 80.73 201.61 85.73 210.25 75.76 210.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-5" data-name="tri 6" points="80.73 201.61 75.76 210.26 70.76 201.63 80.73 201.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8" data-name="tri 8" points="85.73 210.25 90.7 201.6 95.71 210.23 85.73 210.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-3" data-name="tri 7" points="90.7 201.6 85.73 210.25 80.73 201.61 90.7 201.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-18" data-name="tri 0" points="0.95 219.03 5.93 210.38 10.93 219.02 0.95 219.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-16" data-name="tri 1" points="10.93 219.02 15.9 210.37 20.91 219 10.93 219.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-19" data-name="tri 0" points="15.9 210.37 10.93 219.02 5.93 210.38 15.9 210.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-14" data-name="tri 2" points="20.91 219 25.88 210.35 30.88 218.98 20.91 219" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-17" data-name="tri 1" points="25.88 210.35 20.91 219 15.9 210.37 25.88 210.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-12" data-name="tri 3" points="30.88 218.98 35.85 210.33 40.86 218.97 30.88 218.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-15" data-name="tri 2" points="35.85 210.33 30.88 218.98 25.88 210.35 35.85 210.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-10" data-name="tri 4" points="40.86 218.97 45.83 210.32 50.83 218.95 40.86 218.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-13" data-name="tri 3" points="45.83 210.32 40.86 218.97 35.85 210.33 45.83 210.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-8" data-name="tri 5" points="50.83 218.95 55.81 210.3 60.81 218.93 50.83 218.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-11" data-name="tri 4" points="55.81 210.3 50.83 218.95 45.83 210.32 55.81 210.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-6" data-name="tri 6" points="60.81 218.93 65.78 210.28 70.79 218.91 60.81 218.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-9" data-name="tri 5" points="65.78 210.28 60.81 218.93 55.81 210.3 65.78 210.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-4" data-name="tri 7" points="70.79 218.91 75.76 210.26 80.76 218.9 70.79 218.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-7" data-name="tri 6" points="75.76 210.26 70.79 218.91 65.78 210.28 75.76 210.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-2" data-name="tri 8" points="80.76 218.9 85.73 210.25 90.74 218.88 80.76 218.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-5" data-name="tri 7" points="85.73 210.25 80.76 218.9 75.76 210.26 85.73 210.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9" data-name="tri 9" points="90.74 218.88 95.71 210.23 100.71 218.86 90.74 218.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-3" data-name="tri 8" points="95.71 210.23 90.74 218.88 85.73 210.25 95.71 210.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-20" data-name="tri 0" points="145.47 141.02 150.44 132.37 155.44 141 145.47 141.02" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-21" data-name="tri 0" points="140.5 149.66 145.47 141.02 150.47 149.65 140.5 149.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-18" data-name="tri 1" points="150.47 149.65 155.44 141 160.45 149.63 150.47 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-22" data-name="tri 0" points="155.44 141 150.47 149.65 145.47 141.02 155.44 141" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-23" data-name="tri 0" points="135.52 158.31 140.5 149.66 145.5 158.3 135.52 158.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-19" data-name="tri 1" points="145.5 158.3 150.47 149.65 155.47 158.28 145.5 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-24" data-name="tri 0" points="150.47 149.65 145.5 158.3 140.5 149.66 150.47 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-16" data-name="tri 2" points="155.47 158.28 160.45 149.63 165.45 158.27 155.47 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-20" data-name="tri 1" points="160.45 149.63 155.47 158.28 150.47 149.65 160.45 149.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-25" data-name="tri 0" points="130.55 166.97 135.52 158.31 140.52 166.95 130.55 166.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-21" data-name="tri 1" points="140.52 166.95 145.5 158.3 150.5 166.93 140.52 166.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-26" data-name="tri 0" points="145.5 158.3 140.52 166.95 135.52 158.31 145.5 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-17" data-name="tri 2" points="150.5 166.93 155.47 158.28 160.48 166.91 150.5 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-22" data-name="tri 1" points="155.47 158.28 150.5 166.93 145.5 158.3 155.47 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-14" data-name="tri 3" points="160.48 166.91 165.45 158.27 170.45 166.9 160.48 166.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-18" data-name="tri 2" points="165.45 158.27 160.48 166.91 155.47 158.28 165.45 158.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-27" data-name="tri 0" points="125.58 175.61 130.55 166.97 135.55 175.6 125.58 175.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-23" data-name="tri 1" points="135.55 175.6 140.52 166.95 145.53 175.58 135.55 175.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-28" data-name="tri 0" points="140.52 166.95 135.55 175.6 130.55 166.97 140.52 166.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-19" data-name="tri 2" points="145.53 175.58 150.5 166.93 155.5 175.56 145.53 175.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-24" data-name="tri 1" points="150.5 166.93 145.53 175.58 140.52 166.95 150.5 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-15" data-name="tri 3" points="155.5 175.56 160.48 166.91 165.48 175.55 155.5 175.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-20" data-name="tri 2" points="160.48 166.91 155.5 175.56 150.5 166.93 160.48 166.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-12" data-name="tri 4" points="165.48 175.55 170.45 166.9 175.46 175.53 165.48 175.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-16" data-name="tri 3" points="170.45 166.9 165.48 175.55 160.48 166.91 170.45 166.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-29" data-name="tri 0" points="120.61 184.26 125.58 175.61 130.58 184.25 120.61 184.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-25" data-name="tri 1" points="130.58 184.25 135.55 175.6 140.56 184.23 130.58 184.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-30" data-name="tri 0" points="135.55 175.6 130.58 184.25 125.58 175.61 135.55 175.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-21" data-name="tri 2" points="140.56 184.23 145.53 175.58 150.53 184.21 140.56 184.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-26" data-name="tri 1" points="145.53 175.58 140.56 184.23 135.55 175.6 145.53 175.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-17" data-name="tri 3" points="150.53 184.21 155.5 175.56 160.51 184.19 150.53 184.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-13" data-name="tri 4" points="160.51 184.19 165.48 175.55 170.48 184.18 160.51 184.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-18" data-name="tri 3" points="165.48 175.55 160.51 184.19 155.5 175.56 165.48 175.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-10" data-name="tri 5" points="170.48 184.18 175.46 175.53 180.46 184.16 170.48 184.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-14" data-name="tri 4" points="175.46 175.53 170.48 184.18 165.48 175.55 175.46 175.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-31" data-name="tri 0" points="115.63 192.91 120.61 184.26 125.61 192.89 115.63 192.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-27" data-name="tri 1" points="125.61 192.89 130.58 184.25 135.58 192.88 125.61 192.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-32" data-name="tri 0" points="130.58 184.25 125.61 192.89 120.61 184.26 130.58 184.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-22" data-name="tri 2" points="135.58 192.88 140.56 184.23 145.56 192.86 135.58 192.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-19" data-name="tri 3" points="145.56 192.86 150.53 184.21 155.53 192.84 145.56 192.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-23" data-name="tri 2" points="150.53 184.21 145.56 192.86 140.56 184.23 150.53 184.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-15" data-name="tri 4" points="155.53 192.84 160.51 184.19 165.51 192.82 155.53 192.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-20" data-name="tri 3" points="160.51 184.19 155.53 192.84 150.53 184.21 160.51 184.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-11" data-name="tri 5" points="165.51 192.82 170.48 184.18 175.49 192.81 165.51 192.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-16" data-name="tri 4" points="170.48 184.18 165.51 192.82 160.51 184.19 170.48 184.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-8" data-name="tri 6" points="175.49 192.81 180.46 184.16 185.46 192.79 175.49 192.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-12" data-name="tri 5" points="180.46 184.16 175.49 192.81 170.48 184.18 180.46 184.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-33" data-name="tri 0" points="110.66 201.56 115.63 192.91 120.64 201.54 110.66 201.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-28" data-name="tri 1" points="120.64 201.54 125.61 192.89 130.61 201.53 120.64 201.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-34" data-name="tri 0" points="125.61 192.89 120.64 201.54 115.63 192.91 125.61 192.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-24" data-name="tri 2" points="130.61 201.53 135.58 192.88 140.59 201.51 130.61 201.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-29" data-name="tri 1" points="135.58 192.88 130.61 201.53 125.61 192.89 135.58 192.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-21" data-name="tri 3" points="140.59 201.51 145.56 192.86 150.56 201.49 140.59 201.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-25" data-name="tri 2" points="145.56 192.86 140.59 201.51 135.58 192.88 145.56 192.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-17" data-name="tri 4" points="150.56 201.49 155.53 192.84 160.54 201.48 150.56 201.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-22" data-name="tri 3" points="155.53 192.84 150.56 201.49 145.56 192.86 155.53 192.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-13" data-name="tri 5" points="160.54 201.48 165.51 192.82 170.51 201.46 160.54 201.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-18" data-name="tri 4" points="165.51 192.82 160.54 201.48 155.53 192.84 165.51 192.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-9" data-name="tri 6" points="170.51 201.46 175.49 192.81 180.49 201.44 170.51 201.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-14" data-name="tri 5" points="175.49 192.81 170.51 201.46 165.51 192.82 175.49 192.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-6" data-name="tri 7" points="180.49 201.44 185.46 192.79 190.46 201.42 180.49 201.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-10" data-name="tri 6" points="185.46 192.79 180.49 201.44 175.49 192.81 185.46 192.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-35" data-name="tri 0" points="105.68 210.21 110.66 201.56 115.66 210.19 105.68 210.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-30" data-name="tri 1" points="115.66 210.19 120.64 201.54 125.64 210.18 115.66 210.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-36" data-name="tri 0" points="120.64 201.54 115.66 210.19 110.66 201.56 120.64 201.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-26" data-name="tri 2" points="125.64 210.18 130.61 201.53 135.61 210.16 125.64 210.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-31" data-name="tri 1" points="130.61 201.53 125.64 210.18 120.64 201.54 130.61 201.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-23" data-name="tri 3" points="135.61 210.16 140.59 201.51 145.59 210.14 135.61 210.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-27" data-name="tri 2" points="140.59 201.51 135.61 210.16 130.61 201.53 140.59 201.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-19" data-name="tri 4" points="145.59 210.14 150.56 201.49 155.56 210.12 145.59 210.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-24" data-name="tri 3" points="150.56 201.49 145.59 210.14 140.59 201.51 150.56 201.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-15" data-name="tri 5" points="155.56 210.12 160.54 201.48 165.54 210.11 155.56 210.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-20" data-name="tri 4" points="160.54 201.48 155.56 210.12 150.56 201.49 160.54 201.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-11" data-name="tri 6" points="165.54 210.11 170.51 201.46 175.51 210.09 165.54 210.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-16" data-name="tri 5" points="170.51 201.46 165.54 210.11 160.54 201.48 170.51 201.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-7" data-name="tri 7" points="175.51 210.09 180.49 201.44 185.49 210.07 175.51 210.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-12" data-name="tri 6" points="180.49 201.44 175.51 210.09 170.51 201.46 180.49 201.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-4" data-name="tri 8" points="185.49 210.07 190.46 201.42 195.47 210.06 185.49 210.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-8" data-name="tri 7" points="190.46 201.42 185.49 210.07 180.49 201.44 190.46 201.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-37" data-name="tri 0" points="100.71 218.86 105.68 210.21 110.69 218.84 100.71 218.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-32" data-name="tri 1" points="110.69 218.84 115.66 210.19 120.67 218.82 110.69 218.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-38" data-name="tri 0" points="115.66 210.19 110.69 218.84 105.68 210.21 115.66 210.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-28" data-name="tri 2" points="120.67 218.82 125.64 210.18 130.64 218.81 120.67 218.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-33" data-name="tri 1" points="125.64 210.18 120.67 218.82 115.66 210.19 125.64 210.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-25" data-name="tri 3" points="130.64 218.81 135.61 210.16 140.62 218.79 130.64 218.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-29" data-name="tri 2" points="135.61 210.16 130.64 218.81 125.64 210.18 135.61 210.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-21" data-name="tri 4" points="140.62 218.79 145.59 210.14 150.59 218.77 140.62 218.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-26" data-name="tri 3" points="145.59 210.14 140.62 218.79 135.61 210.16 145.59 210.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-17" data-name="tri 5" points="150.59 218.77 155.56 210.12 160.57 218.76 150.59 218.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-22" data-name="tri 4" points="155.56 210.12 150.59 218.77 145.59 210.14 155.56 210.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-13" data-name="tri 6" points="160.57 218.76 165.54 210.11 170.54 218.74 160.57 218.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-18" data-name="tri 5" points="165.54 210.11 160.57 218.76 155.56 210.12 165.54 210.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-9" data-name="tri 7" points="170.54 218.74 175.51 210.09 180.52 218.72 170.54 218.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-14" data-name="tri 6" points="175.51 210.09 170.54 218.74 165.54 210.11 175.51 210.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-5" data-name="tri 8" points="180.52 218.72 185.49 210.07 190.49 218.71 180.52 218.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-10" data-name="tri 7" points="185.49 210.07 180.52 218.72 175.51 210.09 185.49 210.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-2" data-name="tri 9" points="190.49 218.71 195.47 210.06 200.47 218.69 190.49 218.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-6" data-name="tri 8" points="195.47 210.06 190.49 218.71 185.49 210.07 195.47 210.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-39" data-name="tri 0" points="105.7 210.38 100.73 219.03 95.72 210.4 105.7 210.38" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-40" data-name="tri 0" points="110.67 201.74 105.7 210.38 100.7 201.75 110.67 201.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-34" data-name="tri 1" points="100.7 201.75 95.72 210.4 90.72 201.77 100.7 201.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-41" data-name="tri 0" points="95.72 210.4 100.7 201.75 105.7 210.38 95.72 210.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-42" data-name="tri 0" points="115.64 193.09 110.67 201.74 105.67 193.1 115.64 193.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-35" data-name="tri 1" points="105.67 193.1 100.7 201.75 95.69 193.12 105.67 193.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-43" data-name="tri 0" points="100.7 201.75 105.67 193.1 110.67 201.74 100.7 201.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-30" data-name="tri 2" points="95.69 193.12 90.72 201.77 85.72 193.13 95.69 193.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-36" data-name="tri 1" points="90.72 201.77 95.69 193.12 100.7 201.75 90.72 201.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-44" data-name="tri 0" points="120.62 184.43 115.64 193.09 110.64 184.45 120.62 184.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-37" data-name="tri 1" points="110.64 184.45 105.67 193.1 100.67 184.47 110.64 184.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-45" data-name="tri 0" points="105.67 193.1 110.64 184.45 115.64 193.09 105.67 193.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-31" data-name="tri 2" points="100.67 184.47 95.69 193.12 90.69 184.49 100.67 184.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-38" data-name="tri 1" points="95.69 193.12 100.67 184.47 105.67 193.1 95.69 193.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-27" data-name="tri 3" points="90.69 184.49 85.72 193.13 80.71 184.5 90.69 184.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-32" data-name="tri 2" points="85.72 193.13 90.69 184.49 95.69 193.12 85.72 193.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-46" data-name="tri 0" points="125.59 175.79 120.62 184.43 115.61 175.8 125.59 175.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-39" data-name="tri 1" points="115.61 175.8 110.64 184.45 105.64 175.82 115.61 175.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-47" data-name="tri 0" points="110.64 184.45 115.61 175.8 120.62 184.43 110.64 184.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-33" data-name="tri 2" points="105.64 175.82 100.67 184.47 95.67 175.84 105.64 175.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-40" data-name="tri 1" points="100.67 184.47 105.64 175.82 110.64 184.45 100.67 184.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-28" data-name="tri 3" points="95.67 175.84 90.69 184.49 85.69 175.85 95.67 175.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-34" data-name="tri 2" points="90.69 184.49 95.67 175.84 100.67 184.47 90.69 184.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-23" data-name="tri 4" points="85.69 175.85 80.71 184.5 75.71 175.87 85.69 175.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-29" data-name="tri 3" points="80.71 184.5 85.69 175.85 90.69 184.49 80.71 184.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-48" data-name="tri 0" points="130.56 167.14 125.59 175.79 120.59 167.15 130.56 167.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-41" data-name="tri 1" points="120.59 167.15 115.61 175.8 110.61 167.17 120.59 167.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-49" data-name="tri 0" points="115.61 175.8 120.59 167.15 125.59 175.79 115.61 175.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-35" data-name="tri 2" points="110.61 167.17 105.64 175.82 100.64 167.19 110.61 167.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-42" data-name="tri 1" points="105.64 175.82 110.61 167.17 115.61 175.8 105.64 175.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-30" data-name="tri 3" points="100.64 167.19 95.67 175.84 90.66 167.21 100.64 167.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-24" data-name="tri 4" points="90.66 167.21 85.69 175.85 80.68 167.22 90.66 167.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-31" data-name="tri 3" points="85.69 175.85 90.66 167.21 95.67 175.84 85.69 175.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-19" data-name="tri 5" points="80.68 167.22 75.71 175.87 70.71 167.24 80.68 167.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-25" data-name="tri 4" points="75.71 175.87 80.68 167.22 85.69 175.85 75.71 175.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-50" data-name="tri 0" points="135.54 158.49 130.56 167.14 125.56 158.51 135.54 158.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-43" data-name="tri 1" points="125.56 158.51 120.59 167.15 115.59 158.52 125.56 158.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-51" data-name="tri 0" points="120.59 167.15 125.56 158.51 130.56 167.14 120.59 167.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-36" data-name="tri 2" points="115.59 158.52 110.61 167.17 105.61 158.54 115.59 158.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-32" data-name="tri 3" points="105.61 158.54 100.64 167.19 95.64 158.56 105.61 158.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-37" data-name="tri 2" points="100.64 167.19 105.61 158.54 110.61 167.17 100.64 167.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-26" data-name="tri 4" points="95.64 158.56 90.66 167.21 85.66 158.57 95.64 158.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-33" data-name="tri 3" points="90.66 167.21 95.64 158.56 100.64 167.19 90.66 167.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-20" data-name="tri 5" points="85.66 158.57 80.68 167.22 75.68 158.59 85.66 158.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-27" data-name="tri 4" points="80.68 167.22 85.66 158.57 90.66 167.21 80.68 167.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-15" data-name="tri 6" points="75.68 158.59 70.71 167.24 65.71 158.61 75.68 158.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-21" data-name="tri 5" points="70.71 167.24 75.68 158.59 80.68 167.22 70.71 167.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-52" data-name="tri 0" points="140.51 149.84 135.54 158.49 130.53 149.85 140.51 149.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-44" data-name="tri 1" points="130.53 149.85 125.56 158.51 120.56 149.87 130.53 149.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-53" data-name="tri 0" points="125.56 158.51 130.53 149.85 135.54 158.49 125.56 158.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-38" data-name="tri 2" points="120.56 149.87 115.59 158.52 110.58 149.89 120.56 149.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-45" data-name="tri 1" points="115.59 158.52 120.56 149.87 125.56 158.51 115.59 158.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-34" data-name="tri 3" points="110.58 149.89 105.61 158.54 100.61 149.91 110.58 149.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-39" data-name="tri 2" points="105.61 158.54 110.58 149.89 115.59 158.52 105.61 158.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-28" data-name="tri 4" points="100.61 149.91 95.64 158.56 90.63 149.92 100.61 149.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-35" data-name="tri 3" points="95.64 158.56 100.61 149.91 105.61 158.54 95.64 158.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-22" data-name="tri 5" points="90.63 149.92 85.66 158.57 80.66 149.94 90.63 149.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-29" data-name="tri 4" points="85.66 158.57 90.63 149.92 95.64 158.56 85.66 158.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-16" data-name="tri 6" points="80.66 149.94 75.68 158.59 70.68 149.96 80.66 149.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-23" data-name="tri 5" points="75.68 158.59 80.66 149.94 85.66 158.57 75.68 158.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-11" data-name="tri 7" points="70.68 149.96 65.71 158.61 60.71 149.98 70.68 149.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-17" data-name="tri 6" points="65.71 158.61 70.68 149.96 75.68 158.59 65.71 158.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-54" data-name="tri 0" points="145.48 141.19 140.51 149.84 135.51 141.21 145.48 141.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-46" data-name="tri 1" points="135.51 141.21 130.53 149.85 125.53 141.22 135.51 141.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-55" data-name="tri 0" points="130.53 149.85 135.51 141.21 140.51 149.84 130.53 149.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-40" data-name="tri 2" points="125.53 141.22 120.56 149.87 115.56 141.24 125.53 141.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-47" data-name="tri 1" points="120.56 149.87 125.53 141.22 130.53 149.85 120.56 149.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-36" data-name="tri 3" points="115.56 141.24 110.58 149.89 105.58 141.26 115.56 141.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-41" data-name="tri 2" points="110.58 149.89 115.56 141.24 120.56 149.87 110.58 149.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-30" data-name="tri 4" points="105.58 141.26 100.61 149.91 95.6 141.28 105.58 141.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-37" data-name="tri 3" points="100.61 149.91 105.58 141.26 110.58 149.89 100.61 149.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-24" data-name="tri 5" points="95.6 141.28 90.63 149.92 85.63 141.29 95.6 141.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-31" data-name="tri 4" points="90.63 149.92 95.6 141.28 100.61 149.91 90.63 149.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-18" data-name="tri 6" points="85.63 141.29 80.66 149.94 75.65 141.31 85.63 141.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-25" data-name="tri 5" points="80.66 149.94 85.63 141.29 90.63 149.92 80.66 149.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-12" data-name="tri 7" points="75.65 141.31 70.68 149.96 65.68 141.33 75.65 141.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-19" data-name="tri 6" points="70.68 149.96 75.65 141.31 80.66 149.94 70.68 149.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-7" data-name="tri 8" points="65.68 141.33 60.71 149.98 55.7 141.34 65.68 141.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-13" data-name="tri 7" points="60.71 149.98 65.68 141.33 70.68 149.96 60.71 149.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-56" data-name="tri 0" points="150.46 132.54 145.48 141.19 140.48 132.56 150.46 132.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-48" data-name="tri 1" points="140.48 132.56 135.51 141.21 130.5 132.58 140.48 132.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-57" data-name="tri 0" points="135.51 141.21 140.48 132.56 145.48 141.19 135.51 141.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-42" data-name="tri 2" points="130.5 132.58 125.53 141.22 120.53 132.59 130.5 132.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-49" data-name="tri 1" points="125.53 141.22 130.5 132.58 135.51 141.21 125.53 141.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-38" data-name="tri 3" points="120.53 132.59 115.56 141.24 110.55 132.61 120.53 132.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-43" data-name="tri 2" points="115.56 141.24 120.53 132.59 125.53 141.22 115.56 141.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-32" data-name="tri 4" points="110.55 132.61 105.58 141.26 100.58 132.63 110.55 132.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-39" data-name="tri 3" points="105.58 141.26 110.55 132.61 115.56 141.24 105.58 141.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-26" data-name="tri 5" points="100.58 132.63 95.6 141.28 90.6 132.64 100.58 132.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-33" data-name="tri 4" points="95.6 141.28 100.58 132.63 105.58 141.26 95.6 141.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-20" data-name="tri 6" points="90.6 132.64 85.63 141.29 80.62 132.66 90.6 132.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-27" data-name="tri 5" points="85.63 141.29 90.6 132.64 95.6 141.28 85.63 141.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-14" data-name="tri 7" points="80.62 132.66 75.65 141.31 70.65 132.68 80.62 132.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-21" data-name="tri 6" points="75.65 141.31 80.62 132.66 85.63 141.29 75.65 141.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-8" data-name="tri 8" points="70.65 132.68 65.68 141.33 60.67 132.69 70.65 132.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-15" data-name="tri 7" points="65.68 141.33 70.65 132.68 75.65 141.31 65.68 141.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-3" data-name="tri 9" points="60.67 132.69 55.7 141.34 50.7 132.71 60.67 132.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-9" data-name="tri 8" points="55.7 141.34 60.67 132.69 65.68 141.33 55.7 141.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <line id="tri_0-58" data-name="tri 0" x1="6.08" y1="210.16" x2="1.1" y2="218.81" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-59" data-name="tri 0" points="11.05 201.51 6.08 210.16 1.07 201.53 11.05 201.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-50" data-name="tri 1" d="M.19,197.24" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-60" data-name="tri 0" x1="1.07" y1="201.53" x2="6.08" y2="210.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-61" data-name="tri 0" points="16.02 192.86 11.05 201.51 6.05 192.88 16.02 192.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-51" data-name="tri 1" x1="6.05" y1="192.88" x2="1.07" y2="201.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-62" data-name="tri 0" points="1.07 201.53 6.05 192.88 11.05 201.51 1.07 201.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-52" data-name="tri 1" d="M.19,197.24" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-63" data-name="tri 0" points="21 184.21 16.02 192.86 11.02 184.23 21 184.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-53" data-name="tri 1" points="11.02 184.23 6.05 192.88 1.04 184.25 11.02 184.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-64" data-name="tri 0" points="6.05 192.88 11.02 184.23 16.02 192.86 6.05 192.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-44" data-name="tri 2" d="M.16,180" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-54" data-name="tri 1" x1="1.04" y1="184.25" x2="6.05" y2="192.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-65" data-name="tri 0" points="25.97 175.57 21 184.21 15.99 175.58 25.97 175.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-55" data-name="tri 1" points="15.99 175.58 11.02 184.23 6.02 175.6 15.99 175.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-66" data-name="tri 0" points="11.02 184.23 15.99 175.58 21 184.21 11.02 184.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-45" data-name="tri 2" x1="6.02" y1="175.6" x2="1.04" y2="184.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-56" data-name="tri 1" points="1.04 184.25 6.02 175.6 11.02 184.23 1.04 184.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-46" data-name="tri 2" d="M.16,180" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-67" data-name="tri 0" points="30.94 166.92 25.97 175.57 20.96 166.93 30.94 166.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-57" data-name="tri 1" points="20.96 166.93 15.99 175.58 10.99 166.95 20.96 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-68" data-name="tri 0" points="15.99 175.58 20.96 166.93 25.97 175.57 15.99 175.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-47" data-name="tri 2" points="10.99 166.95 6.02 175.6 1.01 166.97 10.99 166.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-58" data-name="tri 1" points="6.02 175.6 10.99 166.95 15.99 175.58 6.02 175.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-40" data-name="tri 3" d="M.13,162.67" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_0-69" data-name="tri 0" points="35.92 158.27 30.94 166.92 25.94 158.28 35.92 158.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-59" data-name="tri 1" points="25.94 158.28 20.96 166.93 15.96 158.3 25.94 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-70" data-name="tri 0" points="20.96 166.93 25.94 158.28 30.94 166.92 20.96 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-48" data-name="tri 2" points="15.96 158.3 10.99 166.95 5.99 158.32 15.96 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <line id="tri_3-41" data-name="tri 3" x1="5.99" y1="158.32" x2="1.01" y2="166.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-49" data-name="tri 2" points="1.01 166.97 5.99 158.32 10.99 166.95 1.01 166.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-42" data-name="tri 3" d="M.13,162.67" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-71" data-name="tri 0" points="40.89 149.62 35.92 158.27 30.91 149.63 40.89 149.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-60" data-name="tri 1" points="30.91 149.63 25.94 158.28 20.94 149.65 30.91 149.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-72" data-name="tri 0" points="25.94 158.28 30.91 149.63 35.92 158.27 25.94 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-50" data-name="tri 2" points="20.94 149.65 15.96 158.3 10.96 149.67 20.94 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-61" data-name="tri 1" points="15.96 158.3 20.94 149.65 25.94 158.28 15.96 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-43" data-name="tri 3" points="10.96 149.67 5.99 158.32 0.98 149.68 10.96 149.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-51" data-name="tri 2" points="5.99 158.32 10.96 149.67 15.96 158.3 5.99 158.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-34" data-name="tri 4" d="M.1,145.39" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-44" data-name="tri 3" x1="0.98" y1="149.68" x2="5.99" y2="158.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-73" data-name="tri 0" points="45.86 140.97 40.89 149.62 35.88 140.99 45.86 140.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-62" data-name="tri 1" points="35.88 140.99 30.91 149.63 25.91 141 35.88 140.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-74" data-name="tri 0" points="30.91 149.63 35.88 140.99 40.89 149.62 30.91 149.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-52" data-name="tri 2" points="25.91 141 20.94 149.65 15.93 141.02 25.91 141" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-63" data-name="tri 1" points="20.94 149.65 25.91 141 30.91 149.63 20.94 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-45" data-name="tri 3" points="15.93 141.02 10.96 149.67 5.96 141.03 15.93 141.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-53" data-name="tri 2" points="10.96 149.67 15.93 141.02 20.94 149.65 10.96 149.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-35" data-name="tri 4" x1="5.96" y1="141.03" x2="0.98" y2="149.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-46" data-name="tri 3" points="0.98 149.68 5.96 141.03 10.96 149.67 0.98 149.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-36" data-name="tri 4" d="M.1,145.39" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-75" data-name="tri 0" points="50.83 132.32 45.86 140.97 40.86 132.34 50.83 132.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-64" data-name="tri 1" points="40.86 132.34 35.88 140.99 30.88 132.35 40.86 132.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-76" data-name="tri 0" points="35.88 140.99 40.86 132.34 45.86 140.97 35.88 140.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-54" data-name="tri 2" points="30.88 132.35 25.91 141 20.91 132.37 30.88 132.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-65" data-name="tri 1" points="25.91 141 30.88 132.35 35.88 140.99 25.91 141" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-47" data-name="tri 3" points="20.91 132.37 15.93 141.02 10.93 132.39 20.91 132.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-55" data-name="tri 2" points="15.93 141.02 20.91 132.37 25.91 141 15.93 141.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-37" data-name="tri 4" points="10.93 132.39 5.96 141.03 0.96 132.41 10.93 132.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-48" data-name="tri 3" points="5.96 141.03 10.93 132.39 15.93 141.02 5.96 141.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_5-28" data-name="tri 5" d="M.08,128.11" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-38" data-name="tri 4" x1="0.96" y1="132.4" x2="5.96" y2="141.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-77" data-name="tri 0" points="205.59 210.13 200.62 218.77 195.62 210.15 205.59 210.13" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-78" data-name="tri 0" points="210.56 201.48 205.59 210.13 200.59 201.5 210.56 201.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-66" data-name="tri 1" points="200.59 201.5 195.62 210.15 190.61 201.51 200.59 201.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-79" data-name="tri 0" points="195.62 210.15 200.59 201.5 205.59 210.13 195.62 210.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-80" data-name="tri 0" points="215.54 192.83 210.56 201.48 205.56 192.85 215.54 192.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-67" data-name="tri 1" points="205.56 192.85 200.59 201.5 195.58 192.86 205.56 192.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-81" data-name="tri 0" points="200.59 201.5 205.56 192.85 210.56 201.48 200.59 201.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-56" data-name="tri 2" points="195.58 192.86 190.61 201.51 185.61 192.88 195.58 192.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-68" data-name="tri 1" points="190.61 201.51 195.58 192.86 200.59 201.5 190.61 201.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-82" data-name="tri 0" points="220.51 184.18 215.54 192.83 210.53 184.2 220.51 184.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-69" data-name="tri 1" points="210.53 184.2 205.56 192.85 200.56 184.22 210.53 184.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-83" data-name="tri 0" points="205.56 192.85 210.53 184.2 215.54 192.83 205.56 192.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-57" data-name="tri 2" points="200.56 184.22 195.58 192.86 190.58 184.23 200.56 184.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-70" data-name="tri 1" points="195.58 192.86 200.56 184.22 205.56 192.85 195.58 192.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-49" data-name="tri 3" points="190.58 184.23 185.61 192.88 180.6 184.25 190.58 184.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-58" data-name="tri 2" points="185.61 192.88 190.58 184.23 195.58 192.86 185.61 192.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-84" data-name="tri 0" x1="220.51" y1="184.18" x2="215.51" y2="175.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-71" data-name="tri 1" points="215.51 175.55 210.53 184.2 205.53 175.56 215.51 175.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-85" data-name="tri 0" points="210.53 184.2 215.51 175.55 220.51 184.18 210.53 184.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-59" data-name="tri 2" points="205.53 175.56 200.56 184.22 195.56 175.58 205.53 175.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-72" data-name="tri 1" points="200.56 184.22 205.53 175.56 210.53 184.2 200.56 184.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-50" data-name="tri 3" points="195.56 175.58 190.58 184.23 185.58 175.6 195.56 175.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-60" data-name="tri 2" points="190.58 184.23 195.56 175.58 200.56 184.22 190.58 184.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-39" data-name="tri 4" points="185.58 175.6 180.6 184.25 175.6 175.62 185.58 175.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-51" data-name="tri 3" points="180.6 184.25 185.58 175.6 190.58 184.23 180.6 184.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-86" data-name="tri 0" d="M219.6,162.6" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-73" data-name="tri 1" points="220.48 166.9 215.51 175.55 210.5 166.92 220.48 166.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-87" data-name="tri 0" x1="215.51" y1="175.55" x2="220.48" y2="166.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-61" data-name="tri 2" points="210.5 166.92 205.53 175.56 200.53 166.93 210.5 166.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-74" data-name="tri 1" points="205.53 175.56 210.5 166.92 215.51 175.55 205.53 175.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-52" data-name="tri 3" points="200.53 166.93 195.56 175.58 190.55 166.95 200.53 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-40" data-name="tri 4" points="190.55 166.95 185.58 175.6 180.57 166.97 190.55 166.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-53" data-name="tri 3" points="185.58 175.6 190.55 166.95 195.56 175.58 185.58 175.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-29" data-name="tri 5" points="180.57 166.97 175.6 175.62 170.6 166.99 180.57 166.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-41" data-name="tri 4" points="175.6 175.62 180.57 166.97 185.58 175.6 175.6 175.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-75" data-name="tri 1" x1="220.48" y1="166.9" x2="215.48" y2="158.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-88" data-name="tri 0" d="M219.6,162.6" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-62" data-name="tri 2" points="215.48 158.27 210.5 166.92 205.5 158.28 215.48 158.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-54" data-name="tri 3" points="205.5 158.28 200.53 166.93 195.53 158.3 205.5 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-63" data-name="tri 2" points="200.53 166.93 205.5 158.28 210.5 166.92 200.53 166.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-42" data-name="tri 4" points="195.53 158.3 190.55 166.95 185.55 158.32 195.53 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-55" data-name="tri 3" points="190.55 166.95 195.53 158.3 200.53 166.93 190.55 166.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-30" data-name="tri 5" points="185.55 158.32 180.57 166.97 175.57 158.33 185.55 158.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-43" data-name="tri 4" points="180.57 166.97 185.55 158.32 190.55 166.95 180.57 166.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-22" data-name="tri 6" points="175.57 158.33 170.6 166.99 165.6 158.35 175.57 158.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-31" data-name="tri 5" points="170.6 166.99 175.57 158.33 180.57 166.97 170.6 166.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-76" data-name="tri 1" d="M219.57,145.32" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-64" data-name="tri 2" points="220.45 149.62 215.48 158.27 210.47 149.64 220.45 149.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-77" data-name="tri 1" x1="215.48" y1="158.27" x2="220.45" y2="149.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-56" data-name="tri 3" points="210.47 149.64 205.5 158.28 200.5 149.65 210.47 149.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-65" data-name="tri 2" points="205.5 158.28 210.47 149.64 215.48 158.27 205.5 158.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-44" data-name="tri 4" points="200.5 149.65 195.53 158.3 190.52 149.67 200.5 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-57" data-name="tri 3" points="195.53 158.3 200.5 149.65 205.5 158.28 195.53 158.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-32" data-name="tri 5" points="190.52 149.67 185.55 158.32 180.55 149.69 190.52 149.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-45" data-name="tri 4" points="185.55 158.32 190.52 149.67 195.53 158.3 185.55 158.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-23" data-name="tri 6" points="180.55 149.69 175.57 158.33 170.57 149.7 180.55 149.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-33" data-name="tri 5" points="175.57 158.33 180.55 149.69 185.55 158.32 175.57 158.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-16" data-name="tri 7" points="170.57 149.7 165.6 158.35 160.6 149.72 170.57 149.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-24" data-name="tri 6" points="165.6 158.35 170.57 149.7 175.57 158.33 165.6 158.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-66" data-name="tri 2" x1="220.45" y1="149.62" x2="215.45" y2="140.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-78" data-name="tri 1" d="M219.57,145.32" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-58" data-name="tri 3" points="215.45 140.99 210.47 149.64 205.47 141 215.45 140.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-67" data-name="tri 2" points="210.47 149.64 215.45 140.99 220.45 149.62 210.47 149.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-46" data-name="tri 4" points="205.47 141 200.5 149.65 195.5 141.02 205.47 141" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-59" data-name="tri 3" points="200.5 149.65 205.47 141 210.47 149.64 200.5 149.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-34" data-name="tri 5" points="195.5 141.02 190.52 149.67 185.52 141.04 195.5 141.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-47" data-name="tri 4" points="190.52 149.67 195.5 141.02 200.5 149.65 190.52 149.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-25" data-name="tri 6" points="185.52 141.04 180.55 149.69 175.54 141.06 185.52 141.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-35" data-name="tri 5" points="180.55 149.69 185.52 141.04 190.52 149.67 180.55 149.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-17" data-name="tri 7" points="175.54 141.06 170.57 149.7 165.57 141.07 175.54 141.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-26" data-name="tri 6" points="170.57 149.7 175.54 141.06 180.55 149.69 170.57 149.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-10" data-name="tri 8" points="165.57 141.07 160.6 149.72 155.59 141.09 165.57 141.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-18" data-name="tri 7" points="160.6 149.72 165.57 141.07 170.57 149.7 160.6 149.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-68" data-name="tri 2" d="M219.54,128" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-60" data-name="tri 3" points="220.42 132.34 215.45 140.99 210.44 132.35 220.42 132.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-69" data-name="tri 2" x1="215.45" y1="140.99" x2="220.42" y2="132.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-48" data-name="tri 4" points="210.44 132.35 205.47 141 200.47 132.37 210.44 132.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-61" data-name="tri 3" points="205.47 141 210.44 132.35 215.45 140.99 205.47 141" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-36" data-name="tri 5" points="200.47 132.37 195.5 141.02 190.49 132.39 200.47 132.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-49" data-name="tri 4" points="195.5 141.02 200.47 132.37 205.47 141 195.5 141.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-27" data-name="tri 6" points="190.49 132.39 185.52 141.04 180.51 132.41 190.49 132.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-37" data-name="tri 5" points="185.52 141.04 190.49 132.39 195.5 141.02 185.52 141.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-19" data-name="tri 7" points="180.51 132.41 175.54 141.06 170.54 132.42 180.51 132.41" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-28" data-name="tri 6" points="175.54 141.06 180.51 132.41 185.52 141.04 175.54 141.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-11" data-name="tri 8" points="170.54 132.42 165.57 141.07 160.56 132.44 170.54 132.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-20" data-name="tri 7" points="165.57 141.07 170.54 132.42 175.54 141.06 165.57 141.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-4" data-name="tri 9" points="160.56 132.44 155.59 141.09 150.59 132.46 160.56 132.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-12" data-name="tri 8" points="155.59 141.09 160.56 132.44 165.57 141.07 155.59 141.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <path id="tri_0-89" data-name="tri 0" d="M219.48,179.88" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-90" data-name="tri 0" x1="215.39" y1="192.83" x2="220.36" y2="184.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-91" data-name="tri 0" d="M219.48,179.88" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-92" data-name="tri 0" points="210.41 201.48 215.39 192.83 220.39 201.46 210.41 201.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-79" data-name="tri 1" d="M219.51,197.17" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-93" data-name="tri 0" x1="220.39" y1="201.46" x2="215.39" y2="192.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-94" data-name="tri 0" points="205.44 210.13 210.41 201.48 215.42 210.11 205.44 210.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-80" data-name="tri 1" x1="215.42" y1="210.11" x2="220.39" y2="201.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-95" data-name="tri 0" points="220.39 201.46 215.42 210.11 210.41 201.48 220.39 201.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-81" data-name="tri 1" d="M219.51,197.17" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-96" data-name="tri 0" points="200.47 218.77 205.44 210.13 210.45 218.76 200.47 218.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-82" data-name="tri 1" points="210.45 218.76 215.42 210.11 220.42 218.74 210.45 218.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-97" data-name="tri 0" points="215.42 210.11 210.45 218.76 205.44 210.13 215.42 210.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-70" data-name="tri 2" d="M219.54,214.44" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-83" data-name="tri 1" x1="220.42" y1="218.74" x2="215.42" y2="210.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-98" data-name="tri 0" points="15.78 53.45 20.76 44.8 25.76 53.43 15.78 53.45" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-99" data-name="tri 0" points="10.81 62.09 15.78 53.45 20.79 62.08 10.81 62.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-84" data-name="tri 1" points="20.79 62.08 25.76 53.43 30.76 62.06 20.79 62.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-100" data-name="tri 0" points="25.76 53.43 20.79 62.08 15.78 53.45 25.76 53.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-101" data-name="tri 0" points="5.84 70.74 10.81 62.09 15.82 70.73 5.84 70.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-85" data-name="tri 1" points="15.82 70.73 20.79 62.08 25.79 70.71 15.82 70.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-102" data-name="tri 0" points="20.79 62.08 15.82 70.73 10.81 62.09 20.79 62.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-71" data-name="tri 2" points="25.79 70.71 30.76 62.06 35.77 70.69 25.79 70.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-86" data-name="tri 1" points="30.76 62.06 25.79 70.71 20.79 62.08 30.76 62.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-103" data-name="tri 0" points="0.87 79.39 5.84 70.74 10.84 79.38 0.87 79.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-87" data-name="tri 1" points="10.84 79.38 15.82 70.73 20.82 79.36 10.84 79.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-104" data-name="tri 0" points="15.82 70.73 10.84 79.38 5.84 70.74 15.82 70.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-72" data-name="tri 2" points="20.82 79.36 25.79 70.71 30.79 79.34 20.82 79.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-88" data-name="tri 1" points="25.79 70.71 20.82 79.36 15.82 70.73 25.79 70.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-62" data-name="tri 3" points="30.79 79.34 35.77 70.69 40.77 79.32 30.79 79.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-73" data-name="tri 2" points="35.77 70.69 30.79 79.34 25.79 70.71 35.77 70.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-105" data-name="tri 0" x1="0.87" y1="79.39" x2="5.87" y2="88.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-89" data-name="tri 1" points="5.87 88.03 10.84 79.38 15.85 88.01 5.87 88.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-106" data-name="tri 0" points="10.84 79.38 5.87 88.03 0.87 79.39 10.84 79.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-74" data-name="tri 2" points="15.85 88.01 20.82 79.36 25.82 87.99 15.85 88.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-90" data-name="tri 1" points="20.82 79.36 15.85 88.01 10.84 79.38 20.82 79.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-63" data-name="tri 3" points="25.82 87.99 30.79 79.34 35.8 87.97 25.82 87.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-75" data-name="tri 2" points="30.79 79.34 25.82 87.99 20.82 79.36 30.79 79.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-50" data-name="tri 4" points="35.8 87.97 40.77 79.32 45.77 87.96 35.8 87.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-64" data-name="tri 3" points="40.77 79.32 35.8 87.97 30.79 79.34 40.77 79.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-107" data-name="tri 0" d="M0,92.38" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-91" data-name="tri 1" points="0.9 96.67 5.87 88.03 10.87 96.66 0.9 96.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-108" data-name="tri 0" x1="5.87" y1="88.03" x2="0.9" y2="96.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-76" data-name="tri 2" points="10.87 96.66 15.85 88.01 20.85 96.64 10.87 96.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-92" data-name="tri 1" points="15.85 88.01 10.87 96.66 5.87 88.03 15.85 88.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-65" data-name="tri 3" points="20.85 96.64 25.82 87.99 30.82 96.62 20.85 96.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-77" data-name="tri 2" points="25.82 87.99 20.85 96.64 15.85 88.01 25.82 87.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-51" data-name="tri 4" points="30.82 96.62 35.8 87.97 40.8 96.61 30.82 96.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-66" data-name="tri 3" points="35.8 87.97 30.82 96.62 25.82 87.99 35.8 87.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-38" data-name="tri 5" points="40.8 96.61 45.77 87.96 50.77 96.59 40.8 96.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-52" data-name="tri 4" points="45.77 87.96 40.8 96.61 35.8 87.97 45.77 87.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-93" data-name="tri 1" x1="0.9" y1="96.68" x2="5.9" y2="105.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-109" data-name="tri 0" d="M0,92.38" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-78" data-name="tri 2" points="5.9 105.31 10.87 96.66 15.88 105.29 5.9 105.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-94" data-name="tri 1" points="10.87 96.66 5.9 105.31 0.9 96.67 10.87 96.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-67" data-name="tri 3" points="15.88 105.29 20.85 96.64 25.85 105.27 15.88 105.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-79" data-name="tri 2" points="20.85 96.64 15.88 105.29 10.87 96.66 20.85 96.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-53" data-name="tri 4" points="25.85 105.27 30.82 96.62 35.83 105.25 25.85 105.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-68" data-name="tri 3" points="30.82 96.62 25.85 105.27 20.85 96.64 30.82 96.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-39" data-name="tri 5" points="35.83 105.25 40.8 96.61 45.8 105.24 35.83 105.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-54" data-name="tri 4" points="40.8 96.61 35.83 105.25 30.82 96.62 40.8 96.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-29" data-name="tri 6" points="45.8 105.24 50.77 96.59 55.78 105.22 45.8 105.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-40" data-name="tri 5" points="50.77 96.59 45.8 105.24 40.8 96.61 50.77 96.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-95" data-name="tri 1" d="M0,109.66" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-80" data-name="tri 2" points="0.93 113.96 5.9 105.31 10.9 113.94 0.93 113.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-96" data-name="tri 1" x1="5.9" y1="105.31" x2="0.92" y2="113.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-69" data-name="tri 3" points="10.9 113.94 15.88 105.29 20.88 113.92 10.9 113.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-81" data-name="tri 2" points="15.88 105.29 10.9 113.94 5.9 105.31 15.88 105.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-55" data-name="tri 4" points="20.88 113.92 25.85 105.27 30.85 113.9 20.88 113.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-70" data-name="tri 3" points="25.85 105.27 20.88 113.92 15.88 105.29 25.85 105.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-41" data-name="tri 5" points="30.85 113.9 35.83 105.25 40.83 113.89 30.85 113.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-56" data-name="tri 4" points="35.83 105.25 30.85 113.9 25.85 105.27 35.83 105.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-30" data-name="tri 6" points="40.83 113.89 45.8 105.24 50.81 113.87 40.83 113.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-42" data-name="tri 5" points="45.8 105.24 40.83 113.89 35.83 105.25 45.8 105.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-21" data-name="tri 7" points="50.81 113.87 55.78 105.22 60.78 113.85 50.81 113.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-31" data-name="tri 6" points="55.78 105.22 50.81 113.87 45.8 105.24 55.78 105.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-82" data-name="tri 2" x1="0.92" y1="113.96" x2="5.93" y2="122.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-97" data-name="tri 1" d="M0,109.66" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-71" data-name="tri 3" points="5.93 122.59 10.9 113.94 15.9 122.57 5.93 122.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-83" data-name="tri 2" points="10.9 113.94 5.93 122.59 0.93 113.96 10.9 113.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-57" data-name="tri 4" points="15.9 122.57 20.88 113.92 25.88 122.55 15.9 122.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-72" data-name="tri 3" points="20.88 113.92 15.9 122.57 10.9 113.94 20.88 113.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-43" data-name="tri 5" points="25.88 122.55 30.85 113.9 35.85 122.54 25.88 122.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-58" data-name="tri 4" points="30.85 113.9 25.88 122.55 20.88 113.92 30.85 113.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-32" data-name="tri 6" points="35.85 122.54 40.83 113.89 45.83 122.52 35.85 122.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-44" data-name="tri 5" points="40.83 113.89 35.85 122.54 30.85 113.9 40.83 113.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-22" data-name="tri 7" points="45.83 122.52 50.81 113.87 55.81 122.5 45.83 122.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-33" data-name="tri 6" points="50.81 113.87 45.83 122.52 40.83 113.89 50.81 113.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-13" data-name="tri 8" points="55.81 122.5 60.78 113.85 65.78 122.48 55.81 122.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-23" data-name="tri 7" points="60.78 113.85 55.81 122.5 50.81 113.87 60.78 113.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-84" data-name="tri 2" d="M.08,126.94" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-73" data-name="tri 3" points="0.96 131.24 5.93 122.59 10.93 131.22 0.96 131.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-85" data-name="tri 2" x1="5.93" y1="122.59" x2="0.96" y2="131.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-59" data-name="tri 4" points="10.93 131.22 15.9 122.57 20.91 131.2 10.93 131.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-74" data-name="tri 3" points="15.9 122.57 10.93 131.22 5.93 122.59 15.9 122.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-45" data-name="tri 5" points="20.91 131.2 25.88 122.55 30.88 131.19 20.91 131.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-60" data-name="tri 4" points="25.88 122.55 20.91 131.2 15.9 122.57 25.88 122.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-34" data-name="tri 6" points="30.88 131.19 35.85 122.54 40.86 131.17 30.88 131.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-46" data-name="tri 5" points="35.85 122.54 30.88 131.19 25.88 122.55 35.85 122.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-24" data-name="tri 7" points="40.86 131.17 45.83 122.52 50.83 131.15 40.86 131.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-35" data-name="tri 6" points="45.83 122.52 40.86 131.17 35.85 122.54 45.83 122.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-14" data-name="tri 8" points="50.83 131.15 55.81 122.5 60.81 131.13 50.83 131.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-25" data-name="tri 7" points="55.81 122.5 50.83 131.15 45.83 122.52 55.81 122.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-5" data-name="tri 9" points="60.81 131.13 65.78 122.48 70.79 131.11 60.81 131.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-15" data-name="tri 8" points="65.78 122.48 60.81 131.13 55.81 122.5 65.78 122.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-110" data-name="tri 0" points="115.54 53.27 120.52 44.63 125.52 53.26 115.54 53.27" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-111" data-name="tri 0" points="110.57 61.92 115.54 53.27 120.54 61.9 110.57 61.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-98" data-name="tri 1" points="120.54 61.9 125.52 53.26 130.52 61.89 120.54 61.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-112" data-name="tri 0" points="125.52 53.26 120.54 61.9 115.54 53.27 125.52 53.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-113" data-name="tri 0" points="105.6 70.57 110.57 61.92 115.57 70.55 105.6 70.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-99" data-name="tri 1" points="115.57 70.55 120.54 61.9 125.55 70.54 115.57 70.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-114" data-name="tri 0" points="120.54 61.9 115.57 70.55 110.57 61.92 120.54 61.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-86" data-name="tri 2" points="125.55 70.54 130.52 61.89 135.52 70.52 125.55 70.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-100" data-name="tri 1" points="130.52 61.89 125.55 70.54 120.54 61.9 130.52 61.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-115" data-name="tri 0" points="100.62 79.22 105.6 70.57 110.6 79.2 100.62 79.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-101" data-name="tri 1" points="110.6 79.2 115.57 70.55 120.58 79.19 110.6 79.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-116" data-name="tri 0" points="115.57 70.55 110.6 79.2 105.6 70.57 115.57 70.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-87" data-name="tri 2" points="120.58 79.19 125.55 70.54 130.55 79.17 120.58 79.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-102" data-name="tri 1" points="125.55 70.54 120.58 79.19 115.57 70.55 125.55 70.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-75" data-name="tri 3" points="130.55 79.17 135.52 70.52 140.53 79.15 130.55 79.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-88" data-name="tri 2" points="135.52 70.52 130.55 79.17 125.55 70.54 135.52 70.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-117" data-name="tri 0" points="95.65 87.87 100.62 79.22 105.63 87.85 95.65 87.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-103" data-name="tri 1" points="105.63 87.85 110.6 79.2 115.6 87.83 105.63 87.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-118" data-name="tri 0" points="110.6 79.2 105.63 87.85 100.62 79.22 110.6 79.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-89" data-name="tri 2" points="115.6 87.83 120.58 79.19 125.58 87.82 115.6 87.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-104" data-name="tri 1" points="120.58 79.19 115.6 87.83 110.6 79.2 120.58 79.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-76" data-name="tri 3" points="125.58 87.82 130.55 79.17 135.55 87.8 125.58 87.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-90" data-name="tri 2" points="130.55 79.17 125.58 87.82 120.58 79.19 130.55 79.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-61" data-name="tri 4" points="135.55 87.8 140.53 79.15 145.53 87.78 135.55 87.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-77" data-name="tri 3" points="140.53 79.15 135.55 87.8 130.55 79.17 140.53 79.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-119" data-name="tri 0" points="90.68 96.52 95.65 87.87 100.65 96.5 90.68 96.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-105" data-name="tri 1" points="100.65 96.5 105.63 87.85 110.63 96.48 100.65 96.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-120" data-name="tri 0" points="105.63 87.85 100.65 96.5 95.65 87.87 105.63 87.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-91" data-name="tri 2" points="110.63 96.48 115.6 87.83 120.61 96.47 110.63 96.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-106" data-name="tri 1" points="115.6 87.83 110.63 96.48 105.63 87.85 115.6 87.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-78" data-name="tri 3" points="120.61 96.47 125.58 87.82 130.58 96.45 120.61 96.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-62" data-name="tri 4" points="130.58 96.45 135.55 87.8 140.56 96.43 130.58 96.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-79" data-name="tri 3" points="135.55 87.8 130.58 96.45 125.58 87.82 135.55 87.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-47" data-name="tri 5" points="140.56 96.43 145.53 87.78 150.53 96.42 140.56 96.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-63" data-name="tri 4" points="145.53 87.78 140.56 96.43 135.55 87.8 145.53 87.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-121" data-name="tri 0" points="85.7 105.17 90.68 96.52 95.68 105.15 85.7 105.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-107" data-name="tri 1" points="95.68 105.15 100.65 96.5 105.65 105.13 95.68 105.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-122" data-name="tri 0" points="100.65 96.5 95.68 105.15 90.68 96.52 100.65 96.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-92" data-name="tri 2" points="105.65 105.13 110.63 96.48 115.63 105.12 105.65 105.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-80" data-name="tri 3" points="115.63 105.12 120.61 96.47 125.61 105.1 115.63 105.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-93" data-name="tri 2" points="120.61 96.47 115.63 105.12 110.63 96.48 120.61 96.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-64" data-name="tri 4" points="125.61 105.1 130.58 96.45 135.58 105.08 125.61 105.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-81" data-name="tri 3" points="130.58 96.45 125.61 105.1 120.61 96.47 130.58 96.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-48" data-name="tri 5" points="135.58 105.08 140.56 96.43 145.56 105.07 135.58 105.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-65" data-name="tri 4" points="140.56 96.43 135.58 105.08 130.58 96.45 140.56 96.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-36" data-name="tri 6" points="145.56 105.07 150.53 96.42 155.53 105.05 145.56 105.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-49" data-name="tri 5" points="150.53 96.42 145.56 105.07 140.56 96.43 150.53 96.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-123" data-name="tri 0" points="80.73 113.82 85.7 105.17 90.71 113.8 80.73 113.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-108" data-name="tri 1" points="90.71 113.8 95.68 105.15 100.68 113.78 90.71 113.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-124" data-name="tri 0" points="95.68 105.15 90.71 113.8 85.7 105.17 95.68 105.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-94" data-name="tri 2" points="100.68 113.78 105.65 105.13 110.66 113.76 100.68 113.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-109" data-name="tri 1" points="105.65 105.13 100.68 113.78 95.68 105.15 105.65 105.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-82" data-name="tri 3" points="110.66 113.76 115.63 105.12 120.64 113.75 110.66 113.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-95" data-name="tri 2" points="115.63 105.12 110.66 113.76 105.65 105.13 115.63 105.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-66" data-name="tri 4" points="120.64 113.75 125.61 105.1 130.61 113.73 120.64 113.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-83" data-name="tri 3" points="125.61 105.1 120.64 113.75 115.63 105.12 125.61 105.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-50" data-name="tri 5" points="130.61 113.73 135.58 105.08 140.59 113.72 130.61 113.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-67" data-name="tri 4" points="135.58 105.08 130.61 113.73 125.61 105.1 135.58 105.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-37" data-name="tri 6" points="140.59 113.72 145.56 105.07 150.56 113.7 140.59 113.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-51" data-name="tri 5" points="145.56 105.07 140.59 113.72 135.58 105.08 145.56 105.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-26" data-name="tri 7" points="150.56 113.7 155.53 105.05 160.53 113.68 150.56 113.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-38" data-name="tri 6" points="155.53 105.05 150.56 113.7 145.56 105.07 155.53 105.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-125" data-name="tri 0" points="75.76 122.47 80.73 113.82 85.73 122.45 75.76 122.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-110" data-name="tri 1" points="85.73 122.45 90.71 113.8 95.71 122.43 85.73 122.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-126" data-name="tri 0" points="90.71 113.8 85.73 122.45 80.73 113.82 90.71 113.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-96" data-name="tri 2" points="95.71 122.43 100.68 113.78 105.69 122.41 95.71 122.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-111" data-name="tri 1" points="100.68 113.78 95.71 122.43 90.71 113.8 100.68 113.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-84" data-name="tri 3" points="105.69 122.41 110.66 113.76 115.66 122.4 105.69 122.41" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-97" data-name="tri 2" points="110.66 113.76 105.69 122.41 100.68 113.78 110.66 113.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-68" data-name="tri 4" points="115.66 122.4 120.64 113.75 125.64 122.38 115.66 122.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-85" data-name="tri 3" points="120.64 113.75 115.66 122.4 110.66 113.76 120.64 113.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-52" data-name="tri 5" points="125.64 122.38 130.61 113.73 135.61 122.36 125.64 122.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-69" data-name="tri 4" points="130.61 113.73 125.64 122.38 120.64 113.75 130.61 113.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-39" data-name="tri 6" points="135.61 122.36 140.59 113.72 145.59 122.34 135.61 122.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-53" data-name="tri 5" points="140.59 113.72 135.61 122.36 130.61 113.73 140.59 113.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-27" data-name="tri 7" points="145.59 122.34 150.56 113.7 155.56 122.33 145.59 122.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-40" data-name="tri 6" points="150.56 113.7 145.59 122.34 140.59 113.72 150.56 113.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-16" data-name="tri 8" points="155.56 122.33 160.53 113.68 165.54 122.31 155.56 122.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-28" data-name="tri 7" points="160.53 113.68 155.56 122.33 150.56 113.7 160.53 113.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-127" data-name="tri 0" points="70.78 131.12 75.76 122.47 80.76 131.1 70.78 131.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-112" data-name="tri 1" points="80.76 131.1 85.73 122.45 90.74 131.08 80.76 131.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-128" data-name="tri 0" points="85.73 122.45 80.76 131.1 75.76 122.47 85.73 122.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-98" data-name="tri 2" points="90.74 131.08 95.71 122.43 100.71 131.06 90.74 131.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-113" data-name="tri 1" points="95.71 122.43 90.74 131.08 85.73 122.45 95.71 122.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-86" data-name="tri 3" points="100.71 131.06 105.69 122.41 110.69 131.05 100.71 131.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-99" data-name="tri 2" points="105.69 122.41 100.71 131.06 95.71 122.43 105.69 122.41" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-70" data-name="tri 4" points="110.69 131.05 115.66 122.4 120.66 131.03 110.69 131.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-87" data-name="tri 3" points="115.66 122.4 110.69 131.05 105.69 122.41 115.66 122.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-54" data-name="tri 5" points="120.66 131.03 125.64 122.38 130.64 131.01 120.66 131.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-71" data-name="tri 4" points="125.64 122.38 120.66 131.03 115.66 122.4 125.64 122.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-41" data-name="tri 6" points="130.64 131.01 135.61 122.36 140.62 130.99 130.64 131.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-55" data-name="tri 5" points="135.61 122.36 130.64 131.01 125.64 122.38 135.61 122.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-29" data-name="tri 7" points="140.62 130.99 145.59 122.34 150.59 130.98 140.62 130.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-42" data-name="tri 6" points="145.59 122.34 140.62 130.99 135.61 122.36 145.59 122.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-17" data-name="tri 8" points="150.59 130.98 155.56 122.33 160.57 130.96 150.59 130.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-30" data-name="tri 7" points="155.56 122.33 150.59 130.98 145.59 122.34 155.56 122.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-6" data-name="tri 9" points="160.57 130.96 165.54 122.31 170.54 130.94 160.57 130.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-18" data-name="tri 8" points="165.54 122.31 160.57 130.96 155.56 122.33 165.54 122.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-129" data-name="tri 0" points="75.77 122.64 70.8 131.28 65.8 122.66 75.77 122.64" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-130" data-name="tri 0" points="80.74 113.99 75.77 122.64 70.77 114.01 80.74 113.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-114" data-name="tri 1" points="70.77 114.01 65.8 122.66 60.79 114.02 70.77 114.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-131" data-name="tri 0" points="65.8 122.66 70.77 114.01 75.77 122.64 65.8 122.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-132" data-name="tri 0" points="85.72 105.34 80.74 113.99 75.74 105.36 85.72 105.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-115" data-name="tri 1" points="75.74 105.36 70.77 114.01 65.77 105.37 75.74 105.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-133" data-name="tri 0" points="70.77 114.01 75.74 105.36 80.74 113.99 70.77 114.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-100" data-name="tri 2" points="65.77 105.37 60.79 114.02 55.79 105.39 65.77 105.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-116" data-name="tri 1" points="60.79 114.02 65.77 105.37 70.77 114.01 60.79 114.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-134" data-name="tri 0" points="90.69 96.69 85.72 105.34 80.72 96.71 90.69 96.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-117" data-name="tri 1" points="80.72 96.71 75.74 105.36 70.74 96.72 80.72 96.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-135" data-name="tri 0" points="75.74 105.36 80.72 96.71 85.72 105.34 75.74 105.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-101" data-name="tri 2" points="70.74 96.72 65.77 105.37 60.76 96.74 70.74 96.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-118" data-name="tri 1" points="65.77 105.37 70.74 96.72 75.74 105.36 65.77 105.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-88" data-name="tri 3" points="60.76 96.74 55.79 105.39 50.79 96.76 60.76 96.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-102" data-name="tri 2" points="55.79 105.39 60.76 96.74 65.77 105.37 55.79 105.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-136" data-name="tri 0" points="95.66 88.04 90.69 96.69 85.69 88.06 95.66 88.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-119" data-name="tri 1" points="85.69 88.06 80.72 96.71 75.71 88.08 85.69 88.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-137" data-name="tri 0" points="80.72 96.71 85.69 88.06 90.69 96.69 80.72 96.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-103" data-name="tri 2" points="75.71 88.08 70.74 96.72 65.74 88.09 75.71 88.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-120" data-name="tri 1" points="70.74 96.72 75.71 88.08 80.72 96.71 70.74 96.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-89" data-name="tri 3" points="65.74 88.09 60.76 96.74 55.76 88.11 65.74 88.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-104" data-name="tri 2" points="60.76 96.74 65.74 88.09 70.74 96.72 60.76 96.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-72" data-name="tri 4" points="55.76 88.11 50.79 96.76 45.78 88.13 55.76 88.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-90" data-name="tri 3" points="50.79 96.76 55.76 88.11 60.76 96.74 50.79 96.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-138" data-name="tri 0" points="100.64 79.39 95.66 88.04 90.66 79.41 100.64 79.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-121" data-name="tri 1" points="90.66 79.41 85.69 88.06 80.69 79.43 90.66 79.41" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-139" data-name="tri 0" points="85.69 88.06 90.66 79.41 95.66 88.04 85.69 88.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-105" data-name="tri 2" points="80.69 79.43 75.71 88.08 70.71 79.44 80.69 79.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-122" data-name="tri 1" points="75.71 88.08 80.69 79.43 85.69 88.06 75.71 88.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-91" data-name="tri 3" points="70.71 79.44 65.74 88.09 60.73 79.46 70.71 79.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-73" data-name="tri 4" points="60.73 79.46 55.76 88.11 50.76 79.48 60.73 79.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-92" data-name="tri 3" points="55.76 88.11 60.73 79.46 65.74 88.09 55.76 88.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-56" data-name="tri 5" points="50.76 79.48 45.78 88.13 40.78 79.5 50.76 79.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-74" data-name="tri 4" points="45.78 88.13 50.76 79.48 55.76 88.11 45.78 88.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-140" data-name="tri 0" points="105.61 70.74 100.64 79.39 95.63 70.76 105.61 70.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-123" data-name="tri 1" points="95.63 70.76 90.66 79.41 85.66 70.78 95.63 70.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-141" data-name="tri 0" points="90.66 79.41 95.63 70.76 100.64 79.39 90.66 79.41" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-106" data-name="tri 2" points="85.66 70.78 80.69 79.43 75.68 70.79 85.66 70.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-93" data-name="tri 3" points="75.68 70.79 70.71 79.44 65.71 70.81 75.68 70.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-107" data-name="tri 2" points="70.71 79.44 75.68 70.79 80.69 79.43 70.71 79.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-75" data-name="tri 4" points="65.71 70.81 60.73 79.46 55.73 70.83 65.71 70.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-94" data-name="tri 3" points="60.73 79.46 65.71 70.81 70.71 79.44 60.73 79.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-57" data-name="tri 5" points="55.73 70.83 50.76 79.48 45.76 70.84 55.73 70.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-76" data-name="tri 4" points="50.76 79.48 55.73 70.83 60.73 79.46 50.76 79.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-43" data-name="tri 6" points="45.76 70.84 40.78 79.5 35.78 70.86 45.76 70.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-58" data-name="tri 5" points="40.78 79.5 45.76 70.84 50.76 79.48 40.78 79.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-142" data-name="tri 0" points="110.58 62.09 105.61 70.74 100.61 62.11 110.58 62.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-124" data-name="tri 1" points="100.61 62.11 95.63 70.76 90.63 62.13 100.61 62.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-143" data-name="tri 0" points="95.63 70.76 100.61 62.11 105.61 70.74 95.63 70.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-108" data-name="tri 2" points="90.63 62.13 85.66 70.78 80.66 62.15 90.63 62.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-125" data-name="tri 1" points="85.66 70.78 90.63 62.13 95.63 70.76 85.66 70.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-95" data-name="tri 3" points="80.66 62.15 75.68 70.79 70.68 62.16 80.66 62.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-109" data-name="tri 2" points="75.68 70.79 80.66 62.15 85.66 70.78 75.68 70.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-77" data-name="tri 4" points="70.68 62.16 65.71 70.81 60.7 62.18 70.68 62.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-96" data-name="tri 3" points="65.71 70.81 70.68 62.16 75.68 70.79 65.71 70.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-59" data-name="tri 5" points="60.7 62.18 55.73 70.83 50.73 62.2 60.7 62.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-78" data-name="tri 4" points="55.73 70.83 60.7 62.18 65.71 70.81 55.73 70.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-44" data-name="tri 6" points="50.73 62.2 45.76 70.84 40.75 62.21 50.73 62.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-60" data-name="tri 5" points="45.76 70.84 50.73 62.2 55.73 70.83 45.76 70.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-31" data-name="tri 7" points="40.75 62.21 35.78 70.86 30.78 62.23 40.75 62.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-45" data-name="tri 6" points="35.78 70.86 40.75 62.21 45.76 70.84 35.78 70.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-144" data-name="tri 0" points="115.56 53.44 110.58 62.09 105.58 53.46 115.56 53.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-126" data-name="tri 1" points="105.58 53.46 100.61 62.11 95.61 53.48 105.58 53.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-145" data-name="tri 0" points="100.61 62.11 105.58 53.46 110.58 62.09 100.61 62.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-110" data-name="tri 2" points="95.61 53.48 90.63 62.13 85.63 53.5 95.61 53.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-127" data-name="tri 1" points="90.63 62.13 95.61 53.48 100.61 62.11 90.63 62.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-97" data-name="tri 3" points="85.63 53.5 80.66 62.15 75.65 53.51 85.63 53.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-111" data-name="tri 2" points="80.66 62.15 85.63 53.5 90.63 62.13 80.66 62.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-79" data-name="tri 4" points="75.65 53.51 70.68 62.16 65.68 53.53 75.65 53.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-98" data-name="tri 3" points="70.68 62.16 75.65 53.51 80.66 62.15 70.68 62.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-61" data-name="tri 5" points="65.68 53.53 60.7 62.18 55.7 53.55 65.68 53.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-80" data-name="tri 4" points="60.7 62.18 65.68 53.53 70.68 62.16 60.7 62.18" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-46" data-name="tri 6" points="55.7 53.55 50.73 62.2 45.73 53.56 55.7 53.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-62" data-name="tri 5" points="50.73 62.2 55.7 53.55 60.7 62.18 50.73 62.2" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-32" data-name="tri 7" points="45.73 53.56 40.75 62.21 35.75 53.58 45.73 53.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-47" data-name="tri 6" points="40.75 62.21 45.73 53.56 50.73 62.2 40.75 62.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-19" data-name="tri 8" points="35.75 53.58 30.78 62.23 25.77 53.6 35.75 53.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-33" data-name="tri 7" points="30.78 62.23 35.75 53.58 40.75 62.21 30.78 62.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-146" data-name="tri 0" points="120.53 44.8 115.56 53.44 110.55 44.81 120.53 44.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-128" data-name="tri 1" points="110.55 44.81 105.58 53.46 100.58 44.83 110.55 44.81" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-147" data-name="tri 0" points="105.58 53.46 110.55 44.81 115.56 53.44 105.58 53.46" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-112" data-name="tri 2" points="100.58 44.83 95.61 53.48 90.6 44.84 100.58 44.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-129" data-name="tri 1" points="95.61 53.48 100.58 44.83 105.58 53.46 95.61 53.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-99" data-name="tri 3" points="90.6 44.84 85.63 53.5 80.63 44.86 90.6 44.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-113" data-name="tri 2" points="85.63 53.5 90.6 44.84 95.61 53.48 85.63 53.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-81" data-name="tri 4" points="80.63 44.86 75.65 53.51 70.65 44.88 80.63 44.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-100" data-name="tri 3" points="75.65 53.51 80.63 44.86 85.63 53.5 75.65 53.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-63" data-name="tri 5" points="70.65 44.88 65.68 53.53 60.67 44.9 70.65 44.88" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-82" data-name="tri 4" points="65.68 53.53 70.65 44.88 75.65 53.51 65.68 53.53" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-48" data-name="tri 6" points="60.67 44.9 55.7 53.55 50.7 44.92 60.67 44.9" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-64" data-name="tri 5" points="55.7 53.55 60.67 44.9 65.68 53.53 55.7 53.55" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-34" data-name="tri 7" points="50.7 44.92 45.73 53.56 40.72 44.93 50.7 44.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-49" data-name="tri 6" points="45.73 53.56 50.7 44.92 55.7 53.55 45.73 53.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-20" data-name="tri 8" points="40.72 44.93 35.75 53.58 30.75 44.95 40.72 44.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-35" data-name="tri 7" points="35.75 53.58 40.72 44.93 45.73 53.56 35.75 53.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-7" data-name="tri 9" points="30.75 44.95 25.77 53.6 20.77 44.97 30.75 44.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-21" data-name="tri 8" points="25.77 53.6 30.75 44.95 35.75 53.58 25.77 53.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <path id="tri_0-148" data-name="tri 0" d="M.13,74.88" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-149" data-name="tri 0" x1="5.99" y1="70.52" x2="1.01" y2="79.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-150" data-name="tri 0" d="M.13,74.88" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-151" data-name="tri 0" points="10.96 61.87 5.99 70.52 0.98 61.89 10.96 61.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-130" data-name="tri 1" d="M.1,57.59" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-152" data-name="tri 0" x1="0.98" y1="61.89" x2="5.99" y2="70.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-153" data-name="tri 0" points="15.94 53.22 10.96 61.87 5.96 53.24 15.94 53.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-131" data-name="tri 1" x1="5.96" y1="53.24" x2="0.98" y2="61.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-154" data-name="tri 0" points="0.98 61.89 5.96 53.24 10.96 61.87 0.98 61.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-132" data-name="tri 1" d="M.1,57.59" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-155" data-name="tri 0" points="20.91 44.57 15.94 53.22 10.93 44.59 20.91 44.57" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-133" data-name="tri 1" points="10.93 44.59 5.96 53.24 0.95 44.61 10.93 44.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-156" data-name="tri 0" points="5.96 53.24 10.93 44.59 15.94 53.22 5.96 53.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-114" data-name="tri 2" d="M.07,40.32" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-134" data-name="tri 1" x1="0.95" y1="44.61" x2="5.96" y2="53.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-157" data-name="tri 0" points="175.67 122.38 170.69 131.03 165.69 122.4 175.67 122.38" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-158" data-name="tri 0" points="180.64 113.73 175.67 122.38 170.66 113.75 180.64 113.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-135" data-name="tri 1" points="170.66 113.75 165.69 122.4 160.69 113.77 170.66 113.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-159" data-name="tri 0" points="165.69 122.4 170.66 113.75 175.67 122.38 165.69 122.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-160" data-name="tri 0" points="185.61 105.08 180.64 113.73 175.63 105.1 185.61 105.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-136" data-name="tri 1" points="175.63 105.1 170.66 113.75 165.66 105.12 175.63 105.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-161" data-name="tri 0" points="170.66 113.75 175.63 105.1 180.64 113.73 170.66 113.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-115" data-name="tri 2" points="165.66 105.12 160.69 113.77 155.68 105.13 165.66 105.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-137" data-name="tri 1" points="160.69 113.77 165.66 105.12 170.66 113.75 160.69 113.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-162" data-name="tri 0" points="190.58 96.43 185.61 105.08 180.61 96.45 190.58 96.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-138" data-name="tri 1" points="180.61 96.45 175.63 105.1 170.63 96.47 180.61 96.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-163" data-name="tri 0" points="175.63 105.1 180.61 96.45 185.61 105.08 175.63 105.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-116" data-name="tri 2" points="170.63 96.47 165.66 105.12 160.66 96.48 170.63 96.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-139" data-name="tri 1" points="165.66 105.12 170.63 96.47 175.63 105.1 165.66 105.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-101" data-name="tri 3" points="160.66 96.48 155.68 105.13 150.68 96.5 160.66 96.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-117" data-name="tri 2" points="155.68 105.13 160.66 96.48 165.66 105.12 155.68 105.13" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-164" data-name="tri 0" points="195.56 87.79 190.58 96.43 185.58 87.8 195.56 87.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-140" data-name="tri 1" points="185.58 87.8 180.61 96.45 175.6 87.82 185.58 87.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-165" data-name="tri 0" points="180.61 96.45 185.58 87.8 190.58 96.43 180.61 96.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-118" data-name="tri 2" points="175.6 87.82 170.63 96.47 165.63 87.84 175.6 87.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-141" data-name="tri 1" points="170.63 96.47 175.6 87.82 180.61 96.45 170.63 96.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-102" data-name="tri 3" points="165.63 87.84 160.66 96.48 155.65 87.85 165.63 87.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-119" data-name="tri 2" points="160.66 96.48 165.63 87.84 170.63 96.47 160.66 96.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-83" data-name="tri 4" points="155.65 87.85 150.68 96.5 145.68 87.87 155.65 87.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-103" data-name="tri 3" points="150.68 96.5 155.65 87.85 160.66 96.48 150.68 96.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-166" data-name="tri 0" points="200.53 79.14 195.56 87.79 190.55 79.15 200.53 79.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-142" data-name="tri 1" points="190.55 79.15 185.58 87.8 180.58 79.17 190.55 79.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-167" data-name="tri 0" points="185.58 87.8 190.55 79.15 195.56 87.79 185.58 87.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-120" data-name="tri 2" points="180.58 79.17 175.6 87.82 170.6 79.19 180.58 79.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-143" data-name="tri 1" points="175.6 87.82 180.58 79.17 185.58 87.8 175.6 87.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-104" data-name="tri 3" points="170.6 79.19 165.63 87.84 160.63 79.21 170.6 79.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-84" data-name="tri 4" points="160.63 79.21 155.65 87.85 150.65 79.22 160.63 79.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-105" data-name="tri 3" points="155.65 87.85 160.63 79.21 165.63 87.84 155.65 87.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-65" data-name="tri 5" points="150.65 79.22 145.68 87.87 140.68 79.24 150.65 79.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-85" data-name="tri 4" points="145.68 87.87 150.65 79.22 155.65 87.85 145.68 87.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-168" data-name="tri 0" points="205.5 70.49 200.53 79.14 195.53 70.51 205.5 70.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-144" data-name="tri 1" points="195.53 70.51 190.55 79.15 185.55 70.52 195.53 70.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-169" data-name="tri 0" points="190.55 79.15 195.53 70.51 200.53 79.14 190.55 79.15" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-121" data-name="tri 2" points="185.55 70.52 180.58 79.17 175.57 70.54 185.55 70.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-106" data-name="tri 3" points="175.57 70.54 170.6 79.19 165.6 70.56 175.57 70.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-122" data-name="tri 2" points="170.6 79.19 175.57 70.54 180.58 79.17 170.6 79.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-86" data-name="tri 4" points="165.6 70.56 160.63 79.21 155.62 70.58 165.6 70.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-107" data-name="tri 3" points="160.63 79.21 165.6 70.56 170.6 79.19 160.63 79.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-66" data-name="tri 5" points="155.62 70.58 150.65 79.22 145.65 70.59 155.62 70.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-87" data-name="tri 4" points="150.65 79.22 155.62 70.58 160.63 79.21 150.65 79.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-50" data-name="tri 6" points="145.65 70.59 140.68 79.24 135.67 70.61 145.65 70.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-67" data-name="tri 5" points="140.68 79.24 145.65 70.59 150.65 79.22 140.68 79.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-170" data-name="tri 0" points="210.47 61.84 205.5 70.49 200.5 61.85 210.47 61.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-145" data-name="tri 1" points="200.5 61.85 195.53 70.51 190.53 61.87 200.5 61.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-171" data-name="tri 0" points="195.53 70.51 200.5 61.85 205.5 70.49 195.53 70.51" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-123" data-name="tri 2" points="190.53 61.87 185.55 70.52 180.55 61.89 190.53 61.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-146" data-name="tri 1" points="185.55 70.52 190.53 61.87 195.53 70.51 185.55 70.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-108" data-name="tri 3" points="180.55 61.89 175.57 70.54 170.57 61.91 180.55 61.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-124" data-name="tri 2" points="175.57 70.54 180.55 61.89 185.55 70.52 175.57 70.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-88" data-name="tri 4" points="170.57 61.91 165.6 70.56 160.6 61.92 170.57 61.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-109" data-name="tri 3" points="165.6 70.56 170.57 61.91 175.57 70.54 165.6 70.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-68" data-name="tri 5" points="160.6 61.92 155.62 70.58 150.62 61.94 160.6 61.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-89" data-name="tri 4" points="155.62 70.58 160.6 61.92 165.6 70.56 155.62 70.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-51" data-name="tri 6" points="150.62 61.94 145.65 70.59 140.64 61.96 150.62 61.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-69" data-name="tri 5" points="145.65 70.59 150.62 61.94 155.62 70.58 145.65 70.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-36" data-name="tri 7" points="140.64 61.96 135.67 70.61 130.67 61.98 140.64 61.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-52" data-name="tri 6" points="135.67 70.61 140.64 61.96 145.65 70.59 135.67 70.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-172" data-name="tri 0" points="215.45 53.19 210.47 61.84 205.47 53.21 215.45 53.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-147" data-name="tri 1" points="205.47 53.21 200.5 61.85 195.5 53.22 205.47 53.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-173" data-name="tri 0" points="200.5 61.85 205.47 53.21 210.47 61.84 200.5 61.85" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-125" data-name="tri 2" points="195.5 53.22 190.53 61.87 185.52 53.24 195.5 53.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-148" data-name="tri 1" points="190.53 61.87 195.5 53.22 200.5 61.85 190.53 61.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-110" data-name="tri 3" points="185.52 53.24 180.55 61.89 175.55 53.26 185.52 53.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-126" data-name="tri 2" points="180.55 61.89 185.52 53.24 190.53 61.87 180.55 61.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-90" data-name="tri 4" points="175.55 53.26 170.57 61.91 165.57 53.28 175.55 53.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-111" data-name="tri 3" points="170.57 61.91 175.55 53.26 180.55 61.89 170.57 61.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-70" data-name="tri 5" points="165.57 53.28 160.6 61.92 155.59 53.29 165.57 53.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-91" data-name="tri 4" points="160.6 61.92 165.57 53.28 170.57 61.91 160.6 61.92" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-53" data-name="tri 6" points="155.59 53.29 150.62 61.94 145.62 53.31 155.59 53.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-71" data-name="tri 5" points="150.62 61.94 155.59 53.29 160.6 61.92 150.62 61.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-37" data-name="tri 7" points="145.62 53.31 140.64 61.96 135.64 53.33 145.62 53.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-54" data-name="tri 6" points="140.64 61.96 145.62 53.31 150.62 61.94 140.64 61.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-22" data-name="tri 8" points="135.64 53.33 130.67 61.98 125.67 53.34 135.64 53.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-38" data-name="tri 7" points="130.67 61.98 135.64 53.33 140.64 61.96 130.67 61.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-174" data-name="tri 0" points="220.42 44.54 215.45 53.19 210.44 44.56 220.42 44.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-149" data-name="tri 1" points="210.44 44.56 205.47 53.21 200.47 44.58 210.44 44.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-175" data-name="tri 0" points="205.47 53.21 210.44 44.56 215.45 53.19 205.47 53.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-127" data-name="tri 2" points="200.47 44.58 195.5 53.22 190.49 44.59 200.47 44.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-150" data-name="tri 1" points="195.5 53.22 200.47 44.58 205.47 53.21 195.5 53.22" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-112" data-name="tri 3" points="190.49 44.59 185.52 53.24 180.52 44.61 190.49 44.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-128" data-name="tri 2" points="185.52 53.24 190.49 44.59 195.5 53.22 185.52 53.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-92" data-name="tri 4" points="180.52 44.61 175.55 53.26 170.54 44.63 180.52 44.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-113" data-name="tri 3" points="175.55 53.26 180.52 44.61 185.52 53.24 175.55 53.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-72" data-name="tri 5" points="170.54 44.63 165.57 53.28 160.57 44.64 170.54 44.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-93" data-name="tri 4" points="165.57 53.28 170.54 44.63 175.55 53.26 165.57 53.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-55" data-name="tri 6" points="160.57 44.64 155.59 53.29 150.59 44.66 160.57 44.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-73" data-name="tri 5" points="155.59 53.29 160.57 44.64 165.57 53.28 155.59 53.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-39" data-name="tri 7" points="150.59 44.66 145.62 53.31 140.62 44.68 150.59 44.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-56" data-name="tri 6" points="145.62 53.31 150.59 44.66 155.59 53.29 145.62 53.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-23" data-name="tri 8" points="140.62 44.68 135.64 53.33 130.64 44.7 140.62 44.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-40" data-name="tri 7" points="135.64 53.33 140.62 44.68 145.62 53.31 135.64 53.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-8" data-name="tri 9" points="130.64 44.7 125.67 53.34 120.66 44.71 130.64 44.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-24" data-name="tri 8" points="125.67 53.34 130.64 44.7 135.64 53.33 125.67 53.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <line id="tri_0-176" data-name="tri 0" x1="215.3" y1="53.19" x2="220.27" y2="44.54" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-177" data-name="tri 0" points="210.33 61.83 215.3 53.19 220.3 61.82 210.33 61.83" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-151" data-name="tri 1" d="M219.42,57.52" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-178" data-name="tri 0" x1="220.3" y1="61.82" x2="215.3" y2="53.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-179" data-name="tri 0" points="205.35 70.48 210.33 61.83 215.33 70.47 205.35 70.48" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-152" data-name="tri 1" x1="215.33" y1="70.47" x2="220.3" y2="61.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-180" data-name="tri 0" points="220.3 61.82 215.33 70.47 210.33 61.83 220.3 61.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-153" data-name="tri 1" d="M219.42,57.52" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-181" data-name="tri 0" points="200.38 79.14 205.35 70.48 210.35 79.12 200.38 79.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-154" data-name="tri 1" points="210.35 79.12 215.33 70.47 220.33 79.1 210.35 79.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-182" data-name="tri 0" points="215.33 70.47 210.35 79.12 205.35 70.48 215.33 70.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-129" data-name="tri 2" d="M219.45,74.81" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-155" data-name="tri 1" x1="220.33" y1="79.1" x2="215.33" y2="70.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-183" data-name="tri 0" points="195.41 87.78 200.38 79.14 205.38 87.77 195.41 87.78" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-156" data-name="tri 1" points="205.38 87.77 210.35 79.12 215.36 87.75 205.38 87.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-184" data-name="tri 0" points="210.35 79.12 205.38 87.77 200.38 79.14 210.35 79.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-130" data-name="tri 2" x1="215.36" y1="87.75" x2="220.33" y2="79.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-157" data-name="tri 1" points="220.33 79.1 215.36 87.75 210.35 79.12 220.33 79.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-131" data-name="tri 2" d="M219.45,74.81" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-185" data-name="tri 0" points="190.44 96.43 195.41 87.78 200.41 96.42 190.44 96.43" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-158" data-name="tri 1" points="200.41 96.42 205.38 87.77 210.39 96.4 200.41 96.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-186" data-name="tri 0" points="205.38 87.77 200.41 96.42 195.41 87.78 205.38 87.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-132" data-name="tri 2" points="210.39 96.4 215.36 87.75 220.36 96.38 210.39 96.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-159" data-name="tri 1" points="215.36 87.75 210.39 96.4 205.38 87.77 215.36 87.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-114" data-name="tri 3" d="M219.48,92.09" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_0-187" data-name="tri 0" points="185.46 105.08 190.44 96.43 195.44 105.06 185.46 105.08" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-160" data-name="tri 1" points="195.44 105.06 200.41 96.42 205.41 105.05 195.44 105.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-188" data-name="tri 0" points="200.41 96.42 195.44 105.06 190.44 96.43 200.41 96.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-133" data-name="tri 2" points="205.41 105.05 210.39 96.4 215.39 105.03 205.41 105.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <line id="tri_3-115" data-name="tri 3" x1="215.39" y1="105.03" x2="220.36" y2="96.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-134" data-name="tri 2" points="220.36 96.38 215.39 105.03 210.39 96.4 220.36 96.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-116" data-name="tri 3" d="M219.48,92.09" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-189" data-name="tri 0" points="180.49 113.73 185.46 105.08 190.47 113.71 180.49 113.73" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-161" data-name="tri 1" points="190.47 113.71 195.44 105.06 200.44 113.7 190.47 113.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-190" data-name="tri 0" points="195.44 105.06 190.47 113.71 185.46 105.08 195.44 105.06" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-135" data-name="tri 2" points="200.44 113.7 205.41 105.05 210.41 113.68 200.44 113.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-162" data-name="tri 1" points="205.41 105.05 200.44 113.7 195.44 105.06 205.41 105.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-117" data-name="tri 3" points="210.41 113.68 215.39 105.03 220.39 113.66 210.41 113.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-136" data-name="tri 2" points="215.39 105.03 210.41 113.68 205.41 105.05 215.39 105.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-94" data-name="tri 4" d="M219.51,109.37" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-118" data-name="tri 3" x1="220.39" y1="113.66" x2="215.39" y2="105.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-191" data-name="tri 0" points="175.51 122.38 180.49 113.73 185.49 122.36 175.51 122.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-163" data-name="tri 1" points="185.49 122.36 190.47 113.71 195.47 122.34 185.49 122.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-192" data-name="tri 0" points="190.47 113.71 185.49 122.36 180.49 113.73 190.47 113.71" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-137" data-name="tri 2" points="195.47 122.34 200.44 113.7 205.44 122.33 195.47 122.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-164" data-name="tri 1" points="200.44 113.7 195.47 122.34 190.47 113.71 200.44 113.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-119" data-name="tri 3" points="205.44 122.33 210.41 113.68 215.42 122.31 205.44 122.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-138" data-name="tri 2" points="210.41 113.68 205.44 122.33 200.44 113.7 210.41 113.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-95" data-name="tri 4" x1="215.42" y1="122.31" x2="220.39" y2="113.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-120" data-name="tri 3" points="220.39 113.66 215.42 122.31 210.41 113.68 220.39 113.66" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-96" data-name="tri 4" d="M219.51,109.37" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-193" data-name="tri 0" points="170.54 131.03 175.51 122.38 180.52 131.01 170.54 131.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-165" data-name="tri 1" points="180.52 131.01 185.49 122.36 190.5 130.99 180.52 131.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-194" data-name="tri 0" points="185.49 122.36 180.52 131.01 175.51 122.38 185.49 122.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-139" data-name="tri 2" points="190.5 130.99 195.47 122.34 200.47 130.98 190.5 130.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-166" data-name="tri 1" points="195.47 122.34 190.5 130.99 185.49 122.36 195.47 122.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-121" data-name="tri 3" points="200.47 130.98 205.44 122.33 210.44 130.96 200.47 130.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-140" data-name="tri 2" points="205.44 122.33 200.47 130.98 195.47 122.34 205.44 122.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-97" data-name="tri 4" points="210.44 130.96 215.42 122.31 220.42 130.94 210.44 130.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-122" data-name="tri 3" points="215.42 122.31 210.44 130.96 205.44 122.33 215.42 122.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_5-74" data-name="tri 5" d="M219.54,126.65" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-98" data-name="tri 4" x1="220.42" y1="130.94" x2="215.42" y2="122.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <path id="tri_0-195" data-name="tri 0" d="M5-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-167" data-name="tri 1" x1="15.85" y1="1.26" x2="5.87" y2="1.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-196" data-name="tri 0" d="M5-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-141" data-name="tri 2" x1="25.82" y1="1.24" x2="15.85" y2="1.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-168" data-name="tri 1" d="M15-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-123" data-name="tri 3" x1="35.8" y1="1.23" x2="25.82" y2="1.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-142" data-name="tri 2" d="M24.94-3.05" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-99" data-name="tri 4" x1="45.77" y1="1.21" x2="35.8" y2="1.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-124" data-name="tri 3" d="M34.92-3.07" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-197" data-name="tri 0" d="M0,5.63" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-169" data-name="tri 1" points="0.9 9.93 5.87 1.28 10.87 9.91 0.9 9.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-198" data-name="tri 0" x1="5.87" y1="1.28" x2="0.9" y2="9.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-143" data-name="tri 2" points="10.87 9.91 15.85 1.26 20.85 9.89 10.87 9.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-170" data-name="tri 1" points="15.85 1.26 10.87 9.91 5.87 1.28 15.85 1.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-125" data-name="tri 3" points="20.85 9.89 25.82 1.24 30.82 9.87 20.85 9.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-144" data-name="tri 2" points="25.82 1.24 20.85 9.89 15.85 1.26 25.82 1.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-100" data-name="tri 4" points="30.82 9.87 35.8 1.23 40.8 9.86 30.82 9.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-126" data-name="tri 3" points="35.8 1.23 30.82 9.87 25.82 1.24 35.8 1.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-75" data-name="tri 5" points="40.8 9.86 45.77 1.21 50.78 9.84 40.8 9.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-101" data-name="tri 4" points="45.77 1.21 40.8 9.86 35.8 1.23 45.77 1.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-171" data-name="tri 1" x1="0.9" y1="9.93" x2="5.9" y2="18.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-199" data-name="tri 0" d="M0,5.63" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-145" data-name="tri 2" points="5.9 18.56 10.87 9.91 15.88 18.54 5.9 18.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-172" data-name="tri 1" points="10.87 9.91 5.9 18.56 0.9 9.93 10.87 9.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-127" data-name="tri 3" points="15.88 18.54 20.85 9.89 25.85 18.52 15.88 18.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-146" data-name="tri 2" points="20.85 9.89 15.88 18.54 10.87 9.91 20.85 9.89" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-102" data-name="tri 4" points="25.85 18.52 30.82 9.87 35.83 18.5 25.85 18.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-128" data-name="tri 3" points="30.82 9.87 25.85 18.52 20.85 9.89 30.82 9.87" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-76" data-name="tri 5" points="35.83 18.5 40.8 9.86 45.8 18.49 35.83 18.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-103" data-name="tri 4" points="40.8 9.86 35.83 18.5 30.82 9.87 40.8 9.86" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-57" data-name="tri 6" points="45.8 18.49 50.78 9.84 55.78 18.47 45.8 18.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-77" data-name="tri 5" points="50.78 9.84 45.8 18.49 40.8 9.86 50.78 9.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-173" data-name="tri 1" d="M0,22.91" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-147" data-name="tri 2" points="0.93 27.21 5.9 18.56 10.9 27.19 0.93 27.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-174" data-name="tri 1" x1="5.9" y1="18.56" x2="0.93" y2="27.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-129" data-name="tri 3" points="10.9 27.19 15.88 18.54 20.88 27.17 10.9 27.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-148" data-name="tri 2" points="15.88 18.54 10.9 27.19 5.9 18.56 15.88 18.54" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-104" data-name="tri 4" points="20.88 27.17 25.85 18.52 30.85 27.16 20.88 27.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-130" data-name="tri 3" points="25.85 18.52 20.88 27.17 15.88 18.54 25.85 18.52" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-78" data-name="tri 5" points="30.85 27.16 35.83 18.5 40.83 27.14 30.85 27.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-105" data-name="tri 4" points="35.83 18.5 30.85 27.16 25.85 18.52 35.83 18.5" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-58" data-name="tri 6" points="40.83 27.14 45.8 18.49 50.81 27.12 40.83 27.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-79" data-name="tri 5" points="45.8 18.49 40.83 27.14 35.83 18.5 45.8 18.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-41" data-name="tri 7" points="50.81 27.12 55.78 18.47 60.78 27.1 50.81 27.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-59" data-name="tri 6" points="55.78 18.47 50.81 27.12 45.8 18.49 55.78 18.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-149" data-name="tri 2" x1="0.93" y1="27.21" x2="5.93" y2="35.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-175" data-name="tri 1" d="M0,22.91" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-131" data-name="tri 3" points="5.93 35.84 10.9 27.19 15.9 35.82 5.93 35.84" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-150" data-name="tri 2" points="10.9 27.19 5.93 35.84 0.93 27.21 10.9 27.19" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-106" data-name="tri 4" points="15.9 35.82 20.88 27.17 25.88 35.8 15.9 35.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-132" data-name="tri 3" points="20.88 27.17 15.9 35.82 10.9 27.19 20.88 27.17" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-80" data-name="tri 5" points="25.88 35.8 30.85 27.16 35.86 35.79 25.88 35.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-107" data-name="tri 4" points="30.85 27.16 25.88 35.8 20.88 27.17 30.85 27.16" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-60" data-name="tri 6" points="35.86 35.79 40.83 27.14 45.83 35.77 35.86 35.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-81" data-name="tri 5" points="40.83 27.14 35.86 35.79 30.85 27.16 40.83 27.14" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-42" data-name="tri 7" points="45.83 35.77 50.81 27.12 55.81 35.75 45.83 35.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-61" data-name="tri 6" points="50.81 27.12 45.83 35.77 40.83 27.14 50.81 27.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-25" data-name="tri 8" points="55.81 35.75 60.78 27.1 65.78 35.74 55.81 35.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-43" data-name="tri 7" points="60.78 27.1 55.81 35.75 50.81 27.12 60.78 27.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-151" data-name="tri 2" d="M.08,40.2" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-133" data-name="tri 3" points="0.96 44.49 5.93 35.84 10.93 44.47 0.96 44.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-152" data-name="tri 2" x1="5.93" y1="35.84" x2="0.96" y2="44.49" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-108" data-name="tri 4" points="10.93 44.47 15.9 35.82 20.91 44.45 10.93 44.47" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-134" data-name="tri 3" points="15.9 35.82 10.93 44.47 5.93 35.84 15.9 35.82" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-82" data-name="tri 5" points="20.91 44.45 25.88 35.8 30.88 44.44 20.91 44.45" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-109" data-name="tri 4" points="25.88 35.8 20.91 44.45 15.9 35.82 25.88 35.8" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-62" data-name="tri 6" points="30.88 44.44 35.86 35.79 40.86 44.42 30.88 44.44" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-83" data-name="tri 5" points="35.86 35.79 30.88 44.44 25.88 35.8 35.86 35.79" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-44" data-name="tri 7" points="40.86 44.42 45.83 35.77 50.84 44.4 40.86 44.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-63" data-name="tri 6" points="45.83 35.77 40.86 44.42 35.86 35.79 45.83 35.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-26" data-name="tri 8" points="50.84 44.4 55.81 35.75 60.81 44.38 50.84 44.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-45" data-name="tri 7" points="55.81 35.75 50.84 44.4 45.83 35.77 55.81 35.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-9" data-name="tri 9" points="60.81 44.38 65.78 35.74 70.79 44.37 60.81 44.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-27" data-name="tri 8" points="65.78 35.74 60.81 44.38 55.81 35.75 65.78 35.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <line id="tri_0-200" data-name="tri 0" x1="105.63" y1="1.1" x2="95.65" y2="1.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-176" data-name="tri 1" x1="115.6" y1="1.09" x2="105.63" y2="1.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-201" data-name="tri 0" d="M104.75-3.19" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_2-153" data-name="tri 2" x1="125.58" y1="1.07" x2="115.6" y2="1.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-177" data-name="tri 1" d="M114.72-3.21" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-135" data-name="tri 3" x1="135.55" y1="1.05" x2="125.58" y2="1.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-154" data-name="tri 2" d="M124.7-3.22" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-110" data-name="tri 4" x1="145.53" y1="1.04" x2="135.55" y2="1.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-136" data-name="tri 3" d="M134.67-3.24" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-202" data-name="tri 0" points="90.68 9.77 95.65 1.12 100.66 9.75 90.68 9.77" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-178" data-name="tri 1" points="100.66 9.75 105.63 1.1 110.63 9.74 100.66 9.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-203" data-name="tri 0" points="105.63 1.1 100.66 9.75 95.65 1.12 105.63 1.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-155" data-name="tri 2" points="110.63 9.74 115.6 1.09 120.61 9.72 110.63 9.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-179" data-name="tri 1" points="115.6 1.09 110.63 9.74 105.63 1.1 115.6 1.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-137" data-name="tri 3" points="120.61 9.72 125.58 1.07 130.58 9.7 120.61 9.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_4-111" data-name="tri 4" points="130.58 9.7 135.56 1.05 140.56 9.68 130.58 9.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-138" data-name="tri 3" points="135.56 1.05 130.58 9.7 125.58 1.07 135.56 1.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-84" data-name="tri 5" points="140.56 9.68 145.53 1.04 150.53 9.67 140.56 9.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-112" data-name="tri 4" points="145.53 1.04 140.56 9.68 135.56 1.05 145.53 1.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-204" data-name="tri 0" points="85.7 18.42 90.68 9.77 95.68 18.4 85.7 18.42" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-180" data-name="tri 1" points="95.68 18.4 100.66 9.75 105.66 18.39 95.68 18.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-205" data-name="tri 0" points="100.66 9.75 95.68 18.4 90.68 9.77 100.66 9.75" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-156" data-name="tri 2" points="105.66 18.39 110.63 9.74 115.63 18.37 105.66 18.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_3-139" data-name="tri 3" points="115.63 18.37 120.61 9.72 125.61 18.35 115.63 18.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-157" data-name="tri 2" points="120.61 9.72 115.63 18.37 110.63 9.74 120.61 9.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-113" data-name="tri 4" points="125.61 18.35 130.58 9.7 135.59 18.33 125.61 18.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-140" data-name="tri 3" points="130.58 9.7 125.61 18.35 120.61 9.72 130.58 9.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-85" data-name="tri 5" points="135.59 18.33 140.56 9.68 145.56 18.32 135.59 18.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-114" data-name="tri 4" points="140.56 9.68 135.59 18.33 130.58 9.7 140.56 9.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-64" data-name="tri 6" points="145.56 18.32 150.53 9.67 155.54 18.3 145.56 18.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-86" data-name="tri 5" points="150.53 9.67 145.56 18.32 140.56 9.68 150.53 9.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-206" data-name="tri 0" points="80.73 27.07 85.7 18.42 90.71 27.05 80.73 27.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-181" data-name="tri 1" points="90.71 27.05 95.68 18.4 100.68 27.04 90.71 27.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-207" data-name="tri 0" points="95.68 18.4 90.71 27.05 85.7 18.42 95.68 18.4" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-158" data-name="tri 2" points="100.68 27.04 105.66 18.39 110.66 27.01 100.68 27.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-182" data-name="tri 1" points="105.66 18.39 100.68 27.04 95.68 18.4 105.66 18.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-141" data-name="tri 3" points="110.66 27.01 115.63 18.37 120.64 27 110.66 27.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-159" data-name="tri 2" points="115.63 18.37 110.66 27.01 105.66 18.39 115.63 18.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-115" data-name="tri 4" points="120.64 27 125.61 18.35 130.61 26.98 120.64 27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-142" data-name="tri 3" points="125.61 18.35 120.64 27 115.63 18.37 125.61 18.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-87" data-name="tri 5" points="130.61 26.98 135.59 18.33 140.59 26.97 130.61 26.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-116" data-name="tri 4" points="135.59 18.33 130.61 26.98 125.61 18.35 135.59 18.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-65" data-name="tri 6" points="140.59 26.97 145.56 18.32 150.56 26.95 140.59 26.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-88" data-name="tri 5" points="145.56 18.32 140.59 26.97 135.59 18.33 145.56 18.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-46" data-name="tri 7" points="150.56 26.95 155.54 18.3 160.54 26.93 150.56 26.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-66" data-name="tri 6" points="155.54 18.3 150.56 26.95 145.56 18.32 155.54 18.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-208" data-name="tri 0" points="75.76 35.72 80.73 27.07 85.74 35.7 75.76 35.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-183" data-name="tri 1" points="85.74 35.7 90.71 27.05 95.71 35.68 85.74 35.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-209" data-name="tri 0" points="90.71 27.05 85.74 35.7 80.73 27.07 90.71 27.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-160" data-name="tri 2" points="95.71 35.68 100.68 27.04 105.69 35.67 95.71 35.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-184" data-name="tri 1" points="100.68 27.04 95.71 35.68 90.71 27.05 100.68 27.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-143" data-name="tri 3" points="105.69 35.67 110.66 27.01 115.66 35.65 105.69 35.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-161" data-name="tri 2" points="110.66 27.01 105.69 35.67 100.68 27.04 110.66 27.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-117" data-name="tri 4" points="115.66 35.65 120.64 27 125.64 35.63 115.66 35.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-144" data-name="tri 3" points="120.64 27 115.66 35.65 110.66 27.01 120.64 27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-89" data-name="tri 5" points="125.64 35.63 130.61 26.98 135.61 35.62 125.64 35.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-118" data-name="tri 4" points="130.61 26.98 125.64 35.63 120.64 27 130.61 26.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-67" data-name="tri 6" points="135.61 35.62 140.59 26.97 145.59 35.6 135.61 35.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-90" data-name="tri 5" points="140.59 26.97 135.61 35.62 130.61 26.98 140.59 26.97" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-47" data-name="tri 7" points="145.59 35.6 150.56 26.95 155.56 35.58 145.59 35.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-68" data-name="tri 6" points="150.56 26.95 145.59 35.6 140.59 26.97 150.56 26.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-28" data-name="tri 8" points="155.56 35.58 160.54 26.93 165.54 35.56 155.56 35.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-48" data-name="tri 7" points="160.54 26.93 155.56 35.58 150.56 26.95 160.54 26.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-210" data-name="tri 0" points="70.79 44.37 75.76 35.72 80.76 44.35 70.79 44.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-185" data-name="tri 1" points="80.76 44.35 85.74 35.7 90.74 44.33 80.76 44.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-211" data-name="tri 0" points="85.74 35.7 80.76 44.35 75.76 35.72 85.74 35.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-162" data-name="tri 2" points="90.74 44.33 95.71 35.68 100.72 44.32 90.74 44.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-186" data-name="tri 1" points="95.71 35.68 90.74 44.33 85.74 35.7 95.71 35.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-145" data-name="tri 3" points="100.72 44.32 105.69 35.67 110.69 44.3 100.72 44.32" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-163" data-name="tri 2" points="105.69 35.67 100.72 44.32 95.71 35.68 105.69 35.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-119" data-name="tri 4" points="110.69 44.3 115.66 35.65 120.67 44.28 110.69 44.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-146" data-name="tri 3" points="115.66 35.65 110.69 44.3 105.69 35.67 115.66 35.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-91" data-name="tri 5" points="120.67 44.28 125.64 35.63 130.64 44.26 120.67 44.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-120" data-name="tri 4" points="125.64 35.63 120.67 44.28 115.66 35.65 125.64 35.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-69" data-name="tri 6" points="130.64 44.26 135.61 35.62 140.62 44.25 130.64 44.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_5-92" data-name="tri 5" points="135.61 35.62 130.64 44.26 125.64 35.63 135.61 35.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-49" data-name="tri 7" points="140.62 44.25 145.59 35.6 150.59 44.23 140.62 44.25" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_6-70" data-name="tri 6" points="145.59 35.6 140.62 44.25 135.61 35.62 145.59 35.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-29" data-name="tri 8" points="150.59 44.23 155.56 35.58 160.57 44.21 150.59 44.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_7-50" data-name="tri 7" points="155.56 35.58 150.59 44.23 145.59 35.6 155.56 35.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_9-10" data-name="tri 9" points="160.57 44.21 165.54 35.56 170.54 44.19 160.57 44.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_8-30" data-name="tri 8" points="165.54 35.56 160.57 44.21 155.56 35.58 165.54 35.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-212" data-name="tri 0" points="75.78 35.89 70.8 44.53 65.8 35.91 75.78 35.89" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-213" data-name="tri 0" points="80.75 27.24 75.78 35.89 70.77 27.26 80.75 27.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-187" data-name="tri 1" points="70.77 27.26 65.8 35.91 60.8 27.27 70.77 27.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-214" data-name="tri 0" points="65.8 35.91 70.77 27.26 75.78 35.89 65.8 35.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-215" data-name="tri 0" points="85.72 18.59 80.75 27.24 75.74 18.61 85.72 18.59" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-188" data-name="tri 1" points="75.74 18.61 70.77 27.26 65.77 18.62 75.74 18.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-216" data-name="tri 0" points="70.77 27.26 75.74 18.61 80.75 27.24 70.77 27.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-164" data-name="tri 2" points="65.77 18.62 60.8 27.27 55.79 18.64 65.77 18.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-189" data-name="tri 1" points="60.8 27.27 65.77 18.62 70.77 27.26 60.8 27.27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-217" data-name="tri 0" points="90.69 9.94 85.72 18.59 80.72 9.96 90.69 9.94" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-190" data-name="tri 1" points="80.72 9.96 75.74 18.61 70.74 9.98 80.72 9.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-218" data-name="tri 0" points="75.74 18.61 80.72 9.96 85.72 18.59 75.74 18.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-165" data-name="tri 2" points="70.74 9.98 65.77 18.62 60.77 9.99 70.74 9.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-191" data-name="tri 1" points="65.77 18.62 70.74 9.98 75.74 18.61 65.77 18.62" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-147" data-name="tri 3" points="60.77 9.99 55.79 18.64 50.79 10.01 60.77 9.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-166" data-name="tri 2" points="55.79 18.64 60.77 9.99 65.77 18.62 55.79 18.64" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-219" data-name="tri 0" points="95.67 1.29 90.69 9.94 85.69 1.31 95.67 1.29" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-192" data-name="tri 1" points="85.69 1.31 80.72 9.96 75.72 1.33 85.69 1.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-220" data-name="tri 0" points="80.72 9.96 85.69 1.31 90.69 9.94 80.72 9.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-167" data-name="tri 2" points="75.72 1.33 70.74 9.98 65.74 1.34 75.72 1.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-193" data-name="tri 1" points="70.74 9.98 75.72 1.33 80.72 9.96 70.74 9.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-148" data-name="tri 3" points="65.74 1.34 60.77 9.99 55.76 1.36 65.74 1.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-168" data-name="tri 2" points="60.77 9.99 65.74 1.34 70.74 9.98 60.77 9.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-121" data-name="tri 4" points="55.76 1.36 50.79 10.01 45.79 1.38 55.76 1.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-149" data-name="tri 3" points="50.79 10.01 55.76 1.36 60.77 9.99 50.79 10.01" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-221" data-name="tri 0" d="M94.78-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-194" data-name="tri 1" d="M84.81-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-222" data-name="tri 0" x1="95.66" y1="1.3" x2="85.69" y2="1.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-169" data-name="tri 2" d="M74.83-3" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-195" data-name="tri 1" x1="85.69" y1="1.31" x2="75.71" y2="1.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-150" data-name="tri 3" d="M64.86-2.95" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <path id="tri_4-122" data-name="tri 4" d="M54.88-2.93" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-151" data-name="tri 3" x1="65.74" y1="1.34" x2="55.76" y2="1.36" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_5-93" data-name="tri 5" d="M44.91-2.92" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-123" data-name="tri 4" x1="55.76" y1="1.36" x2="45.79" y2="1.38" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <polygon id="tri_0-223" data-name="tri 0" points="175.67 35.63 170.69 44.28 165.69 35.65 175.67 35.63" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="0.92"/>
+    <polygon id="tri_0-224" data-name="tri 0" points="180.64 26.99 175.67 35.63 170.66 27 180.64 26.99" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-196" data-name="tri 1" points="170.66 27 165.69 35.65 160.69 27.02 170.66 27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-225" data-name="tri 0" points="165.69 35.65 170.66 27 175.67 35.63 165.69 35.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-226" data-name="tri 0" points="185.61 18.34 180.64 26.99 175.63 18.35 185.61 18.34" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-197" data-name="tri 1" points="175.63 18.35 170.66 27 165.66 18.37 175.63 18.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-227" data-name="tri 0" points="170.66 27 175.63 18.35 180.64 26.99 170.66 27" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-170" data-name="tri 2" points="165.66 18.37 160.69 27.02 155.69 18.39 165.66 18.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-198" data-name="tri 1" points="160.69 27.02 165.66 18.37 170.66 27 160.69 27.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-228" data-name="tri 0" points="190.58 9.69 185.61 18.34 180.61 9.7 190.58 9.69" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-199" data-name="tri 1" points="180.61 9.7 175.63 18.35 170.63 9.72 180.61 9.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-229" data-name="tri 0" points="175.63 18.35 180.61 9.7 185.61 18.34 175.63 18.35" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-171" data-name="tri 2" points="170.63 9.72 165.66 18.37 160.66 9.74 170.63 9.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-200" data-name="tri 1" points="165.66 18.37 170.63 9.72 175.63 18.35 165.66 18.37" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-152" data-name="tri 3" points="160.66 9.74 155.69 18.39 150.68 9.76 160.66 9.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-172" data-name="tri 2" points="155.69 18.39 160.66 9.74 165.66 18.37 155.69 18.39" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-230" data-name="tri 0" points="195.56 1.04 190.58 9.69 185.58 1.05 195.56 1.04" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-201" data-name="tri 1" points="185.58 1.05 180.61 9.7 175.61 1.07 185.58 1.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-231" data-name="tri 0" points="180.61 9.7 185.58 1.05 190.58 9.69 180.61 9.7" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-173" data-name="tri 2" points="175.61 1.07 170.63 9.72 165.63 1.09 175.61 1.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-202" data-name="tri 1" points="170.63 9.72 175.61 1.07 180.61 9.7 170.63 9.72" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-153" data-name="tri 3" points="165.63 1.09 160.66 9.74 155.65 1.1 165.63 1.09" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-174" data-name="tri 2" points="160.66 9.74 165.63 1.09 170.63 9.72 160.66 9.74" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-124" data-name="tri 4" points="155.65 1.1 150.68 9.76 145.68 1.12 155.65 1.1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-154" data-name="tri 3" points="150.68 9.76 155.65 1.1 160.66 9.74 150.68 9.76" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-232" data-name="tri 0" d="M194.68-3.25" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-203" data-name="tri 1" d="M184.7-3.24" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_0-233" data-name="tri 0" x1="195.56" y1="1.04" x2="185.58" y2="1.05" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-175" data-name="tri 2" d="M174.73-3.22" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-204" data-name="tri 1" x1="185.58" y1="1.05" x2="175.61" y2="1.07" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-155" data-name="tri 3" d="M164.75-3.2" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <path id="tri_4-125" data-name="tri 4" d="M154.77-3.19" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-156" data-name="tri 3" x1="165.63" y1="1.09" x2="155.65" y2="1.11" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_5-94" data-name="tri 5" d="M144.8-3.17" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-126" data-name="tri 4" x1="155.65" y1="1.11" x2="145.68" y2="1.12" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+  <g>
+    <line id="tri_0-234" data-name="tri 0" x1="205.38" y1="1.02" x2="195.41" y2="1.03" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_1-205" data-name="tri 1" x1="215.36" y1="1" x2="205.38" y2="1.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_0-235" data-name="tri 0" d="M204.5-3.28" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_2-176" data-name="tri 2" d="M214.48-3.29" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_1-206" data-name="tri 1" d="M214.48-3.29" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-236" data-name="tri 0" points="190.44 9.68 195.41 1.03 200.41 9.67 190.44 9.68" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-207" data-name="tri 1" points="200.41 9.67 205.38 1.02 210.39 9.65 200.41 9.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-237" data-name="tri 0" points="205.38 1.02 200.41 9.67 195.41 1.03 205.38 1.02" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-177" data-name="tri 2" points="210.39 9.65 215.36 1 220.36 9.63 210.39 9.65" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-208" data-name="tri 1" points="215.36 1 210.39 9.65 205.38 1.02 215.36 1" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-157" data-name="tri 3" d="M219.48,5.34" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <polygon id="tri_0-238" data-name="tri 0" points="185.46 18.33 190.44 9.68 195.44 18.31 185.46 18.33" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-209" data-name="tri 1" points="195.44 18.31 200.41 9.67 205.41 18.3 195.44 18.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-239" data-name="tri 0" points="200.41 9.67 195.44 18.31 190.44 9.68 200.41 9.67" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-178" data-name="tri 2" points="205.41 18.3 210.39 9.65 215.39 18.28 205.41 18.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <text x="0.88" y="4.29"></text>
+    <line id="tri_3-158" data-name="tri 3" x1="215.39" y1="18.28" x2="220.36" y2="9.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-179" data-name="tri 2" points="220.36 9.63 215.39 18.28 210.39 9.65 220.36 9.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_3-159" data-name="tri 3" d="M219.48,5.34" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-240" data-name="tri 0" points="180.49 26.98 185.46 18.33 190.47 26.96 180.49 26.98" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-210" data-name="tri 1" points="190.47 26.96 195.44 18.31 200.44 26.95 190.47 26.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-241" data-name="tri 0" points="195.44 18.31 190.47 26.96 185.46 18.33 195.44 18.31" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-180" data-name="tri 2" points="200.44 26.95 205.41 18.3 210.42 26.93 200.44 26.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-211" data-name="tri 1" points="205.41 18.3 200.44 26.95 195.44 18.31 205.41 18.3" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-160" data-name="tri 3" points="210.42 26.93 215.39 18.28 220.39 26.91 210.42 26.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-181" data-name="tri 2" points="215.39 18.28 210.42 26.93 205.41 18.3 215.39 18.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-127" data-name="tri 4" d="M219.51,22.62" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_3-161" data-name="tri 3" x1="220.39" y1="26.91" x2="215.39" y2="18.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-242" data-name="tri 0" points="175.52 35.63 180.49 26.98 185.49 35.61 175.52 35.63" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-212" data-name="tri 1" points="185.49 35.61 190.47 26.96 195.47 35.6 185.49 35.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-243" data-name="tri 0" points="190.47 26.96 185.49 35.61 180.49 26.98 190.47 26.96" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-182" data-name="tri 2" points="195.47 35.6 200.44 26.95 205.44 35.58 195.47 35.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-213" data-name="tri 1" points="200.44 26.95 195.47 35.6 190.47 26.96 200.44 26.95" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-162" data-name="tri 3" points="205.44 35.58 210.42 26.93 215.42 35.56 205.44 35.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-183" data-name="tri 2" points="210.42 26.93 205.44 35.58 200.44 26.95 210.42 26.93" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-128" data-name="tri 4" x1="215.42" y1="35.56" x2="220.39" y2="26.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-163" data-name="tri 3" points="220.39 26.91 215.42 35.56 210.42 26.93 220.39 26.91" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_4-129" data-name="tri 4" d="M219.51,22.62" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-244" data-name="tri 0" points="170.54 44.28 175.52 35.63 180.52 44.26 170.54 44.28" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-214" data-name="tri 1" points="180.52 44.26 185.49 35.61 190.5 44.24 180.52 44.26" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_0-245" data-name="tri 0" points="185.49 35.61 180.52 44.26 175.52 35.63 185.49 35.61" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-184" data-name="tri 2" points="190.5 44.24 195.47 35.6 200.47 44.23 190.5 44.24" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_1-215" data-name="tri 1" points="195.47 35.6 190.5 44.24 185.49 35.61 195.47 35.6" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-164" data-name="tri 3" points="200.47 44.23 205.44 35.58 210.45 44.21 200.47 44.23" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_2-185" data-name="tri 2" points="205.44 35.58 200.47 44.23 195.47 35.6 205.44 35.58" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_4-130" data-name="tri 4" points="210.45 44.21 215.42 35.56 220.42 44.19 210.45 44.21" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <polygon id="tri_3-165" data-name="tri 3" points="215.42 35.56 210.45 44.21 205.44 35.58 215.42 35.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <path id="tri_5-95" data-name="tri 5" d="M219.54,39.9" transform="translate(0.88 4.29)" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+    <line id="tri_4-131" data-name="tri 4" x1="220.42" y1="44.19" x2="215.42" y2="35.56" fill="#fff" stroke="#000" stroke-miterlimit="10"/>
+  </g>
+</svg>

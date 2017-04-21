@@ -1,0 +1,36 @@
+{
+	"grammar_name" : "Test 2 Time Grammar", 
+	"seed" : -1, 
+	"framerate" : 30.0,
+	"bbox" : [-440.0, -440.0, 440.0, 440.0],
+	"dry_run" : false,
+	"rules" : [
+		{ 
+			"rule_name" : "init_1",
+			"matching_tags" : [],
+			"produced_tags" : ["t"],
+			"operator" : "time_init",
+			"parameters" : [2.0, 1.0],
+			"init_value" : ""
+		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["t"],
+			"produced_tags" : ["ta","inv_ta"],
+			"operator" : "time_slice",
+			"parameters" : [0.5,0.5],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "rotrule1",
+			"matching_tags" : ["tri"],
+			"produced_tags" : ["rotr_1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0.0],
+			"init_value" : "ta"
+		}
+
+	]
+}
