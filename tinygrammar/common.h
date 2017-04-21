@@ -32,6 +32,8 @@ using namespace std;
 
 #define IS_DEBUG 0
 
+#define SPEEDUP_SUM 1
+
 static constexpr double resolution = 2;
 static constexpr double matrix_resolution = 100;
 static constexpr int matrix_num = (int)(matrix_resolution * matrix_resolution);

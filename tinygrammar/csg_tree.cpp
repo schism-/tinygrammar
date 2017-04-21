@@ -75,6 +75,45 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, const vector<polygon2
     return node;
 }
 
+CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    auto node = new CSGTree::OpNode();
+    node->node_tag = get_node_id(tree);
+    node->child_left = a;
+    node->child_right = b;
+    node->content = new NodeContent();
+
+    for(auto s : a->content->shapes) {
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->content->shapes.push_back(as);
+    }
+    for(auto s : b->content->shapes) {
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->content->shapes.push_back(as);
+    }
+    return node;
+}
+
+#if SPEEDUP_SUM
+
+CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+    auto res_node = CSGTree::BuildResult(tree, a, b);
+    res_node->op_type = sum_op;
+    if (update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+    }
+    return res_node;
+}
+
+#else
+
 CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
     vector<polygon2r> a_polys = make_vector(a->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
@@ -88,6 +127,8 @@ CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::No
     }
     return res_node;
 }
+
+#endif
 
 CSGTree::OpNode* CSGTree::Union(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
     vector<polygon2r> a_polys = make_vector(a->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
