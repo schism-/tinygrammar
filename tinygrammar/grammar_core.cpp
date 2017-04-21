@@ -333,20 +333,20 @@ PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_s
                 auto start = (TimeSliceShape*)nullptr;
                 for(auto&& shape : active_shapes) {
                     auto temp = (TimeSliceShape*)shape;
-                    rule = tangle_match_rule(grammar, temp->slice->ts_tag, make_vector(shape_map.at(temp)->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
+                    rule = tangle_match_rule(grammar, temp->slice->ts_tag, make_vector(shape_map.at(temp)->node->shapes, [&](AnimatedShape* shape){return shape->tag;}));
                     start = ((TimeSliceShape*)shape);
                     if(rule) break;
                 }
                 if(not rule) return res;
                 auto start_node = shape_map.at(start);
-                auto shape_tags = make_set(make_vector(start_node->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
+                auto shape_tags = make_set(make_vector(start_node->node->shapes, [&](AnimatedShape* shape){return shape->tag;}));
                 auto g = get_grammar(grammar_filename);
                 auto inv_tag = tag_to_mapping(g, "inv_" + mapping_to_tag(g, start->slice->ts_tag));
                 
                 for(auto shape : active_shapes) {
                     auto temp_ts = (TimeSliceShape*)shape;
                     auto temp_node = shape_map.at((TimeSliceShape*)shape);
-                    auto temp_tags = make_set(make_vector(temp_node->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
+                    auto temp_tags = make_set(make_vector(temp_node->node->shapes, [&](AnimatedShape* shape){return shape->tag;}));
                     std::vector<int> intersection;
                     set_intersection(shape_tags.begin(),shape_tags.end(),temp_tags.begin(),temp_tags.end(), std::back_inserter(intersection));
                     
@@ -415,7 +415,7 @@ Rule* matching_rule(const ShapeGroup& matched, bool anim_shape, const map<Shape*
             auto rule = new Rule();
             
             if (!anim_shape) {
-                rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->slice->ts_tag, make_vector(shape_map.at(shape)->node->content->shapes, [&](AnimatedShape* shape){return shape->tag;}));
+                rule = tangle_match_rule(grammar, ((TimeSliceShape*)shape)->slice->ts_tag, make_vector(shape_map.at(shape)->node->shapes, [&](AnimatedShape* shape){return shape->tag;}));
             }
             else {
                 auto ntl = shape_map.at((AnimatedShape*)shape);

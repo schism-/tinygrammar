@@ -181,7 +181,7 @@ ShapeGroup to_animated_shapes(const vector<BaseExpansion*>& active_nodes){
     for (auto an : active_nodes){
         auto temp = ((ExpansionAnim*)an);
         for (auto&& l : temp->tree->leaves)
-            for (auto&& s : l->content->shapes)
+            for (auto&& s : l->shapes)
                 res.push_back(s);
     }
     return res;

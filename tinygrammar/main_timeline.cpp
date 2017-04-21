@@ -20,7 +20,7 @@ void printTimeLine(Grammar* g, TimeManager::TimeLine* t){
     std::cout << " ~~~ Printing Timeline ~~~ " << std::endl;
     auto k = 0;
     for (auto&& ntl : t->timelines){
-        std::cout << (k++) << " " << mapping_to_tag(g, ntl->node->content->shapes[0]->tag) << "\t|";
+        std::cout << (k++) << " " << mapping_to_tag(g, ntl->node->shapes[0]->tag) << "\t|";
         auto ntl_duration = ntl->duration;
         char slice_char = '-';
         for (auto&& s : ntl->slices){
@@ -71,7 +71,7 @@ int main(int argc, const char * argv[]) {
 //    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/teaser.svg");
 //    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
 //    auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
-    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square100.svg");
+    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square1000.svg");
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);

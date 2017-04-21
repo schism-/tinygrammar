@@ -136,7 +136,7 @@ void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  con
     auto context = new SVGContext();
     context->begin_frame(wh, offset, scale_factor);
     
-    for (auto&& s : t->root->content->shapes)
+    for (auto&& s : t->root->shapes)
         context->draw_shape(s);
     
     context->end_frame(offset, scale_factor);

@@ -5,29 +5,17 @@
 namespace CSGTree
 {
     
-    struct NodeContent
-    {
-        vector<AnimatedShape*> shapes;
-        NodeContent() { }
-        NodeContent(const vector<AnimatedShape*>& shapes) : shapes(shapes) {}
-        NodeContent(AnimatedShape* shape) { shapes = vector<AnimatedShape*>(); shapes.push_back(shape); }
-        ~NodeContent() {
-            for(auto s : shapes) if(s) delete s;
-        }
-    };
-    
     struct Node
     {
         Node* parent = nullptr;
-        NodeContent* content = nullptr;
+        vector<AnimatedShape*> shapes;
         int node_tag = -1;
         
         Node() { }
-        Node(NodeContent* c) : content(c) { }
-        Node(const vector<AnimatedShape*>& shapes) { content = new NodeContent(shapes); }
+        Node(const vector<AnimatedShape*>& s) { shapes = s; }
         
         virtual ~Node() {
-            if(content) delete content;
+            for(auto s : shapes) if(s) delete s;
         }
     };
     

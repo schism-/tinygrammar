@@ -18,7 +18,7 @@
 
 struct Shape {
     int shape_type = basic_shape;
-    ~Shape() {};
+    virtual ~Shape() {};
 };
 
 struct ShapeGroup : vector<Shape*> {
@@ -72,7 +72,7 @@ struct AnnotatedShape : Shape {
     ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
     
-    Shape*                  annotation;
+    Shape*                  annotation = nullptr;
     
     AnnotatedShape() {shape_type = annotated_shape;};
 };
@@ -89,7 +89,7 @@ struct AnimatedShape : Shape {
     ym_frame2r              frame = ym_identity_frame2r;
     polygon2r               poly;
     
-    Shape*                  annotation;
+    Shape*                  annotation = nullptr;
     
     ym_vec4f                fill_color =   {255.0, 255.0, 255.0, 1.0};
     ym_vec4f                border_color = {0.0, 0.0, 0.0, 1.0};
@@ -97,8 +97,8 @@ struct AnimatedShape : Shape {
     vector<polygon2r>       trail;
     
     AnimatedShape() {shape_type = animated_shape;};
-    AnimatedShape(polygon2r poly) : poly(poly) {shape_type = animated_shape;};
-    AnimatedShape(polygon2r poly, int tag, int tid) : poly(poly), tag(tag), tid(tid) {shape_type = animated_shape;};
+    AnimatedShape(const polygon2r& poly) : poly(poly) {shape_type = animated_shape;};
+    AnimatedShape(const polygon2r& poly, int tag, int tid) : poly(poly), tag(tag), tid(tid) {shape_type = animated_shape;};
 };
 
 #endif /* shape_h */
