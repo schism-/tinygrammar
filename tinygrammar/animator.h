@@ -25,12 +25,12 @@ struct Animator{
     
     ~Animator(){}
     
-    double cubicInOut(double t){
+    double cubicInOut(double t) const {
         if  (t < 0.5) return 4*t*t*t;
         else return (t-1) * (2 * t - 2) * (2 * t - 2) + 1;
     }
     
-    double easing(double incr, double alpha_s, double alpha_e, double current_time, double total_dur){
+    double easing(double incr, double alpha_s, double alpha_e, double current_time, double total_dur) const {
         auto new_incr = incr / ((alpha_e - alpha_s) * total_dur);
         auto local_alpha = ym_clamp( (current_time - alpha_s * total_dur) / ((alpha_e - alpha_s) * total_dur), 0.0, 1.0);
         auto local_alpha_prev = ym_clamp(local_alpha - new_incr, 0.0f, 1.0f);
@@ -45,7 +45,8 @@ struct Animator{
         return new_incr;
     }
     
-    vector<AnimatedShape*> operator() (vector<AnimatedShape*> shape, double current_time, double incr, double total_dur) {
+    void operator() (const vector<AnimatedShape*>& shape, double current_time, double incr, double total_dur) const {
+//    vector<AnimatedShape*> operator() (const vector<AnimatedShape*>& shape, double current_time, double incr, double total_dur) const {
         switch(animator_name){
             case anim_single:
             {
@@ -59,7 +60,7 @@ struct Animator{
                 auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
                 for (auto&& as : shape) as->poly = transform(m.first, as->poly, new_incr);
                 
-                return shape;
+//                return shape;
                 break;
             }
             case anim_group:
@@ -73,12 +74,13 @@ struct Animator{
                 auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
                 for (auto&& as : shape) as->poly = transform_group(m.first, as->poly, new_incr);
                 
-                return shape;
+//                return shape;
                 break;
             }
             case anim_attribute:
             {
-                if (current_time / total_dur < akf.offset) return shape;
+//                if (current_time / total_dur < akf.offset) return shape;
+                if (current_time / total_dur < akf.offset) return;
                 auto m = get_matrix(akf, current_time / total_dur);
                 auto alpha_s = m.second[0];
                 auto alpha_e = m.second[1];
@@ -88,7 +90,8 @@ struct Animator{
                 
                 if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
                     printf(" \n");
-                    return shape;
+                    return;
+//                    return shape;
                 }
                 
                 auto new_incr = incr / (alpha_diff * total_dur);
@@ -97,27 +100,30 @@ struct Animator{
                     printf(" n_i %f | l_a %.4f | i %.4f | %.4f / %.4f | [%.2f, %.2f]->%.2f \n",
                            new_incr, local_alpha, incr, current_time, total_dur, alpha_s, alpha_e, alpha_e - alpha_s);
                 
-                for (auto&& as : shape) as = transform_attributes(m.first, as, cubicInOut(local_alpha));
+                for (auto&& as : shape) transform_attributes(m.first, as, cubicInOut(local_alpha));
 
-                return shape;
+//                return shape;
                 break;
             }
             case anim_morph:
             {
                 if (IS_DEBUG) printf("anim_morph \n");
-                return vector<AnimatedShape*>();
+//                return vector<AnimatedShape*>();
+                return;
                 break;
             }
             case anim_noop:
             {
                 if (IS_DEBUG) printf("noop \n");
-                return shape;
+                return;
+//                return shape;
                 break;
             }
             default:
             {
                 printf("[Operator->op] ERROR: Shouldn't have gotten here. Invalid animator type\n");
-                return shape;
+                return;
+//                return shape;
                 break;
             }
         }

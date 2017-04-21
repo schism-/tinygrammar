@@ -67,7 +67,7 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
-AnimatedShape* transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double frame);
+void transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double frame);
 
 AnimatorMatrix copy(const AnimatorMatrix& am);
 

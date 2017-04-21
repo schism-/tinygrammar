@@ -9,27 +9,32 @@ namespace CSGTree
     {
         vector<AnimatedShape*> shapes;
         NodeContent() { }
-        NodeContent(vector<AnimatedShape*> shapes) : shapes(shapes) {}
+        NodeContent(const vector<AnimatedShape*>& shapes) : shapes(shapes) {}
         NodeContent(AnimatedShape* shape) { shapes = vector<AnimatedShape*>(); shapes.push_back(shape); }
-        ~NodeContent() {}
+        ~NodeContent() {
+            for(auto s : shapes) if(s) delete s;
+        }
     };
     
     struct Node
     {
-        Node* parent;
-        NodeContent* content;
+        Node* parent = nullptr;
+        NodeContent* content = nullptr;
         int node_tag = -1;
         
         Node() { }
         Node(NodeContent* c) : content(c) { }
-        Node(vector<AnimatedShape*> shapes) { content = new NodeContent(shapes); }
-        ~Node() {}
+        Node(const vector<AnimatedShape*>& shapes) { content = new NodeContent(shapes); }
+        
+        virtual ~Node() {
+            if(content) delete content;
+        }
     };
     
     struct OpNode : Node
     {
-        Node* child_left;
-        Node* child_right;
+        Node* child_left = nullptr;
+        Node* child_right = nullptr;
         int op_type;
     };
     
@@ -42,7 +47,7 @@ namespace CSGTree
     struct Tree
     {
         int node_id = 0;
-        Node* root;
+        Node* root = nullptr;
         vector<OpNode*> nodes;
         vector<LeafNode*> leaves;
         Tree() { root = nullptr; nodes = vector<OpNode*>(); leaves = vector<LeafNode*>(); }
@@ -62,8 +67,8 @@ namespace CSGTree
     OpNode* PlaceInShape(Tree* tree, Node* a, Node* b, bool update = true);
     
 //    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double delta, bool update = true);
-    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double current_time, double incr, double total_dur, bool update = true);
-    void UpdateLeafNode(Tree* tree, vector<LeafNode*> as, Animator anim, int frame, bool update = true);
+    void UpdateLeafNode(Tree* tree, LeafNode* a, const Animator& anim, double current_time, double incr, double total_dur, bool update = true);
+    void UpdateLeafNode(Tree* tree, const vector<LeafNode*>& as, const Animator& anim, int frame, bool update = true);
     void UpdateContent(Tree* tree, LeafNode* a);
     void UpdateTree(Tree* tree);
     void PropagateContent(Tree* tree, LeafNode* a);
