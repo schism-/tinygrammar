@@ -35,8 +35,8 @@ struct Operator{
     Operator (int operator_name, int init) : operator_name(operator_name), init_value(init) {}
     ~Operator(){}
 
-    ShapeGroup operator() (const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler,
-                           ShapeGroup* annotations = nullptr, TimeManager::TimeLine* timeline = nullptr, CSGTree::Tree* tree = nullptr) {
+    ShapeGroup apply (const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler,
+                           ShapeGroup* annotations = nullptr, TimeManager::TimeLine* timeline = nullptr, CSGTree::Tree* tree = nullptr) const {
         switch(operator_name){
             case op_split:
                 return tangle_split_operator(shapes, tags, parameters, sampler, annotations);

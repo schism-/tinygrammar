@@ -191,7 +191,7 @@ ShapeGroup to_animated_shapes(const vector<BaseExpansion*>& active_nodes){
 void expand_init(History* h) {
     auto grammar = get_grammar(grammar_filename);
     auto init_step = matching_init();
-    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);
+    auto init_shapes = init_step->op.apply(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn);
     auto init_partition = PartitionShapeGroup();
     init_partition.added = init_shapes;
     init_partition.remainder = ShapeGroup();
@@ -209,7 +209,7 @@ bool expand(History* h) {
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
 //        printf("Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
-        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
+        grammar_step.first.added = grammar_step.second->op.apply(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters, grammar->rn);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
         return true;
@@ -240,7 +240,7 @@ bool expand(HistoryAnim* h) {
     if (grammar_step.second != nullptr){
         //if an appliable rule has been found, apply it and retrieve results
 //        printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
-        grammar_step.first.added = grammar_step.second->op(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters,
+        grammar_step.first.added = grammar_step.second->op.apply(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters,
                                                            grammar->rn, nullptr, h->history.back()->timeline);
         //update model
         update_history(h, grammar_step.first, grammar_step.second);
@@ -279,7 +279,7 @@ bool expand(HistoryAnim* h) {
             }
 
             // Apply the animation to the selected slices
-            grammar_step.first.added = grammar_step.second->op(shapes, grammar_step.second->produced_tags, grammar_step.second->parameters,
+            grammar_step.first.added = grammar_step.second->op.apply(shapes, grammar_step.second->produced_tags, grammar_step.second->parameters,
                                                                grammar->rn, nullptr, h->history.back()->timeline);
             //update model
             update_history(h, grammar_step.first, grammar_step.second);

@@ -61,7 +61,7 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
     }
     else{
         auto ins = (pos - am.bounding_box.min) / am.step;
-        auto x_idx = (int)ins.x, y_idx = (int)ins.y;
+//        auto x_idx = (int)ins.x, y_idx = (int)ins.y;
 //        
 //        ym_affine2r mat_00, mat_01, mat_02,
 //                    mat_10, mat_11, mat_12,

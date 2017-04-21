@@ -70,13 +70,10 @@ namespace TimeManager {
     
     void AnimateTimeLine(TimeLine* t, CSGTree::Tree* tree, double current_time, double incr);
     void AnimateNodeTimeLine(NodeTimeLine* ntl, CSGTree::Tree* tree, double current_time, double incr);
-    
-    static ThreadPool pool(8);
-
 }
 
 struct TimeSliceShape : Shape {
-    TimeManager::TimeSlice* slice;
+    TimeManager::TimeSlice* slice = nullptr;
     
     TimeSliceShape () {shape_type = time_shape;};
     TimeSliceShape (TimeManager::TimeSlice* s) {shape_type = time_shape; slice = s;};

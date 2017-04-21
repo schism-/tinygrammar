@@ -57,9 +57,7 @@ CSGTree::Tree* standard_example(Grammar* g) {
     auto op3_3  = CSGTree::Sum(tree, op3_2, n5_5);
     auto op3_4  = CSGTree::Sum(tree, op3_3, n5_6);
     auto op3_5  = CSGTree::Sum(tree, op3_4, n5_7);
-    
     auto op6    = CSGTree::PlaceInShape(tree, n3, op1);
-    
     auto op3_6  = CSGTree::Sum(tree, op3_5, op6);
     
     return tree;

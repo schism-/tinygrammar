@@ -81,7 +81,7 @@ inline polyline2r make_polyline_circle(const ym_vec2r& c, double radius, double 
     return curve;
 }
 
-static polyline2r make_line(const ym_vec2r& a, const ym_vec2r& b) {
+inline polyline2r make_line(const ym_vec2r& a, const ym_vec2r& b) {
     return make_polyline_segment(a, b, resolution);
 }
 

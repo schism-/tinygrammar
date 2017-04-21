@@ -74,7 +74,7 @@ int main(int argc, const char * argv[]) {
     auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square1000.svg");
     
     auto init_step = matching_init();
-    auto init_shapes = init_step->op(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);
+    auto init_shapes = init_step->op.apply(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);
     auto init_partition = PartitionShapeGroup();
     init_partition.added = init_shapes;
     init_partition.remainder = ShapeGroup();
