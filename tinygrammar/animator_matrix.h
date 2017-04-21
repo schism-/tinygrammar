@@ -88,12 +88,8 @@ struct AnimatorKeyframes{
     AnimatorKeyframes (const vector<AnimatorMatrix>& kf, const vector<double>& kf_i) : keyframes(kf), keyframes_idx(kf_i) { offset = 0.0; }
     
     AnimatorKeyframes (const AnimatorMatrix& kf, const vector<double>& kf_num, int a_t, double off = 0.0) {
-        keyframes = vector<AnimatorMatrix>();
-        keyframes_idx = vector<double>();
-        for (auto&& kfn : kf_num) {
-            keyframes.push_back(kf);
-            keyframes_idx.push_back(kfn);
-        }
+        keyframes = vector<AnimatorMatrix>(kf_num.size(), kf);
+        keyframes_idx = kf_num;
         offset = off;
         anim_type = a_t;
     }
@@ -103,12 +99,8 @@ struct AnimatorKeyframes{
             printf("[ERROR] AKF CONSTRUCTOR : kf length and kf_num doesn't match ");
             return;
         }
-        keyframes = vector<AnimatorMatrix>();
-        keyframes_idx = vector<double>();
-        for (auto i = 0;  i < (int)kf_num.size(); i++) {
-            keyframes.push_back(kf[i]);
-            keyframes_idx.push_back(kf_num[i]);
-        }
+        keyframes = kf;
+        keyframes_idx = kf_num;
         offset = off;
         anim_type = a_t;
     }

@@ -117,7 +117,7 @@ int main(int argc, const char * argv[]) {
     
     for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
         if (IS_DEBUG) printf("Animating frame %d\n", k);
-        else  printf("#%d...", k);
+        else  { printf("#%d...\n", k); fflush(stdout); }
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
         stringstream ss1;
         ss1 << std::setfill('0') << std::setw(3) << k;
