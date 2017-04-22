@@ -54,7 +54,7 @@ namespace CSGTree
     OpNode* New_XOR(Tree* tree, Node* a, Node* b);
     OpNode* New_PlaceInShape(Tree* tree, Node* a, Node* b);
 
-    OpNode* Update_Sum(Tree* tree, Node* a, Node* b);
+    void Update_Sum(Tree* tree, OpNode* a);
     OpNode* Update_Union(Tree* tree, Node* a, Node* b);
     OpNode* Update_Difference(Tree* tree, Node* a, Node* b);
     OpNode* Update_Intersection(Tree* tree, Node* a, Node* b);

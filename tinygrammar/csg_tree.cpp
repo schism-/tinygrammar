@@ -115,10 +115,26 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, CSGTree::Node* a, CSG
 
 #if 1
 
-CSGTree::OpNode* CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
-    auto res_node = CSGTree::BuildResult(tree, a, b);
-    res_node->op_type = sum_op;
-    return res_node;
+void CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::OpNode* node){
+    auto a = node->child_left, b = node->child_right;
+
+    for(auto s : node->shapes) delete s;
+    node->shapes.clear();
+    node->shapes.reserve(a->shapes.size()+b->shapes.size());
+    for(auto s : a->shapes) {
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->shapes.push_back(as);
+    }
+    for(auto s : b->shapes) {
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->shapes.push_back(as);
+    }
 }
 
 #else
@@ -341,9 +357,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case sum_op:
         {
             //printf("Updating sum \n");
-            auto temp = CSGTree::Update_Sum(tree, a->child_left, a->child_right);
-            for(auto s : a->shapes) if(s) delete s;
-            a->shapes = temp->shapes;
+            CSGTree::Update_Sum(tree, a);
             break;
         }
         case place_in_op:
