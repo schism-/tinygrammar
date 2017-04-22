@@ -139,6 +139,7 @@ void CSGTree::UpdateResult(CSGTree::Tree* tree, CSGTree::OpNode* node, const vec
 void CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::OpNode* node){
     auto a = node->child_left, b = node->child_right;
 
+#if SPEEDUP_SUM == 0
     for(auto s : node->shapes) delete s;
     node->shapes.clear();
     node->shapes.reserve(a->shapes.size()+b->shapes.size());
@@ -156,6 +157,21 @@ void CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::OpNode* node){
         as->fill_color = s->fill_color;
         node->shapes.push_back(as);
     }
+#elif SPEEDUP_SUM == 1
+    if(node->shapes.size() != a->shapes.size()+b->shapes.size()) printf("BUG!!!!!!!!!!!!!!!\n");
+    for(auto i = 0; i < a->shapes.size(); i ++) {
+        node->shapes[i]->poly = a->shapes[i]->poly;
+        node->shapes[i]->border_color = a->shapes[i]->border_color;
+        node->shapes[i]->fill_color = a->shapes[i]->fill_color;
+    }
+    for(auto i = 0; i < b->shapes.size(); i ++) {
+        node->shapes[i+a->shapes.size()]->poly = b->shapes[i]->poly;
+        node->shapes[i+a->shapes.size()]->border_color = b->shapes[i]->border_color;
+        node->shapes[i+a->shapes.size()]->fill_color = b->shapes[i]->fill_color;
+    }
+#else
+#error Wrong option
+#endif
 }
 
 #else
