@@ -103,7 +103,7 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, CSGTree::Node* a, CSG
 CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
     auto res_node = CSGTree::BuildResult(tree, a, b);
     res_node->op_type = sum_op;
-    if (update){
+    if (update) {
         a->parent = res_node;
         b->parent = res_node;
         CSGTree::AddNode(tree, res_node);
@@ -252,7 +252,7 @@ void CSGTree::PropagateContent(CSGTree::Tree* tree, CSGTree::LeafNode* a){
 }
 
 
-void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a){
+void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
     switch (a->op_type) {
         case union_op:
         {
