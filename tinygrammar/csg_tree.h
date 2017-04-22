@@ -76,6 +76,7 @@ namespace CSGTree
     
     OpNode* BuildResult(Tree* tree, const vector<polygon2r>& shapes, Node* a, Node* b);
     OpNode* BuildResult_Sum(Tree* tree, Node* a, Node* b);
+    OpNode* BuildResult_SumAlias(Tree* tree, Node* a, Node* b);
     void UpdateResult(Tree* tree, OpNode* a, const vector<polygon2r>& shapes);
     
     int get_node_id(Tree* tree);

@@ -114,6 +114,23 @@ CSGTree::OpNode* CSGTree::BuildResult_Sum(CSGTree::Tree* tree, CSGTree::Node* a,
     return node;
 }
 
+CSGTree::OpNode* CSGTree::BuildResult_SumAlias(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+    auto node = new CSGTree::OpNode();
+    node->node_tag = get_node_id(tree);
+    node->child_left = a;
+    node->child_right = b;
+    
+    node->shapes.reserve(a->shapes.size()+b->shapes.size());
+    for (auto&& s : a->shapes) {
+        node->shapes.push_back(s);
+    }
+    for (auto&& s : b->shapes) {
+        node->shapes.push_back(s);
+    }
+    
+    return node;
+}
+
 void CSGTree::UpdateResult(CSGTree::Tree* tree, CSGTree::OpNode* node, const vector<polygon2r>& shapes){
     auto a = node->child_left, b = node->child_right;
 
@@ -163,6 +180,10 @@ void CSGTree::UpdateResult(CSGTree::Tree* tree, CSGTree::OpNode* node, const vec
 
 void CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::OpNode* node){
     auto a = node->child_left, b = node->child_right;
+    
+#if SPEEDUP_ALIASSUM
+    return;
+#endif
 
 #if SPEEDUP_SUM == 0
     for(auto s : node->shapes) delete s;
@@ -257,7 +278,11 @@ void CSGTree::Update_PlaceInShape(CSGTree::Tree* tree, CSGTree::OpNode* node){
 #if 1
 
 CSGTree::OpNode* CSGTree::New_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+#if SPEEDUP_ALIASSUM
+    auto res_node = CSGTree::BuildResult_SumAlias(tree, a, b);
+#else
     auto res_node = CSGTree::BuildResult_Sum(tree, a, b);
+#endif
     res_node->op_type = sum_op;
     //    if (update){
     a->parent = res_node;

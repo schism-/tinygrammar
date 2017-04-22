@@ -33,6 +33,7 @@ using namespace std;
 #define IS_DEBUG 0
 
 #define SPEEDUP_SUM 1
+#define SPEEDUP_ALIASSUM 1
 
 static constexpr double resolution = 2;
 // static constexpr double matrix_resolution = 100;
