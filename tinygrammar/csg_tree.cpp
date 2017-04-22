@@ -80,6 +80,7 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, CSGTree::Node* a, CSG
     node->child_left = a;
     node->child_right = b;
 
+    node->shapes.reserve(a->shapes.size()+b->shapes.size());
     for(auto s : a->shapes) {
         auto as = new AnimatedShape();
         as->poly = s->poly;

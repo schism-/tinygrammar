@@ -162,6 +162,7 @@ vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>> get_data(Grammar* g, T
     int n_c = 0, i_c = 0;
     int n_tid_max = 0, i_tid_max = 0;
     auto data = vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>>();
+    data.reserve(shapes.size());
     for (auto&& s : shapes){
         auto temp = (TimeSliceShape*)s;
         auto ntl = TimeManager::FindTimeLine(timeline, temp->slice);
@@ -191,6 +192,7 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
     for (auto&& ntl : data) anim_shapes.insert(anim_shapes.end(), ntl.second->node->shapes.begin(), ntl.second->node->shapes.end());
     auto bbox = compute_bbox(anim_shapes);
     
+    children.reserve(data.size());
     for(auto&& d : data) {
         auto am  = AnimatorMatrix();
         double start_delta, end_delta;
@@ -217,10 +219,11 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
         
         if (offset == 0.0) { start_delta = 0.0; end_delta = 1.0; }
         
-        auto akf = AnimatorKeyframes(am, {start_delta, end_delta}, parameters[0] == 1.0 ? anim_single : anim_group, 0.0);
-        
-        d.first->slice->animation = akf;
+        d.first->slice->animation = AnimatorKeyframes(am, {start_delta, end_delta}, parameters[0] == 1.0 ? anim_single : anim_group, 0.0);;
         d.first->slice->ts_tag = tags[0];
+        static int counter = 0;
+        printf("+ %lu\n", counter * sizeof(AnimatorMatrix) * d.first->slice->animation.keyframes.size());
+        counter++;
         children.push_back(d.first);
     }
     return children;
