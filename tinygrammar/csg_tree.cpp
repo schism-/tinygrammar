@@ -89,6 +89,31 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, const vector<polygon2
     return node;
 }
 
+CSGTree::OpNode* CSGTree::BuildResult_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    auto node = new CSGTree::OpNode();
+    node->node_tag = get_node_id(tree);
+    node->child_left = a;
+    node->child_right = b;
+
+    node->shapes.reserve(a->shapes.size()+b->shapes.size());
+    for (auto&& s : a->shapes){
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->shapes.push_back(as);
+    }
+    for (auto&& s : b->shapes){
+        auto as = new AnimatedShape();
+        as->poly = s->poly;
+        as->border_color = s->border_color;
+        as->fill_color = s->fill_color;
+        node->shapes.push_back(as);
+    }
+    
+    return node;
+}
+
 void CSGTree::UpdateResult(CSGTree::Tree* tree, CSGTree::OpNode* node, const vector<polygon2r>& shapes){
     auto a = node->child_left, b = node->child_right;
 
@@ -229,6 +254,21 @@ void CSGTree::Update_PlaceInShape(CSGTree::Tree* tree, CSGTree::OpNode* node){
     CSGTree::UpdateResult(tree, node, result);
 }
 
+#if 1
+
+CSGTree::OpNode* CSGTree::New_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+    auto res_node = CSGTree::BuildResult_Sum(tree, a, b);
+    res_node->op_type = sum_op;
+    //    if (update){
+    a->parent = res_node;
+    b->parent = res_node;
+    CSGTree::AddNode(tree, res_node);
+    //    }
+    return res_node;
+}
+
+#else
+
 CSGTree::OpNode* CSGTree::New_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
@@ -242,6 +282,8 @@ CSGTree::OpNode* CSGTree::New_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree
     //    }
     return res_node;
 }
+
+#endif
 
 CSGTree::OpNode* CSGTree::New_Union(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
