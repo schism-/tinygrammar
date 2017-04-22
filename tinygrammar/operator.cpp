@@ -222,7 +222,6 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
         d.first->slice->animation = AnimatorKeyframes(am, {start_delta, end_delta}, parameters[0] == 1.0 ? anim_single : anim_group, 0.0);;
         d.first->slice->ts_tag = tags[0];
         static int counter = 0;
-        printf("+ %lu\n", counter * sizeof(AnimatorMatrix) * d.first->slice->animation.keyframes.size());
         counter++;
         children.push_back(d.first);
     }
