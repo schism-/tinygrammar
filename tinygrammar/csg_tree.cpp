@@ -45,22 +45,37 @@ CSGTree::LeafNode* CSGTree::CopyNode(CSGTree::Tree* tree, CSGTree::LeafNode* a){
 }
 
 CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, const vector<polygon2r>& shapes, CSGTree::Node* a, CSGTree::Node* b){
+    static auto def_border_color = AnimatedShape().border_color;
+    static auto def_fill_color = AnimatedShape().fill_color;
     auto result_shapes = vector<AnimatedShape*>();
+    auto acol = false, bcol = false;
+    for(auto s : a->shapes)
+        if(!(s->border_color == def_border_color) || !(s->fill_color == def_fill_color)) {
+            acol = true; break;
+        }
+    for(auto s : b->shapes)
+        if(!(s->border_color == def_border_color) || !(s->fill_color == def_fill_color)) {
+            bcol = true; break;
+        }
     for (auto&& r : shapes){
         auto as = new AnimatedShape();
         as->poly = r;
-        for (auto&& acs : a->shapes){
-            if (r == acs->poly) {
-                as->border_color = acs->border_color;
-                as->fill_color = acs->fill_color;
-                break;
+        if(acol) {
+            for (auto&& acs : a->shapes){
+                if (r == acs->poly) {
+                    as->border_color = acs->border_color;
+                    as->fill_color = acs->fill_color;
+                    break;
+                }
             }
         }
-        for (auto&& bcs : b->shapes){
-            if (r == bcs->poly) {
-                as->border_color = bcs->border_color;
-                as->fill_color = bcs->fill_color;
-                break;
+        if(bcol) {
+            for (auto&& bcs : b->shapes){
+                if (r == bcs->poly) {
+                    as->border_color = bcs->border_color;
+                    as->fill_color = bcs->fill_color;
+                    break;
+                }
             }
         }
         result_shapes.push_back(as);
