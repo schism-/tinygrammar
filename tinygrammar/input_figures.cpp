@@ -49,16 +49,16 @@ CSGTree::Tree* standard_example(Grammar* g) {
     auto n5_7 = CSGTree::AddShape(tree, new AnimatedShape({s5_7}, l_s_tag[0], 6));
     
     // Tree creation
-    auto op1    = CSGTree::Union(tree, n1, n2);
+    auto op1    = CSGTree::New_Union(tree, n1, n2);
     
-    auto op3    = CSGTree::Sum(tree, n5_1,  n5_2);
-    auto op3_1  = CSGTree::Sum(tree, op3,   n5_3);
-    auto op3_2  = CSGTree::Sum(tree, op3_1, n5_4);
-    auto op3_3  = CSGTree::Sum(tree, op3_2, n5_5);
-    auto op3_4  = CSGTree::Sum(tree, op3_3, n5_6);
-    auto op3_5  = CSGTree::Sum(tree, op3_4, n5_7);
-    auto op6    = CSGTree::PlaceInShape(tree, n3, op1);
-    auto op3_6  = CSGTree::Sum(tree, op3_5, op6);
+    auto op3    = CSGTree::New_Sum(tree, n5_1,  n5_2);
+    auto op3_1  = CSGTree::New_Sum(tree, op3,   n5_3);
+    auto op3_2  = CSGTree::New_Sum(tree, op3_1, n5_4);
+    auto op3_3  = CSGTree::New_Sum(tree, op3_2, n5_5);
+    auto op3_4  = CSGTree::New_Sum(tree, op3_3, n5_6);
+    auto op3_5  = CSGTree::New_Sum(tree, op3_4, n5_7);
+    auto op6    = CSGTree::New_PlaceInShape(tree, n3, op1);
+    auto op3_6  = CSGTree::New_Sum(tree, op3_5, op6);
     
     return tree;
 }
@@ -89,7 +89,7 @@ CSGTree::Tree* little_squares(Grammar* g, int extra_value) {
                 last_op = shape;
             }
             else{
-                last_op = CSGTree::Sum(tree, last_op, shape);
+                last_op = CSGTree::New_Sum(tree, last_op, shape);
             }
         }
     }
@@ -138,7 +138,7 @@ CSGTree::Tree* squares_and_circles(Grammar* g, int extra_value) {
                 last_op = shape;
             }
             else{
-                last_op = CSGTree::Sum(tree, last_op, shape);
+                last_op = CSGTree::New_Sum(tree, last_op, shape);
             }
             k++;
         }
@@ -186,8 +186,8 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
                 s_temp->tid = 0;
                 s_temp->poly = {sq};
                 auto s_shape = CSGTree::AddShape(tree, s_temp);
-                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
-                last_op = CSGTree::Sum(tree, last_op, res);
+                auto res = CSGTree::New_PlaceInShape(tree, shape, s_shape);
+                last_op = CSGTree::New_Sum(tree, last_op, res);
             }
             else if (temp->tag == tag_to_mapping(g, "graph")){
                 auto t_bb = bounds_polygon(temp->poly);
@@ -211,10 +211,10 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
                 auto s2_shape = CSGTree::AddShape(tree, s2_temp);
 
                 
-                auto res = CSGTree::Sum(tree, s_shape, s2_shape);
-                res = CSGTree::PlaceInShape(tree, shape, res);
+                auto res = CSGTree::New_Sum(tree, s_shape, s2_shape);
+                res = CSGTree::New_PlaceInShape(tree, shape, res);
                 
-                last_op = CSGTree::Sum(tree, last_op, res);
+                last_op = CSGTree::New_Sum(tree, last_op, res);
             }
             else if (temp->tag == tag_to_mapping(g, "tachi")){
                 auto t_bb = bounds_polygon(temp->poly);
@@ -229,12 +229,12 @@ CSGTree::Tree* load_svg(Grammar* g, string filename) {
                 s_temp->poly = {seg1};
                 auto s_shape = CSGTree::AddShape(tree, s_temp);
                 
-                auto res = CSGTree::PlaceInShape(tree, shape, s_shape);
+                auto res = CSGTree::New_PlaceInShape(tree, shape, s_shape);
                 
-                last_op = CSGTree::Sum(tree, last_op, res);
+                last_op = CSGTree::New_Sum(tree, last_op, res);
             }
             else {
-                last_op = CSGTree::Sum(tree, last_op, shape);  //test 3
+                last_op = CSGTree::New_Sum(tree, last_op, shape);  //test 3
             }
         }
     }

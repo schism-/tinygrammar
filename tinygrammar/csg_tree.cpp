@@ -98,94 +98,64 @@ CSGTree::OpNode* CSGTree::BuildResult(CSGTree::Tree* tree, CSGTree::Node* a, CSG
     return node;
 }
 
-#if SPEEDUP_SUM
+#if 1
 
-CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     auto res_node = CSGTree::BuildResult(tree, a, b);
     res_node->op_type = sum_op;
-    if (update) {
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
 #else
 
-CSGTree::OpNode* CSGTree::Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
-    vector<polygon2r> a_polys = make_vector(a->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
-    vector<polygon2r> b_polys = make_vector(b->content->shapes, [&](AnimatedShape* shape){return shape->poly;});
+CSGTree::OpNode* CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     a_polys.insert(a_polys.end(), b_polys.begin(), b_polys.end());
     auto res_node = CSGTree::BuildResult(tree, a_polys, a, b);
     res_node->op_type = sum_op;
-    if (update){
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
 #endif
 
-CSGTree::OpNode* CSGTree::Union(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_Union(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     auto result = union_polygons_clipper(a_polys, b_polys);
     auto res_node = CSGTree::BuildResult(tree, result, a, b);
     res_node->op_type = union_op;
-    if(update) {
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
-CSGTree::OpNode* CSGTree::Difference(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_Difference(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     auto result = subtract_polygons_clipper(a_polys, b_polys);
     auto res_node = CSGTree::BuildResult(tree, result, a, b);
     res_node->op_type = difference_op;
-    if (update){
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
-CSGTree::OpNode* CSGTree::Intersection(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_Intersection(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     auto result = intersect_polygons(a_polys, b_polys);
     auto res_node = CSGTree::BuildResult(tree, result, a, b);
     res_node->op_type = intersection_op;
-    if(update){
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
-CSGTree::OpNode* CSGTree::XOR(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_XOR(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     auto result = xor_polygons_clipper(a_polys, b_polys);
     auto res_node = CSGTree::BuildResult(tree, result, a, b);
     res_node->op_type = xor_op;
-    if(update){
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
-CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b, bool update){
+CSGTree::OpNode* CSGTree::Update_PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
     vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
     vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
     auto temp = intersect_polygons(b_polys, a_polys);
@@ -194,31 +164,98 @@ CSGTree::OpNode* CSGTree::PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CS
     
     auto res_node = CSGTree::BuildResult(tree, result, a, b);
     res_node->op_type = place_in_op;
-    if (update){
-        a->parent = res_node;
-        b->parent = res_node;
-        CSGTree::AddNode(tree, res_node);
-    }
     return res_node;
 }
 
-//void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, Animator anim, double delta, bool update){
-//    if (update){
-//        auto new_shapes = anim(a->content->shapes, delta);
-//        a->content = new NodeContent(new_shapes);
+CSGTree::OpNode* CSGTree::New_Sum(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    a_polys.insert(a_polys.end(), b_polys.begin(), b_polys.end());
+    auto res_node = CSGTree::BuildResult(tree, a_polys, a, b);
+    res_node->op_type = sum_op;
+    //    if (update){
+    a->parent = res_node;
+    b->parent = res_node;
+    CSGTree::AddNode(tree, res_node);
+    //    }
+    return res_node;
+}
+
+CSGTree::OpNode* CSGTree::New_Union(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto result = union_polygons_clipper(a_polys, b_polys);
+    auto res_node = CSGTree::BuildResult(tree, result, a, b);
+    res_node->op_type = union_op;
+//    if(update) {
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
 //    }
-//    
-//    UpdateContent(tree, a);
-//    
-//    for (auto&& c : a->copies) CSGTree::UpdateLeafNode(tree, c, anim, delta, false);
-//}
+    return res_node;
+}
+
+CSGTree::OpNode* CSGTree::New_Difference(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto result = subtract_polygons_clipper(a_polys, b_polys);
+    auto res_node = CSGTree::BuildResult(tree, result, a, b);
+    res_node->op_type = difference_op;
+//    if (update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+//    }
+    return res_node;
+}
+
+CSGTree::OpNode* CSGTree::New_Intersection(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b) {
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto result = intersect_polygons(a_polys, b_polys);
+    auto res_node = CSGTree::BuildResult(tree, result, a, b);
+    res_node->op_type = intersection_op;
+//    if(update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+//    }
+    return res_node;
+}
+
+CSGTree::OpNode* CSGTree::New_XOR(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto result = xor_polygons_clipper(a_polys, b_polys);
+    auto res_node = CSGTree::BuildResult(tree, result, a, b);
+    res_node->op_type = xor_op;
+//    if(update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+//    }
+    return res_node;
+}
+
+CSGTree::OpNode* CSGTree::New_PlaceInShape(CSGTree::Tree* tree, CSGTree::Node* a, CSGTree::Node* b){
+    vector<polygon2r> a_polys = make_vector(a->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    vector<polygon2r> b_polys = make_vector(b->shapes, [&](AnimatedShape* shape){return shape->poly;});
+    auto temp = intersect_polygons(b_polys, a_polys);
+    auto result = subtract_polygons_clipper(a_polys, temp);
+    result.insert(result.end(), temp.begin(), temp.end());
+    
+    auto res_node = CSGTree::BuildResult(tree, result, a, b);
+    res_node->op_type = place_in_op;
+//    if (update){
+        a->parent = res_node;
+        b->parent = res_node;
+        CSGTree::AddNode(tree, res_node);
+//    }
+    return res_node;
+}
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, CSGTree::LeafNode* a, const Animator& anim, double current_time, double incr, double total_dur, bool update){
-    if (update){
-//        auto new_shapes = anim(a->content->shapes, current_time, incr, total_dur);
-//        a->content = new NodeContent(new_shapes);
-        anim(a->shapes, current_time, incr, total_dur);
-    }
+    anim(a->shapes, current_time, incr, total_dur);
 }
 
 void CSGTree::UpdateLeafNode(CSGTree::Tree* tree, const vector<CSGTree::LeafNode*>& as, const Animator& anim, int frame, bool update){
@@ -257,7 +294,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case union_op:
         {
             //printf("Updating union \n");
-            auto temp = CSGTree::Union(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_Union(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;
@@ -265,7 +302,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case intersection_op:
         {
             //printf("Updating intersection \n");
-            auto temp = CSGTree::Intersection(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_Intersection(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;
@@ -273,7 +310,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case difference_op:
         {
             //printf("Updating difference \n");
-            auto temp = CSGTree::Difference(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_Difference(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;
@@ -281,7 +318,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case xor_op:
         {
             //printf("Updating xor \n");
-            auto temp = CSGTree::XOR(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_XOR(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;
@@ -289,7 +326,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case sum_op:
         {
             //printf("Updating sum \n");
-            auto temp = CSGTree::Sum(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_Sum(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;
@@ -297,7 +334,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         case place_in_op:
         {
             //printf("Updating place_in \n");
-            auto temp = CSGTree::PlaceInShape(tree, a->child_left, a->child_right, false);
+            auto temp = CSGTree::Update_PlaceInShape(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
             break;

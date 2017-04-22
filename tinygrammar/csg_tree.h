@@ -47,14 +47,20 @@ namespace CSGTree
     LeafNode* AddShape(Tree* tree, AnimatedShape* shape);
     LeafNode* CopyNode(Tree* tree, LeafNode* a);
 
-    OpNode* Sum(Tree* tree, Node* a, Node* b, bool update = true);
-    OpNode* Union(Tree* tree, Node* a, Node* b, bool update = true);
-    OpNode* Difference(Tree* tree, Node* a, Node* b, bool update = true);
-    OpNode* Intersection(Tree* tree, Node* a, Node* b, bool update = true);
-    OpNode* XOR(Tree* tree, Node* a, Node* b, bool update = true);
-    OpNode* PlaceInShape(Tree* tree, Node* a, Node* b, bool update = true);
-    
-//    void UpdateLeafNode(Tree* tree, LeafNode* a, Animator anim, double delta, bool update = true);
+    OpNode* New_Sum(Tree* tree, Node* a, Node* b);
+    OpNode* New_Union(Tree* tree, Node* a, Node* b);
+    OpNode* New_Difference(Tree* tree, Node* a, Node* b);
+    OpNode* New_Intersection(Tree* tree, Node* a, Node* b);
+    OpNode* New_XOR(Tree* tree, Node* a, Node* b);
+    OpNode* New_PlaceInShape(Tree* tree, Node* a, Node* b);
+
+    OpNode* Update_Sum(Tree* tree, Node* a, Node* b);
+    OpNode* Update_Union(Tree* tree, Node* a, Node* b);
+    OpNode* Update_Difference(Tree* tree, Node* a, Node* b);
+    OpNode* Update_Intersection(Tree* tree, Node* a, Node* b);
+    OpNode* Update_XOR(Tree* tree, Node* a, Node* b);
+    OpNode* Update_PlaceInShape(Tree* tree, Node* a, Node* b);
+
     void UpdateLeafNode(Tree* tree, LeafNode* a, const Animator& anim, double current_time, double incr, double total_dur, bool update = true);
     void UpdateLeafNode(Tree* tree, const vector<LeafNode*>& as, const Animator& anim, int frame, bool update = true);
     void UpdateContent(Tree* tree, LeafNode* a);
