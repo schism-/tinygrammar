@@ -35,7 +35,6 @@ inline double easing(double incr, double alpha_s, double alpha_e, double current
 
 inline void apply_anim(const vector<AnimatedShape*>& shape, double current_time, double incr, double total_dur,
                        int animator_name,
-                       const anim_params& params,
                        const AnimatorKeyframes& akf) {
     switch(animator_name){
         case anim_single:
@@ -127,12 +126,12 @@ struct Animator{
     Animator (){animator_name = anim_noop;}
     Animator (int animator_name) : animator_name(animator_name) {}
     Animator (int animator_name, anim_params p) : animator_name(animator_name), params(p) {}
-    Animator (int animator_name, AnimatorKeyframes akf) : animator_name(animator_name), akf(akf) {}
+    Animator (int animator_name, const AnimatorKeyframes& akf) : animator_name(animator_name), akf(akf) {}
     
     ~Animator(){}
     
     void operator() (const vector<AnimatedShape*>& shape, double current_time, double incr, double total_dur) const {
-        return apply_anim(shape, current_time, incr, total_dur, animator_name, params, akf);
+        return apply_anim(shape, current_time, incr, total_dur, animator_name, akf);
     }
 };
 

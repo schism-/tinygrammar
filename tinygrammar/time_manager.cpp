@@ -183,7 +183,6 @@ void TimeManager::AnimateNodeTimeLine(TimeManager::NodeTimeLine* ntl, CSGTree::T
     
     //Update the node linked to the ntl with the animation associated to the active slice
     if (IS_DEBUG) printf("n %d s %d ", (CSGTree::LeafNode*)ntl->node->node_tag, selected_slice->ts_tag);
-    auto an = Animator(selected_slice->animation.anim_type, selected_slice->animation);
-    CSGTree::UpdateLeafNode(tree, (CSGTree::LeafNode*)ntl->node, an,
-                            slice_current_time, delta, selected_slice->duration);
+    apply_anim(ntl->node->shapes, slice_current_time, delta, selected_slice->duration, selected_slice->animation.anim_type, selected_slice->animation);
 }
+
