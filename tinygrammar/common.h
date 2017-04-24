@@ -120,8 +120,7 @@ typedef ym_vec<int, TAG_SIZE> rule_tags;
 
 typedef ym_vec<double, PARAM_SIZE> anim_params;
 
-// static string grammar_filename = "grammars/test_time_grammar_test_teaser.json";
-static string grammar_filename = "grammars/test_edo_time_grammar_tris.json";
+extern string grammar_filename;
 
 // ==============================================
 // ====== METHODS FOR LOG/EXP OF MATRICES =======

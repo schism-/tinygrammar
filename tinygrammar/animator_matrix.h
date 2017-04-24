@@ -13,7 +13,6 @@
 #include "tangle_utilities.h"
 
 struct AnimatorMatrix{
-    
     array<ym_affine2r, matrix_num> mats;
     array<ym_vec2r, matrix_num> mats_centers;
     ym_range2r bounding_box;

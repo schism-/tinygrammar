@@ -65,13 +65,17 @@ void printTimeLine(Grammar* g, TimeManager::TimeLine* t){
 }
 
 int main(int argc, const char * argv[]) {
+    auto input_grammar = std::string(argv[1]);
+    auto input_svg = std::string(argv[2]);
     
+    grammar_filename = input_grammar;
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
 //    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/teaser.svg");
 //    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
 //    auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
-    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square4000.svg");
+//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square4000.svg");
+    auto tree = initialize_tree(grammar, 3, 5, input_svg);
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op.apply(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);

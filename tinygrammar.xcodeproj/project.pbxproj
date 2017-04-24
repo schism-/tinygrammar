@@ -84,6 +84,8 @@
 		AAC8FB131E0BF2B70066AE65 /* input_figures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC8FB111E0BF2B70066AE65 /* input_figures.cpp */; };
 		AAC8FB141E0BF2B70066AE65 /* input_figures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC8FB111E0BF2B70066AE65 /* input_figures.cpp */; };
 		AAD29A2F1DB0FD9200F1B962 /* time_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD29A2D1DB0FD9200F1B962 /* time_manager.cpp */; };
+		E53E81301EAE063500CCDA1D /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53E812F1EAE063500CCDA1D /* common.cpp */; };
+		E53E81311EAE06F800CCDA1D /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53E812F1EAE063500CCDA1D /* common.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -199,6 +201,7 @@
 		AAC8FB121E0BF2B70066AE65 /* input_figures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = input_figures.h; sourceTree = "<group>"; };
 		AAD29A2D1DB0FD9200F1B962 /* time_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time_manager.cpp; sourceTree = "<group>"; };
 		AAD29A2E1DB0FD9200F1B962 /* time_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = time_manager.h; sourceTree = "<group>"; };
+		E53E812F1EAE063500CCDA1D /* common.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,7 @@
 		18D7E9101D08525300C79911 /* tinygrammar */ = {
 			isa = PBXGroup;
 			children = (
+				E53E812F1EAE063500CCDA1D /* common.cpp */,
 				18D7E91B1D0AF68F00C79911 /* common.h */,
 				18D7E9461D80166200C79911 /* ui.h */,
 				18D7E9111D08525300C79911 /* main.cpp */,
@@ -516,6 +520,7 @@
 				AAC8FB131E0BF2B70066AE65 /* input_figures.cpp in Sources */,
 				18D7E9361D1A9E2800C79911 /* tangle_utilities.cpp in Sources */,
 				18D7E9121D08525300C79911 /* main.cpp in Sources */,
+				E53E81301EAE063500CCDA1D /* common.cpp in Sources */,
 				18D7E9231D0B0A3A00C79911 /* shape.cpp in Sources */,
 				18D7E91A1D0AB31800C79911 /* expansion_manager.cpp in Sources */,
 				18D7E9811D80223E00C79911 /* format.cpp in Sources */,
@@ -547,6 +552,7 @@
 				AAC8FB141E0BF2B70066AE65 /* input_figures.cpp in Sources */,
 				AA8164311DB6740100A66F22 /* imgui.cpp in Sources */,
 				AA8164301DB673FF00A66F22 /* imgui_demo.cpp in Sources */,
+				E53E81311EAE06F800CCDA1D /* common.cpp in Sources */,
 				AA81642C1DB673EA00A66F22 /* format.cpp in Sources */,
 				AA8164271DB673C600A66F22 /* csg_tree.cpp in Sources */,
 				AA81641D1DB673A700A66F22 /* shape.cpp in Sources */,
