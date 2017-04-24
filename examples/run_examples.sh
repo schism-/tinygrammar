@@ -6,6 +6,6 @@ for d in */ ; do
     if [ ! -f $s/$s.svg ]; then
     	echo "File not found!"
 	else 
-		./create_animation.sh $s/$s.json $s/$s.svg $s
+		./create_animation.sh $s/$s.json $s/$s.svg $s/svgs/ $s
 	fi
 done
