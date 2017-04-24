@@ -31,4 +31,6 @@ Temporary Items
 
 */**/UserInterfaceState.xcuserstate
 */**/Breakpoints_v2.xcbkptlist
+bin
 results
+tinygrammar.xcodeproj
