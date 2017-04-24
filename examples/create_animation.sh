@@ -3,7 +3,22 @@
 
 #1: grammar
 #2: svg
+#3: output folder
 
-./../Bin/Release/tinygrammar_time $1 $2 $3
-convert -density 40 -resize 500x500 $4/svgs/*.svg -set filename:base "%[base]" $4/pngs/"%[filename:base].png"
-convert -delay 1/30 -loop 0 $4/pngs/*.png $4/$4.gif
+if [ ! -d "$3/svgs" ]; then
+	mkdir -p $3/svgs
+else 
+	rm -rf $3/svgs/*.svg
+fi	
+
+if [ ! -d "$3/pngs" ]; then
+	mkdir -p $3/pngs
+else 
+	rm -rf $3/pngs/*.png
+fi	
+
+./../Bin/Release/tinygrammar_time $1 $2 $3/svgs
+
+convert -density 40 -resize 500x500 $3/svgs/*.svg -set filename:base "%[base]" $3/pngs/"%[filename:base].png"
+
+convert -delay 1/30 -loop 0 $3/pngs/*.png $3/animated.gif
