@@ -710,6 +710,7 @@
 					"$(PROJECT_DIR)/external/glfw",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "${PROJECT_DIR}/bin";
 			};
 			name = Debug;
 		};
@@ -722,6 +723,7 @@
 					"$(PROJECT_DIR)/external/glfw",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "${PROJECT_DIR}/bin";
 			};
 			name = Release;
 		};
