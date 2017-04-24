@@ -43,7 +43,7 @@ inline void apply_anim(const vector<AnimatedShape*>& shape, double current_time,
             auto alpha_s = m.second[0];
             auto alpha_e = m.second[1];
             
-            if (alpha_e - alpha_s <= EPS_2)
+            if (alpha_e - alpha_s <= EPS_2_3)
                 printf("houston, we have a problem! \n");
             
             auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
@@ -58,7 +58,7 @@ inline void apply_anim(const vector<AnimatedShape*>& shape, double current_time,
             auto alpha_s = m.second[0];
             auto alpha_e = m.second[1];
             
-            if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
+            if (alpha_e - alpha_s <= EPS_2_3) printf("houston, we have a problem! \n");
             
             auto new_incr = easing(incr, alpha_s, alpha_e, current_time, total_dur);
             for (auto&& as : shape) as->poly = transform_group(m.first, as->poly, new_incr);
@@ -75,9 +75,9 @@ inline void apply_anim(const vector<AnimatedShape*>& shape, double current_time,
             auto alpha_e = m.second[1];
             auto alpha_diff = alpha_e - alpha_s;
             
-            if (alpha_e - alpha_s <= EPS_2) printf("houston, we have a problem! \n");
+            if (alpha_e - alpha_s <= EPS_2_3) printf("houston, we have a problem! \n");
             
-            if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2){
+            if (alpha_e != 1.0 && abs(current_time - alpha_e * total_dur) <= EPS_2_3){
                 printf(" \n");
                 return;
                 //                    return shape;

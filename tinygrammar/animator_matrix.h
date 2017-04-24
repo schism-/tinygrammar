@@ -58,7 +58,7 @@ struct AnimatorMatrix{
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
 AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
 
-ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos);
+ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
@@ -104,7 +104,7 @@ struct AnimatorKeyframes{
     // Remember to implement interpolation
 };
 
-AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe);
+const AnimatorMatrix& get_matrix_nearest(const AnimatorKeyframes& akf, int keyframe);
 pair<AnimatorMatrix, ym_vec2r> get_matrix(const AnimatorKeyframes& akf, double delta);
 AnimatorKeyframes copy(const AnimatorKeyframes& akf);
 

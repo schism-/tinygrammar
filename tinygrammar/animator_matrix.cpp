@@ -54,7 +54,7 @@ AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double
     return res_am;
 }
 
-ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
+ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos){
     if (!ym_rinside(am.bounding_box, pos)){
         printf("[AnimatorMatrix] ERROR: position outside the bounding box;");
         return ym_affine2r();
@@ -92,7 +92,8 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
-            auto m = get_matrix(am, p);
+#if SPEEDUP_MATLN == 0
+            auto m = get_matrix_nearest(am, p);
             
             auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
             auto log_m = ln(mat);
@@ -111,6 +112,30 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
             new_p = ym_transform_point(incr_aff_t, new_p);
             
             new_shape.back() += (new_p + centroid);
+#elif SPEEDUP_MATLN == 1
+            auto m = get_matrix_nearest(am, p);
+            
+            auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
+            auto log_m = ln(mat);
+            log_m = log_m * incr;
+            log_m = exp(log_m);
+
+            auto log_m2 = ln(m.m);
+            log_m2 = log_m2 * incr;
+            log_m2 = exp(log_m2);
+            
+            printf("- %f %f\n", log_m[0][0], log_m[1][1]);
+            printf("+ %f %f\n", log_m2[0][0], log_m2[1][1]);
+
+            auto incr_t = m.t * incr;
+            auto incr_rot = ym_mat2r(log_m2);
+            
+            auto new_p = incr_rot * (p - centroid) + incr_t;
+            
+            new_shape.back() += (new_p + centroid);
+#else
+#error
+#endif
         }
     }
     return new_shape;
@@ -119,7 +144,7 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr){
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
-    auto m = get_matrix(am, centroid);
+    auto m = get_matrix_nearest(am, centroid);
     
     auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
     auto log_m = ln(mat);
@@ -150,7 +175,7 @@ void transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double
     shape->fill_color   = (1.0 - frame) * am.start_f_color + frame * am.end_f_color;
 }
 
-AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe){
+const AnimatorMatrix& get_matrix_nearest(const AnimatorKeyframes& akf, int keyframe){
     auto key_idx = std::distance(akf.keyframes_idx.begin(), std::find(akf.keyframes_idx.begin(), akf.keyframes_idx.end(), keyframe));
     return akf.keyframes.at(key_idx);
 }
