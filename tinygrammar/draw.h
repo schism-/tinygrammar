@@ -66,4 +66,22 @@ struct SVGContext : DrawContext {
     string _svg_points(const polyline2r& curve);
 };
 
+struct SVGFileContext : DrawContext {
+    string filename = "";
+    FILE* f = nullptr;
+    
+    SVGFileContext(const std::string& filename);
+    
+    virtual void begin_frame(const ym_vec2i& wh, const ym_vec2r& offset, const ym_vec2r& scale = {}) override;
+    virtual void end_frame(const ym_vec2r& offset, const ym_vec2r& scale = {}) override;
+    
+    virtual void draw_polygon(const polygon2r& poly, const ym_vec4f& stroke, const ym_vec4f& fill, string tag = "") override;
+    virtual void draw_line(const polyline2r& curve, const ym_vec4f& stroke) override;
+    virtual void draw_point(const ym_vec2r& p, const ym_vec4f& stroke) override;
+    virtual void draw_text(const ym_vec2r& p, const string& msg, double size, const ym_vec4f& stroke) override;
+    
+    void _svg_style(const ym_vec4f& stroke, const ym_vec4f& fill);
+    void _svg_points(const polyline2r& curve);
+};
+
 #endif /* draw_hpp */

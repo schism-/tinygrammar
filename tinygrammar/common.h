@@ -34,6 +34,7 @@ using namespace std;
 
 #define SPEEDUP_SUM 1
 #define SPEEDUP_ALIASSUM 1
+#define SPEEDUP_SAVESVG 1
 
 static constexpr double resolution = 2;
 // static constexpr double matrix_resolution = 100;
