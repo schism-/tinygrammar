@@ -225,14 +225,14 @@ void SVGFileContext::draw_text(const ym_vec2r &p, const string &text,
 
 void SVGFileContext::_svg_style(const ym_vec4f &stroke, const ym_vec4f &fill) {
   if (stroke.w != 0) {
-    fprintf(f, "stroke=\"rgb(%d,%d,%d)\" stroke-opacity=\"%f\"", (int)stroke.x,
+    fprintf(f, "stroke=\"rgb(%d,%d,%d)\" stroke-opacity=\"%.3g\"", (int)stroke.x,
             (int)stroke.y, (int)stroke.z, stroke.w);
   } else {
     fprintf(f, "stroke=\"none\"");
   }
   fprintf(f, " ");
   if (fill.w != 0) {
-    fprintf(f, "fill=\"rgb(%d,%d,%d)\" fill-opacity=\"%f\"", (int)fill.x,
+    fprintf(f, "fill=\"rgb(%d,%d,%d)\" fill-opacity=\"%.3g\"", (int)fill.x,
             (int)fill.y, (int)fill.z, fill.w);
   } else {
     fprintf(f, "fill=\"none\"");
@@ -242,7 +242,7 @@ void SVGFileContext::_svg_style(const ym_vec4f &stroke, const ym_vec4f &fill) {
 void SVGFileContext::_svg_points(const polyline2r &curve) {
   auto first = true;
   for (auto &&p : curve) {
-    fprintf(f, "%s%f %f ", (first) ? "M" : "L", p.x, p.y);
+    fprintf(f, "%s%.4g %.4g ", (first) ? "M" : "L", p.x, p.y);
     first = false;
   }
   //    if(closed_polyline(curve)) svg += "Z";
