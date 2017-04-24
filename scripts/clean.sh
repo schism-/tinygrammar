@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf ./png/*.png
-rm -rf ./svg/*.svg
+rm -rf results/png/*.png
+rm -rf results/svg/*.svg
