@@ -17,7 +17,9 @@ else
 	rm -rf $3/pngs/*.png
 fi	
 
+START_TIME=$SECONDS
 ./../Bin/Release/tinygrammar_time $1 $2 $3/svgs
+echo "Execution ended in : $(($SECONDS - $START_TIME)) seconds!"
 
 convert -density 40 -resize 500x500 $3/svgs/*.svg -set filename:base "%[base]" $3/pngs/"%[filename:base].png"
 
