@@ -13,8 +13,9 @@
 #include "tangle_utilities.h"
 
 struct AnimatorMatrix{
-    array<ym_affine2r, matrix_num> mats;
-    array<ym_vec2r, matrix_num> mats_centers;
+    vector<ym_affine2r> mats_;
+    vector<ym_vec2r> mats_centers_;
+    ym_affine2r cmat;
     ym_range2r bounding_box;
     ym_vec2r step;
     
@@ -32,13 +33,15 @@ struct AnimatorMatrix{
         bounding_box = bb;
         step = bounding_box.max - bounding_box.min;
         step.x = step.x / matrix_resolution; step.y = step.y / matrix_resolution;
+        mats_centers_.resize(matrix_num);
+        mats_.resize(matrix_num);
         for (auto i = 0; i < matrix_num; i++){
-            mats[i] = ym_affine2r();
+            mats_[i] = ym_affine2r();
             auto temp_r = ym_range2r({bounding_box.min.x + (i % (int)matrix_resolution) * step.x,
                                       bounding_box.min.y + (i / (int)matrix_resolution) * step.y},
                                      {bounding_box.min.x + (i % (int)matrix_resolution + 1) * step.x,
                                       bounding_box.min.y + (i / (int)matrix_resolution + 1) * step.y});
-            mats_centers[i] = ym_rcenter(temp_r);
+            mats_centers_[i] = ym_rcenter(temp_r);
         }
     }
     
@@ -46,14 +49,7 @@ struct AnimatorMatrix{
         bounding_box = bb;
         step = bounding_box.max - bounding_box.min;
         step.x = step.x / matrix_resolution; step.y = step.y / matrix_resolution;
-        for (auto i = 0; i < matrix_num; i++){
-            mats[i] = mat;
-            auto temp_r = ym_range2r({bounding_box.min.x + (i % (int)matrix_resolution) * step.x,
-                                      bounding_box.min.y + (i / (int)matrix_resolution) * step.y},
-                                     {bounding_box.min.x + ((i + 1) % (int)matrix_resolution) * step.x,
-                                      bounding_box.min.y + ((i + 1) / (int)matrix_resolution) * step.y});
-            mats_centers[i] = ym_rcenter(temp_r);
-        }
+        cmat = mat;
     }
     
     ~AnimatorMatrix(){}

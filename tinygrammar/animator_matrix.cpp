@@ -10,10 +10,10 @@
 
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale){
     auto res_am = AnimatorMatrix(bb);
-    for (auto i = 0; i <= res_am.mats.size(); i++){
-        auto v_d = pos - res_am.mats_centers[i];
+    for (auto i = 0; i <= res_am.mats_.size(); i++){
+        auto v_d = pos - res_am.mats_centers_[i];
         v_d = ym_normalize(v_d);
-        res_am.mats[i].t = v_d * scale;
+        res_am.mats_[i].t = v_d * scale;
 
     }
     
@@ -48,8 +48,8 @@ AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double
     auto res_am = AnimatorMatrix(bb);
     auto circle = make_polyline_circle({0.0, 0.0}, 25.0, 4.0);
     
-    for (auto i = 0; i <= res_am.mats.size(); i++){
-        res_am.mats[i].t = pos - res_am.mats_centers[i];
+    for (auto i = 0; i <= res_am.mats_.size(); i++){
+        res_am.mats_[i].t = pos - res_am.mats_centers_[i];
     }
     return res_am;
 }
@@ -60,6 +60,7 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
         return ym_affine2r();
     }
     else{
+        if(am.mats_.empty()) return am.cmat;
         auto ins = (pos - am.bounding_box.min) / am.step;
 //        auto x_idx = (int)ins.x, y_idx = (int)ins.y;
 //        
@@ -77,20 +78,11 @@ ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos){
 //        mat_21 = am.mats[(int)matrix_resolution * (y_idx + 1) + (x_idx)];     auto log_m21 = ln(mat_21); log_m21 = log_m21 * (1.0 / 9.0);
 //        mat_22 = am.mats[(int)matrix_resolution * (y_idx + 1) + (x_idx + 1)]; auto log_m22 = ln(mat_22); log_m22 = log_m22 * (1.0 / 9.0);
         
-        auto mat = am.mats[(int)matrix_resolution * (int)ins.y + (int)ins.x];
+        auto mat = am.mats_[(int)matrix_resolution * (int)ins.y + (int)ins.x];
         
 //        mat = ym_affine2r(exp(log_m00 + log_m01 + log_m02 + log_m10 + log_m11 + log_m12 + log_m20 + log_m21 + log_m22));
         
         return mat;
-    }
-}
-
-void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx){
-    if (x_idx < 0 || y_idx < 0 || x_idx >= matrix_resolution || y_idx >= matrix_resolution){
-        printf("[AnimatorMatrix] ERROR: invalid index;");
-    }
-    else{
-        am.mats[(int)matrix_resolution * y_idx + x_idx] = mat;
     }
 }
 
@@ -190,9 +182,5 @@ AnimatorKeyframes copy(const AnimatorKeyframes& akf){
 }
 
 AnimatorMatrix copy(const AnimatorMatrix& am){
-    auto res = AnimatorMatrix(am.bounding_box);
-    std::copy(std::begin(am.mats), std::end(am.mats), std::begin(res.mats));
-    std::copy(std::begin(am.mats_centers), std::end(am.mats_centers), std::begin(res.mats_centers));
-    res.step = ym_vec2r(am.step.x, am.step.y);
-    return res;
+    return am;
 }
