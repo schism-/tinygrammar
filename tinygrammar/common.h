@@ -121,6 +121,7 @@ typedef ym_vec<int, TAG_SIZE> rule_tags;
 typedef ym_vec<double, PARAM_SIZE> anim_params;
 
 extern string grammar_filename;
+extern string svgout_filename;
 
 // ==============================================
 // ====== METHODS FOR LOG/EXP OF MATRICES =======

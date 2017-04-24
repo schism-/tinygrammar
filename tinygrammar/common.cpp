@@ -9,3 +9,4 @@
 #include "common.h"
 
 string grammar_filename = "grammars/test_edo_time_grammar_tris.json";
+string svgout_filename = "./results/svg/";

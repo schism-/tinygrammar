@@ -67,8 +67,11 @@ void printTimeLine(Grammar* g, TimeManager::TimeLine* t){
 int main(int argc, const char * argv[]) {
     auto input_grammar = std::string(argv[1]);
     auto input_svg = std::string(argv[2]);
+    auto input_out = std::string(argv[3]);
     
     grammar_filename = input_grammar;
+    svgout_filename = input_out;
+    
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
 //    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/teaser.svg");
