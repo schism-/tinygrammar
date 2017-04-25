@@ -134,9 +134,9 @@ extern string svgout_filename;
 #define EPS_2_3 0.000000001
 #define EPS_3_3 0.000001
 
-#define EPS_1_2 0.000001
-#define EPS_2_2 0.00000000001
-#define EPS_3_2 0.00000001
+#define EPS_1_2 0.0001
+#define EPS_2_2 0.000000001
+#define EPS_3_2 0.000001
 
 inline double frobenius_norm(const ym_mat3r& m) {
     return sqrt( m[0][0] * m[0][0] + m[0][1] * m[0][1] + m[0][2] * m[0][2] +
