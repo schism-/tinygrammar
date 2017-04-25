@@ -133,16 +133,22 @@ void save_svg(History* h, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_
 }
 
 void save_svg(CSGTree::Tree* t, const ym_vec2i& wh, const ym_vec2r& offset,  const ym_vec2r& scale_factor, string postfix){
+#if SPEEDUP_SAVESVG
+    auto context = new SVGFileContext(svgout_filename + "/tangleSVG_" + postfix + ".svg");
+#else
     auto context = new SVGContext();
+#endif
     context->begin_frame(wh, offset, scale_factor);
     
     for (auto&& s : t->root->shapes)
         context->draw_shape(s);
     
     context->end_frame(offset, scale_factor);
-    time_t rawtime; time (&rawtime);
-    //save_text_file("./results/tangleSVG_" + std::to_string(get_sec()) + "_" + postfix + ".svg", context->svg);
+    
+#if !SPEEDUP_SAVESVG
     save_text_file(svgout_filename + "/tangleSVG_" + postfix + ".svg", context->svg);
+#endif
+    
     delete context;
 }
 

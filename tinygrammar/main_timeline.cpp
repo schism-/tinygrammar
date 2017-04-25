@@ -122,7 +122,7 @@ int main(int argc, const char * argv[]) {
     save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, ss.str());
     if (grammar->dry_run) return 0;
     
-    for (auto i = frame_step; (i - duration) <= EPS_2; i = i + frame_step){
+    for (auto i = frame_step; (i - duration) <= EPS_2_3; i = i + frame_step){
         if (IS_DEBUG) printf("Animating frame %d\n", k);
         else  { printf("#%d...\n", k); fflush(stdout); }
         TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
