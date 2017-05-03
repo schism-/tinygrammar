@@ -29,7 +29,9 @@
 			"matching_tags" : ["tri"],
 			"produced_tags" : ["up_t1"],
 			"operator" : "move_towards",
-			"parameters" : [0.0, 0.0, 500.0, 0.0, 0.0],
+			//                    x     y   - exp
+			//							    + impl
+			"parameters" : [0.0, 0.0, 0.0, -50.0, -0.1],			
 			"init_value" : "time1"
 		}
 
