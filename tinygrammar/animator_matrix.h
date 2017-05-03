@@ -13,8 +13,9 @@
 #include "tangle_utilities.h"
 
 struct AnimatorMatrix{
-    array<ym_affine2r, matrix_num> mats;
-    array<ym_vec2r, matrix_num> mats_centers;
+    vector<ym_affine2r> mats_;
+    vector<ym_vec2r> mats_centers_;
+    ym_affine2r cmat;
     ym_range2r bounding_box;
     ym_vec2r step;
     
@@ -32,13 +33,15 @@ struct AnimatorMatrix{
         bounding_box = bb;
         step = bounding_box.max - bounding_box.min;
         step.x = step.x / matrix_resolution; step.y = step.y / matrix_resolution;
+        mats_centers_.resize(matrix_num);
+        mats_.resize(matrix_num);
         for (auto i = 0; i < matrix_num; i++){
-            mats[i] = ym_affine2r();
+            mats_[i] = ym_affine2r();
             auto temp_r = ym_range2r({bounding_box.min.x + (i % (int)matrix_resolution) * step.x,
                                       bounding_box.min.y + (i / (int)matrix_resolution) * step.y},
                                      {bounding_box.min.x + (i % (int)matrix_resolution + 1) * step.x,
                                       bounding_box.min.y + (i / (int)matrix_resolution + 1) * step.y});
-            mats_centers[i] = ym_rcenter(temp_r);
+            mats_centers_[i] = ym_rcenter(temp_r);
         }
     }
     
@@ -46,14 +49,7 @@ struct AnimatorMatrix{
         bounding_box = bb;
         step = bounding_box.max - bounding_box.min;
         step.x = step.x / matrix_resolution; step.y = step.y / matrix_resolution;
-        for (auto i = 0; i < matrix_num; i++){
-            mats[i] = mat;
-            auto temp_r = ym_range2r({bounding_box.min.x + (i % (int)matrix_resolution) * step.x,
-                                      bounding_box.min.y + (i / (int)matrix_resolution) * step.y},
-                                     {bounding_box.min.x + ((i + 1) % (int)matrix_resolution) * step.x,
-                                      bounding_box.min.y + ((i + 1) / (int)matrix_resolution) * step.y});
-            mats_centers[i] = ym_rcenter(temp_r);
-        }
+        cmat = mat;
     }
     
     ~AnimatorMatrix(){}
@@ -62,7 +58,7 @@ struct AnimatorMatrix{
 AnimatorMatrix move_towards_point(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
 AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double scale = 1.0);
 
-ym_affine2r get_matrix(const AnimatorMatrix& am, const ym_vec2r& pos);
+ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
@@ -108,7 +104,7 @@ struct AnimatorKeyframes{
     // Remember to implement interpolation
 };
 
-AnimatorMatrix get_matrix(const AnimatorKeyframes& akf, int keyframe);
+const AnimatorMatrix& get_matrix_nearest(const AnimatorKeyframes& akf, int keyframe);
 pair<AnimatorMatrix, ym_vec2r> get_matrix(const AnimatorKeyframes& akf, double delta);
 AnimatorKeyframes copy(const AnimatorKeyframes& akf);
 
