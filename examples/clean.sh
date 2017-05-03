@@ -1,3 +1,12 @@
 #!/bin/bash
-rm -rf results/png/*.png
-rm -rf results/svg/*.svg
+
+s=""
+for d in */ ; do
+    s="$(basename $d)"
+    if [ ! -d $s/ ]; then
+    	echo "Folder not found!"
+	else 
+		rm -rf $s/pngs
+		rm -rf $s/svgs
+	fi
+done
