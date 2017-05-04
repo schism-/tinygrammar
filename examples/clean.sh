@@ -6,7 +6,6 @@ for d in */ ; do
     if [ ! -d $s/ ]; then
     	echo "Folder not found!"
 	else 
-		rm -rf $s/pngs
-		rm -rf $s/svgs
+		rm -rf $s/frames
 	fi
 done
