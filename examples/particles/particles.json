@@ -11,7 +11,7 @@
 			"matching_tags" : [],
 			"produced_tags" : ["a"],
 			"operator" : "time_init",
-			"parameters" : [4.5, 1.0],
+			"parameters" : [4.0, 1.0],
 			"init_value" : "square"
 		}, 
 
@@ -20,7 +20,7 @@
 			"matching_tags" : ["a"],
 			"produced_tags" : ["timeA1", "inv_timeA1", "rest1","timeA2", "inv_timeA2", "rest2","timeA3", "inv_timeA3","rest3"],
 			"operator" : "time_slice",
-			"parameters" : [0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.25],
+			"parameters" : [0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.125],
 			"init_value" : "triA"
 		},
 
@@ -29,34 +29,34 @@
 			"matching_tags" : ["a"],
 			"produced_tags" : ["rest1","timeB1", "inv_timeB1", "rest2","timeB2", "inv_timeB2", "rest3","timeB3", "inv_timeB3","rest4"],
 			"operator" : "time_slice",
-			"parameters" : [0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.1875],
+			"parameters" : [0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625],
 			"init_value" : "triB"
 		},
 
 		{ 	
 			"rule_name" : "time_rule_3",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeC1", "inv_timeC1", "rest2","timeC2", "inv_timeC2", "rest3","timeC3", "inv_timeC3","rest4"],
+			"produced_tags" : ["rest1","timeC1", "inv_timeC1", "rest2","timeC2", "inv_timeC2", "rest3","timeC3", "inv_timeC3"],
 			"operator" : "time_slice",
-			"parameters" : [0.125, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.125],
+			"parameters" : [0.125, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125],
 			"init_value" : "triC"
 		},
 
 		{ 	
 			"rule_name" : "time_rule_4",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeD1", "inv_timeD1", "rest2","timeD2", "inv_timeD2", "rest3","timeD3", "inv_timeD3","rest4"],
+			"produced_tags" : ["rest1","timeD1", "inv_timeD1", "rest2","timeD2", "inv_timeD2", "rest3"],
 			"operator" : "time_slice",
-			"parameters" : [0.1875, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625],
+			"parameters" : [0.1875, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.25],
 			"init_value" : "triD"
 		},
 
 		{ 	
 			"rule_name" : "time_rule_5",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeE1", "inv_timeE1", "rest2","timeE2", "inv_timeE2", "rest3","timeE3", "inv_timeE3"],
+			"produced_tags" : ["rest1","timeE1", "inv_timeE1", "rest2","timeE2", "inv_timeE2", "rest3"],
 			"operator" : "time_slice",
-			"parameters" : [0.25, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125],
+			"parameters" : [0.25, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.1875],
 			"init_value" : "triE"
 		},
 
@@ -170,7 +170,7 @@
 			"init_value" : "timeE2"
 		},
 
-				{ 	
+		{ 	
 			"rule_name" : "space_rule_A3",
 			"matching_tags" : ["triA"],
 			"produced_tags" : ["implode_triA3"],
@@ -201,28 +201,6 @@
 			//							    + impl
 			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
 			"init_value" : "timeC3"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_D3",
-			"matching_tags" : ["triD"],
-			"produced_tags" : ["implode_triD3"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeD3"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_E3",
-			"matching_tags" : ["triE"],
-			"produced_tags" : ["implode_triE3"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeE3"
 		}
 
 	]
