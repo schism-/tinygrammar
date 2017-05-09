@@ -15,193 +15,643 @@
 			"init_value" : "square"
 		}, 
 
+		//=========================== TIMESLICE FOR CONTAINER =================//
+
 		{ 	
 			"rule_name" : "time_rule_1",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["timeA1", "inv_timeA1", "rest1","timeA2", "inv_timeA2", "rest2","timeA3", "inv_timeA3","rest3"],
+			"produced_tags" : ["setup", "rest1", "crack1", "move1", "inv_move1", "rest2","crack2", "move2", "crack4", "rest3", "crack3", "move3", "inv_move3", "rest4"],
 			"operator" : "time_slice",
-			"parameters" : [0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.125],
-			"init_value" : "triA"
+			"parameters" : [0.005, 0.2, 0.015, 0.025, 0.025, 0.2, 0.015, 0.025, 0.025, 0.2, 0.015, 0.025, 0.025, 0.2],
+			"init_value" : ""
 		},
+
+		//=========================== TIMESLICE FOR SQUARES =================//
 
 		{ 	
 			"rule_name" : "time_rule_2",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeB1", "inv_timeB1", "rest2","timeB2", "inv_timeB2", "rest3","timeB3", "inv_timeB3","rest4"],
+			"produced_tags" : ["rest", "fall_down", "fall_up", "fade","rest2"],
 			"operator" : "time_slice",
-			"parameters" : [0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625],
-			"init_value" : "triB"
+			"parameters" : [0.145, 0.1, 0.1, 0.05,0.645],
+			"init_value" : "square1"
 		},
-
 		{ 	
 			"rule_name" : "time_rule_3",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeC1", "inv_timeC1", "rest2","timeC2", "inv_timeC2", "rest3","timeC3", "inv_timeC3"],
+			"produced_tags" : ["rest", "fall_down", "fall_up", "fade","rest2"],
 			"operator" : "time_slice",
-			"parameters" : [0.125, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.0625, 0.125, 0.125],
-			"init_value" : "triC"
-		},
-
+			"parameters" : [0.41, 0.1, 0.1, 0.05,0.4],
+			"init_value" : "square2"
+		},		
 		{ 	
 			"rule_name" : "time_rule_4",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeD1", "inv_timeD1", "rest2","timeD2", "inv_timeD2", "rest3"],
+			"produced_tags" : ["rest","fall_down", "fall_up", "fade","rest2"],
 			"operator" : "time_slice",
-			"parameters" : [0.1875, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.25],
-			"init_value" : "triD"
+			"parameters" : [0.675, 0.1, 0.1, 0.05,0.115],
+			"init_value" : "square3"
 		},
+
+
+		//=========================== TIMESLICE FOR PARTICLES =================//
 
 		{ 	
 			"rule_name" : "time_rule_5",
 			"matching_tags" : ["a"],
-			"produced_tags" : ["rest1","timeE1", "inv_timeE1", "rest2","timeE2", "inv_timeE2", "rest3"],
+			"produced_tags" : ["setup","rest", "appear", "explode", "fade", "rest2"],
 			"operator" : "time_slice",
-			"parameters" : [0.25, 0.125, 0.125, 0.0625, 0.125, 0.125, 0.1875],
-			"init_value" : "triE"
+			"parameters" : [0.005, 0.2, 0.025, 0.05, 0.025, 0.695],
+			"init_value" : "triA"
+		},
+		{ 	
+			"rule_name" : "time_rule_6",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["setup","rest", "appear", "explode", "fade", "rest2"],
+			"operator" : "time_slice",
+			"parameters" : [0.005, 0.465, 0.025, 0.05, 0.025, 0.43],
+			"init_value" : "triB"
+		},		
+		{ 	
+			"rule_name" : "time_rule_7",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["setup","rest", "appear", "explode", "fade", "rest2"],
+			"operator" : "time_slice",
+			"parameters" : [0.005, 0.73, 0.025, 0.05, 0.025, 0.165],
+			"init_value" : "triC"
+		},
+
+		//=========================== SETUP RULES ============================//
+
+		//=========================== CRACKS =================================//
+
+
+		{ 	
+			"rule_name" : "rule_setup1",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_A1",
+			"rule_name" : "rule_setup3",
+			"matching_tags" : ["crack2"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
+		},
+
+		{ 	
+			"rule_name" : "rule_setup4",
+			"matching_tags" : ["crack3"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
+		},
+
+		{ 	
+			"rule_name" : "rule_setup4",
+			"matching_tags" : ["crack4"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
+		},
+
+		{ 	
+			"rule_name" : "rule_setup5",
+			"matching_tags" : ["container"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [200.0, 255.0, 200.0, 1.0,
+							200.0, 255.0, 200.0, 1.0,
+							200.0, 255.0, 200.0, 1.0,
+							200.0, 255.0, 200.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "setup"
+		},
+
+		//=========================== SQUARES ===========================//
+
+
+		{ 	
+			"rule_name" : "rule_setup6",
+			"matching_tags" : ["square1"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "rest"
+		},	
+
+		{ 	
+			"rule_name" : "rule_setup7",
+			"matching_tags" : ["square2"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "rest"
+		},	
+
+		{ 	
+			"rule_name" : "rule_setup8",
+			"matching_tags" : ["square3"],
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "rest"
+		},			
+
+		//=========================== PARTICLES ===========================//
+
+		{ 	
+			"rule_name" : "rule_setup9",
 			"matching_tags" : ["triA"],
-			"produced_tags" : ["implode_triA1"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeA1"
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_B1",
+			"rule_name" : "rule_setup10",
 			"matching_tags" : ["triB"],
-			"produced_tags" : ["implode_triB1"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeB1"
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_C1",
+			"rule_name" : "rule_setup11",
 			"matching_tags" : ["triC"],
-			"produced_tags" : ["implode_triC1"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeC1"
+			"produced_tags" : ["setup_all"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "setup"
+		},
+		//=========================== END SETUP RULES ===========================//
+
+		//=========================== FIRST FALL ================================//
+
+		{
+				"rule_name" : "rule_fall1_down",
+		    	"matching_tags" : ["square1"], 
+    			"produced_tags" : ["square1_fall_down"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, -135.0, 0.0, 205.0, 0.05],
+    			"init_value" : "fall_down"
+    	},
+
+		{
+				"rule_name" : "rule_fall1_up",
+		    	"matching_tags" : ["square1"], 
+    			"produced_tags" : ["square1_fall_up"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, -75.0, -80.0, -80.0, 0.05],
+    			"init_value" : "fall_up"
+    	},
+
+    	{ 	
+			"rule_name" : "rule_fade_square1",
+			"matching_tags" : ["square1"],
+			"produced_tags" : ["fade_square1"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
+		},
+
+		//=========================== END FIRST FALL ============================//
+
+		//=========================== SECOND FALL ================================//
+
+		{
+				"rule_name" : "rule_fall2_down",
+		    	"matching_tags" : ["square2"], 
+    			"produced_tags" : ["square2_fall_down"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, -135.0, 0.0, 205.0, 0.05],
+    			"init_value" : "fall_down"
+    	},
+
+		{
+				"rule_name" : "rule_fall2_up",
+		    	"matching_tags" : ["square2"], 
+    			"produced_tags" : ["square2_fall_up"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, -75.0, 80.0, -80.0, 0.05],
+    			"init_value" : "fall_up"
+    	},
+
+    	{ 	
+			"rule_name" : "rule_fade_square2",
+			"matching_tags" : ["square2"],
+			"produced_tags" : ["fade_square2"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
+		},
+
+		//=========================== END SECOND FALL ============================//
+
+		//=========================== THIRD FALL ================================//
+
+		{
+				"rule_name" : "rule_fall3_down",
+		    	"matching_tags" : ["square3"], 
+    			"produced_tags" : ["square3_fall_down"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, -155.0, 0.0, 205.0, 0.05],
+    			"init_value" : "fall_down"
+    	},
+
+		{
+				"rule_name" : "rule_fall_up",
+		    	"matching_tags" : ["square3"], 
+    			"produced_tags" : ["square3_fall_up"],
+   				"operator" : "rot_tran",
+    			"parameters" : [1.0, 70.0, -100.0, -120.0, 0.05],
+    			"init_value" : "fall_up"
+    	},
+
+    	{ 	
+			"rule_name" : "rule_fade_square3",
+			"matching_tags" : ["square3"],
+			"produced_tags" : ["fade_square3"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
+		},
+
+		//=========================== END THIRD FALL ============================//
+
+		//=========================== FIRST CRACK ===============================//
+
+
+		{ 	
+			"rule_name" : "rule_appear_crack1",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["appear_crack1"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "crack1"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_D1",
-			"matching_tags" : ["triD"],
-			"produced_tags" : ["implode_triD1"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeD1"
+			"rule_name" : "space_rule1",
+			"matching_tags" : ["container"],
+			"produced_tags" : ["space_container"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move1"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_E1",
-			"matching_tags" : ["triE"],
-			"produced_tags" : ["implode_triE1"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeE1"
+			"rule_name" : "space_rule2",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["space_crack1"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move1"
 		},
 
+		//=========================== END FIRST CRACK ===========================//
+
+		//=========================== FIRST CRACK PARTICLES ===============================//
+
 		{ 	
-			"rule_name" : "space_rule_A2",
+			"rule_name" : "appear_triA",
 			"matching_tags" : ["triA"],
-			"produced_tags" : ["implode_triA2"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeA2"
+			"produced_tags" : ["appear_triA"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "appear"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_B2",
-			"matching_tags" : ["triB"],
-			"produced_tags" : ["implode_triB2"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeB2"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_C2",
-			"matching_tags" : ["triC"],
-			"produced_tags" : ["implode_triC2"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeC2"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_D2",
-			"matching_tags" : ["triD"],
-			"produced_tags" : ["implode_triD2"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeD2"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_E2",
-			"matching_tags" : ["triE"],
-			"produced_tags" : ["implode_triE2"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeE2"
-		},
-
-		{ 	
-			"rule_name" : "space_rule_A3",
+			"rule_name" : "lefttriA",
 			"matching_tags" : ["triA"],
-			"produced_tags" : ["implode_triA3"],
+			"produced_tags" : ["explodetriA"],
 			"operator" : "move_towards",
 			//                    x     y   - exp
 			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeA3"
+			"parameters" : [0.0, 150.0, 0.0, -150.0 ,-0.1],			
+			"init_value" : "explode"
+		},
+
+
+		{ 	
+			"rule_name" : "fade_triA",
+			"matching_tags" : ["triA"],
+			"produced_tags" : ["fade_triA"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
+		},
+
+		//=========================== END FIRST CRACK PARTICLES ===========================//
+
+
+		//=========================== SECOND CRACK ==============================//
+
+		{ 	
+			"rule_name" : "rule_appear_crack2",
+			"matching_tags" : ["crack2"],
+			"produced_tags" : ["appear_crack2"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "crack2"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_B3",
+			"rule_name" : "space_rule3",
+			"matching_tags" : ["container"],
+			"produced_tags" : ["space_container"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move2"
+		},
+
+		{ 	
+			"rule_name" : "space_rule3",
+			"matching_tags" : ["container"],
+			"produced_tags" : ["space_container"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, -3.0, 0.01],
+			"init_value" : "crack4"
+		},
+
+		{ 	
+			"rule_name" : "rule_appear_crack4",
+			"matching_tags" : ["crack4"],
+			"produced_tags" : ["appear_crack4"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "crack4"
+		},
+
+		{ 	
+			"rule_name" : "space_rule4",
+			"matching_tags" : ["crack2"],
+			"produced_tags" : ["space_crack2"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move2"
+		},
+
+		{ 	
+			"rule_name" : "space_rule6",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["space_crack3"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move2"
+		},
+
+		{ 	
+			"rule_name" : "space_rule4",
+			"matching_tags" : ["crack2"],
+			"produced_tags" : ["space_crack2"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, -3.0, 0.01],
+			"init_value" : "crack4"
+		},
+
+		{ 	
+			"rule_name" : "space_rule6",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["space_crack3"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, -3.0, 0.01],
+			"init_value" : "crack4"
+		},
+		//=========================== END SECOND CRACK ===========================//
+
+
+		//=========================== SECOND CRACK PARTICLES ===============================//
+
+		{ 	
+			"rule_name" : "appear_triB",
 			"matching_tags" : ["triB"],
-			"produced_tags" : ["implode_triB3"],
-			"operator" : "move_towards",
-			//                    x     y   - exp
-			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeB3"
+			"produced_tags" : ["appear_triB"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "appear"
 		},
 
 		{ 	
-			"rule_name" : "space_rule_C3",
-			"matching_tags" : ["triC"],
-			"produced_tags" : ["implode_triC3"],
+			"rule_name" : "righttriB",
+			"matching_tags" : ["triB"],
+			"produced_tags" : ["explodetriB"],
 			"operator" : "move_towards",
 			//                    x     y   - exp
 			//							    + impl
-			"parameters" : [0.0, 0.0, -50.0, -50.0, -0.1],			
-			"init_value" : "timeC3"
+			"parameters" : [0.0, -150.0, 0.0, -150.0 ,-0.1],			
+			"init_value" : "explode"
+		},
+
+
+		{ 	
+			"rule_name" : "fade_triB",
+			"matching_tags" : ["triB"],
+			"produced_tags" : ["fade_triB"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
+		},
+
+		//=========================== END SECOND CRACK PARTICLES ===========================//
+
+
+		//=========================== THIRD CRACK ================================//
+
+		{ 	
+			"rule_name" : "rule_appear_crack3",
+			"matching_tags" : ["crack3"],
+			"produced_tags" : ["appear_crack3"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "crack3"
+		},
+
+		{ 	
+			"rule_name" : "space_rule5",
+			"matching_tags" : ["container"],
+			"produced_tags" : ["space_container"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move3"
+		},
+
+		{ 	
+			"rule_name" : "space_rule6",
+			"matching_tags" : ["crack3"],
+			"produced_tags" : ["space_crack3"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move3"
+		},
+
+		{ 	
+			"rule_name" : "space_rule7",
+			"matching_tags" : ["crack2"],
+			"produced_tags" : ["space_crack3"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move3"
+		},
+
+		{ 	
+			"rule_name" : "space_rule8",
+			"matching_tags" : ["crack1"],
+			"produced_tags" : ["space_crack3"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move3"
+		},
+
+
+		{ 	
+			"rule_name" : "space_rule8",
+			"matching_tags" : ["crack4"],
+			"produced_tags" : ["space_crack4"],
+			"operator" : "translation",
+			"parameters" : [1.0, 0.0, 3.0, 0.01],
+			"init_value" : "move3"
+		},
+
+		//=========================== END THIRD CRACK ===========================//
+
+		//=========================== THIRD CRACK PARTICLES ===============================//
+
+		{ 	
+			"rule_name" : "appear_triC",
+			"matching_tags" : ["triC"],
+			"produced_tags" : ["appear_triC"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							0.0, 0.0],
+			"init_value" : "appear"
+		},
+
+		{ 	
+			"rule_name" : "lefttriC",
+			"matching_tags" : ["triC"],
+			"produced_tags" : ["explodetriC"],
+			"operator" : "move_towards",
+			//                    x     y   - exp
+			//							    + impl
+			"parameters" : [0.0, 150.0, 0.0, -150.0 ,-0.1],			
+			"init_value" : "explode"
+		},
+
+
+		{ 	
+			"rule_name" : "fade_triC",
+			"matching_tags" : ["triC"],
+			"produced_tags" : ["fade_triC"],
+			"operator" : "attribute",
+			"parameters" : [255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							255.0, 250.0, 159.0, 1.0,
+							255.0, 250.0, 159.0, 0.0,
+							0.0, 0.0],
+			"init_value" : "fade"
 		}
+
+
+		//=========================== END THIRD CRACK PARTICLES ===========================//
+
 
 	]
 }
