@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18D7E90D1D08525300C79911"
-            BuildableName = "tinygrammar"
-            BlueprintName = "tinygrammar"
+            BlueprintIdentifier = "AA8164141DB6738000A66F22"
+            BuildableName = "tinygrammar_time"
+            BlueprintName = "tinygrammar_time"
             ReferencedContainer = "container:tinygrammar.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -42,7 +42,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "18D7E90D1D08525300C79911"
-            BuildableName = "tinygrammar"
-            BlueprintName = "tinygrammar"
+            BlueprintIdentifier = "AA8164141DB6738000A66F22"
+            BuildableName = "tinygrammar_time"
+            BlueprintName = "tinygrammar_time"
             ReferencedContainer = "container:tinygrammar.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
