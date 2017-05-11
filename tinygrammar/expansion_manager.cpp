@@ -226,6 +226,7 @@ void expand_init(HistoryAnim* h) {
 
 bool expand(HistoryAnim* h) {
     //retrieve active nodes
+    
     auto front = get_active_nodes(h);
     //pass them to grammar core
     auto grammar = get_grammar(grammar_filename);
@@ -233,7 +234,18 @@ bool expand(HistoryAnim* h) {
     auto active_slices = to_slices(front);
     // Mapping the shapes to their respective slices
     auto shapes_map = map<Shape*, TimeManager::NodeTimeLine*>();
-    for (auto && as : active_slices) shapes_map[as] = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
+    
+    //EDOARDO FIX
+    static map<TimeManager::TimeSlice*, TimeManager::NodeTimeLine*> sliceToTimeline;
+    
+    for (auto && as : active_slices){
+        if (sliceToTimeline[((TimeSliceShape*)as)->slice] != nullptr)
+            shapes_map[as] = sliceToTimeline[((TimeSliceShape*)as)->slice];
+        else {
+             shapes_map[as] = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
+             sliceToTimeline[((TimeSliceShape*)as)->slice] = shapes_map[as];
+        }
+    }
     
     auto grammar_step = matching_slice(grammar, active_slices, shapes_map);
     

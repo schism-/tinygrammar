@@ -10,8 +10,11 @@
 
 
 TimeManager::NodeTimeLine* TimeManager::FindTimeLine (TimeManager::TimeLine* t, TimeManager::TimeSlice* slice){
-    for (auto&& ntm : t->timelines){
-        if (find(ntm->slices.begin(), ntm->slices.end(), slice) != ntm->slices.end()) return ntm;
+    for (auto&& ntm : t->timelines){ //ntm is a NodeTimeLine object
+        // Per ogni time line controllo se la slice vi appartiene
+        if (find(ntm->slices.begin(), ntm->slices.end(), slice) != ntm->slices.end()){
+            return ntm;
+        }
     }
     printf("[ERROR] FindTimeLine : NodeTimeLine not found \n");
     return nullptr;
