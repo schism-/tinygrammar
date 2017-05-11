@@ -2,7 +2,7 @@
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-500.0, -348.0, 500.0, 346.0],
+	"bbox" : [-1000.0, -1000.0, 1000.0, 346.0],
 	"dry_run" : false,
 
 	"rules" : [
@@ -200,7 +200,8 @@
 
 		{ 	
 			"rule_name" : "space_rule_ls3",
-			"matching_tags" : ["tri"], "produced_tags" : ["lt3"],
+			"matching_tags" : ["tri"], 
+			"produced_tags" : ["lt3"],
 			"operator" : "attribute",
 			"parameters" : [0.0, 0.0, 0.0, 0.0, 
 							0.0, 0.0, 0.0, 1.0, 

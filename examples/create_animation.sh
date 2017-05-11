@@ -16,7 +16,7 @@ START_TIME=$SECONDS
 echo "Execution ended in : $(($SECONDS - $START_TIME)) seconds!"
 
 echo "CREATING PNG FRAMES"
-mogrify -format png -density 20 $3/frames/*.svg
+mogrify -format png -density 40 $3/frames/*.svg
 
 #convert -density 20 -resize 500x500 $3/svgs/*.svg -set filename:base "%[base]" $3/pngs/"%[filename:base].png"
 echo "CREATING GIF"

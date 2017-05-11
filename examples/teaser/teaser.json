@@ -2,7 +2,7 @@
 	"grammar_name" : "Control Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-400.0, -400.0, 400.0, 400.0],
+	"bbox" : [-1000.0, -1000.0, 1000.0, 1000.0],
 	"dry_run" : false,
 
 	"rules" : [
