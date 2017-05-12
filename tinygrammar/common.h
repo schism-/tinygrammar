@@ -38,8 +38,8 @@ using namespace std;
 #define SPEEDUP_MATLN 0
 
 static constexpr double resolution = 2;
-// static constexpr double matrix_resolution = 100;
-static constexpr double matrix_resolution = 25;
+static constexpr double matrix_resolution = 100;
+//static constexpr double matrix_resolution = 25;
 static constexpr int matrix_num = (int)(matrix_resolution * matrix_resolution);
 
 enum {
