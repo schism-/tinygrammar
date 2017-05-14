@@ -7,381 +7,382 @@
 	.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}
 </style>
 <title>particles</title>
-<rect id="square1" x="248.1" y="-60.6" class="st0" width="37.1" height="37.1"/>
-<rect id="square2" x="248.1" y="-60.6" class="st0" width="37.1" height="37.1"/>
-<rect id="square3" x="248.1" y="-60.6" class="st0" width="37.1" height="37.1"/>
-<circle id="container" class="st0" cx="258.3" cy="269.1" r="82.5"/>
-<polygon id="crack1" class="st0" points="267.8,227.3 269.2,223.3 268.5,210.1 268.2,207.5 261.4,206.4 260.1,186.7 258.3,186.7 
-	259.7,208 266.2,209.1 267.2,223.2 266.1,226.9 "/>
-<polyline id="crack2" class="st0" points="260.1,239.9 266.4,255.3 259.4,260.7 260.6,262.6 269.2,256.1 262.4,240.2 267.8,227.3 
-	266.1,226.9 260.1,240.6 "/>
-<polygon id="crack4" class="st0" points="260.2,288.9 259.5,281.2 249.2,270 259.7,261.3 260.8,263.5 251.8,270 261.3,280 
-	262.7,288.5 "/>
-<polygon id="crack3" class="st0" points="269.2,350.8 265,346.2 262.9,339 252.8,325.8 264.4,315.2 262.7,288.5 260.2,288.9 
-	262.4,314.6 249.9,325.4 260.9,340.4 263,347.4 266.6,351.2 "/>
-<polygon id="triA_0-7" class="st1" points="252.1,205.6 251.1,204.7 252.1,202.7 "/>
-<polygon id="triA_3" class="st1" points="248.3,197.3 250.3,198.3 248.2,199.2 "/>
-<polygon id="triA_1-7" class="st1" points="244.1,202.3 259.1,201.6 244.1,199.3 "/>
-<path id="triA_0-10_2_" class="st1" d="M253.1,185.3"/>
-<polygon id="triA_1-9" class="st1" points="262.4,210.3 261.4,208.3 262.4,207.3 "/>
-<polygon id="triA_4-2" class="st1" points="249.7,216.2 252.6,217.1 249.7,219.1 "/>
-<polygon id="triA_2-8" class="st1" points="246.1,205.8 247.1,207.8 246.1,208.7 "/>
-<polygon id="triA_2-9" class="st1" points="245.9,208.7 243.9,207.7 245.9,206.7 "/>
-<path id="triA_2-10_2_" class="st1" d="M246,185.1"/>
-<polygon id="triA_4-6" class="st1" points="250.2,206.3 252.2,206.4 250.2,208.3 "/>
-<polygon id="triA_5-4" class="st1" points="246.5,199.5 247.5,201.5 246.5,202.5 "/>
-<polygon id="triA_5-5" class="st1" points="255,185.8 253.1,183.8 255.1,183.9 "/>
-<polygon id="triA_4-8" class="st1" points="256.3,205.3 258.1,206.3 256.2,208.2 "/>
-<polygon id="triA_4-9" class="st1" points="259.3,202.1 257.3,202.1 259.3,200.2 "/>
-<polygon id="triA_1-16" class="st1" points="260.9,206.4 245.9,207.1 260.9,208.4 "/>
-<polygon id="triA_1-17" class="st1" points="249.3,200.8 247.3,199.8 249.3,198.8 "/>
-<polygon id="triA_3-12" class="st1" points="245.5,213.5 247.4,215.5 245.4,216.5 "/>
-<polygon id="triA_7-5" class="st1" points="249.3,201.9 247.4,199.8 249.4,198.9 "/>
-<line id="triA_0-2-3_2_" class="st0" x1="247.5" y1="185.7" x2="244.5" y2="186.7"/>
-<polygon id="triA_1-2-3" class="st1" points="255.9,224.5 257.9,225.4 255.8,227.4 "/>
-<polygon id="triA_0-7-2" class="st1" points="256,210.6 254.1,209.6 256.1,207.6 "/>
-<polygon id="triA_3-2-3" class="st1" points="256,210.4 256.9,211.3 255.9,212.3 "/>
-<polygon id="triA_1-8-2" class="st1" points="245.9,209.4 247.8,210.4 245.8,212.3 "/>
-<polygon id="triA_2-6-2" class="st1" points="246.8,201.7 248.8,202.7 246.8,203.7 "/>
-<polyline id="triA_4-2-3" class="st1" points="254.2,216.9 254.3,214 255.2,215 254.2,216.9 "/>
-<polygon id="triA_5-2-2" class="st1" points="261.3,196.9 263.3,198 261.3,198.9 "/>
-<polygon id="triA_0-13-2" class="st1" points="267.2,218.4 265.2,218.3 267.2,216.5 "/>
-<polygon id="triA_3-7-2" class="st1" points="259.7,194.5 257.7,192.5 259.7,192.5 "/>
-<polygon id="triA_0-14-2" class="st1" points="244.3,188.8 246.3,190.8 244.3,190.7 "/>
-<polygon id="triA_0-15-2" class="st1" points="256.3,189.2 254.3,187.2 256.3,187.2 "/>
-<polygon id="triA_1-13-2" class="st1" points="252.4,218.1 250.4,217.1 252.5,216.1 "/>
-<polygon id="triA_4-7-2" class="st1" points="249.7,205.3 247.7,203.3 249.7,202.3 "/>
-<polygon id="triA_1-14-2" class="st1" points="257.3,220.6 259.2,221.6 258.2,222.6 "/>
-<polygon id="triA_4-11-2" class="st1" points="258.8,188.9 256.9,186.8 258.9,185.9 "/>
-<polygon id="triA_9-2" class="st1" points="252.6,207 253.6,207.9 251.6,208.8 "/>
-<polygon id="triA_8-3-2" class="st1" points="251.5,188 249.6,186 251.6,185 "/>
-<path id="triA_1-3-3_1_" class="st1" d="M256.8,184.5"/>
-<polygon id="triA_0-4-3" class="st1" points="254.3,211.4 256.3,212.4 254.2,213.4 "/>
-<polygon id="triA_1-2-4" class="st1" points="249.9,189.9 251.8,190.9 249.9,191.9 "/>
-<polygon id="triA_2-3-3" class="st1" points="256.1,224.6 257.9,226.6 256,227.6 "/>
-<polygon id="triA_2-3-4" class="st1" points="257.7,213.6 255.7,213.6 257.8,211.7 "/>
-<polygon id="triA_0-9-3" class="st1" points="256.4,214.2 253.5,212.1 256.5,211.2 "/>
-<polygon id="triA_0-10-3" class="st1" points="261.9,193.7 263.8,194.7 261.8,195.6 "/>
-<polygon id="triA_1-9-3" class="st1" points="261.5,187.9 260.5,186.8 261.5,185.9 "/>
-<polygon id="triA_3-4-3" class="st1" points="250.8,193.1 253.7,193.1 250.7,195 "/>
-<polygon id="triA_4-3-4" class="st1" points="255.5,189.8 253.5,189.8 254.6,187.9 "/>
-<polygon id="triA_1-10-3" class="st1" points="244.5,219.3 246.4,220.3 244.4,222.3 "/>
-<polygon id="triA_0-13-3" class="st1" points="257.6,208.4 256.6,207.4 257.6,206.5 "/>
-<polygon id="triA_3-6-3" class="st1" points="257.5,189 259.5,190.1 257.4,192 "/>
-<polyline id="triA_6-3-3" class="st1" points="248.8,235.3 246.9,237.2 246.9,234.3 248.8,235.3 "/>
-<polyline id="triA_1-12-3" class="st1" points="251,214 251,212.1 253,213 251,214 "/>
-<polygon id="triA_2-11-3" class="st1" points="261,192.1 259,191.1 261.1,189.1 "/>
-<polygon id="triA_3-9-3" class="st1" points="267.8,216.8 265.9,215.9 267.9,214.9 "/>
-<polygon id="triA_5-4-3" class="st1" points="253.7,218.2 254.7,218.2 253.7,220.1 "/>
-<polygon id="triA_5-5-3" class="st1" points="254,202 253,200 255,200.1 "/>
-<polygon id="triA_6-3-4" class="st1" points="267.8,193.8 266.8,192.8 267.8,190.9 "/>
-<polygon id="triA_1-14-3" class="st1" points="254.3,192 256.3,193.1 254.2,194 "/>
-<polygon id="triA_1-15-3" class="st1" points="255.2,194.5 253.2,193.6 255.2,192.6 "/>
-<polygon id="triA_6-4-3" class="st1" points="246.1,208.2 247.1,209.2 246.1,210.2 "/>
-<polygon id="triA_7-2-4" class="st1" points="257.9,195.1 259.9,196.1 257.9,197.1 "/>
-<polygon id="triA_0-18-3" class="st1" points="247,187.3 249,188.4 247,190.3 "/>
-<polygon id="triA_1-16-3" class="st1" points="266.7,194.6 268.7,195.7 266.7,196.6 "/>
-<polygon id="triA_4-10-3" class="st1" points="252.5,212.4 254.5,213.4 252.5,214.3 "/>
-<polygon id="triA_5-8-3" class="st1" points="246.8,224.4 248.8,225.5 246.8,226.4 "/>
-<polygon id="triA_4-11-3" class="st1" points="248.6,211.6 247.7,210.6 248.7,208.6 "/>
-<polygon id="triA_5-9-3" class="st1" points="255.5,195.8 253.6,193.8 255.6,192.8 "/>
-<polygon id="triA_6-7-3" class="st1" points="262.3,216.4 261.4,214.4 262.3,213.4 "/>
-<line id="triA_0-4-4_1_" class="st0" x1="260.9" y1="184.3" x2="258.9" y2="184.3"/>
-<polygon id="triA_0-3-5" class="st1" points="248.1,201.1 246.1,200.1 248.1,199.1 "/>
-<polygon id="triA_0-8-4" class="st1" points="255.4,200.2 257.4,200.2 255.4,202.1 "/>
-<polygon id="triA_4-4-4" class="st1" points="246.7,211.3 247.7,213.3 246.7,213.3 "/>
-<polygon id="triA_2-6-4" class="st1" points="247.7,200.2 249.7,201.2 246.7,202.1 "/>
-<polygon id="triA_1-9-4" class="st1" points="254.2,189.6 253.2,188.6 254.3,186.7 "/>
-<polygon id="triA_3-4-5" class="st1" points="252.2,204.9 253.2,206.9 252.2,207.9 "/>
-<polygon id="triA_4-2-5" class="st1" points="245.6,185.1 247.6,186.1 245.6,188 "/>
-<polygon id="triA_1-10-4" class="st1" points="257,189.5 257.9,191.6 255.9,192.5 "/>
-<polygon id="triA_0-3_1_" class="st1" points="252.3,215.1 251.4,214.1 252.4,213.1 "/>
-<polygon id="triA_1-7_1_" class="st1" points="250.1,203.1 248.1,202.1 250.2,200.1 "/>
-<polygon id="triA_1-9_1_" class="st1" points="238.1,194.5 237.1,192.5 238.1,191.5 "/>
-<polygon id="triA_4-3_1_" class="st1" points="259.1,195.4 257.2,194.5 259.2,193.5 "/>
-<polygon id="triA_2-8_1_" class="st1" points="246.7,214.5 247.6,216.6 246.6,217.4 "/>
-<polygon id="triA_2-10_1_" class="st1" points="255.1,211.4 257.1,213.4 255.1,214.4 "/>
-<path id="triA_4-6_2_" class="st1" d="M244.4,185.1"/>
-<polygon id="triA_3-9_1_" class="st1" points="249.5,209.4 247.6,207.5 249.6,206.6 "/>
-<polygon id="triA_1-16_1_" class="st1" points="249.5,186.6 251.5,187.6 249.5,188.5 "/>
-<polygon id="triA_1-17_1_" class="st1" points="254.1,215 252.1,213.9 254.2,213 "/>
-<polygon id="triA_3-12_1_" class="st1" points="245.8,215.7 247.8,217.8 245.8,218.7 "/>
-<polygon id="triA_5-9_1_" class="st1" points="260.8,213.3 258.8,212.2 260.8,211.3 "/>
-<polygon id="triA_7-5_1_" class="st1" points="254.3,211.3 252.4,209.2 254.4,208.3 "/>
-<polygon id="triA_0-2-3_1_" class="st1" points="257.3,211.8 260.3,213.8 257.2,214.7 "/>
-<polygon id="triA_0-7-2_1_" class="st1" points="255.7,215.5 253.7,214.5 255.8,212.5 "/>
-<polygon id="triB_0-7_1_" class="st1" points="266.2,248.6 265.2,247.7 266.2,245.7 "/>
-<polygon id="triB_3_1_" class="st1" points="262.4,242.1 264.4,243.1 262.3,244 "/>
-<polygon id="triB_1-7_3_" class="st1" points="261.9,248.2 276.9,247.5 261.9,245.2 "/>
-<path id="triB_0-10_1_" class="st1" d="M269.1,231.2"/>
-<polygon id="triB_1-9_3_" class="st1" points="277.2,253.1 276.2,251.1 277.2,250.1 "/>
-<polygon id="triB_4-2_1_" class="st1" points="265.8,261.6 268.7,262.5 265.8,264.5 "/>
-<polygon id="triB_2-8_3_" class="st1" points="263.8,251.9 264.8,253.9 263.8,254.8 "/>
-<polygon id="triB_2-9_1_" class="st1" points="260,250.9 258,249.9 260,248.9 "/>
-<path id="triB_2-10_4_" class="st1" d="M262.4,231.3"/>
-<polygon id="triB_4-6_3_" class="st1" points="267.4,249.8 269.4,249.9 267.4,251.8 "/>
-<polygon id="triB_5-4_1_" class="st1" points="263.3,242.8 264.3,244.8 263.3,245.8 "/>
-<polygon id="triB_5-5_1_" class="st1" points="273.2,231.2 271.3,229.2 273.3,229.3 "/>
-<polygon id="triB_4-8_1_" class="st1" points="271.3,249.2 273.1,250.2 271.2,252.1 "/>
-<polygon id="triB_4-9_1_" class="st1" points="277.4,244.1 275.4,244.1 277.4,242.2 "/>
-<polygon id="triB_1-16_3_" class="st1" points="277.1,249.4 262.1,250.1 277.1,251.4 "/>
-<polygon id="triB_1-17_3_" class="st1" points="263.5,244 261.5,243 263.5,242 "/>
-<polygon id="triB_3-12_3_" class="st1" points="263.6,256.9 265.5,258.9 263.5,259.9 "/>
-<polygon id="triB_7-5_3_" class="st1" points="263.7,243.9 261.8,241.8 263.8,240.9 "/>
-<line id="triB_0-2-3_4_" class="st0" x1="266" y1="230" x2="263" y2="231"/>
-<polygon id="triB_1-2-3_1_" class="st1" points="270.5,269.4 272.5,270.3 270.4,272.3 "/>
-<polygon id="triB_0-7-2_3_" class="st1" points="272.2,255.5 270.3,254.5 272.3,252.5 "/>
-<polygon id="triB_3-2-3_1_" class="st1" points="273.9,253.3 274.8,254.2 273.8,255.2 "/>
-<polygon id="triB_1-8-2_1_" class="st1" points="261.2,253.5 263.1,254.5 261.1,256.4 "/>
-<polygon id="triB_2-6-2_1_" class="st1" points="265.5,247.5 267.5,248.5 265.5,249.5 "/>
-<polyline id="triB_4-2-3_1_" class="st1" points="271,260.6 271.1,257.7 272,258.7 271,260.6 "/>
-<polygon id="triB_5-2-2_1_" class="st1" points="276.9,238.7 278.9,239.8 276.9,240.7 "/>
-<polygon id="triB_0-13-2_1_" class="st1" points="284.7,264.2 282.7,264.1 284.7,262.3 "/>
-<polygon id="triB_3-7-2_1_" class="st1" points="274.8,241 272.8,239 274.8,239 "/>
-<polygon id="triB_0-14-2_1_" class="st1" points="259.8,234.4 261.8,236.4 259.8,236.3 "/>
-<polygon id="triB_0-15-2_1_" class="st1" points="272.1,231.2 270.1,229.2 272.1,229.2 "/>
-<polygon id="triB_1-13-2_1_" class="st1" points="269.4,260.3 267.4,259.3 269.5,258.3 "/>
-<polygon id="triB_4-7-2_1_" class="st1" points="265.2,251.5 263.2,249.5 265.2,248.5 "/>
-<polygon id="triB_1-14-2_1_" class="st1" points="276,262.5 277.9,263.5 276.9,264.5 "/>
-<polygon id="triB_4-11-2_1_" class="st1" points="273.9,230.5 272,228.4 274,227.5 "/>
-<polygon id="triB_9-2_1_" class="st1" points="268.1,249.7 269.1,250.6 267.1,251.5 "/>
-<polygon id="triB_8-3-2_1_" class="st1" points="267.7,233.7 265.8,231.7 267.8,230.7 "/>
-<path id="triB_1-3-3_2_" class="st1" d="M274.9,228.7"/>
-<polygon id="triB_0-4-3_1_" class="st1" points="272.6,257 274.6,258 272.5,259 "/>
-<polygon id="triB_1-2-4_1_" class="st1" points="264.6,235.6 266.5,236.6 264.6,237.6 "/>
-<polygon id="triB_2-3-3_1_" class="st1" points="271.7,269 273.5,271 271.6,272 "/>
-<polygon id="triB_2-3-4_1_" class="st1" points="274.9,257 272.9,257 275,255.1 "/>
-<polygon id="triB_0-9-3_1_" class="st1" points="271.1,257.1 268.2,255 271.2,254.1 "/>
-<polygon id="triB_0-10-3_1_" class="st1" points="276.3,237.5 278.2,238.5 276.2,239.4 "/>
-<polygon id="triB_1-9-3_1_" class="st1" points="275.7,230.1 274.7,229 275.7,228.1 "/>
-<polygon id="triB_3-4-3_1_" class="st1" points="265.7,235.9 268.6,235.9 265.6,237.8 "/>
-<polygon id="triB_4-3-4_1_" class="st1" points="271.7,232.6 269.7,232.6 270.8,230.7 "/>
-<polygon id="triB_1-10-3_1_" class="st1" points="260.6,264.2 262.5,265.2 260.5,267.2 "/>
-<polygon id="triB_0-13-3_1_" class="st1" points="273.9,253.4 272.9,252.4 273.9,251.5 "/>
-<polygon id="triB_3-6-3_1_" class="st1" points="273.1,234.8 275.1,235.9 273,237.8 "/>
-<polyline id="triB_6-3-3_1_" class="st1" points="266.2,280.7 264.3,282.6 264.3,279.7 266.2,280.7 "/>
-<polyline id="triB_1-12-3_1_" class="st1" points="265.6,256 265.6,254.1 267.6,255 265.6,256 "/>
-<polygon id="triB_2-11-3_1_" class="st1" points="279.3,237.5 277.3,236.5 279.4,234.5 "/>
-<polygon id="triB_3-9-3_1_" class="st1" points="284.2,259.8 282.3,258.9 284.3,257.9 "/>
-<polygon id="triB_5-4-3_1_" class="st1" points="271.3,259.8 272.3,259.8 271.3,261.7 "/>
-<polygon id="triB_5-5-3_1_" class="st1" points="270.1,244.2 269.1,242.2 271.1,242.3 "/>
-<polygon id="triB_6-3-4_1_" class="st1" points="282.1,236.2 281.1,235.2 282.1,233.3 "/>
-<polygon id="triB_1-14-3_1_" class="st1" points="270,235.7 272,236.8 269.9,237.7 "/>
-<polygon id="triB_1-15-3_1_" class="st1" points="270,237.2 268,236.3 270,235.3 "/>
-<polygon id="triB_6-4-3_1_" class="st1" points="264,253.7 265,254.7 264,255.7 "/>
-<polygon id="triB_7-2-4_1_" class="st1" points="276.3,240.3 278.3,241.3 276.3,242.3 "/>
-<polygon id="triB_0-18-3_1_" class="st1" points="261.9,233.8 263.9,234.9 261.9,236.8 "/>
-<polygon id="triB_1-16-3_1_" class="st1" points="282.8,238.7 284.8,239.8 282.8,240.7 "/>
-<polygon id="triB_4-10-3_1_" class="st1" points="267.9,255.1 269.9,256.1 267.9,257 "/>
-<polygon id="triB_5-8-3_1_" class="st1" points="265.6,266.4 267.6,267.5 265.6,268.4 "/>
-<polygon id="triB_4-11-3_1_" class="st1" points="264,256.4 263.1,255.4 264.1,253.4 "/>
-<polygon id="triB_5-9-3_1_" class="st1" points="271.2,239.1 269.3,237.1 271.3,236.1 "/>
-<polygon id="triB_6-7-3_1_" class="st1" points="278.1,259.3 277.2,257.3 278.1,256.3 "/>
-<line id="triB_0-4-4_2_" class="st0" x1="279.7" y1="226.7" x2="277.7" y2="226.7"/>
-<polygon id="triB_0-3-5_1_" class="st1" points="266.7,247 264.7,246 266.7,245 "/>
-<polygon id="triB_0-8-4_1_" class="st1" points="269.4,242.8 271.4,242.8 269.4,244.7 "/>
-<polygon id="triB_4-4-4_1_" class="st1" points="265.2,256.4 266.2,258.4 265.2,258.4 "/>
-<polygon id="triB_2-6-4_1_" class="st1" points="262.5,245.4 264.5,246.4 261.5,247.3 "/>
-<polygon id="triB_1-9-4_1_" class="st1" points="271.5,234.9 270.5,233.9 271.6,232 "/>
-<polygon id="triB_3-4-5_1_" class="st1" points="266.4,250.6 267.4,252.6 266.4,253.6 "/>
-<polygon id="triB_4-2-5_1_" class="st1" points="263.2,229.3 265.2,230.3 263.2,232.2 "/>
-<polygon id="triB_1-10-4_1_" class="st1" points="272.9,233.9 273.8,236 271.8,236.9 "/>
-<polygon id="triB_0-3_2_" class="st1" points="266.3,260.1 265.4,259.1 266.4,258.1 "/>
-<polygon id="triB_1-7_2_" class="st1" points="265.4,247.6 263.4,246.6 265.5,244.6 "/>
-<polygon id="triB_1-9_2_" class="st1" points="254.6,236.3 253.6,234.3 254.6,233.3 "/>
-<polygon id="triB_4-3_2_" class="st1" points="274.9,241 273,240.1 275,239.1 "/>
-<polygon id="triB_2-8_2_" class="st1" points="263,260.3 263.9,262.4 262.9,263.2 "/>
-<polygon id="triB_2-10_3_" class="st1" points="272.5,255.7 274.5,257.7 272.5,258.7 "/>
-<path id="triB_4-6_1_" class="st1" d="M262.9,231.1"/>
-<polygon id="triB_3-9_2_" class="st1" points="265.8,255.3 263.9,253.4 265.9,252.5 "/>
-<polygon id="triB_1-16_2_" class="st1" points="263.7,231.4 265.7,232.4 263.7,233.3 "/>
-<polygon id="triB_1-17_2_" class="st1" points="272.8,258.8 270.8,257.7 272.9,256.8 "/>
-<polygon id="triB_3-12_2_" class="st1" points="261.3,261.1 263.3,263.2 261.3,264.1 "/>
-<polygon id="triB_5-9_2_" class="st1" points="278.3,257.5 276.3,256.4 278.3,255.5 "/>
-<polygon id="triB_7-5_2_" class="st1" points="272.7,252.8 270.8,250.7 272.8,249.8 "/>
-<polygon id="triB_0-2-3_3_" class="st1" points="271.4,256.7 274.4,258.7 271.3,259.6 "/>
-<polygon id="triB_0-7-2_2_" class="st1" points="273.2,258.2 271.2,257.2 273.3,255.2 "/>
-<polyline id="triC_6-3-3_1_" class="st1" points="266.7,284.6 264.7,286.4 264.8,283.5 266.7,284.6 "/>
-<polygon id="triC_0-7_2_" class="st1" points="250.4,313.2 249.4,312.3 250.5,310.3 "/>
-<polygon id="triC_3_2_" class="st1" points="248.5,304.2 250.5,305.2 248.4,306.1 "/>
-<polygon id="triC_1-7_5_" class="st1" points="243.3,311.3 258.3,310.6 243.4,308.3 "/>
-<path id="triC_0-10_3_" class="st1" d="M250.8,291.5"/>
-<polygon id="triC_1-9_5_" class="st1" points="260.9,318.7 259.9,316.7 260.9,315.7 "/>
-<polygon id="triC_4-2_2_" class="st1" points="251,322.4 253.9,323.4 251,325.3 "/>
-<polygon id="triC_2-8_5_" class="st1" points="246.8,314.4 247.8,316.4 246.8,317.3 "/>
-<polygon id="triC_2-9_2_" class="st1" points="244.9,313.5 242.9,312.4 244.9,311.5 "/>
-<path id="triC_2-10_6_" class="st1" d="M243.8,294.6"/>
-<polygon id="triC_4-6_5_" class="st1" points="247.3,313.4 249.2,313.5 247.2,315.4 "/>
-<polygon id="triC_5-4_2_" class="st1" points="245.4,306.7 246.3,308.7 245.3,309.7 "/>
-<polygon id="triC_5-5_2_" class="st1" points="252.7,292.9 250.7,291 252.7,291 "/>
-<polygon id="triC_4-8_2_" class="st1" points="257.7,310.4 259.6,311.3 257.7,313.3 "/>
-<polygon id="triC_4-9_2_" class="st1" points="259.9,308 257.9,307.9 259.9,306.1 "/>
-<polygon id="triC_1-16_5_" class="st1" points="257.9,311.4 242.9,312.1 257.9,313.4 "/>
-<polygon id="triC_1-17_5_" class="st1" points="247.8,307.9 245.8,306.9 247.8,305.9 "/>
-<polygon id="triC_3-12_5_" class="st1" points="244.4,318.3 246.3,320.3 244.3,321.3 "/>
-<polygon id="triC_7-5_5_" class="st1" points="248.9,311.1 247,309.1 249,308.1 "/>
-<line id="triC_0-2-3_6_" class="st1" x1="245.3" y1="293.1" x2="242.2" y2="294"/>
-<polygon id="triC_1-2-3_2_" class="st1" points="253.8,330.5 255.8,331.4 253.7,333.4 "/>
-<polygon id="triC_0-7-2_5_" class="st1" points="255.5,315.5 253.5,314.5 255.6,312.5 "/>
-<polygon id="triC_3-2-3_2_" class="st1" points="257.1,317.3 258.1,318.2 257,319.2 "/>
-<polygon id="triC_1-8-2_2_" class="st1" points="243.7,315.5 245.6,316.5 243.7,318.4 "/>
-<polygon id="triC_2-6-2_2_" class="st1" points="245.9,310 247.9,311 245.9,312 "/>
-<polyline id="triC_4-2-3_2_" class="st1" points="255.5,325.5 255.6,322.6 256.6,323.6 255.5,325.5 "/>
-<polygon id="triC_5-2-2_2_" class="st1" points="260.3,305.4 262.3,306.4 260.3,307.4 "/>
-<polygon id="triC_0-13-2_2_" class="st1" points="267.7,327.5 265.7,327.5 267.7,325.6 "/>
-<polygon id="triC_3-7-2_2_" class="st1" points="260.5,299.8 258.5,297.7 260.5,297.8 "/>
-<polygon id="triC_0-14-2_2_" class="st1" points="241.3,294.3 243.3,296.3 241.3,296.2 "/>
-<polygon id="triC_0-15-2_2_" class="st1" points="254.1,294.3 252.1,292.3 254.1,292.3 "/>
-<polygon id="triC_1-13-2_2_" class="st1" points="251.4,323.2 249.4,322.1 251.4,321.2 "/>
-<polygon id="triC_4-7-2_2_" class="st1" points="246.7,314.2 244.8,312.2 246.8,311.2 "/>
-<polygon id="triC_1-14-2_2_" class="st1" points="257.6,326.7 259.5,327.8 258.4,328.8 "/>
-<polygon id="triC_4-11-2_2_" class="st1" points="257.5,294.1 255.6,292.1 257.6,291.1 "/>
-<polygon id="triC_9-2_2_" class="st1" points="249.9,313.6 250.9,314.5 248.9,315.5 "/>
-<polygon id="triC_8-3-2_2_" class="st1" points="250.5,292.9 248.6,290.9 250.6,289.9 "/>
-<path id="triC_1-3-3_3_" class="st1" d="M257.7,289.7"/>
-<polygon id="triC_0-4-3_2_" class="st1" points="251.4,315.9 253.4,317 251.4,317.9 "/>
-<polygon id="triC_1-2-4_2_" class="st1" points="248,299.3 249.9,300.4 248,301.3 "/>
-<polygon id="triC_2-3-3_2_" class="st1" points="254.7,329.5 256.5,331.5 254.6,332.5 "/>
-<polygon id="triC_2-3-4_2_" class="st1" points="257.9,322.5 255.9,322.5 257.9,320.6 "/>
-<polygon id="triC_0-9-3_2_" class="st1" points="253.9,320 251,317.9 254,317 "/>
-<polygon id="triC_0-10-3_2_" class="st1" points="263.7,302.4 265.7,303.5 263.6,304.3 "/>
-<polygon id="triC_1-9-3_2_" class="st1" points="260.6,296.2 259.6,295.2 260.6,294.2 "/>
-<polygon id="triC_3-4-3_2_" class="st1" points="249.7,301.4 252.6,301.4 249.6,303.3 "/>
-<polygon id="triC_4-3-4_2_" class="st1" points="255.4,297.4 253.4,297.3 254.4,295.4 "/>
-<polygon id="triC_1-10-3_2_" class="st1" points="242.7,326.3 244.7,327.4 242.6,329.3 "/>
-<polygon id="triC_0-13-3_2_" class="st1" points="255.2,317 254.2,316.1 255.2,315.1 "/>
-<polygon id="triC_3-6-3_2_" class="st1" points="255,293.9 257,294.9 254.9,296.9 "/>
-<polyline id="triC_6-3-3_2_" class="st1" points="246.7,343 244.7,344.9 244.8,342 246.7,343 "/>
-<polyline id="triC_1-12-3_2_" class="st1" points="250.5,318.9 250.6,317 252.5,317.9 250.5,318.9 "/>
-<polygon id="triC_2-11-3_2_" class="st1" points="260.3,300.5 258.3,299.4 260.4,297.5 "/>
-<polygon id="triC_3-9-3_2_" class="st1" points="265.2,323.5 263.2,322.6 265.3,321.6 "/>
-<polygon id="triC_5-4-3_2_" class="st1" points="253.2,324 254.2,324 253.1,325.9 "/>
-<polygon id="triC_5-5-3_2_" class="st1" points="254.6,308.6 253.6,306.7 255.6,306.8 "/>
-<polygon id="triC_6-3-4_2_" class="st1" points="266.5,303.2 265.6,302.2 266.6,300.3 "/>
-<polygon id="triC_1-14-3_2_" class="st1" points="253.7,301.2 255.7,302.2 253.6,303.2 "/>
-<polygon id="triC_1-15-3_2_" class="st1" points="254,300 252,299.1 254,298.1 "/>
-<polygon id="triC_6-4-3_2_" class="st1" points="246.9,313.9 247.9,314.9 246.9,315.9 "/>
-<polygon id="triC_7-2-4_2_" class="st1" points="255.8,302.1 257.7,303.2 255.7,304.1 "/>
-<polygon id="triC_0-18-3_2_" class="st1" points="246.6,296.6 248.6,297.7 246.6,299.6 "/>
-<polygon id="triC_1-16-3_2_" class="st1" points="266.9,300.4 268.8,301.4 266.8,302.4 "/>
-<polygon id="triC_4-10-3_2_" class="st1" points="250.5,320.8 252.4,321.8 250.4,322.7 "/>
-<polygon id="triC_5-8-3_2_" class="st1" points="247.7,333.2 249.7,334.3 247.6,335.2 "/>
-<polygon id="triC_4-11-3_2_" class="st1" points="249.8,316.7 248.9,315.7 249.9,313.7 "/>
-<polygon id="triC_5-9-3_2_" class="st1" points="254.6,302.3 252.7,300.3 254.7,299.3 "/>
-<polygon id="triC_6-7-3_2_" class="st1" points="261.2,324.9 260.4,322.9 261.3,321.9 "/>
-<line id="triC_0-4-4_3_" class="st1" x1="262.1" y1="291.3" x2="260.1" y2="291.3"/>
-<polygon id="triC_0-3-5_2_" class="st1" points="247,309.7 245.1,308.6 247.1,307.7 "/>
-<polygon id="triC_0-8-4_2_" class="st1" points="255.4,309.5 257.4,309.5 255.3,311.4 "/>
-<polygon id="triC_4-4-4_2_" class="st1" points="244.3,315.8 245.2,317.9 244.2,317.8 "/>
-<polygon id="triC_2-6-4_2_" class="st1" points="247.6,306.8 249.6,307.8 246.5,308.8 "/>
-<polygon id="triC_1-9-4_2_" class="st1" points="254.2,298.8 253.2,297.8 254.2,295.9 "/>
-<polygon id="triC_3-4-5_2_" class="st1" points="252.9,311.1 253.9,313.2 252.8,314.1 "/>
-<polygon id="triC_4-2-5_2_" class="st1" points="244.1,293.2 246.1,294.2 244.1,296.1 "/>
-<polygon id="triC_1-10-4_2_" class="st1" points="258.6,296.2 259.6,298.2 257.5,299.2 "/>
-<polygon id="triC_0-3_3_" class="st1" points="254.2,320.7 253.2,319.7 254.2,318.7 "/>
-<polygon id="triC_1-7_4_" class="st1" points="249.1,312.6 247.1,311.5 249.2,309.6 "/>
-<polygon id="triC_1-9_4_" class="st1" points="237.4,299.6 236.4,297.6 237.4,296.6 "/>
-<polygon id="triC_4-3_3_" class="st1" points="261,301.9 259,301 261,300 "/>
-<polygon id="triC_2-8_4_" class="st1" points="244.1,321.8 245,323.8 244,324.7 "/>
-<polygon id="triC_2-10_5_" class="st1" points="256.4,320.5 258.3,322.5 256.3,323.5 "/>
-<path id="triC_4-6_4_" class="st1" d="M242.5,292.5"/>
-<polygon id="triC_3-9_3_" class="st1" points="250.7,315.5 248.7,313.6 250.7,312.7 "/>
-<polygon id="triC_1-16_4_" class="st1" points="250.6,292.4 252.6,293.4 250.6,294.3 "/>
-<polygon id="triC_1-17_4_" class="st1" points="251.4,321 249.4,320 251.4,319 "/>
-<polygon id="triC_3-12_4_" class="st1" points="244.9,324.1 246.8,326.2 244.8,327.1 "/>
-<polygon id="triC_5-9_3_" class="st1" points="262.2,319.5 260.2,318.5 262.2,317.5 "/>
-<polygon id="triC_7-5_4_" class="st1" points="252.4,316.1 250.5,314.1 252.5,313.1 "/>
-<polygon id="triC_0-2-3_5_" class="st1" points="255.1,320.9 258.1,322.8 255,323.8 "/>
-<polygon id="triC_0-7-2_4_" class="st1" points="254.6,323.5 252.6,322.4 254.7,320.5 "/>
-<polygon id="triC_0-7_3_" class="st1" points="251.7,335.4 250.7,334.5 251.7,332.5 "/>
-<polygon id="triC_3_3_" class="st1" points="247.8,324.7 249.7,325.7 247.7,326.6 "/>
-<polygon id="triC_1-7_7_" class="st1" points="242.9,330.7 257.9,330 242.9,327.7 "/>
-<path id="triC_0-10_4_" class="st1" d="M255.1,314.4"/>
-<polygon id="triC_1-9_7_" class="st1" points="262.6,341.5 261.7,339.5 262.7,338.5 "/>
-<polygon id="triC_4-2_3_" class="st1" points="247.8,346.4 250.7,347.4 247.8,349.3 "/>
-<polygon id="triC_2-8_7_" class="st1" points="246.4,333.3 247.3,335.3 246.3,336.2 "/>
-<polygon id="triC_2-9_3_" class="st1" points="243.9,336.5 241.9,335.4 243.9,334.5 "/>
-<path id="triC_2-10_8_" class="st1" d="M246.8,313.3"/>
-<polygon id="triC_4-6_7_" class="st1" points="250.7,338.2 252.7,338.2 250.7,340.2 "/>
-<polygon id="triC_5-4_3_" class="st1" points="248.7,326.4 249.7,328.4 248.7,329.4 "/>
-<polygon id="triC_5-5_3_" class="st1" points="253.7,315.2 251.8,313.3 253.8,313.3 "/>
-<polygon id="triC_4-8_3_" class="st1" points="254.2,335.4 256,336.4 254.1,338.3 "/>
-<polygon id="triC_4-9_3_" class="st1" points="260.3,332.7 258.3,332.7 260.4,330.8 "/>
-<polygon id="triC_1-16_7_" class="st1" points="263,336.1 248,336.8 263,338.1 "/>
-<polygon id="triC_1-17_7_" class="st1" points="248.8,328.7 246.8,327.7 248.8,326.7 "/>
-<polygon id="triC_3-12_7_" class="st1" points="244.2,345.3 246.2,347.4 244.2,348.3 "/>
-<polygon id="triC_7-5_7_" class="st1" points="249.5,331.2 247.5,329.1 249.5,328.2 "/>
-<line id="triC_0-2-3_8_" class="st1" x1="249.7" y1="313.2" x2="246.7" y2="314.1"/>
-<polygon id="triC_1-2-3_3_" class="st1" points="257.7,353.4 259.7,354.3 257.6,356.3 "/>
-<polygon id="triC_0-7-2_7_" class="st1" points="254.4,340.7 252.4,339.6 254.5,337.7 "/>
-<polygon id="triC_3-2-3_3_" class="st1" points="255.2,342.3 256.2,343.2 255.2,344.2 "/>
-<polygon id="triC_1-8-2_3_" class="st1" points="248.2,338.5 250,339.5 248.1,341.4 "/>
-<polygon id="triC_2-6-2_3_" class="st1" points="247.8,328.6 249.8,329.7 247.7,330.6 "/>
-<polyline id="triC_4-2-3_3_" class="st1" points="253.2,345.3 253.2,342.4 254.2,343.5 253.2,345.3 "/>
-<polygon id="triC_5-2-2_3_" class="st1" points="258.8,326.2 260.8,327.2 258.7,328.2 "/>
-<polygon id="triC_0-13-2_3_" class="st1" points="267.7,346.2 265.7,346.2 267.8,344.3 "/>
-<polygon id="triC_3-7-2_3_" class="st1" points="261.2,325 259.3,323 261.3,323 "/>
-<polygon id="triC_0-14-2_3_" class="st1" points="245.4,316.6 247.4,318.5 245.4,318.5 "/>
-<polygon id="triC_0-15-2_3_" class="st1" points="256.3,319 254.3,317 256.3,317 "/>
-<polygon id="triC_1-13-2_3_" class="st1" points="253,347.2 251,346.1 253,345.2 "/>
-<polygon id="triC_4-7-2_3_" class="st1" points="248.8,332.7 246.8,330.6 248.9,329.7 "/>
-<polygon id="triC_1-14-2_3_" class="st1" points="259.1,350.6 261,351.7 259.9,352.6 "/>
-<polygon id="triC_4-11-2_3_" class="st1" points="257.4,317.8 255.5,315.7 257.5,314.8 "/>
-<polygon id="triC_9-2_3_" class="st1" points="252.6,337.8 253.6,338.7 251.5,339.7 "/>
-<polygon id="triC_8-3-2_3_" class="st1" points="251,316.7 249.1,314.7 251.1,313.7 "/>
-<path id="triC_1-3-3_4_" class="st1" d="M256.3,311.8"/>
-<polygon id="triC_0-4-3_3_" class="st1" points="253.1,339.5 255.1,340.5 253.1,341.5 "/>
-<polygon id="triC_1-2-4_3_" class="st1" points="251.7,320.4 253.6,321.4 251.6,322.4 "/>
-<polygon id="triC_2-3-3_3_" class="st1" points="255,352.8 256.8,354.9 254.9,355.8 "/>
-<polygon id="triC_2-3-4_3_" class="st1" points="258.3,342.8 256.3,342.7 258.4,340.9 "/>
-<polygon id="triC_0-9-3_3_" class="st1" points="255.9,342.8 252.9,340.7 256,339.8 "/>
-<polygon id="triC_0-10-3_3_" class="st1" points="263.6,323.1 265.6,324.1 263.6,325 "/>
-<polygon id="triC_1-9-3_3_" class="st1" points="263.5,317.9 262.5,316.9 263.6,315.9 "/>
-<polygon id="triC_3-4-3_3_" class="st1" points="249.6,323.9 252.5,323.9 249.6,325.8 "/>
-<polygon id="triC_4-3-4_3_" class="st1" points="253.7,318.8 251.7,318.7 252.7,316.9 "/>
-<polygon id="triC_1-10-3_3_" class="st1" points="242.9,346.9 244.9,348 242.9,349.9 "/>
-<polygon id="triC_0-13-3_3_" class="st1" points="258.9,339.6 257.9,338.7 258.9,337.7 "/>
-<polygon id="triC_3-6-3_3_" class="st1" points="257.5,318.2 259.5,319.2 257.5,321.2 "/>
-<polyline id="triC_6-3-3_3_" class="st1" points="248.3,362.9 246.3,364.7 246.4,361.8 248.3,362.9 "/>
-<polyline id="triC_1-12-3_3_" class="st1" points="250.3,341.8 250.4,339.9 252.4,340.8 250.3,341.8 "/>
-<polygon id="triC_2-11-3_3_" class="st1" points="259.1,321 257.1,319.9 259.2,318 "/>
-<polygon id="triC_3-9-3_3_" class="st1" points="268,346.1 266,345.2 268,344.2 "/>
-<polygon id="triC_5-4-3_3_" class="st1" points="253.5,346.9 254.5,346.9 253.5,348.8 "/>
-<polygon id="triC_5-5-3_3_" class="st1" points="253.4,330.5 252.4,328.6 254.4,328.6 "/>
-<polygon id="triC_6-3-4_3_" class="st1" points="269.1,324.8 268.1,323.8 269.2,321.9 "/>
-<polygon id="triC_1-14-3_3_" class="st1" points="253.4,322 255.4,323 253.4,324 "/>
-<polygon id="triC_1-15-3_3_" class="st1" points="254.2,323.8 252.2,322.9 254.2,321.9 "/>
-<polygon id="triC_6-4-3_3_" class="st1" points="247.4,335.2 248.3,336.2 247.3,337.2 "/>
-<polygon id="triC_7-2-4_3_" class="st1" points="260.2,322.8 262.2,323.8 260.2,324.8 "/>
-<polygon id="triC_0-18-3_3_" class="st1" points="244.6,315.5 246.6,316.5 244.5,318.5 "/>
-<polygon id="triC_1-16-3_3_" class="st1" points="265.3,323.1 267.3,324.1 265.3,325.1 "/>
-<polygon id="triC_4-10-3_3_" class="st1" points="254.8,343.3 256.8,344.2 254.8,345.2 "/>
-<polygon id="triC_5-8-3_3_" class="st1" points="248.5,355.2 250.5,356.3 248.5,357.2 "/>
-<polygon id="triC_4-11-3_3_" class="st1" points="247.9,340.4 247,339.3 247.9,337.4 "/>
-<polygon id="triC_5-9-3_3_" class="st1" points="253.4,323.5 251.5,321.4 253.5,320.5 "/>
-<polygon id="triC_6-7-3_3_" class="st1" points="261.3,346.5 260.5,344.5 261.4,343.5 "/>
-<line id="triC_0-4-4_4_" class="st1" x1="259.4" y1="312.6" x2="257.4" y2="312.6"/>
-<polygon id="triC_0-3-5_3_" class="st1" points="249.8,328.8 247.8,327.8 249.8,326.8 "/>
-<polygon id="triC_0-8-4_3_" class="st1" points="255.9,329.8 257.9,329.8 255.8,331.7 "/>
-<polygon id="triC_4-4-4_3_" class="st1" points="244.2,338.6 245.2,340.6 244.2,340.6 "/>
-<polygon id="triC_2-6-4_3_" class="st1" points="248.2,328.4 250.2,329.5 247.2,330.4 "/>
-<polygon id="triC_1-9-4_3_" class="st1" points="256.6,320 255.6,319 256.6,317.1 "/>
-<polygon id="triC_3-4-5_3_" class="st1" points="251,331.8 252,333.8 250.9,334.8 "/>
-<polygon id="triC_4-2-5_3_" class="st1" points="246.7,313.3 248.7,314.4 246.6,316.2 "/>
-<polygon id="triC_1-10-4_3_" class="st1" points="259.3,321.4 260.2,323.4 258.2,324.3 "/>
-<polygon id="triC_0-3_4_" class="st1" points="250.2,343.9 249.2,342.9 250.2,341.9 "/>
-<polygon id="triC_1-7_6_" class="st1" points="250.2,332.7 248.3,331.7 250.3,329.7 "/>
-<polygon id="triC_1-9_6_" class="st1" points="238.4,325.9 237.5,323.9 238.5,322.9 "/>
-<polygon id="triC_4-3_4_" class="st1" points="258.5,326.3 256.5,325.3 258.5,324.4 "/>
-<polygon id="triC_2-8_6_" class="st1" points="245.8,342.8 246.8,344.8 245.8,345.7 "/>
-<polygon id="triC_2-10_7_" class="st1" points="254.7,339.1 256.7,341.2 254.7,342.1 "/>
-<path id="triC_4-6_6_" class="st1" d="M244.1,316.5"/>
-<polygon id="triC_3-9_4_" class="st1" points="249.2,339.1 247.3,337.2 249.3,336.3 "/>
-<polygon id="triC_1-16_6_" class="st1" points="248.7,315.2 250.7,316.3 248.7,317.1 "/>
-<polygon id="triC_1-17_6_" class="st1" points="253.8,342.6 251.8,341.6 253.9,340.6 "/>
-<polygon id="triC_3-12_6_" class="st1" points="246,343.9 247.9,345.9 245.9,346.9 "/>
-<polygon id="triC_5-9_4_" class="st1" points="262.5,344.9 260.5,343.8 262.6,342.9 "/>
-<polygon id="triC_7-5_6_" class="st1" points="256.5,341.1 254.6,339 256.6,338.1 "/>
-<polygon id="triC_0-2-3_7_" class="st1" points="259.5,339.7 262.5,341.7 259.5,342.6 "/>
-<polygon id="triC_0-7-2_6_" class="st1" points="255.9,344.1 253.9,343 255.9,341.1 "/>
+<rect id="square1" x="248.1" y="-121.8" class="st0" width="37.1" height="37.1"/>
+<rect id="square2" x="248.1" y="-121.8" class="st0" width="37.1" height="37.1"/>
+<rect id="square3" x="248.1" y="-121.8" class="st0" width="37.1" height="37.1"/>
+<circle id="container" class="st0" cx="258.3" cy="207.9" r="82.5"/>
+<polygon id="crack1" class="st0" points="267.8,166.1 269.2,162.1 268.5,148.9 268.2,146.3 261.4,145.2 260.1,125.5 258.3,125.5 
+	259.7,146.8 266.2,147.9 267.2,162 266.1,165.7 "/>
+<polyline id="crack2" class="st0" points="260.1,178.7 266.4,194.1 259.4,199.5 260.6,201.4 269.2,194.9 262.4,179 267.8,166.1 
+	266.1,165.7 260.1,179.4 "/>
+<polygon id="crack4" class="st0" points="260.2,227.7 259.5,220 249.2,208.8 259.7,200.1 260.8,202.3 251.8,208.8 261.3,218.8 
+	262.7,227.3 "/>
+<polygon id="crack3" class="st0" points="269.2,289.6 265,285 262.9,277.8 252.8,264.6 264.4,254 262.7,227.3 260.2,227.7 
+	262.4,253.4 249.9,264.2 260.9,279.2 263,286.2 266.6,290 "/>
+<polygon id="triA_0-7" class="st1" points="252.1,144.4 251.1,143.5 252.1,141.5 "/>
+<polygon id="triA_3" class="st1" points="248.3,136.1 250.3,137.1 248.2,138 "/>
+<polygon id="triA_1-7" class="st1" points="244.1,141.1 259.1,140.4 244.1,138.1 "/>
+<path id="triA_0-10_2_" class="st1" d="M253.1,124.1"/>
+<polygon id="triA_1-9" class="st1" points="262.4,149.1 261.4,147.1 262.4,146.1 "/>
+<polygon id="triA_4-2" class="st1" points="249.7,155 252.6,155.9 249.7,157.9 "/>
+<polygon id="triA_2-8" class="st1" points="246.1,144.6 247.1,146.6 246.1,147.5 "/>
+<polygon id="triA_2-9" class="st1" points="245.9,147.5 243.9,146.5 245.9,145.5 "/>
+<path id="triA_2-10_2_" class="st1" d="M246,123.9"/>
+<polygon id="triA_4-6" class="st1" points="250.2,145.1 252.2,145.2 250.2,147.1 "/>
+<polygon id="triA_5-4" class="st1" points="246.5,138.3 247.5,140.3 246.5,141.3 "/>
+<polygon id="triA_5-5" class="st1" points="255,124.6 253.1,122.6 255.1,122.7 "/>
+<polygon id="triA_4-8" class="st1" points="256.3,144.1 258.1,145.1 256.2,147 "/>
+<polygon id="triA_4-9" class="st1" points="259.3,140.9 257.3,140.9 259.3,139 "/>
+<polygon id="triA_1-16" class="st1" points="260.9,145.2 245.9,145.9 260.9,147.2 "/>
+<polygon id="triA_1-17" class="st1" points="249.3,139.6 247.3,138.6 249.3,137.6 "/>
+<polygon id="triA_3-12" class="st1" points="245.5,152.3 247.4,154.3 245.4,155.3 "/>
+<polygon id="triA_7-5" class="st1" points="249.3,140.7 247.4,138.6 249.4,137.7 "/>
+<line id="triA_0-2-3_2_" class="st0" x1="247.5" y1="124.5" x2="244.5" y2="125.5"/>
+<polygon id="triA_1-2-3" class="st1" points="255.9,163.3 257.9,164.2 255.8,166.2 "/>
+<polygon id="triA_0-7-2" class="st1" points="256,149.4 254.1,148.4 256.1,146.4 "/>
+<polygon id="triA_3-2-3" class="st1" points="256,149.2 256.9,150.1 255.9,151.1 "/>
+<polygon id="triA_1-8-2" class="st1" points="245.9,148.2 247.8,149.2 245.8,151.1 "/>
+<polygon id="triA_2-6-2" class="st1" points="246.8,140.5 248.8,141.5 246.8,142.5 "/>
+<polyline id="triA_4-2-3" class="st1" points="254.2,155.7 254.3,152.8 255.2,153.8 254.2,155.7 "/>
+<polygon id="triA_5-2-2" class="st1" points="261.3,135.7 263.3,136.8 261.3,137.7 "/>
+<polygon id="triA_0-13-2" class="st1" points="267.2,157.2 265.2,157.1 267.2,155.3 "/>
+<polygon id="triA_3-7-2" class="st1" points="259.7,133.3 257.7,131.3 259.7,131.3 "/>
+<polygon id="triA_0-14-2" class="st1" points="244.3,127.6 246.3,129.6 244.3,129.5 "/>
+<polygon id="triA_0-15-2" class="st1" points="256.3,128 254.3,126 256.3,126 "/>
+<polygon id="triA_1-13-2" class="st1" points="252.4,156.9 250.4,155.9 252.5,154.9 "/>
+<polygon id="triA_4-7-2" class="st1" points="249.7,144.1 247.7,142.1 249.7,141.1 "/>
+<polygon id="triA_1-14-2" class="st1" points="257.3,159.4 259.2,160.4 258.2,161.4 "/>
+<polygon id="triA_4-11-2" class="st1" points="258.8,127.7 256.9,125.6 258.9,124.7 "/>
+<polygon id="triA_9-2" class="st1" points="252.6,145.8 253.6,146.7 251.6,147.6 "/>
+<polygon id="triA_8-3-2" class="st1" points="251.5,126.8 249.6,124.8 251.6,123.8 "/>
+<path id="triA_1-3-3_1_" class="st1" d="M256.8,123.3"/>
+<polygon id="triA_0-4-3" class="st1" points="254.3,150.2 256.3,151.2 254.2,152.2 "/>
+<polygon id="triA_1-2-4" class="st1" points="249.9,128.7 251.8,129.7 249.9,130.7 "/>
+<polygon id="triA_2-3-3" class="st1" points="256.1,163.4 257.9,165.4 256,166.4 "/>
+<polygon id="triA_2-3-4" class="st1" points="257.7,152.4 255.7,152.4 257.8,150.5 "/>
+<polygon id="triA_0-9-3" class="st1" points="256.4,153 253.5,150.9 256.5,150 "/>
+<polygon id="triA_0-10-3" class="st1" points="261.9,132.5 263.8,133.5 261.8,134.4 "/>
+<polygon id="triA_1-9-3" class="st1" points="261.5,126.7 260.5,125.6 261.5,124.7 "/>
+<polygon id="triA_3-4-3" class="st1" points="250.8,131.9 253.7,131.9 250.7,133.8 "/>
+<polygon id="triA_4-3-4" class="st1" points="255.5,128.6 253.5,128.6 254.6,126.7 "/>
+<polygon id="triA_1-10-3" class="st1" points="244.5,158.1 246.4,159.1 244.4,161.1 "/>
+<polygon id="triA_0-13-3" class="st1" points="257.6,147.2 256.6,146.2 257.6,145.3 "/>
+<polygon id="triA_3-6-3" class="st1" points="257.5,127.8 259.5,128.9 257.4,130.8 "/>
+<polyline id="triA_6-3-3" class="st1" points="248.8,174.1 246.9,176 246.9,173.1 248.8,174.1 "/>
+<polyline id="triA_1-12-3" class="st1" points="251,152.8 251,150.9 253,151.8 251,152.8 "/>
+<polygon id="triA_2-11-3" class="st1" points="261,130.9 259,129.9 261.1,127.9 "/>
+<polygon id="triA_3-9-3" class="st1" points="267.8,155.6 265.9,154.7 267.9,153.7 "/>
+<polygon id="triA_5-4-3" class="st1" points="253.7,157 254.7,157 253.7,158.9 "/>
+<polygon id="triA_5-5-3" class="st1" points="254,140.8 253,138.8 255,138.9 "/>
+<polygon id="triA_6-3-4" class="st1" points="267.8,132.6 266.8,131.6 267.8,129.7 "/>
+<polygon id="triA_1-14-3" class="st1" points="254.3,130.8 256.3,131.9 254.2,132.8 "/>
+<polygon id="triA_1-15-3" class="st1" points="255.2,133.3 253.2,132.4 255.2,131.4 "/>
+<polygon id="triA_6-4-3" class="st1" points="246.1,147 247.1,148 246.1,149 "/>
+<polygon id="triA_7-2-4" class="st1" points="257.9,133.9 259.9,134.9 257.9,135.9 "/>
+<polygon id="triA_0-18-3" class="st1" points="247,126.1 249,127.2 247,129.1 "/>
+<polygon id="triA_1-16-3" class="st1" points="266.7,133.4 268.7,134.5 266.7,135.4 "/>
+<polygon id="triA_4-10-3" class="st1" points="252.5,151.2 254.5,152.2 252.5,153.1 "/>
+<polygon id="triA_5-8-3" class="st1" points="246.8,163.2 248.8,164.3 246.8,165.2 "/>
+<polygon id="triA_4-11-3" class="st1" points="248.6,150.4 247.7,149.4 248.7,147.4 "/>
+<polygon id="triA_5-9-3" class="st1" points="255.5,134.6 253.6,132.6 255.6,131.6 "/>
+<polygon id="triA_6-7-3" class="st1" points="262.3,155.2 261.4,153.2 262.3,152.2 "/>
+<line id="triA_0-4-4_1_" class="st0" x1="260.9" y1="123.1" x2="258.9" y2="123.1"/>
+<polygon id="triA_0-3-5" class="st1" points="248.1,139.9 246.1,138.9 248.1,137.9 "/>
+<polygon id="triA_0-8-4" class="st1" points="255.4,139 257.4,139 255.4,140.9 "/>
+<polygon id="triA_4-4-4" class="st1" points="246.7,150.1 247.7,152.1 246.7,152.1 "/>
+<polygon id="triA_2-6-4" class="st1" points="247.7,139 249.7,140 246.7,140.9 "/>
+<polygon id="triA_1-9-4" class="st1" points="254.2,128.4 253.2,127.4 254.3,125.5 "/>
+<polygon id="triA_3-4-5" class="st1" points="252.2,143.7 253.2,145.7 252.2,146.7 "/>
+<polygon id="triA_4-2-5" class="st1" points="245.6,123.9 247.6,124.9 245.6,126.8 "/>
+<polygon id="triA_1-10-4" class="st1" points="257,128.3 257.9,130.4 255.9,131.3 "/>
+<polygon id="triA_0-3_1_" class="st1" points="252.3,153.9 251.4,152.9 252.4,151.9 "/>
+<polygon id="triA_1-7_1_" class="st1" points="250.1,141.9 248.1,140.9 250.2,138.9 "/>
+<polygon id="triA_1-9_1_" class="st1" points="238.1,133.3 237.1,131.3 238.1,130.3 "/>
+<polygon id="triA_4-3_1_" class="st1" points="259.1,134.2 257.2,133.3 259.2,132.3 "/>
+<polygon id="triA_2-8_1_" class="st1" points="246.7,153.3 247.6,155.4 246.6,156.2 "/>
+<polygon id="triA_2-10_1_" class="st1" points="255.1,150.2 257.1,152.2 255.1,153.2 "/>
+<path id="triA_4-6_2_" class="st1" d="M244.4,123.9"/>
+<polygon id="triA_3-9_1_" class="st1" points="249.5,148.2 247.6,146.3 249.6,145.4 "/>
+<polygon id="triA_1-16_1_" class="st1" points="249.5,125.4 251.5,126.4 249.5,127.3 "/>
+<polygon id="triA_1-17_1_" class="st1" points="254.1,153.8 252.1,152.7 254.2,151.8 "/>
+<polygon id="triA_3-12_1_" class="st1" points="245.8,154.5 247.8,156.6 245.8,157.5 "/>
+<polygon id="triA_5-9_1_" class="st1" points="260.8,152.1 258.8,151 260.8,150.1 "/>
+<polygon id="triA_7-5_1_" class="st1" points="254.3,150.1 252.4,148 254.4,147.1 "/>
+<polygon id="triA_0-2-3_1_" class="st1" points="257.3,150.6 260.3,152.6 257.2,153.5 "/>
+<polygon id="triA_0-7-2_1_" class="st1" points="255.7,154.3 253.7,153.3 255.8,151.3 "/>
+<polygon id="triB_0-7_1_" class="st1" points="266.2,187.4 265.2,186.5 266.2,184.5 "/>
+<polygon id="triB_3_1_" class="st1" points="262.4,180.9 264.4,181.9 262.3,182.8 "/>
+<polygon id="triB_1-7_3_" class="st1" points="261.9,187 276.9,186.3 261.9,184 "/>
+<path id="triB_0-10_1_" class="st1" d="M269.1,170"/>
+<polygon id="triB_1-9_3_" class="st1" points="277.2,191.9 276.2,189.9 277.2,188.9 "/>
+<polygon id="triB_4-2_1_" class="st1" points="265.8,200.4 268.7,201.3 265.8,203.3 "/>
+<polygon id="triB_2-8_3_" class="st1" points="263.8,190.7 264.8,192.7 263.8,193.6 "/>
+<polygon id="triB_2-9_1_" class="st1" points="260,189.7 258,188.7 260,187.7 "/>
+<path id="triB_2-10_4_" class="st1" d="M262.4,170.1"/>
+<polygon id="triB_4-6_3_" class="st1" points="267.4,188.6 269.4,188.7 267.4,190.6 "/>
+<polygon id="triB_5-4_1_" class="st1" points="263.3,181.6 264.3,183.6 263.3,184.6 "/>
+<polygon id="triB_5-5_1_" class="st1" points="273.2,170 271.3,168 273.3,168.1 "/>
+<polygon id="triB_4-8_1_" class="st1" points="271.3,188 273.1,189 271.2,190.9 "/>
+<polygon id="triB_4-9_1_" class="st1" points="277.4,182.9 275.4,182.9 277.4,181 "/>
+<polygon id="triB_1-16_3_" class="st1" points="277.1,188.2 262.1,188.9 277.1,190.2 "/>
+<polygon id="triB_1-17_3_" class="st1" points="263.5,182.8 261.5,181.8 263.5,180.8 "/>
+<polygon id="triB_3-12_3_" class="st1" points="263.6,195.7 265.5,197.7 263.5,198.7 "/>
+<polygon id="triB_7-5_3_" class="st1" points="263.7,182.7 261.8,180.6 263.8,179.7 "/>
+<line id="triB_0-2-3_4_" class="st0" x1="266" y1="168.8" x2="263" y2="169.8"/>
+<polygon id="triB_1-2-3_1_" class="st1" points="270.5,208.2 272.5,209.1 270.4,211.1 "/>
+<polygon id="triB_0-7-2_3_" class="st1" points="272.2,194.3 270.3,193.3 272.3,191.3 "/>
+<polygon id="triB_3-2-3_1_" class="st1" points="273.9,192.1 274.8,193 273.8,194 "/>
+<polygon id="triB_1-8-2_1_" class="st1" points="261.2,192.3 263.1,193.3 261.1,195.2 "/>
+<polygon id="triB_2-6-2_1_" class="st1" points="265.5,186.3 267.5,187.3 265.5,188.3 "/>
+<polyline id="triB_4-2-3_1_" class="st1" points="271,199.4 271.1,196.5 272,197.5 271,199.4 "/>
+<polygon id="triB_5-2-2_1_" class="st1" points="276.9,177.5 278.9,178.6 276.9,179.5 "/>
+<polygon id="triB_0-13-2_1_" class="st1" points="284.7,203 282.7,202.9 284.7,201.1 "/>
+<polygon id="triB_3-7-2_1_" class="st1" points="274.8,179.8 272.8,177.8 274.8,177.8 "/>
+<polygon id="triB_0-14-2_1_" class="st1" points="259.8,173.2 261.8,175.2 259.8,175.1 "/>
+<polygon id="triB_0-15-2_1_" class="st1" points="272.1,170 270.1,168 272.1,168 "/>
+<polygon id="triB_1-13-2_1_" class="st1" points="269.4,199.1 267.4,198.1 269.5,197.1 "/>
+<polygon id="triB_4-7-2_1_" class="st1" points="265.2,190.3 263.2,188.3 265.2,187.3 "/>
+<polygon id="triB_1-14-2_1_" class="st1" points="276,201.3 277.9,202.3 276.9,203.3 "/>
+<polygon id="triB_4-11-2_1_" class="st1" points="273.9,169.3 272,167.2 274,166.3 "/>
+<polygon id="triB_9-2_1_" class="st1" points="268.1,188.5 269.1,189.4 267.1,190.3 "/>
+<polygon id="triB_8-3-2_1_" class="st1" points="267.7,172.5 265.8,170.5 267.8,169.5 "/>
+<path id="triB_1-3-3_2_" class="st1" d="M274.9,167.5"/>
+<polygon id="triB_0-4-3_1_" class="st1" points="272.6,195.8 274.6,196.8 272.5,197.8 "/>
+<polygon id="triB_1-2-4_1_" class="st1" points="264.6,174.4 266.5,175.4 264.6,176.4 "/>
+<polygon id="triB_2-3-3_1_" class="st1" points="271.7,207.8 273.5,209.8 271.6,210.8 "/>
+<polygon id="triB_2-3-4_1_" class="st1" points="274.9,195.8 272.9,195.8 275,193.9 "/>
+<polygon id="triB_0-9-3_1_" class="st1" points="271.1,195.9 268.2,193.8 271.2,192.9 "/>
+<polygon id="triB_0-10-3_1_" class="st1" points="276.3,176.3 278.2,177.3 276.2,178.2 "/>
+<polygon id="triB_1-9-3_1_" class="st1" points="275.7,168.9 274.7,167.8 275.7,166.9 "/>
+<polygon id="triB_3-4-3_1_" class="st1" points="265.7,174.7 268.6,174.7 265.6,176.6 "/>
+<polygon id="triB_4-3-4_1_" class="st1" points="271.7,171.4 269.7,171.4 270.8,169.5 "/>
+<polygon id="triB_1-10-3_1_" class="st1" points="260.6,203 262.5,204 260.5,206 "/>
+<polygon id="triB_0-13-3_1_" class="st1" points="273.9,192.2 272.9,191.2 273.9,190.3 "/>
+<polygon id="triB_3-6-3_1_" class="st1" points="273.1,173.6 275.1,174.7 273,176.6 "/>
+<polyline id="triB_6-3-3_1_" class="st1" points="266.2,219.5 264.3,221.4 264.3,218.5 266.2,219.5 "/>
+<polyline id="triB_1-12-3_1_" class="st1" points="265.6,194.8 265.6,192.9 267.6,193.8 265.6,194.8 "/>
+<polygon id="triB_2-11-3_1_" class="st1" points="279.3,176.3 277.3,175.3 279.4,173.3 "/>
+<polygon id="triB_3-9-3_1_" class="st1" points="284.2,198.6 282.3,197.7 284.3,196.7 "/>
+<polygon id="triB_5-4-3_1_" class="st1" points="271.3,198.6 272.3,198.6 271.3,200.5 "/>
+<polygon id="triB_5-5-3_1_" class="st1" points="270.1,183 269.1,181 271.1,181.1 "/>
+<polygon id="triB_6-3-4_1_" class="st1" points="282.1,175 281.1,174 282.1,172.1 "/>
+<polygon id="triB_1-14-3_1_" class="st1" points="270,174.5 272,175.6 269.9,176.5 "/>
+<polygon id="triB_1-15-3_1_" class="st1" points="270,176 268,175.1 270,174.1 "/>
+<polygon id="triB_6-4-3_1_" class="st1" points="264,192.5 265,193.5 264,194.5 "/>
+<polygon id="triB_7-2-4_1_" class="st1" points="276.3,179.1 278.3,180.1 276.3,181.1 "/>
+<polygon id="triB_0-18-3_1_" class="st1" points="261.9,172.6 263.9,173.7 261.9,175.6 "/>
+<polygon id="triB_1-16-3_1_" class="st1" points="282.8,177.5 284.8,178.6 282.8,179.5 "/>
+<polygon id="triB_4-10-3_1_" class="st1" points="267.9,193.9 269.9,194.9 267.9,195.8 "/>
+<polygon id="triB_5-8-3_1_" class="st1" points="265.6,205.2 267.6,206.3 265.6,207.2 "/>
+<polygon id="triB_4-11-3_1_" class="st1" points="264,195.2 263.1,194.2 264.1,192.2 "/>
+<polygon id="triB_5-9-3_1_" class="st1" points="271.2,177.9 269.3,175.9 271.3,174.9 "/>
+<polygon id="triB_6-7-3_1_" class="st1" points="278.1,198.1 277.2,196.1 278.1,195.1 "/>
+<line id="triB_0-4-4_2_" class="st0" x1="279.7" y1="165.5" x2="277.7" y2="165.5"/>
+<polygon id="triB_0-3-5_1_" class="st1" points="266.7,185.8 264.7,184.8 266.7,183.8 "/>
+<polygon id="triB_0-8-4_1_" class="st1" points="269.4,181.6 271.4,181.6 269.4,183.5 "/>
+<polygon id="triB_4-4-4_1_" class="st1" points="265.2,195.2 266.2,197.2 265.2,197.2 "/>
+<polygon id="triB_2-6-4_1_" class="st1" points="262.5,184.2 264.5,185.2 261.5,186.1 "/>
+<polygon id="triB_1-9-4_1_" class="st1" points="271.5,173.7 270.5,172.7 271.6,170.8 "/>
+<polygon id="triB_3-4-5_1_" class="st1" points="266.4,189.4 267.4,191.4 266.4,192.4 "/>
+<polygon id="triB_4-2-5_1_" class="st1" points="263.2,168.1 265.2,169.1 263.2,171 "/>
+<polygon id="triB_1-10-4_1_" class="st1" points="272.9,172.7 273.8,174.8 271.8,175.7 "/>
+<polygon id="triB_0-3_2_" class="st1" points="266.3,198.9 265.4,197.9 266.4,196.9 "/>
+<polygon id="triB_1-7_2_" class="st1" points="265.4,186.4 263.4,185.4 265.5,183.4 "/>
+<polygon id="triB_1-9_2_" class="st1" points="254.6,175.1 253.6,173.1 254.6,172.1 "/>
+<polygon id="triB_4-3_2_" class="st1" points="274.9,179.8 273,178.9 275,177.9 "/>
+<polygon id="triB_2-8_2_" class="st1" points="263,199.1 263.9,201.2 262.9,202 "/>
+<polygon id="triB_2-10_3_" class="st1" points="272.5,194.5 274.5,196.5 272.5,197.5 "/>
+<path id="triB_4-6_1_" class="st1" d="M262.9,169.9"/>
+<polygon id="triB_3-9_2_" class="st1" points="265.8,194.1 263.9,192.2 265.9,191.3 "/>
+<polygon id="triB_1-16_2_" class="st1" points="263.7,170.2 265.7,171.2 263.7,172.1 "/>
+<polygon id="triB_1-17_2_" class="st1" points="272.8,197.6 270.8,196.5 272.9,195.6 "/>
+<polygon id="triB_3-12_2_" class="st1" points="261.3,199.9 263.3,202 261.3,202.9 "/>
+<polygon id="triB_5-9_2_" class="st1" points="278.3,196.3 276.3,195.2 278.3,194.3 "/>
+<polygon id="triB_7-5_2_" class="st1" points="272.7,191.6 270.8,189.5 272.8,188.6 "/>
+<polygon id="triB_0-2-3_3_" class="st1" points="271.4,195.5 274.4,197.5 271.3,198.4 "/>
+<polygon id="triB_0-7-2_2_" class="st1" points="273.2,197 271.2,196 273.3,194 "/>
+<polyline id="triC_6-3-3_1_" class="st1" points="266.7,223.4 264.7,225.2 264.8,222.3 266.7,223.4 "/>
+<polygon id="triC_0-7_2_" class="st1" points="250.4,252 249.4,251.1 250.5,249.1 "/>
+<polygon id="triC_3_2_" class="st1" points="248.5,243 250.5,244 248.4,244.9 "/>
+<polygon id="triC_1-7_5_" class="st1" points="243.3,250.1 258.3,249.4 243.4,247.1 "/>
+<path id="triC_0-10_3_" class="st1" d="M250.8,230.3"/>
+<polygon id="triC_1-9_5_" class="st1" points="260.9,257.5 259.9,255.5 260.9,254.5 "/>
+<polygon id="triC_4-2_2_" class="st1" points="251,261.2 253.9,262.2 251,264.1 "/>
+<polygon id="triC_2-8_5_" class="st1" points="246.8,253.2 247.8,255.2 246.8,256.1 "/>
+<polygon id="triC_2-9_2_" class="st1" points="244.9,252.3 242.9,251.2 244.9,250.3 "/>
+<path id="triC_2-10_6_" class="st1" d="M243.8,233.4"/>
+<polygon id="triC_4-6_5_" class="st1" points="247.3,252.2 249.2,252.3 247.2,254.2 "/>
+<polygon id="triC_5-4_2_" class="st1" points="245.4,245.5 246.3,247.5 245.3,248.5 "/>
+<polygon id="triC_5-5_2_" class="st1" points="252.7,231.7 250.7,229.8 252.7,229.8 "/>
+<polygon id="triC_4-8_2_" class="st1" points="257.7,249.2 259.6,250.1 257.7,252.1 "/>
+<polygon id="triC_4-9_2_" class="st1" points="259.9,246.8 257.9,246.7 259.9,244.9 "/>
+<polygon id="triC_1-16_5_" class="st1" points="257.9,250.2 242.9,250.9 257.9,252.2 "/>
+<polygon id="triC_1-17_5_" class="st1" points="247.8,246.7 245.8,245.7 247.8,244.7 "/>
+<polygon id="triC_3-12_5_" class="st1" points="244.4,257.1 246.3,259.1 244.3,260.1 "/>
+<polygon id="triC_7-5_5_" class="st1" points="248.9,249.9 247,247.9 249,246.9 "/>
+<line id="triC_0-2-3_6_" class="st0" x1="245.3" y1="231.9" x2="242.2" y2="232.8"/>
+<polygon id="triC_1-2-3_2_" class="st1" points="253.8,269.3 255.8,270.2 253.7,272.2 "/>
+<polygon id="triC_0-7-2_5_" class="st1" points="255.5,254.3 253.5,253.3 255.6,251.3 "/>
+<polygon id="triC_3-2-3_2_" class="st1" points="257.1,256.1 258.1,257 257,258 "/>
+<polygon id="triC_1-8-2_2_" class="st1" points="243.7,254.3 245.6,255.3 243.7,257.2 "/>
+<polygon id="triC_2-6-2_2_" class="st1" points="245.9,248.8 247.9,249.8 245.9,250.8 "/>
+<polyline id="triC_4-2-3_2_" class="st1" points="255.5,264.3 255.6,261.4 256.6,262.4 255.5,264.3 "/>
+<polygon id="triC_5-2-2_2_" class="st1" points="260.3,244.2 262.3,245.2 260.3,246.2 "/>
+<polygon id="triC_0-13-2_2_" class="st1" points="267.7,266.3 265.7,266.3 267.7,264.4 "/>
+<polygon id="triC_3-7-2_2_" class="st1" points="260.5,238.6 258.5,236.5 260.5,236.6 "/>
+<polygon id="triC_0-14-2_2_" class="st1" points="241.3,233.1 243.3,235.1 241.3,235 "/>
+<polygon id="triC_0-15-2_2_" class="st1" points="254.1,233.1 252.1,231.1 254.1,231.1 "/>
+<polygon id="triC_1-13-2_2_" class="st1" points="251.4,262 249.4,260.9 251.4,260 "/>
+<polygon id="triC_4-7-2_2_" class="st1" points="246.7,253 244.8,251 246.8,250 "/>
+<polygon id="triC_1-14-2_2_" class="st1" points="257.6,265.5 259.5,266.6 258.4,267.6 "/>
+<polygon id="triC_4-11-2_2_" class="st1" points="257.5,232.9 255.6,230.9 257.6,229.9 "/>
+<polygon id="triC_9-2_2_" class="st1" points="249.9,252.4 250.9,253.3 248.9,254.3 "/>
+<polygon id="triC_8-3-2_2_" class="st1" points="250.5,231.7 248.6,229.7 250.6,228.7 "/>
+<path id="triC_1-3-3_3_" class="st1" d="M257.7,228.5"/>
+<polygon id="triC_0-4-3_2_" class="st1" points="251.4,254.7 253.4,255.8 251.4,256.7 "/>
+<polygon id="triC_1-2-4_2_" class="st1" points="248,238.1 249.9,239.2 248,240.1 "/>
+<polygon id="triC_2-3-3_2_" class="st1" points="254.7,268.3 256.5,270.3 254.6,271.3 "/>
+<polygon id="triC_2-3-4_2_" class="st1" points="257.9,261.3 255.9,261.3 257.9,259.4 "/>
+<polygon id="triC_0-9-3_2_" class="st1" points="253.9,258.8 251,256.7 254,255.8 "/>
+<polygon id="triC_0-10-3_2_" class="st1" points="263.7,241.2 265.7,242.3 263.6,243.1 "/>
+<polygon id="triC_1-9-3_2_" class="st1" points="260.6,235 259.6,234 260.6,233 "/>
+<polygon id="triC_3-4-3_2_" class="st1" points="249.7,240.2 252.6,240.2 249.6,242.1 "/>
+<polygon id="triC_4-3-4_2_" class="st1" points="255.4,236.2 253.4,236.1 254.4,234.2 "/>
+<polygon id="triC_1-10-3_2_" class="st1" points="242.7,265.1 244.7,266.2 242.6,268.1 "/>
+<polygon id="triC_0-13-3_2_" class="st1" points="255.2,255.8 254.2,254.9 255.2,253.9 "/>
+<polygon id="triC_3-6-3_2_" class="st1" points="255,232.7 257,233.7 254.9,235.7 "/>
+<polyline id="triC_6-3-3_2_" class="st1" points="246.7,281.8 244.7,283.7 244.8,280.8 246.7,281.8 "/>
+<polyline id="triC_1-12-3_2_" class="st1" points="250.5,257.7 250.6,255.8 252.5,256.7 250.5,257.7 "/>
+<polygon id="triC_2-11-3_2_" class="st1" points="260.3,239.3 258.3,238.2 260.4,236.3 "/>
+<polygon id="triC_3-9-3_2_" class="st1" points="265.2,262.3 263.2,261.4 265.3,260.4 "/>
+<polygon id="triC_5-4-3_2_" class="st1" points="253.2,262.8 254.2,262.8 253.1,264.7 "/>
+<polygon id="triC_5-5-3_2_" class="st1" points="254.6,247.4 253.6,245.5 255.6,245.6 "/>
+<polygon id="triC_6-3-4_2_" class="st1" points="266.5,242 265.6,241 266.6,239.1 "/>
+<polygon id="triC_1-14-3_2_" class="st1" points="253.7,240 255.7,241 253.6,242 "/>
+<polygon id="triC_1-15-3_2_" class="st1" points="254,238.8 252,237.9 254,236.9 "/>
+<polygon id="triC_6-4-3_2_" class="st1" points="246.9,252.7 247.9,253.7 246.9,254.7 "/>
+<polygon id="triC_7-2-4_2_" class="st1" points="255.8,240.9 257.7,242 255.7,242.9 "/>
+<polygon id="triC_0-18-3_2_" class="st1" points="246.6,235.4 248.6,236.5 246.6,238.4 "/>
+<polygon id="triC_1-16-3_2_" class="st1" points="266.9,239.2 268.8,240.2 266.8,241.2 "/>
+<polygon id="triC_4-10-3_2_" class="st1" points="250.5,259.6 252.4,260.6 250.4,261.5 "/>
+<polygon id="triC_5-8-3_2_" class="st1" points="247.7,272 249.7,273.1 247.6,274 "/>
+<polygon id="triC_4-11-3_2_" class="st1" points="249.8,255.5 248.9,254.5 249.9,252.5 "/>
+<polygon id="triC_5-9-3_2_" class="st1" points="254.6,241.1 252.7,239.1 254.7,238.1 "/>
+<polygon id="triC_6-7-3_2_" class="st1" points="261.2,263.7 260.4,261.7 261.3,260.7 "/>
+<line id="triC_0-4-4_3_" class="st0" x1="262.1" y1="230.1" x2="260.1" y2="230.1"/>
+<polygon id="triC_0-3-5_2_" class="st1" points="247,248.5 245.1,247.4 247.1,246.5 "/>
+<polygon id="triC_0-8-4_2_" class="st1" points="255.4,248.3 257.4,248.3 255.3,250.2 "/>
+<polygon id="triC_4-4-4_2_" class="st1" points="244.3,254.6 245.2,256.7 244.2,256.6 "/>
+<polygon id="triC_2-6-4_2_" class="st1" points="247.6,245.6 249.6,246.6 246.5,247.6 "/>
+<polygon id="triC_1-9-4_2_" class="st1" points="254.2,237.6 253.2,236.6 254.2,234.7 "/>
+<polygon id="triC_3-4-5_2_" class="st1" points="252.9,249.9 253.9,252 252.8,252.9 "/>
+<polygon id="triC_4-2-5_2_" class="st1" points="244.1,232 246.1,233 244.1,234.9 "/>
+<polygon id="triC_1-10-4_2_" class="st1" points="258.6,235 259.6,237 257.5,238 "/>
+<polygon id="triC_0-3_3_" class="st1" points="254.2,259.5 253.2,258.5 254.2,257.5 "/>
+<polygon id="triC_1-7_4_" class="st1" points="249.1,251.4 247.1,250.3 249.2,248.4 "/>
+<polygon id="triC_1-9_4_" class="st1" points="237.4,238.4 236.4,236.4 237.4,235.4 "/>
+<polygon id="triC_4-3_3_" class="st1" points="261,240.7 259,239.8 261,238.8 "/>
+<polygon id="triC_2-8_4_" class="st1" points="244.1,260.6 245,262.6 244,263.5 "/>
+<polygon id="triC_2-10_5_" class="st1" points="256.4,259.3 258.3,261.3 256.3,262.3 "/>
+<path id="triC_4-6_4_" class="st1" d="M242.5,231.3"/>
+<polygon id="triC_3-9_3_" class="st1" points="250.7,254.3 248.7,252.4 250.7,251.5 "/>
+<polygon id="triC_1-16_4_" class="st1" points="250.6,231.2 252.6,232.2 250.6,233.1 "/>
+<polygon id="triC_1-17_4_" class="st1" points="251.4,259.8 249.4,258.8 251.4,257.8 "/>
+<polygon id="triC_3-12_4_" class="st1" points="244.9,262.9 246.8,265 244.8,265.9 "/>
+<polygon id="triC_5-9_3_" class="st1" points="262.2,258.3 260.2,257.3 262.2,256.3 "/>
+<polygon id="triC_7-5_4_" class="st1" points="252.4,254.9 250.5,252.9 252.5,251.9 "/>
+<polygon id="triC_0-2-3_5_" class="st1" points="255.1,259.7 258.1,261.6 255,262.6 "/>
+<polygon id="triC_0-7-2_4_" class="st1" points="254.6,262.3 252.6,261.2 254.7,259.3 "/>
+<polygon id="triC_0-7_3_" class="st1" points="251.7,274.2 250.7,273.3 251.7,271.3 "/>
+<polygon id="triC_3_3_" class="st1" points="247.8,263.5 249.7,264.5 247.7,265.4 "/>
+<polygon id="triC_1-7_7_" class="st1" points="242.9,269.5 257.9,268.8 242.9,266.5 "/>
+<path id="triC_0-10_4_" class="st1" d="M255.1,253.2"/>
+<polygon id="triC_1-9_7_" class="st1" points="262.6,280.3 261.7,278.3 262.7,277.3 "/>
+<polygon id="triC_4-2_3_" class="st1" points="247.8,285.2 250.7,286.2 247.8,288.1 "/>
+<polygon id="triC_2-8_7_" class="st1" points="246.4,272.1 247.3,274.1 246.3,275 "/>
+<polygon id="triC_2-9_3_" class="st1" points="243.9,275.3 241.9,274.2 243.9,273.3 "/>
+<path id="triC_2-10_8_" class="st1" d="M246.8,252.1"/>
+<polygon id="triC_4-6_7_" class="st1" points="250.7,277 252.7,277 250.7,279 "/>
+<polygon id="triC_5-4_3_" class="st1" points="248.7,265.2 249.7,267.2 248.7,268.2 "/>
+<polygon id="triC_5-5_3_" class="st1" points="253.7,254 251.8,252.1 253.8,252.1 "/>
+<polygon id="triC_4-8_3_" class="st1" points="254.2,274.2 256,275.2 254.1,277.1 "/>
+<polygon id="triC_4-9_3_" class="st1" points="260.3,271.5 258.3,271.5 260.4,269.6 "/>
+<polygon id="triC_1-16_7_" class="st1" points="263,274.9 248,275.6 263,276.9 "/>
+<polygon id="triC_1-17_7_" class="st1" points="248.8,267.5 246.8,266.5 248.8,265.5 "/>
+<polygon id="triC_3-12_7_" class="st1" points="244.2,284.1 246.2,286.2 244.2,287.1 "/>
+<polygon id="triC_7-5_7_" class="st1" points="249.5,270 247.5,267.9 249.5,267 "/>
+<line id="triC_0-2-3_8_" class="st0" x1="249.7" y1="252" x2="246.7" y2="252.9"/>
+<polygon id="triC_1-2-3_3_" class="st1" points="257.7,292.2 259.7,293.1 257.6,295.1 "/>
+<polygon id="triC_0-7-2_7_" class="st1" points="254.4,279.5 252.4,278.4 254.5,276.5 "/>
+<polygon id="triC_3-2-3_3_" class="st1" points="255.2,281.1 256.2,282 255.2,283 "/>
+<polygon id="triC_1-8-2_3_" class="st1" points="248.2,277.3 250,278.3 248.1,280.2 "/>
+<polygon id="triC_2-6-2_3_" class="st1" points="247.8,267.4 249.8,268.5 247.7,269.4 "/>
+<polyline id="triC_4-2-3_3_" class="st1" points="253.2,284.1 253.2,281.2 254.2,282.3 253.2,284.1 "/>
+<polygon id="triC_5-2-2_3_" class="st1" points="258.8,265 260.8,266 258.7,267 "/>
+<polygon id="triC_0-13-2_3_" class="st1" points="267.7,285 265.7,285 267.8,283.1 "/>
+<polygon id="triC_3-7-2_3_" class="st1" points="261.2,263.8 259.3,261.8 261.3,261.8 "/>
+<polygon id="triC_0-14-2_3_" class="st1" points="245.4,255.4 247.4,257.3 245.4,257.3 "/>
+<polygon id="triC_0-15-2_3_" class="st1" points="256.3,257.8 254.3,255.8 256.3,255.8 "/>
+<polygon id="triC_1-13-2_3_" class="st1" points="253,286 251,284.9 253,284 "/>
+<polygon id="triC_4-7-2_3_" class="st1" points="248.8,271.5 246.8,269.4 248.9,268.5 "/>
+<polygon id="triC_1-14-2_3_" class="st1" points="259.1,289.4 261,290.5 259.9,291.4 "/>
+<polygon id="triC_4-11-2_3_" class="st1" points="257.4,256.6 255.5,254.5 257.5,253.6 "/>
+<polygon id="triC_9-2_3_" class="st1" points="252.6,276.6 253.6,277.5 251.5,278.5 "/>
+<polygon id="triC_8-3-2_3_" class="st1" points="251,255.5 249.1,253.5 251.1,252.5 "/>
+<path id="triC_1-3-3_4_" class="st1" d="M256.3,250.6"/>
+<polygon id="triC_0-4-3_3_" class="st1" points="253.1,278.3 255.1,279.3 253.1,280.3 "/>
+<polygon id="triC_1-2-4_3_" class="st1" points="251.7,259.2 253.6,260.2 251.6,261.2 "/>
+<polygon id="triC_2-3-3_3_" class="st1" points="255,291.6 256.8,293.7 254.9,294.6 "/>
+<polygon id="triC_2-3-4_3_" class="st1" points="258.3,281.6 256.3,281.5 258.4,279.7 "/>
+<polygon id="triC_0-9-3_3_" class="st1" points="255.9,281.6 252.9,279.5 256,278.6 "/>
+<polygon id="triC_0-10-3_3_" class="st1" points="263.6,261.9 265.6,262.9 263.6,263.8 "/>
+<polygon id="triC_1-9-3_3_" class="st1" points="263.5,256.7 262.5,255.7 263.6,254.7 "/>
+<polygon id="triC_3-4-3_3_" class="st1" points="249.6,262.7 252.5,262.7 249.6,264.6 "/>
+<polygon id="triC_4-3-4_3_" class="st1" points="253.7,257.6 251.7,257.5 252.7,255.7 "/>
+<polygon id="triC_1-10-3_3_" class="st1" points="242.9,285.7 244.9,286.8 242.9,288.7 "/>
+<polygon id="triC_0-13-3_3_" class="st1" points="258.9,278.4 257.9,277.5 258.9,276.5 "/>
+<polygon id="triC_3-6-3_3_" class="st1" points="257.5,257 259.5,258 257.5,260 "/>
+<polyline id="triC_6-3-3_3_" class="st1" points="248.3,301.7 246.3,303.5 246.4,300.6 248.3,301.7 "/>
+<polyline id="triC_1-12-3_3_" class="st1" points="250.3,280.6 250.4,278.7 252.4,279.6 250.3,280.6 "/>
+<polygon id="triC_2-11-3_3_" class="st1" points="259.1,259.8 257.1,258.7 259.2,256.8 "/>
+<polygon id="triC_3-9-3_3_" class="st1" points="268,284.9 266,284 268,283 "/>
+<polygon id="triC_5-4-3_3_" class="st1" points="253.5,285.7 254.5,285.7 253.5,287.6 "/>
+<polygon id="triC_5-5-3_3_" class="st1" points="253.4,269.3 252.4,267.4 254.4,267.4 "/>
+<polygon id="triC_6-3-4_3_" class="st1" points="269.1,263.6 268.1,262.6 269.2,260.7 "/>
+<polygon id="triC_1-14-3_3_" class="st1" points="253.4,260.8 255.4,261.8 253.4,262.8 "/>
+<polygon id="triC_1-15-3_3_" class="st1" points="254.2,262.6 252.2,261.7 254.2,260.7 "/>
+<polygon id="triC_6-4-3_3_" class="st1" points="247.4,274 248.3,275 247.3,276 "/>
+<polygon id="triC_7-2-4_3_" class="st1" points="260.2,261.6 262.2,262.6 260.2,263.6 "/>
+<polygon id="triC_0-18-3_3_" class="st1" points="244.6,254.3 246.6,255.3 244.5,257.3 "/>
+<polygon id="triC_1-16-3_3_" class="st1" points="265.3,261.9 267.3,262.9 265.3,263.9 "/>
+<polygon id="triC_4-10-3_3_" class="st1" points="254.8,282.1 256.8,283 254.8,284 "/>
+<polygon id="triC_5-8-3_3_" class="st1" points="248.5,294 250.5,295.1 248.5,296 "/>
+<polygon id="triC_4-11-3_3_" class="st1" points="247.9,279.2 247,278.1 247.9,276.2 "/>
+<polygon id="triC_5-9-3_3_" class="st1" points="253.4,262.3 251.5,260.2 253.5,259.3 "/>
+<polygon id="triC_6-7-3_3_" class="st1" points="261.3,285.3 260.5,283.3 261.4,282.3 "/>
+<line id="triC_0-4-4_4_" class="st0" x1="259.4" y1="251.4" x2="257.4" y2="251.4"/>
+<polygon id="triC_0-3-5_3_" class="st1" points="249.8,267.6 247.8,266.6 249.8,265.6 "/>
+<polygon id="triC_0-8-4_3_" class="st1" points="255.9,268.6 257.9,268.6 255.8,270.5 "/>
+<polygon id="triC_4-4-4_3_" class="st1" points="244.2,277.4 245.2,279.4 244.2,279.4 "/>
+<polygon id="triC_2-6-4_3_" class="st1" points="248.2,267.2 250.2,268.3 247.2,269.2 "/>
+<polygon id="triC_1-9-4_3_" class="st1" points="256.6,258.8 255.6,257.8 256.6,255.9 "/>
+<polygon id="triC_3-4-5_3_" class="st1" points="251,270.6 252,272.6 250.9,273.6 "/>
+<polygon id="triC_4-2-5_3_" class="st1" points="246.7,252.1 248.7,253.2 246.6,255 "/>
+<polygon id="triC_1-10-4_3_" class="st1" points="259.3,260.2 260.2,262.2 258.2,263.1 "/>
+<polygon id="triC_0-3_4_" class="st1" points="250.2,282.7 249.2,281.7 250.2,280.7 "/>
+<polygon id="triC_1-7_6_" class="st1" points="250.2,271.5 248.3,270.5 250.3,268.5 "/>
+<polygon id="triC_1-9_6_" class="st1" points="238.4,264.7 237.5,262.7 238.5,261.7 "/>
+<polygon id="triC_4-3_4_" class="st1" points="258.5,265.1 256.5,264.1 258.5,263.2 "/>
+<polygon id="triC_2-8_6_" class="st1" points="245.8,281.6 246.8,283.6 245.8,284.5 "/>
+<polygon id="triC_2-10_7_" class="st1" points="254.7,277.9 256.7,280 254.7,280.9 "/>
+<path id="triC_4-6_6_" class="st1" d="M244.1,255.3"/>
+<polygon id="triC_3-9_4_" class="st1" points="249.2,277.9 247.3,276 249.3,275.1 "/>
+<polygon id="triC_1-16_6_" class="st1" points="248.7,254 250.7,255.1 248.7,255.9 "/>
+<polygon id="triC_1-17_6_" class="st1" points="253.8,281.4 251.8,280.4 253.9,279.4 "/>
+<polygon id="triC_3-12_6_" class="st1" points="246,282.7 247.9,284.7 245.9,285.7 "/>
+<polygon id="triC_5-9_4_" class="st1" points="262.5,283.7 260.5,282.6 262.6,281.7 "/>
+<polygon id="triC_7-5_6_" class="st1" points="256.5,279.9 254.6,277.8 256.6,276.9 "/>
+<polygon id="triC_0-2-3_7_" class="st1" points="259.5,278.5 262.5,280.5 259.5,281.4 "/>
+<polygon id="triC_0-7-2_6_" class="st1" points="255.9,282.9 253.9,281.8 255.9,279.9 "/>
+<rect id="tempino" x="247.8" y="330.1" class="st0" width="37.1" height="37.1"/>
 </svg>

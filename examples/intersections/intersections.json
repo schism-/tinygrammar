@@ -2,7 +2,7 @@
 	"grammar_name" : "big shapes Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-2200.0, -2200.0, 2200.0, 2200.0],
+	"bbox" : [-1200.0, -1200.0, 1200.0, 1200.0],
 	"dry_run" : false,
 
 	"rules" : [
@@ -391,7 +391,7 @@
 			"matching_tags" : ["a5"],
 			"produced_tags" : ["cs5_e1"],
 			"operator" : "translation",
-			"parameters" : [0.0, -10.0, 0.0, 0.0],
+			"parameters" : [0.0, -20.0, 0.0, 0.0],
 			"init_value" : "b1"
 		},
 
@@ -409,7 +409,7 @@
 			"matching_tags" : ["a10"],
 			"produced_tags" : ["cs5_e1"],
 			"operator" : "translation",
-			"parameters" : [0.0, 0.0, 2.0, 0.0],
+			"parameters" : [0.0, 0.0, 5.0, 0.0],
 			"init_value" : "j"
 		},
 
@@ -418,7 +418,7 @@
 			"matching_tags" : ["a10"],
 			"produced_tags" : ["cs5_e1"],
 			"operator" : "translation",
-			"parameters" : [0.0, 0.0, 2.0, 0.0],
+			"parameters" : [0.0, 0.0, 5.0, 0.0],
 			"init_value" : "k"
 		},
 
@@ -518,7 +518,7 @@
 			"matching_tags" : ["a16"],
 			"produced_tags" : ["cs5_e1"],
 			"operator" : "translation",
-			"parameters" : [0.0, 0.0, -1.0, 0.0],
+			"parameters" : [0.0, 0.0, -5.0, 0.0],
 			"init_value" : "i"
 		},
 
@@ -527,7 +527,7 @@
 			"matching_tags" : ["a17"],
 			"produced_tags" : ["cs5_e1"],
 			"operator" : "translation",
-			"parameters" : [0.0, 0.0, -1.0, 0.0],
+			"parameters" : [0.0, 0.0, -5.0, 0.0],
 			"init_value" : "g"
 		},
 
@@ -618,7 +618,7 @@
 			"matching_tags" : ["ll1"],
 			"produced_tags" : ["ll1_sc"],
 			"operator" : "scale",
-			"parameters" : [1.0, 2.0, 0.0],
+			"parameters" : [0.0, 2.0, 0.0],
 			"init_value" : "scale1"
 		},
 
