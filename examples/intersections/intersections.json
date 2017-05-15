@@ -2,7 +2,7 @@
 	"grammar_name" : "big shapes Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-1200.0, -1200.0, 1200.0, 1200.0],
+	"bbox" : [-540.0, -540.0, 540.0, 540.0],
 	"dry_run" : false,
 
 	"rules" : [

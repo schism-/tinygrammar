@@ -2,7 +2,7 @@
 	"grammar_name" : "Test Time Grammar", 
 	"seed" : -1, 
 	"framerate" : 30.0,
-	"bbox" : [-1000.0, -1000.0, 1000.0, 346.0],
+	"bbox" : [-540.0, -540.0, 540.0, 540.0],
 	"dry_run" : false,
 
 	"rules" : [
