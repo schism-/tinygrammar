@@ -31,14 +31,14 @@ struct Grammar {
     ~Grammar() {};
 };
 
-int add_rule_to_mapping(Grammar* grammar, string rulename);
-rule_tags add_tags(Grammar* grammar, vector<string> tags);
-int tag_to_mapping(Grammar* grammar, string tag);
+int add_rule_to_mapping(Grammar* grammar, const string& rulename);
+rule_tags add_tags(Grammar* grammar, const vector<string>& tags);
+int tag_to_mapping(Grammar* grammar, const string& tag);
 string mapping_to_tag(Grammar* grammar, int tag);
 bool is_tag_invert(Grammar* grammar, int tag);
 int invert_tag(Grammar* grammar, int tag);
 
-Grammar* get_grammar(string filename);
+Grammar* get_grammar(const string& filename);
 vector<Rule*> get_inits(Grammar* g);
 vector<Rule*> get_rules(Grammar* g);
 Rule* matching_init();

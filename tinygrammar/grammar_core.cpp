@@ -16,12 +16,12 @@ using namespace jsonxx;
 
 Grammar* main_grammar = nullptr;
 
-int add_rule_to_mapping(Grammar* grammar, string rulename){
+int add_rule_to_mapping(Grammar* grammar, const string& rulename){
     if (grammar->rule_mapping.count(rulename) > 0) return grammar->rule_mapping.at(rulename);
     else {grammar->rule_mapping[rulename] = (int)(grammar->rule_mapping.size() + 1); return grammar->rule_mapping.at(rulename);}
 }
 
-rule_tags add_tags(Grammar* grammar, vector<string> tags){
+rule_tags add_tags(Grammar* grammar, const vector<string>& tags){
     auto res = rule_tags();
     auto k = 0;
     for (auto t : tags){
@@ -32,12 +32,18 @@ rule_tags add_tags(Grammar* grammar, vector<string> tags){
     return res;
 }
 
-int tag_to_mapping(Grammar* grammar, string tag) {
+int tag_to_mapping(Grammar* grammar, const string& tag) {
+#if 0
     if (grammar->tag_mapping.count(tag) > 0) { return grammar->tag_mapping[tag]; }
     else {
         //printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str());
         return -1;
     }
+#else
+    auto it = grammar->tag_mapping.find(tag);
+    if(it == grammar->tag_mapping.end()) return -1;
+    else return it->second;
+#endif
 }
 
 string mapping_to_tag(Grammar* grammar, int tag) {
@@ -67,7 +73,7 @@ int invert_tag(Grammar* grammar, int tag){
 }
 
 
-Grammar* get_grammar(string filename){
+Grammar* get_grammar(const string& filename){
     if (main_grammar == nullptr){
         auto res = new Grammar();
         
@@ -248,10 +254,12 @@ pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGrou
 }
 
 Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags){
+    static auto matches = vector<int>();
+    matches.clear();
+    
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
-            auto matches = vector<int>();
             auto grammar = get_grammar(grammar_filename);
             const auto& rules = grammar->rules;
             for(auto i = 0; i < (int)rules.size(); i++){
@@ -263,7 +271,6 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
         }
         case animation_grammar:
         {
-            auto matches = vector<int>();
             auto grammar = get_grammar(grammar_filename);
             const auto& rules = grammar->rules;
             for(auto i = 0; i < (int)rules.size(); i++){
