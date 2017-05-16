@@ -705,6 +705,7 @@
 		AA8164191DB6738000A66F22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				GCC_UNROLL_LOOPS = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glfw",
@@ -718,6 +719,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_UNROLL_LOOPS = YES;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glfw",
