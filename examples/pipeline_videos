@@ -1,0 +1,38 @@
+PIPELINE VIDEO GENERATION
+
+./create_animation.sh intersections/intersections.json intersections/intersections_more_10000.svg intersections/ 0
+python modify_svg_scale.py intersections/frames/ 0.500000
+mogrify -format png intersections/frames/*.svg
+ffmpeg -framerate 30 -i intersections/frames/tangleSVG_%03d.png -pix_fmt yuv420p intersections/frames/animated_10000.mp4
+
+./create_animation.sh intersections/intersections.json intersections/intersections_basic_8000.svg intersections/ 0
+python modify_svg_scale.py intersections/frames/ 0.700000
+mogrify -format png intersections/frames/*.svg
+ffmpeg -framerate 30 -i intersections/frames/tangleSVG_%03d.png -pix_fmt yuv420p intersections/frames/animated_8000.mp4
+
+./create_animation.sh cube/cube.json cube/cube.svg cube/ 0
+mogrify -format png cube/frames/*.svg
+ffmpeg -framerate 30 -i cube/frames/tangleSVG_%03d.png -pix_fmt yuv420p cube/frames/animated_cube.mp4
+
+./create_animation.sh abstract/abstract.json abstract/abstract.svg abstract/ 0
+python modify_svg_scale.py abstract/frames/ 2.000000
+mogrify -format png abstract/frames/*.svg
+ffmpeg -framerate 30 -i abstract/frames/tangleSVG_%03d.png -pix_fmt yuv420p abstract/frames/animated_abstract.mp4
+
+./create_animation.sh controlpanel/controlpanel.json controlpanel/controlpanel.svg controlpanel/ 0
+python modify_svg_scale.py controlpanel/frames/ 5.200000
+mogrify -format png controlpanel/frames/*.svg
+ffmpeg -framerate 30 -i controlpanel/frames/tangleSVG_%03d.png -pix_fmt yuv420p controlpanel/frames/animated_controlpanel.mp4
+
+./create_animation.sh particles/particles_bn.json particles/particles.svg particles/ 0
+mogrify -format png particles/frames/*.svg
+ffmpeg -framerate 30 -i particles/frames/tangleSVG_%03d.png -pix_fmt yuv420p particles/frames/animated_particles.mp4
+
+./create_animation.sh statue/statue.json statue/statue.svg statue/ 0
+python modify_svg_scale.py statue/frames/ 1.800000
+mogrify -format png statue/frames/*.svg
+ffmpeg -framerate 30 -i statue/frames/tangleSVG_%03d.png -pix_fmt yuv420p statue/frames/animated_statue.mp4
+
+./create_animation.sh teaser/teaser.json teaser/teaser.svg teaser/ 1
+mogrify -format png teaser/frames/*.svg
+ffmpeg -framerate 30 -i teaser/frames/tangleSVG_%03d.png -pix_fmt yuv420p teaser/frames/animated_teaser.mp4
