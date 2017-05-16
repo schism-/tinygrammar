@@ -21,7 +21,7 @@ ShapeGroup _split_shapes(const vector<polyline2r>& curves, Shape* shape, int gid
     return children;
 }
 
-vector<polyline2r> _curves(const polygon2r& poly, const ym_frame2r& frame, rule_params parameters, rng& rn) {
+vector<polyline2r> _curves(const polygon2r& poly, const ym_frame2r& frame, const rule_params& parameters, rng& rn) {
     auto bbox = bounds_polygon(transform_polygon_inverse(frame, poly));
     auto offset = ym_rsize(bbox).y / round(ym_rsize(bbox).y / parameters[0]);
     auto curves = vector<polyline2r>();
@@ -47,7 +47,7 @@ vector<polyline2r> _curves(const polygon2r& poly, const ym_frame2r& frame, rule_
     return curves;
 }
 
-ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& rn, ShapeGroup* annotations){
+ShapeGroup tangle_split_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& rn, ShapeGroup* annotations){
     auto children = ShapeGroup();
     auto gid = TangleShape::next_gid();
     
@@ -62,7 +62,7 @@ ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_
     return children;
 }
 
-ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn){
+ShapeGroup init_operator(const rule_tags& tags, const rule_params& parameters, int init_value, rng& rn){
     auto children = ShapeGroup();
     if (parameters[0] == 0){
         // built-in shape
@@ -83,7 +83,7 @@ ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value,
 // |       TIME OPERATORS       |
 // |============================|
 
-ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn, CSGTree::Tree* tree){
+ShapeGroup time_init_operator(const rule_tags& tags, const rule_params& parameters, int init_value, rng& rn, CSGTree::Tree* tree){
     auto children = ShapeGroup();
     
     if (tree == nullptr) {
@@ -105,7 +105,7 @@ ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_v
     return children;
 }
 
-ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& rn, TimeManager::TimeLine* timeline){
+ShapeGroup time_slice_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& rn, TimeManager::TimeLine* timeline){
     auto children = ShapeGroup();
     auto g = get_grammar(grammar_filename);
     for(auto&& shape : shapes) {
@@ -179,7 +179,7 @@ vector<pair<TimeSliceShape*, TimeManager::NodeTimeLine*>> get_data(Grammar* g, T
 }
 
 
-ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+ShapeGroup affine_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline){
     auto g = get_grammar(grammar_filename);
     auto children = ShapeGroup();
     
@@ -228,7 +228,7 @@ ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params
     return children;
 }
 
-ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+ShapeGroup move_towards_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline){
     auto g = get_grammar(grammar_filename);
     auto children = ShapeGroup();
     
@@ -277,7 +277,7 @@ ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_
     return children;
 }
 
-ShapeGroup morph_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+ShapeGroup morph_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline){
     auto g = get_grammar(grammar_filename);
     auto children = ShapeGroup();
     int animator_type;
@@ -312,7 +312,7 @@ ShapeGroup morph_operator(const ShapeGroup& shapes, rule_tags tags, rule_params 
     return children;
 }
 
-ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline){
+ShapeGroup attributes_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline){
     auto children = ShapeGroup();
     
     auto off_count = 1;
