@@ -5,6 +5,12 @@
 #2: svg
 #3: output folder
 
+if [ ! -d "$3/frames" ]; then
+	mkdir -p $3/frames
+else 
+	rm -rf $3/frames
+fi
+
 ./../Bin/Release/tinygrammar_time $1 $2 $3/frames
 
 #echo "CREATING PNG FRAMES"
