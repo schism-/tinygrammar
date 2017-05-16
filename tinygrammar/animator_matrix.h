@@ -64,9 +64,12 @@ AnimatorMatrix morph_to_circle(const ym_range2r& bb, const ym_vec2r& pos, double
 
 ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos);
 void set_matrix(AnimatorMatrix am, const ym_affine2r& mat, int x_idx, int y_idx);
-polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
-polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
+// polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr);
+// polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr);
 void transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double frame);
+
+void transform(const AnimatorMatrix& am, polygon2r* poly, double incr);
+void transform_group(const AnimatorMatrix& am, polygon2r* poly, double incr);
 
 AnimatorMatrix copy(const AnimatorMatrix& am);
 
