@@ -240,7 +240,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
         {
             auto grammar = get_grammar(grammar_filename);
             const auto& rules = grammar->rules;
-            for(auto i = 0; i < (int)rules.size(); i++){
+            for(auto i = 0; i < (int)rules.size(); i++) {
                 if (tag_in_rule(tag, rules[i]->matching_tags))
                     matches.push_back(i);
             }
@@ -251,8 +251,8 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
         {
             auto grammar = get_grammar(grammar_filename);
             const auto& rules = grammar->rules;
-            for(auto i = 0; i < (int)rules.size(); i++){
-                if (temporal_tags.empty() || rules[i]->op.init_value == tag_to_mapping(grammar, "")){
+            for(auto i = 0; i < (int)rules.size(); i++) {
+                if (temporal_tags.empty() || rules[i]->op.init_value == tag_to_mapping(grammar)){
                     if (tag_in_rule(tag, rules[i]->matching_tags))
                         matches.push_back(i);
                 }

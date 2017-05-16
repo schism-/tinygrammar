@@ -74,6 +74,14 @@ inline int tag_to_mapping(Grammar* grammar, const string& tag) {
 #endif
 }
 
+inline int tag_to_mapping(Grammar* grammar) {
+    static int ret = -1;
+    if(ret < 0) {
+        ret = tag_to_mapping(grammar, "");
+    }
+    return ret;
+}
+
 inline string mapping_to_tag(Grammar* grammar, int tag) {
     for( auto&& pair : grammar->tag_mapping ){
         if (pair.second == tag) return pair.first;
