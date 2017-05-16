@@ -237,20 +237,22 @@ bool expand(HistoryAnim* h) {
     
     //EDOARDO FIX
     static unordered_map<TimeManager::TimeSlice*, TimeManager::NodeTimeLine*> sliceToTimeline;
-    static unordered_map<AnimatedShape*, CSGTree::LeafNode*> shapeToNode;
+    static unordered_map<Shape*, CSGTree::LeafNode*> shapeToNode;
 
-    for (auto && as : active_slices){
-        if (sliceToTimeline[((TimeSliceShape*)as)->slice] != nullptr)
-            shapes_map[as] = sliceToTimeline[((TimeSliceShape*)as)->slice];
+    for (auto && as : active_slices) {
+        auto it = sliceToTimeline.find(((TimeSliceShape*)as)->slice);
+        if (it != sliceToTimeline.end())
+            shapes_map[as] = it->second;
         else {
-             shapes_map[as] = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
-             sliceToTimeline[((TimeSliceShape*)as)->slice] = shapes_map[as];
+            auto v = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
+             shapes_map[as] = v;
+             sliceToTimeline[((TimeSliceShape*)as)->slice] = v;
         }
     }
     
     auto grammar_step = matching_slice(grammar, active_slices, shapes_map);
     
-    if (grammar_step.second != nullptr){
+    if (grammar_step.second != nullptr) {
         //if an appliable rule has been found, apply it and retrieve results
 //        printf("[TIME] Rule applied : %s \n", grammar_step.second->rule_name_str.c_str());
         grammar_step.first.added = grammar_step.second->op.apply(grammar_step.first.match, grammar_step.second->produced_tags, grammar_step.second->parameters,
@@ -269,8 +271,10 @@ bool expand(HistoryAnim* h) {
         // Mapping the shapes to their respective slices
         auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
         for (auto && as : anim_shapes){
-            auto node = shapeToNode[(AnimatedShape*)as];
-            if (node == nullptr){
+            auto it = shapeToNode.find(as);
+            CSGTree::LeafNode* node = nullptr;
+            if(it != shapeToNode.end()) node = it->second;
+            else {
                 node = CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)as);
                 shapeToNode[(AnimatedShape*)as] = node;
             }
