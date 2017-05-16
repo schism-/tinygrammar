@@ -710,6 +710,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glfw",
 				);
+				LLVM_LTO = YES_THIN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "${PROJECT_DIR}/bin";
 			};
@@ -724,6 +725,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/external/glfw",
 				);
+				LLVM_LTO = YES_THIN;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SYMROOT = "${PROJECT_DIR}/bin";
 			};
