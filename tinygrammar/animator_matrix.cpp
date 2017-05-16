@@ -90,8 +90,10 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
     
+    new_shape.reserve(poly.size());
     for (auto&& line : poly){
         new_shape += polyline2r();
+        new_shape.back().reserve(line.size());
         for (auto&& p : line){
 #if SPEEDUP_MATLN == 0
             auto m = get_matrix_nearest(am, p);
@@ -192,6 +194,11 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
 polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, double incr){
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
+    
+    auto incr_aff = ym_affine2r{};
+    auto incr_aff_t = ym_affine2r{};
+    
+#if SPEEDUP_MATLN == 0
     auto m = get_matrix_nearest(am, centroid);
     
     auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
@@ -204,11 +211,57 @@ polygon2r transform_group(const AnimatorMatrix& am, const polygon2r& poly, doubl
     log_m_t = log_m_t * incr;
     log_m_t = exp(log_m_t);
     
-    auto incr_aff = ym_affine2r(log_m);
-    auto incr_aff_t = ym_affine2r(log_m_t);
+    incr_aff = ym_affine2r(log_m);
+    incr_aff_t = ym_affine2r(log_m_t);
     
+#elif SPEEDUP_MATLN == 2
+    if(am.mats_.empty()) {
+        if(am.cmat__hack__incr < 0) {
+            auto m = get_matrix_nearest(am, centroid);
+            
+            auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
+            auto log_m = ln(mat);
+            log_m = log_m * incr;
+            log_m = exp(log_m);
+            
+            auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+            auto log_m_t = ln(mat_t);
+            log_m_t = log_m_t * incr;
+            log_m_t = exp(log_m_t);
+            
+            ((AnimatorMatrix&)am).cmat__hack__exp_r = ym_affine2r(log_m);
+            ((AnimatorMatrix&)am).cmat__hack__exp_t = ym_affine2r(log_m_t);
+            ((AnimatorMatrix&)am).cmat__hack__incr = incr;
+        } else if(am.cmat__hack__incr != incr) {
+            printf("ERROR!!!!\n");
+        }
+        
+        incr_aff = am.cmat__hack__exp_r;
+        incr_aff_t = am.cmat__hack__exp_t;
+    } else {
+        auto m = get_matrix_nearest(am, centroid);
+        
+        auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
+        auto log_m = ln(mat);
+        log_m = log_m * incr;
+        log_m = exp(log_m);
+        
+        auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+        auto log_m_t = ln(mat_t);
+        log_m_t = log_m_t * incr;
+        log_m_t = exp(log_m_t);
+        
+        incr_aff = ym_affine2r(log_m);
+        incr_aff_t = ym_affine2r(log_m_t);
+    }
+#else
+#error
+#endif
+    
+    new_shape.reserve(poly.size());
     for (auto&& line : poly){
         new_shape += polyline2r();
+        new_shape.back().reserve(line.size());
         for (auto&& p : line){
             auto new_p = ym_transform_point(incr_aff, p);
             new_p = ym_transform_point(incr_aff_t, new_p);
