@@ -150,7 +150,7 @@ CSGTree::Tree* squares_and_circles(Grammar* g, int extra_value) {
 CSGTree::Tree* load_svg(Grammar* g, string filename) {
     auto tree = CSGTree::InitTree();
     auto shapes = load_svg(filename);
-    auto tag_count = map<int, int>();
+    auto tag_count = unordered_map<int, int>();
     auto last_op = (CSGTree::Node*)nullptr;
     auto shape = (CSGTree::LeafNode*)nullptr;
     auto first = true;
