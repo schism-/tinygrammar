@@ -8,5 +8,5 @@
 
 #include "common.h"
 
-string grammar_filename = "grammars/intersections.json";
+string grammar_filename = "examples/intersections/intersections.json";
 string svgout_filename = "./results/svg/";
