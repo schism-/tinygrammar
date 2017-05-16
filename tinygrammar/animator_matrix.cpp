@@ -481,11 +481,7 @@ pair<AnimatorMatrix, ym_vec2r> get_matrix(const AnimatorKeyframes& akf, double d
 AnimatorKeyframes copy(const AnimatorKeyframes& akf){
     auto res = AnimatorKeyframes();
     res.keyframes = vector<AnimatorMatrix>();
-    for (auto&& am : akf.keyframes) res.keyframes.push_back(copy(am));
+    for (auto&& am : akf.keyframes) res.keyframes.push_back(am);
     for (auto&& am_i : akf.keyframes_idx) res.keyframes_idx.push_back(am_i);
     return res;
-}
-
-AnimatorMatrix copy(const AnimatorMatrix& am){
-    return am;
 }

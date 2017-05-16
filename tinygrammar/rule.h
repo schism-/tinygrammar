@@ -25,7 +25,7 @@ struct Rule {
     Operator op;
     
     Rule() {matching_tags = rule_tags(); produced_tags = rule_tags(); parameters = rule_params(); }
-    Rule(rule_tags mt, rule_tags pt, rule_params pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
+    Rule(const rule_tags& mt, const rule_tags& pt, const rule_params& pa) : matching_tags(mt), produced_tags(pt), parameters(pa) {};
     
     ~Rule() {};
 };

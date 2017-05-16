@@ -12,19 +12,19 @@
 #include "shape.h"
 #include "time_manager.h"
 
-ShapeGroup tangle_split_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, ShapeGroup* annotations = nullptr);
-ShapeGroup init_operator(rule_tags tags, rule_params parameters, int init_value, rng& sampler);
+ShapeGroup tangle_split_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, ShapeGroup* annotations = nullptr);
+ShapeGroup init_operator(const rule_tags& tags, const rule_params& parameters, int init_value, rng& sampler);
 
-ShapeGroup time_init_operator(rule_tags tags, rule_params parameters, int init_value, rng& rn, CSGTree::Tree* tree = nullptr);
-ShapeGroup time_slice_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+ShapeGroup time_init_operator(const rule_tags& tags, const rule_params& parameters, int init_value, rng& rn, CSGTree::Tree* tree = nullptr);
+ShapeGroup time_slice_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
-ShapeGroup affine_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+ShapeGroup affine_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
-ShapeGroup rotation_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+ShapeGroup rotation_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
-ShapeGroup move_towards_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline);
+ShapeGroup move_towards_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline);
 
-ShapeGroup attributes_operator(const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
+ShapeGroup attributes_operator(const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler, TimeManager::TimeLine* timeline = nullptr);
 
 struct Operator{
     int operator_name;
@@ -35,7 +35,7 @@ struct Operator{
     Operator (int operator_name, int init) : operator_name(operator_name), init_value(init) {}
     ~Operator(){}
 
-    ShapeGroup apply (const ShapeGroup& shapes, rule_tags tags, rule_params parameters, rng& sampler,
+    ShapeGroup apply (const ShapeGroup& shapes, const rule_tags& tags, const rule_params& parameters, rng& sampler,
                            ShapeGroup* annotations = nullptr, TimeManager::TimeLine* timeline = nullptr, CSGTree::Tree* tree = nullptr) const {
         switch(operator_name){
             case op_split:

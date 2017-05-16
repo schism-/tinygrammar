@@ -71,8 +71,6 @@ void transform_attributes(const AnimatorMatrix& am, AnimatedShape* shape, double
 void transform(const AnimatorMatrix& am, polygon2r* poly, double incr);
 void transform_group(const AnimatorMatrix& am, polygon2r* poly, double incr);
 
-AnimatorMatrix copy(const AnimatorMatrix& am);
-
 struct AnimatorKeyframes{
     
     vector<AnimatorMatrix> keyframes;
