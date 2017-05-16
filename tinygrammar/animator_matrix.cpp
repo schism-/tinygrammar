@@ -86,7 +86,7 @@ ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos){
     }
 }
 
-polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr){
+polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr) {
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
     
@@ -134,6 +134,53 @@ polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr
             auto new_p = incr_rot * (p - centroid) + incr_t;
             
             new_shape.back() += (new_p + centroid);
+#elif SPEEDUP_MATLN == 2
+            if(am.mats_.empty()) {
+                if(am.cmat__hack__incr < 0) {
+                    auto m = get_matrix_nearest(am, p);
+                    
+                    auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
+                    auto log_m = ln(mat);
+                    log_m = log_m * incr;
+                    log_m = exp(log_m);
+                    
+                    auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+                    auto log_m_t = ln(mat_t);
+                    log_m_t = log_m_t * incr;
+                    log_m_t = exp(log_m_t);
+                    
+                    ((AnimatorMatrix&)am).cmat__hack__exp_r = ym_affine2r(log_m);
+                    ((AnimatorMatrix&)am).cmat__hack__exp_t = ym_affine2r(log_m_t);
+                    ((AnimatorMatrix&)am).cmat__hack__incr = incr;
+                } else if(am.cmat__hack__incr != incr) {
+                    printf("ERROR!!!!\n");
+                }
+                
+                auto new_p = ym_transform_point(am.cmat__hack__exp_r, p - centroid);
+                new_p = ym_transform_point(am.cmat__hack__exp_t, new_p);
+                
+                new_shape.back() += (new_p + centroid);
+            } else {
+                auto m = get_matrix_nearest(am, p);
+                
+                auto mat = ym_mat<double, 3, 3>(m.m, {0.0, 0.0});
+                auto log_m = ln(mat);
+                log_m = log_m * incr;
+                log_m = exp(log_m);
+                
+                auto mat_t = ym_mat<double, 3, 3>({{1.0, 0.0}, {0.0, 1.0}}, m.t);
+                auto log_m_t = ln(mat_t);
+                log_m_t = log_m_t * incr;
+                log_m_t = exp(log_m_t);
+                
+                auto incr_aff = ym_affine2r(log_m);
+                auto incr_aff_t = ym_affine2r(log_m_t);
+                
+                auto new_p = ym_transform_point(incr_aff, p - centroid);
+                new_p = ym_transform_point(incr_aff_t, new_p);
+                
+                new_shape.back() += (new_p + centroid);
+            }
 #else
 #error
 #endif

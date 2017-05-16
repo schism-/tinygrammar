@@ -15,7 +15,6 @@
 struct AnimatorMatrix{
     vector<ym_affine2r> mats_;
     vector<ym_vec2r> mats_centers_;
-    ym_affine2r cmat;
     ym_range2r bounding_box;
     ym_vec2r step;
     
@@ -26,7 +25,11 @@ struct AnimatorMatrix{
     ym_vec4f end_f_color   = {255.0, 255.0, 255.0, 1.0};
     
     bool has_trail = false;
-    
+
+    ym_affine2r cmat;
+    double cmat__hack__incr;
+    ym_affine2r cmat__hack__exp_r, cmat__hack__exp_t;
+
     AnimatorMatrix () {}
     
     AnimatorMatrix (const ym_range2r& bb) {
@@ -50,6 +53,7 @@ struct AnimatorMatrix{
         step = bounding_box.max - bounding_box.min;
         step.x = step.x / matrix_resolution; step.y = step.y / matrix_resolution;
         cmat = mat;
+        cmat__hack__incr = -1;
     }
     
     ~AnimatorMatrix(){}
