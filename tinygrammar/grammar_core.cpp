@@ -32,28 +32,6 @@ rule_tags add_tags(Grammar* grammar, const vector<string>& tags){
     return res;
 }
 
-int tag_to_mapping(Grammar* grammar, const string& tag) {
-#if 0
-    if (grammar->tag_mapping.count(tag) > 0) { return grammar->tag_mapping[tag]; }
-    else {
-        //printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str());
-        return -1;
-    }
-#else
-    auto it = grammar->tag_mapping.find(tag);
-    if(it == grammar->tag_mapping.end()) return -1;
-    else return it->second;
-#endif
-}
-
-string mapping_to_tag(Grammar* grammar, int tag) {
-    for( auto&& pair : grammar->tag_mapping ){
-        if (pair.second == tag) return pair.first;
-    }
-//    printf("[MAPPING->TAG] [ERROR] tag not found : %d\n", tag);
-    return "";
-}
-
 bool is_tag_invert(Grammar* grammar, int tag){
     auto s_tag = mapping_to_tag(grammar, tag);
     if (contains(s_tag, "inv_")) return true;

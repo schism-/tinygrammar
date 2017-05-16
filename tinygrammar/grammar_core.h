@@ -33,8 +33,8 @@ struct Grammar {
 
 int add_rule_to_mapping(Grammar* grammar, const string& rulename);
 rule_tags add_tags(Grammar* grammar, const vector<string>& tags);
-int tag_to_mapping(Grammar* grammar, const string& tag);
-string mapping_to_tag(Grammar* grammar, int tag);
+inline int tag_to_mapping(Grammar* grammar, const string& tag);
+inline string mapping_to_tag(Grammar* grammar, int tag);
 bool is_tag_invert(Grammar* grammar, int tag);
 int invert_tag(Grammar* grammar, int tag);
 
@@ -59,5 +59,28 @@ inline bool tag_in_rule(int tag, const rule_tags& tags){
     }
     return false;
 }
+
+inline int tag_to_mapping(Grammar* grammar, const string& tag) {
+#if 0
+    if (grammar->tag_mapping.count(tag) > 0) { return grammar->tag_mapping[tag]; }
+    else {
+        //printf("[TAG->MAPPING] [ERROR] tag not found : %s\n", tag.c_str());
+        return -1;
+    }
+#else
+    auto it = grammar->tag_mapping.find(tag);
+    if(it == grammar->tag_mapping.end()) return -1;
+    else return it->second;
+#endif
+}
+
+inline string mapping_to_tag(Grammar* grammar, int tag) {
+    for( auto&& pair : grammar->tag_mapping ){
+        if (pair.second == tag) return pair.first;
+    }
+    //    printf("[MAPPING->TAG] [ERROR] tag not found : %d\n", tag);
+    return {};
+}
+
 
 #endif /* grammar_core_h */
