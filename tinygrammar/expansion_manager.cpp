@@ -267,7 +267,7 @@ bool expand(HistoryAnim* h) {
         auto anim_shapes = to_animated_shapes(front);
         
         // Mapping the shapes to their respective slices
-        auto shapes_map = map<Shape*, TimeManager::NodeTimeLine*>();
+        auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
         for (auto && as : anim_shapes){
             auto node = shapeToNode[(AnimatedShape*)as];
             if (node == nullptr){

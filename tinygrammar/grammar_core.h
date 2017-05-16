@@ -18,8 +18,8 @@ struct Grammar {
     int                             seed = 0;
     rng                    rn;
     
-    map<string, int> rule_mapping;
-    map<string, int> tag_mapping;
+    unordered_map<string, int> rule_mapping;
+    unordered_map<string, int> tag_mapping;
     
     // Animation data
     double framerate;
