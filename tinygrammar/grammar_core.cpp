@@ -247,21 +247,13 @@ pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGrou
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
-
-bool tag_in_rule(int tag, const rule_tags& tags){
-    for (auto i = 0; i < TAG_SIZE; i++){
-        if (tag == tags[i]) return true;
-    }
-    return false;
-}
-
 Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags){
     switch (ACTIVE_GRAMMAR) {
         case tangle_grammar:
         {
             auto matches = vector<int>();
             auto grammar = get_grammar(grammar_filename);
-            auto rules = get_rules(grammar);
+            const auto& rules = grammar->rules;
             for(auto i = 0; i < (int)rules.size(); i++){
                 if (tag_in_rule(tag, rules[i]->matching_tags))
                     matches.push_back(i);
@@ -273,7 +265,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
         {
             auto matches = vector<int>();
             auto grammar = get_grammar(grammar_filename);
-            auto rules = get_rules(grammar);
+            const auto& rules = grammar->rules;
             for(auto i = 0; i < (int)rules.size(); i++){
                 if (temporal_tags.empty() || rules[i]->op.init_value == tag_to_mapping(grammar, "")){
                     if (tag_in_rule(tag, rules[i]->matching_tags))

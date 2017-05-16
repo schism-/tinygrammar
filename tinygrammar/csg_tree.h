@@ -55,11 +55,11 @@ namespace CSGTree
     OpNode* New_PlaceInShape(Tree* tree, Node* a, Node* b);
 
     void Update_Sum(Tree* tree, OpNode* a);
-    void Update_Union(Tree* tree, OpNode* a);
-    void Update_Difference(Tree* tree, OpNode* a);
-    void Update_Intersection(Tree* tree, OpNode* a);
-    void Update_XOR(Tree* tree, OpNode* a);
-    void Update_PlaceInShape(Tree* tree, OpNode* a);
+    OpNode* Update_Union(Tree* tree, Node* a, Node* b);
+    OpNode* Update_Difference(Tree* tree, Node* a, Node* b);
+    OpNode* Update_Intersection(Tree* tree, Node* a, Node* b);
+    OpNode* Update_XOR(Tree* tree, Node* a, Node* b);
+    OpNode* Update_PlaceInShape(Tree* tree, Node* a, Node* b);
 
     void UpdateLeafNode(Tree* tree, LeafNode* a, const Animator& anim, double current_time, double incr, double total_dur, bool update = true);
     void UpdateLeafNode(Tree* tree, const vector<LeafNode*>& as, const Animator& anim, int frame, bool update = true);
@@ -77,7 +77,7 @@ namespace CSGTree
     OpNode* BuildResult(Tree* tree, const vector<polygon2r>& shapes, Node* a, Node* b);
     OpNode* BuildResult_Sum(Tree* tree, Node* a, Node* b);
     OpNode* BuildResult_SumAlias(Tree* tree, Node* a, Node* b);
-    void UpdateResult(Tree* tree, OpNode* a, const vector<polygon2r>& shapes);
+    OpNode* BuildResult(Tree* tree, Node* a, Node* b);
     
     int get_node_id(Tree* tree);
 }

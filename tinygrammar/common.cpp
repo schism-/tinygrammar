@@ -8,5 +8,5 @@
 
 #include "common.h"
 
-string grammar_filename = "grammars/test_edo_time_grammar_tris.json";
+string grammar_filename = "grammars/intersections.json";
 string svgout_filename = "./results/svg/";

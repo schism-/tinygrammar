@@ -47,10 +47,17 @@ pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
 pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 
-bool tag_in_rule(int tag, const rule_tags& tags);
+inline bool tag_in_rule(int tag, const rule_tags& tags);
 Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags = {});
 
 PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
+
+inline bool tag_in_rule(int tag, const rule_tags& tags){
+    for (auto i = 0; i < TAG_SIZE; i++){
+        if (tag == tags[i]) return true;
+    }
+    return false;
+}
 
 #endif /* grammar_core_h */

@@ -89,6 +89,7 @@ ym_affine2r get_matrix_nearest(const AnimatorMatrix& am, const ym_vec2r& pos){
 polygon2r transform(const AnimatorMatrix& am, const polygon2r& poly, double incr){
     auto new_shape = polygon2r();
     auto centroid = get_centroid(poly);
+    
     for (auto&& line : poly){
         new_shape += polyline2r();
         for (auto&& p : line){
