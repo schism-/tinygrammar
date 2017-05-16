@@ -26,7 +26,7 @@ struct Grammar {
     ym_range2r output_bbox;
     bool dry_run;
     
-    Grammar() {rules = vector<Rule*>(); rule_mapping = map<string, int>(); tag_mapping = map<string, int>();}
+    Grammar() {rules = vector<Rule*>(); rule_mapping = unordered_map<string, int>(); tag_mapping = unordered_map<string, int>();}
     
     ~Grammar() {};
 };
@@ -44,14 +44,14 @@ vector<Rule*> get_rules(Grammar* g);
 Rule* matching_init();
 
 pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes);
-pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
-pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
+pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
+pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGroup& active_shapes, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 
 inline bool tag_in_rule(int tag, const rule_tags& tags);
 Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags = {});
 
-PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
-Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
+Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 
 inline bool tag_in_rule(int tag, const rule_tags& tags){
     for (auto i = 0; i < TAG_SIZE; i++){

@@ -233,11 +233,11 @@ bool expand(HistoryAnim* h) {
     
     auto active_slices = to_slices(front);
     // Mapping the shapes to their respective slices
-    auto shapes_map = map<Shape*, TimeManager::NodeTimeLine*>();
+    auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
     
     //EDOARDO FIX
-    static map<TimeManager::TimeSlice*, TimeManager::NodeTimeLine*> sliceToTimeline;
-    static map<AnimatedShape*, CSGTree::LeafNode*> shapeToNode;
+    static unordered_map<TimeManager::TimeSlice*, TimeManager::NodeTimeLine*> sliceToTimeline;
+    static unordered_map<AnimatedShape*, CSGTree::LeafNode*> shapeToNode;
 
     for (auto && as : active_slices){
         if (sliceToTimeline[((TimeSliceShape*)as)->slice] != nullptr)

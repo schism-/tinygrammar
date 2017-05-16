@@ -203,7 +203,7 @@ pair<PartitionShapeGroup, Rule*> matching(const ShapeGroup& active_shapes){
     return pair<PartitionShapeGroup, Rule*>(PartitionShapeGroup(), nullptr);
 }
 
-pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map){
+pair<PartitionShapeGroup, Rule*> matching_slice(Grammar* g, const ShapeGroup& active_shapes, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map){
     //matching of the shapes
     auto matched_shapes = matching_shapes(active_shapes, false, shape_map);
     //matching of the rule
@@ -278,7 +278,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
     return nullptr;
 }
 
-PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_shape, const map<Shape*, TimeManager::NodeTimeLine*>& shape_map){
+PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_shape, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map){
     auto res = PartitionShapeGroup();
     auto grammar = get_grammar(grammar_filename);
     switch (ACTIVE_GRAMMAR) {

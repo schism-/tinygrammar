@@ -19,6 +19,7 @@
 #include <iostream>
 #include <sstream>
 #include <random>
+#include <unordered_map>
 
 #include "tree.hh"
 #include "yocto_math.h"
