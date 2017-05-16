@@ -397,7 +397,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
     switch (a->op_type) {
         case union_op:
         {
-            printf("Updating union \n");
+            //printf("Updating union \n");
             auto temp = CSGTree::Update_Union(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
@@ -405,7 +405,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         }
         case intersection_op:
         {
-            printf("Updating intersection \n");
+            //printf("Updating intersection \n");
             auto temp = CSGTree::Update_Intersection(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
@@ -413,7 +413,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         }
         case difference_op:
         {
-            printf("Updating difference \n");
+            //printf("Updating difference \n");
             auto temp = CSGTree::Update_Difference(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
@@ -421,7 +421,7 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         }
         case xor_op:
         {
-            printf("Updating xor \n");
+            //printf("Updating xor \n");
             auto temp = CSGTree::Update_XOR(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
@@ -429,13 +429,13 @@ void CSGTree::UpdateOpNode(CSGTree::Tree* tree, CSGTree::OpNode* a) {
         }
         case sum_op:
         {
-            printf("Updating sum \n");
+            //printf("Updating sum \n");
             CSGTree::Update_Sum(tree, a);
             break;
         }
         case place_in_op:
         {
-            printf("Updating place_in \n");
+            //printf("Updating place_in \n");
             auto temp = CSGTree::Update_PlaceInShape(tree, a->child_left, a->child_right);
             for(auto s : a->shapes) if(s) delete s;
             a->shapes = temp->shapes;
