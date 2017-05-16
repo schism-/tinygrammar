@@ -159,10 +159,12 @@ void CSGTree::Update_Sum(CSGTree::Tree* tree, CSGTree::OpNode* node){
     auto a = node->child_left, b = node->child_right;
     
 #if SPEEDUP_ALIASSUM
-    node->shapes.clear();
-    node->shapes.reserve(a->shapes.size()+b->shapes.size());
-    node->shapes.insert(node->shapes.end(), a->shapes.begin(), a->shapes.end());
-    node->shapes.insert(node->shapes.end(), b->shapes.begin(), b->shapes.end());
+    if(enable_updateSum) {
+        node->shapes.clear();
+        node->shapes.reserve(a->shapes.size()+b->shapes.size());
+        node->shapes.insert(node->shapes.end(), a->shapes.begin(), a->shapes.end());
+        node->shapes.insert(node->shapes.end(), b->shapes.begin(), b->shapes.end());
+    }
     return;
 #endif
 

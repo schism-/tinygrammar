@@ -84,6 +84,7 @@
 		AAC8FB131E0BF2B70066AE65 /* input_figures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC8FB111E0BF2B70066AE65 /* input_figures.cpp */; };
 		AAC8FB141E0BF2B70066AE65 /* input_figures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAC8FB111E0BF2B70066AE65 /* input_figures.cpp */; };
 		AAD29A2F1DB0FD9200F1B962 /* time_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAD29A2D1DB0FD9200F1B962 /* time_manager.cpp */; };
+		BE7D90A11ECB64FC00B8ED03 /* csg_tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAA5FB411D8FED0B006B1F03 /* csg_tree.cpp */; };
 		E53E81301EAE063500CCDA1D /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53E812F1EAE063500CCDA1D /* common.cpp */; };
 		E53E81311EAE06F800CCDA1D /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53E812F1EAE063500CCDA1D /* common.cpp */; };
 /* End PBXBuildFile section */
@@ -589,6 +590,7 @@
 				AABD92091E13EF8100CFB209 /* format.cpp in Sources */,
 				AABD920C1E13EFA400CFB209 /* imgui_demo.cpp in Sources */,
 				AABD92031E13EF3400CFB209 /* imgui_impl_glfw.cpp in Sources */,
+				BE7D90A11ECB64FC00B8ED03 /* csg_tree.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

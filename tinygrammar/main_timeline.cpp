@@ -68,9 +68,11 @@ int main(int argc, const char * argv[]) {
     auto input_grammar = std::string(argv[1]);
     auto input_svg = std::string(argv[2]);
     auto input_out = std::string(argv[3]);
+    auto input_enableSum = std::stoi(argv[4]);
     
     grammar_filename = input_grammar;
     svgout_filename = input_out;
+    enable_updateSum = input_enableSum;
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);

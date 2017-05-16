@@ -11,7 +11,7 @@ else
 	rm -rf $3/frames
 fi
 
-./../Bin/Release/tinygrammar_time $1 $2 $3/frames
+./../Bin/Release/tinygrammar_time $1 $2 $3/frames $4
 
 #echo "CREATING PNG FRAMES"
 #mogrify -format png $3/frames/*.svg

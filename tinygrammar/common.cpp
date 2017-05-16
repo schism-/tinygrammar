@@ -10,3 +10,4 @@
 
 string grammar_filename = "examples/intersections/intersections.json";
 string svgout_filename = "./results/svg/";
+int enable_updateSum = 0;

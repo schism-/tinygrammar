@@ -126,6 +126,7 @@ typedef ym_vec<double, PARAM_SIZE> anim_params;
 
 extern string grammar_filename;
 extern string svgout_filename;
+extern int enable_updateSum;
 
 // ==============================================
 // ====== METHODS FOR LOG/EXP OF MATRICES =======
