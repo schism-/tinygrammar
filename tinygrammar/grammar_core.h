@@ -58,12 +58,21 @@ Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const un
 PartitionShapeGroup matching_shapes_slice(const ShapeGroup& active_nodes);
 Rule* matching_rule_slice(const ShapeGroup& matched);
 
-inline bool tag_in_rule(int tag, const rule_tags& tags){
-    for (auto i = 0; i < TAG_SIZE; i++){
+#if 0
+inline bool tag_in_rule(int tag, const rule_tags& tags) {
+    for (auto i = 0; i < TAG_SIZE; i++) {
         if (tag == tags[i]) return true;
     }
     return false;
 }
+#else
+inline bool tag_in_rule(int tag, const rule_tags& tags) {
+    return tag == tags[0] || tag == tags[1] || tag == tags[2] || tag == tags[3] ||
+           tag == tags[4] || tag == tags[5] || tag == tags[6] || tag == tags[7] ||
+           tag == tags[8] || tag == tags[9] || tag == tags[10] || tag == tags[11] ||
+           tag == tags[12] || tag == tags[13] || tag == tags[14] || tag == tags[15];
+}
+#endif
 
 inline int tag_to_mapping(Grammar* grammar, const string& tag) {
 #if 0
