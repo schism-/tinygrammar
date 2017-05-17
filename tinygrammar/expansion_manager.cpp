@@ -232,18 +232,15 @@ bool expand(HistoryAnim* h) {
     auto grammar = get_grammar(grammar_filename);
     
     auto active_slices = to_slices(front);
-    // Mapping the shapes to their respective slices
-    auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
     
     for (auto && as : active_slices) {
         auto slice = ((TimeSliceShape*)as)->slice;
         if(!slice->__expand__to_timeline__) {
             slice->__expand__to_timeline__ = TimeManager::FindTimeLine(h->history.back()->timeline, slice);
         }
-        shapes_map[as] = slice->__expand__to_timeline__;
     }
     
-    auto grammar_step = matching_slice(grammar, active_slices, shapes_map);
+    auto grammar_step = matching_slice(grammar, active_slices);
     
     if (grammar_step.second != nullptr) {
         //if an appliable rule has been found, apply it and retrieve results
