@@ -257,10 +257,15 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
                         matches.push_back(i);
                 } else {
                     if (tag_in_rule(tag, rules[i]->matching_tags)) {
-                        if(std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end()) {
-                        matches.clear();
-                        matches.push_back(i);
-                        break;
+                        auto found = false; int found_idx = -1;
+                        for(auto j = 0; j < temporal_tags.size() && !found; j ++) {
+                            if(temporal_tags[j] == rules[i]->op.init_value) { found = true; found_idx = j; }
+                        }
+                        if(found) {
+                        // if(std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end()) {
+                            matches.clear();
+                            matches.push_back(i);
+                            break;
                         }
                     }
                 }
