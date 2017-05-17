@@ -272,4 +272,5 @@ void SVGFileContext::end_frame(const ym_vec2r &offset, const ym_vec2r &scale) {
   fprintf(f, "</g>\n");
   fprintf(f, "</g>\n");
   fprintf(f, "</svg>\n");
+    fclose(f);
 }
