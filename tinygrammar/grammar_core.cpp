@@ -255,13 +255,13 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
                 if (temporal_tags.empty() || rules[i]->op.init_value == tag_to_mapping(grammar)){
                     if (tag_in_rule(tag, rules[i]->matching_tags))
                         matches.push_back(i);
-                }
-                else{
-                    if (tag_in_rule(tag, rules[i]->matching_tags)
-                        and (std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end())){
+                } else {
+                    if (tag_in_rule(tag, rules[i]->matching_tags)) {
+                        if(std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end()) {
                         matches.clear();
                         matches.push_back(i);
                         break;
+                        }
                     }
                 }
             }
