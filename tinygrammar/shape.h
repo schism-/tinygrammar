@@ -16,8 +16,11 @@
 // |=====================================|
 
 
+namespace CSGTree { struct LeafNode; }
+
 struct Shape {
     int shape_type = basic_shape;
+    CSGTree::LeafNode* __expand__to_leafnode__ = nullptr;
     virtual ~Shape() {};
 };
 

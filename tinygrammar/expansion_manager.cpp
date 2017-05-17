@@ -235,9 +235,6 @@ bool expand(HistoryAnim* h) {
     // Mapping the shapes to their respective slices
     auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
     
-    //EDOARDO FIX
-    static unordered_map<Shape*, CSGTree::LeafNode*> shapeToNode;
-
     for (auto && as : active_slices) {
         auto slice = ((TimeSliceShape*)as)->slice;
         if(!slice->__expand__to_timeline__) {
@@ -266,14 +263,11 @@ bool expand(HistoryAnim* h) {
         
         // Mapping the shapes to their respective slices
         auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
-        for (auto && as : anim_shapes){
-            auto it = shapeToNode.find(as);
-            CSGTree::LeafNode* node = nullptr;
-            if(it != shapeToNode.end()) node = it->second;
-            else {
-                node = CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)as);
-                shapeToNode[(AnimatedShape*)as] = node;
+        for (auto && as : anim_shapes) {
+            if(!as->__expand__to_leafnode__) {
+                as->__expand__to_leafnode__ = CSGTree::FindNode(h->history.back()->tree, (AnimatedShape*)as);;
             }
+            CSGTree::LeafNode* node = as->__expand__to_leafnode__;
             shapes_map[(AnimatedShape*)as] = TimeManager::FindTimeLine(h->history.back()->timeline, node);
         }
         grammar_step = matching_anim_shape(grammar, anim_shapes, shapes_map);
