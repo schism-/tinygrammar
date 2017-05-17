@@ -49,6 +49,7 @@ pair<PartitionShapeGroup, Rule*> matching_anim_shape(Grammar* g, const ShapeGrou
 
 inline bool tag_in_rule(int tag, const rule_tags& tags);
 Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_tags = {});
+Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<AnimatedShape>& shapes);
 
 PartitionShapeGroup matching_shapes(const ShapeGroup& active_nodes, bool anim_shape = false, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});
 Rule* matching_rule(const ShapeGroup& matched, bool anim_shape = false, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map = {});

@@ -283,6 +283,58 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<int>& temporal_t
     return nullptr;
 }
 
+Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<AnimatedShape*>& shapes){
+    static auto matches = vector<int>();
+    matches.clear();
+    
+    switch (ACTIVE_GRAMMAR) {
+        case tangle_grammar:
+        {
+            auto grammar = get_grammar(grammar_filename);
+            const auto& rules = grammar->rules;
+            for(auto i = 0; i < (int)rules.size(); i++) {
+                if (tag_in_rule(tag, rules[i]->matching_tags))
+                    matches.push_back(i);
+            }
+            if(matches.empty()) return nullptr;
+            return rules[matches[(int)(ym_rng_nextf(&grammar->rn) * matches.size())]];
+        }
+        case animation_grammar:
+        {
+            auto grammar = get_grammar(grammar_filename);
+            const auto& rules = grammar->rules;
+            for(auto i = 0; i < (int)rules.size(); i++) {
+                if (shapes.empty() || rules[i]->op.init_value == tag_to_mapping(grammar)){
+                    if (tag_in_rule(tag, rules[i]->matching_tags))
+                        matches.push_back(i);
+                } else {
+                    if (tag_in_rule(tag, rules[i]->matching_tags)) {
+                        auto found = false; int found_idx = -1;
+                        for(auto j = 0; j < shapes.size() && !found; j ++) {
+                            if(shapes[j]->tag == rules[i]->op.init_value) { found = true; found_idx = j; }
+                        }
+                        if(found) {
+                            // if(std::find(temporal_tags.begin(), temporal_tags.end(), rules[i]->op.init_value) != temporal_tags.end()) {
+                            matches.clear();
+                            matches.push_back(i);
+                            break;
+                        }
+                    }
+                }
+            }
+            if(matches.empty()) return nullptr;
+            if (tag == 1)
+                printf(" ");
+            auto f_idx = ym_rng_nextf(&(grammar->rn)) * (float)matches.size();
+            auto r_idx = (int)(f_idx);
+            return rules[matches[r_idx]];
+        }
+        default:
+            break;
+    }
+    return nullptr;
+}
+
 PartitionShapeGroup matching_shapes(const ShapeGroup& active_shapes, bool anim_shape, const unordered_map<Shape*, TimeManager::NodeTimeLine*>& shape_map){
     auto res = PartitionShapeGroup();
     auto grammar = get_grammar(grammar_filename);
