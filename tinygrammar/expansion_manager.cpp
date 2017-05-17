@@ -236,18 +236,14 @@ bool expand(HistoryAnim* h) {
     auto shapes_map = unordered_map<Shape*, TimeManager::NodeTimeLine*>();
     
     //EDOARDO FIX
-    static unordered_map<TimeManager::TimeSlice*, TimeManager::NodeTimeLine*> sliceToTimeline;
     static unordered_map<Shape*, CSGTree::LeafNode*> shapeToNode;
 
     for (auto && as : active_slices) {
-        auto it = sliceToTimeline.find(((TimeSliceShape*)as)->slice);
-        if (it != sliceToTimeline.end())
-            shapes_map[as] = it->second;
-        else {
-            auto v = TimeManager::FindTimeLine(h->history.back()->timeline, ((TimeSliceShape*)as)->slice);
-             shapes_map[as] = v;
-             sliceToTimeline[((TimeSliceShape*)as)->slice] = v;
+        auto slice = ((TimeSliceShape*)as)->slice;
+        if(!slice->__expand__to_timeline__) {
+            slice->__expand__to_timeline__ = TimeManager::FindTimeLine(h->history.back()->timeline, slice);
         }
+        shapes_map[as] = slice->__expand__to_timeline__;
     }
     
     auto grammar_step = matching_slice(grammar, active_slices, shapes_map);

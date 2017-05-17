@@ -19,10 +19,14 @@ namespace TimeManager {
 
     static double anim_current_time = 0.0;
     
+    struct NodeTimeLine;
+    
     struct TimeSlice{
         int ts_tag = -1;
         double duration;
         AnimatorKeyframes animation;
+        
+        NodeTimeLine* __expand__to_timeline__ = nullptr;
         
         TimeSlice (double d) : duration(d){}
         TimeSlice (double d, int tag) : duration(d), ts_tag(tag) {animation = AnimatorKeyframes();}
