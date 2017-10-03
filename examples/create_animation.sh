@@ -7,11 +7,15 @@
 
 if [ ! -d "$3/frames" ]; then
 	mkdir -p $3/frames
+        for i in `seq 0 10`;
+        do
+            mkdir $3/frames/tangleSVG_$i
+        done  
 else 
 	rm -rf $3/frames
 fi
 
-./../Bin/Release/tinygrammar_time $1 $2 $3/frames $4
+./../bin/Release/tinygrammar_time $1 $2 $3/frames $4
 
 #echo "CREATING PNG FRAMES"
 #mogrify -format png $3/frames/*.svg
