@@ -326,6 +326,7 @@ Rule* tangle_match_rule(Grammar* grammar, int tag, const vector<AnimatedShape*>&
                 printf(" ");
             auto f_idx = ym_rng_nextf(&(grammar->rn)) * (float)matches.size();
             auto r_idx = (int)(f_idx);
+            std::cout << "\n rule: " << rules[matches[r_idx]]->rule_name_str << "\n";
             return rules[matches[r_idx]];
         }
         default:

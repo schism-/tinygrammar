@@ -77,10 +77,10 @@ int main(int argc, const char * argv[]) {
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
 //  auto tree = initialize_tree(grammar, 3, 5, "resources/svg/tangleSVGprova.svg");
-    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
+//    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
 //  auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
 //    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square4000.svg");
-//    auto tree = initialize_tree(grammar, 3, 5, input_svg);
+    auto tree = initialize_tree(grammar, 3, 5, input_svg);
     
     auto init_step = matching_init();
     auto init_shapes = init_step->op.apply(ShapeGroup(), init_step->produced_tags, init_step->parameters, grammar->rn, nullptr, nullptr, tree);
@@ -106,41 +106,36 @@ int main(int argc, const char * argv[]) {
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(exp_end - exp_begin).count() <<std::endl;
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (exp_end - exp_begin).count() <<std::endl;
 
-    int pino = 0;
+    auto last_exp = ((ExpansionAnim*)(em->history.back()));
+    auto duration = last_exp->timeline->duration;
+    double frame_rate = grammar->framerate;
+    double frame_step = 1.0 / frame_rate;
+    auto k = 1;
     
-    for(auto elem : em->history) {
-        auto last_exp = ((ExpansionAnim*)(elem));
-        auto duration = last_exp->timeline->duration;
-        double frame_rate = grammar->framerate;
-        double frame_step = 1.0 / frame_rate;
-        auto k = 1;
-        
-        stringstream ss;
-        ss << std::setfill('0') << std::setw(3) << 0;
-        
-        auto bbox = grammar->output_bbox;
-        auto size = ym_rsize(bbox);
-        
-        std::chrono::steady_clock::time_point anim_begin = std::chrono::steady_clock::now();
-        TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
-        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, std::to_string(pino)+"/"+ss.str());
-        if (grammar->dry_run) return 0;
+    stringstream ss;
+    ss << std::setfill('0') << std::setw(3) << 0;
+    
+    auto bbox = grammar->output_bbox;
+    auto size = ym_rsize(bbox);
+    
+    std::chrono::steady_clock::time_point anim_begin = std::chrono::steady_clock::now();
+    TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
+    save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, ss.str());
+    if (grammar->dry_run) return 0;
 
-        for (auto i = frame_step; (i - duration) <= EPS_2_3; i = i + frame_step){
-            if (IS_DEBUG) printf("Animating frame %d\n", k);
-            else  { printf("#%d...\n", k); fflush(stdout); }
-            TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
-            stringstream ss1;
-            ss1 << std::setfill('0') << std::setw(3) << k;
-            save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, std::to_string(pino)+"/"+ss1.str());
-            k++;
-        }
-    
-        std::chrono::steady_clock::time_point anim_end= std::chrono::steady_clock::now();
-        std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(anim_end - anim_begin).count() <<std::endl;
-        std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (anim_end - anim_begin).count() <<std::endl;
-        pino++;
+    for (auto i = frame_step; (i - duration) <= EPS_2_3; i = i + frame_step){
+        if (IS_DEBUG) printf("Animating frame %d\n", k);
+        else  { printf("#%d...\n", k); fflush(stdout); }
+        TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, ym_clamp(i, 0.0, duration), frame_step);
+        stringstream ss1;
+        ss1 << std::setfill('0') << std::setw(3) << k;
+        save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, ss1.str());
+        k++;
     }
+
+    std::chrono::steady_clock::time_point anim_end= std::chrono::steady_clock::now();
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(anim_end - anim_begin).count() <<std::endl;
+    std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (anim_end - anim_begin).count() <<std::endl;
     
     // !!!!!!!!!!!!!!!! TODO IMPORTANT !!!!!!!!!!!!!!!!!!!
     // + OPTIMIZATION OF ANIMATION ROUTINE -> ONE TREE UPDATE ONCE *ALL* LEAVES ARE UPDATED
