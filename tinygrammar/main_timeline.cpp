@@ -3,7 +3,7 @@
 //  tinygrammar
 //
 //  Created by tangles on 6/8/16.
-//  Copyright © 2016 visgraph. All rights reserved.
+//  Copyright Â© 2016 visgraph. All rights reserved.
 //
 
 #include <iostream>
@@ -76,10 +76,10 @@ int main(int argc, const char * argv[]) {
     
     auto em = (HistoryAnim*)(make_history(animation_history));
     auto grammar = get_grammar(grammar_filename);
-//  auto tree = initialize_tree(grammar, 3, 5, "resources/svg/tangleSVGprova.svg");
-//    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
-//  auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
-//    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square4000.svg");
+    //  auto tree = initialize_tree(grammar, 3, 5, "resources/svg/tangleSVGprova.svg");
+    //    auto tree = initialize_tree(grammar, 2, 7, "resources/svg/test_tagged_2.svg"); // squares and circles
+    //  auto tree = initialize_tree(grammar, 2, 2, "resources/svg/test_tagged_2.svg"); // squares and circles
+    //    auto tree = initialize_tree(grammar, 3, 5, "resources/svg/edo_square4000.svg");
     auto tree = initialize_tree(grammar, 3, 5, input_svg);
     
     auto init_step = matching_init();
@@ -105,7 +105,7 @@ int main(int argc, const char * argv[]) {
     std::chrono::steady_clock::time_point exp_end= std::chrono::steady_clock::now();
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(exp_end - exp_begin).count() <<std::endl;
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (exp_end - exp_begin).count() <<std::endl;
-
+    
     auto last_exp = ((ExpansionAnim*)(em->history.back()));
     auto duration = last_exp->timeline->duration;
     double frame_rate = grammar->framerate;
@@ -122,7 +122,7 @@ int main(int argc, const char * argv[]) {
     TimeManager::AnimateTimeLine(last_exp->timeline, last_exp->tree, 0.0, frame_step);
     save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, ss.str());
     if (grammar->dry_run) return 0;
-
+    
     for (auto i = frame_step; (i - duration) <= EPS_2_3; i = i + frame_step){
         if (IS_DEBUG) printf("Animating frame %d\n", k);
         else  { printf("#%d...\n", k); fflush(stdout); }
@@ -132,7 +132,7 @@ int main(int argc, const char * argv[]) {
         save_svg(last_exp->tree, {(int)size.x, (int)size.y}, {size.x/2.0, size.y/2.0}, {3.0, 3.0}, ss1.str());
         k++;
     }
-
+    
     std::chrono::steady_clock::time_point anim_end= std::chrono::steady_clock::now();
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::microseconds>(anim_end - anim_begin).count() <<std::endl;
     std::cout << "Time difference = " << std::chrono::duration_cast<std::chrono::nanoseconds> (anim_end - anim_begin).count() <<std::endl;

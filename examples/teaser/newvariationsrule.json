@@ -1,0 +1,949 @@
+{
+	"grammar_name" : "Control Time Grammar", 
+	"seed" : -1, 
+	"framerate" : 30.0,
+	"bbox" : [-540.0, -540.0, 540.0, 540.0],
+	"dry_run" : false,
+
+	"rules" : [
+		{ 
+			"rule_name" : "init_1",
+			"matching_tags" : [],
+			"produced_tags" : ["a"],
+			"operator" : "time_init",
+			"parameters" : [6.0, 1.0],
+			"init_value" : "square"
+		}, 
+
+		{ 	
+			"rule_name" : "time_rule_1",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "id", "c", "inv_c", "inv_b", "inv_id"],
+			"operator" : "time_slice",
+			"parameters" : [0.25, 0.05, 0.2, 0.2, 0.25, 0.05],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_2",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "inv_b", "inv_c"],
+			"operator" : "time_slice",
+			"parameters" : [0.3, 0.2, 0.2, 0.3],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_3",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["inv_b", "b"],
+			"operator" : "time_slice",
+			"parameters" : [0.4, 0.6],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_4",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "d", "inv_b", "inv_c", "inv_d"],
+			"operator" : "time_slice",
+			"parameters" : [0.125, 0.25, 0.125, 0.125, 0.25, 0.125],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_5",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["e", "c", "inv_c", "inv_e"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.55, 0.15, 0.15],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_6",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "e", "inv_b", "inv_e"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.35, 0.25, 0.25],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_7",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "inv_b", "rot", "inv_rot", "dis", "inv_c", "inv_dis"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.2, 0.15, 0.1, 0.1, 0.1, 0.1, 0.1],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_8",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "inv_c", "inv_b"],
+			"operator" : "time_slice",
+			"parameters" : [0.20, 0.30, 0.10, 0.40],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_9",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["dis", "inv_dis", "inv_b", "e", "inv_b", "b", "b", "inv_e"],
+			"operator" : "time_slice",
+			"parameters" : [0.10, 0.15, 0.10, 0.10, 0.20, 0.15, 0.15, 0.05],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_10",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["id", "rot", "c", "inv_b", "inv_id", "inv_c", "inv_rot", "b"],
+			"operator" : "time_slice",
+			"parameters" : [0.1, 0.10, 0.1, 0.20, 0.10, 0.2, 0.1, 0.1],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_11",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["c", "b", "e", "inv_c", "b", "inv_b", "inv_e", "inv_b"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.10, 0.15, 0.10, 0.10, 0.10, 0.15, 0.15],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "time_rule_12",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["b", "c", "id", "inv_b", "inv_c", "inv_id"],
+			"operator" : "time_slice",
+			"parameters" : [0.15, 0.35, 0.1, 0.10, 0.2, 0.1],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs1",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 130.0, 0.05],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs2",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -90.0, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs3",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 20.0, 0.05],
+			"init_value" : "d"
+		},
+		
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 100.0, 0.05],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs5",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 50.0, 0.05],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs6",
+			"matching_tags" : ["cog"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -70.0, 0.5, 0.05],
+			"init_value" : "rot"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs7",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 150.0, 0.6, 0.1],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs8",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 100.0, 0.7, 0.1],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs9",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 50.0, 0.8, 0.1],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs10",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 90.0, 0.9, 0.1],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs11",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -20.0, 1.2, 0.1],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs12",
+			"matching_tags" : ["place"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -70.0, 1.3, 0.1],
+			"init_value" : "rot"
+		},
+
+
+		{ 	
+			"rule_name" : "space_rule_bs19",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.3, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs20",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.8, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs21",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.6, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs22",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.7, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs23",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.2, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs24",
+			"matching_tags" : ["c", "ic"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.9, 0.0],
+			"init_value" : "rot"
+		},
+
+	
+		{ 	
+			"rule_name" : "space_rule_bs25",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 30.0, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs26",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 60.0, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs27",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs28",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 150.0, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs29",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -30.0, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs30",
+			"matching_tags" : ["seg"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -60.0, 0.0],
+			"init_value" : "rot"
+		},
+
+
+		{ 	
+			"rule_name" : "space_rule_bs31",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -45.0, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs32",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 45.0, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs33",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -90.0, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs34",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs35",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, -20.0, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs36",
+			"matching_tags" : ["seg_tachi"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 20.0, 0.0],
+			"init_value" : "rot"
+		},
+
+	
+		{ 	
+			"rule_name" : "space_rule_bs37",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.9, 0.0],
+			"init_value" : "b"
+		},
+	
+		{ 	
+			"rule_name" : "space_rule_bs38",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.6, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs39",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 0.8, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs40",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.2, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs41",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.3, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs42",
+			"matching_tags" : ["lc"],
+			"produced_tags" : ["lc_t1"],
+			"operator" : "scale",
+			"parameters" : [1.0, 1.1, 0.0],
+			"init_value" : "rot"
+		},
+
+
+	
+
+		{ 	
+			"rule_name" : "space_rule_bs43",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 30.0, 0.6, 0.05],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs44",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 60.0, 1.3, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs45",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 90.0, 0.8, 0.05],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs46",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 150.0, 0.9, 0.05],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs47",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -30.0, 1.1, 0.05],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs48",
+			"matching_tags" : ["seg2"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -60.0, 1.2, 0.05],
+			"init_value" : "rot"
+		},
+
+
+
+		{ 	
+			"rule_name" : "space_rule_bs49",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -90.0, 0.7, 0.05],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs50",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -60.0, 0.8, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs51",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, -30.0, 0.6, 0.05],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs52",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 20.0, 1.2, 0.05],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs53",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 40.0, 1.3, 0.05],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs54",
+			"matching_tags" : ["ls"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "rot_scale",
+			"parameters" : [1.0, 150.0, 1.1, 0.05],
+			"init_value" : "rot"
+		},
+
+	
+
+		{ 	
+			"rule_name" : "space_rule_bs55",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs56",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs57",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs58",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs59",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs60",
+			"matching_tags" : ["mclu"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, 9.2, 0.0],
+			"init_value" : "rot"
+		},
+
+	
+
+		{ 	
+			"rule_name" : "space_rule_bs61",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs62",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs63",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs64",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs65",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs66",
+			"matching_tags" : ["mcru"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, 9.2, 0.0],
+			"init_value" : "rot"
+		},
+
+
+
+		{ 	
+			"rule_name" : "space_rule_bs67",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs68",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs69",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs70",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs71",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs72",
+			"matching_tags" : ["mcld"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, 9.2, -9.2, 0.0],
+			"init_value" : "rot"
+		},
+
+	
+
+		{ 	
+			"rule_name" : "space_rule_bs73",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "b"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs74",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs75",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs76",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs77",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs78",
+			"matching_tags" : ["mcrd"],
+			"produced_tags" : ["c_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.5, -9.2, -9.2, 0.0],
+			"init_value" : "rot"
+		},
+
+
+		{ 	
+			"rule_name" : "time_rule_key8",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["bslb", "bslc", "inv_bslc", "inv_bslb", "bslc", "inv_bslc", "bslb", "inv_bslb"],
+			"operator" : "time_slice",
+			"parameters" : [0.5, 0.05, 0.05, 0.1, 0.1, 0.1, 0.05, 0.05], 
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["bsl"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 41.2, 0.0, 0.0],
+			"init_value" : "bslc"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["bsl"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.4, 0.0, 20.0, 0.0],
+			"init_value" : "bslb"
+		},
+
+
+
+		{ 	
+			"rule_name" : "time_rule_key8",
+			"matching_tags" : ["a"],
+			"produced_tags" : ["bsrrot", "inv_bsrrot", "bsrb", "inv_bsrb", "bsrc", "inv_bsrc", "bsrb", "inv_bsrb"],
+			"operator" : "time_slice",
+			"parameters" : [0.04, 0.05, 0.25, 0.05, 0.15, 0.05, 0.35, 0.06],
+			"init_value" : ""
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["bsr", "bull"],
+			"produced_tags" : ["bsr_t1"],
+			"operator" : "scale_tran",
+			"parameters" : [1.0, 0.4, 0.0, -20.0, 0.0],
+			"init_value" : "bsrb"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["bsr", "bull"],
+			"produced_tags" : ["bsr_t2"],
+			"operator" : "translation",
+			"parameters" : [0.0, -41.2, 0.0, 0.0],
+			"init_value" : "bsrc"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs4",
+			"matching_tags" : ["bull"],
+			"produced_tags" : ["bsr_t3"],
+			"operator" : "rotation",
+			"parameters" : [1.0, 90.0, 0.0],
+			"init_value" : "bsrrot"
+		},
+
+	
+		{ 	
+			"rule_name" : "space_rule_bs82",
+			"matching_tags" : ["sliderup"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 10.0, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs83",
+			"matching_tags" : ["sliderup"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 8.0, 0.1],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs84",
+			"matching_tags" : ["sliderup"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 6.0, 0.05],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs85",
+			"matching_tags" : ["sliderup"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 4.0, 0.1],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs86",
+			"matching_tags" : ["sliderup"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 2.0, 0.1],
+			"init_value" : "rot"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs87",
+			"matching_tags" : ["sliderdown"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 2.0, 0.05],
+			"init_value" : "c"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs88",
+			"matching_tags" : ["sliderdown"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 4.0, 0.1],
+			"init_value" : "d"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs89",
+			"matching_tags" : ["sliderdown"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 6.0, 0.05],
+			"init_value" : "e"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs90",
+			"matching_tags" : ["sliderdown"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 8.0, 0.1],
+			"init_value" : "dis"
+		},
+
+		{ 	
+			"rule_name" : "space_rule_bs91",
+			"matching_tags" : ["sliderdown"],
+			"produced_tags" : ["up_t1"],
+			"operator" : "translation",
+			"parameters" : [0.0, 0.0, 10.0, 0.1],
+			"init_value" : "rot"
+		}
+
+	]
+}

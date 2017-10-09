@@ -146,10 +146,7 @@ void TimeManager::AnimateTimeLine(TimeManager::TimeLine* t, CSGTree::Tree* tree,
 //            TimeManager::pool.enqueue([tree,current_time,incr,ntl](){
 //                TimeManager::AnimateNodeTimeLine(ntl, tree, current_time, incr);
 //            });
-//    
-
-    
-    
+//
     
     //For each NodeTimeLine, update its content.
     for (auto&& ntl : t->timelines){
